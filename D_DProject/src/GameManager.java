@@ -19,10 +19,10 @@ public class GameManager {
         gameMessage.getPlayerSelectCharacterMenu();
         System.out.print("Select character:");
         return switch (sc.nextInt()) {
-            case 1 -> CharacterType.KNIGHT;
-            case 2 -> CharacterType.SORCERER;
-            case 3 -> CharacterType.BARD;
-            case 4 -> CharacterType.ASSASSIN;
+            case 1 -> new Character(CharacterType.KNIGHT);
+            case 2 -> new Character(CharacterType.SORCERER);
+            case 3 -> new Character(CharacterType.BARD);
+            case 4 -> new Character(CharacterType.ASSASSIN);
             default -> throw new IllegalStateException("Unexpected value.");
         };
     }
