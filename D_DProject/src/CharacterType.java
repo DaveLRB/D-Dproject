@@ -19,7 +19,7 @@ public enum CharacterType {
 
     }
 
-    int
+
 
 
 }
