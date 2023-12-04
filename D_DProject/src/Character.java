@@ -80,7 +80,7 @@ public class Character {
     }
 
     public void characterTakeDamage(Monster monster) {
-        this.healthPoints = healthPoints - monster.getHitPoints();
+        this.healthPoints = healthPoints - monster.getHitDmg();
     }
 
     public void characterAttack() {
@@ -109,10 +109,10 @@ public class Character {
         int ultimate;
         if (chance <= 0.20 && healthPoints <= 20) {
             switch (characterType) {
-                case KNIGHT -> ultimate = this.strength * 100;
-                case SORCERER -> ultimate = this.intelligence * 100;
-                case BARD -> ultimate = this.charisma * 100;
-                case ASSASSIN -> ultimate = this.dexterity * 100;
+                case KNIGHT -> ultimate = this.strength * 10;
+                case SORCERER -> ultimate = this.intelligence * 10;
+                case BARD -> ultimate = this.charisma * 10;
+                case ASSASSIN -> ultimate = this.dexterity * 10;
             }
         }
     }
