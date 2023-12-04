@@ -80,7 +80,7 @@ public class Character {
     }
 
     public void characterTakeDamage(Monster monster) {
-        this.healthPoints = healthPoints - monster.getHitPoints();
+        this.healthPoints = healthPoints - monster.getHitDmg();
     }
 
     public void characterAttack() {
