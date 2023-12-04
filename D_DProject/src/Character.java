@@ -3,6 +3,7 @@ import java.util.Random;
 public class Character {
 
     private CharacterType characterType;
+    private String name;
     private int strength;
     private int dexterity;
     private int charisma;
@@ -12,24 +13,28 @@ public class Character {
     public Character(CharacterType characterType) {
         switch (characterType) {
             case KNIGHT:
+                this.name = "KNIGHT";
                 this.strength = 12;
                 this.dexterity = 7;
                 this.charisma = 8;
                 this.intelligence = 5;
                 break;
             case SORCERER:
+                this.name= "SORCERER";
                 this.strength = 5;
                 this.dexterity = 6;
                 this.charisma = 8;
                 this.intelligence = 12;
                 break;
             case BARD:
+                this.name= "BARD";
                 this.strength = 7;
                 this.dexterity = 8;
                 this.charisma = 12;
                 this.intelligence = 8;
                 break;
             case ASSASSIN:
+                this.name= "ASSASSIN";
                 this.strength = 8;
                 this.dexterity = 12;
                 this.charisma = 5;
@@ -77,6 +82,13 @@ public class Character {
 
     public void setHealthPoints(int healthPoints) {
         this.healthPoints += healthPoints;
+    }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void characterTakeDamage(Monster monster) {
