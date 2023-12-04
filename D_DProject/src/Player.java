@@ -43,4 +43,12 @@ public class Player {
     public void addHealthPoints(int healthPoints){
         this.healthPoints+=healthPoints;
     }
+
+    public String getNAME() {
+        return NAME;
+    }
+
+    public Character getSELECTED_CHARACTER() {
+        return SELECTED_CHARACTER;
+    }
 }
