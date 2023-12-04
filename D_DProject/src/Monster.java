@@ -89,7 +89,7 @@ public class Monster {
     public static Monster[] createMonstersForLevel(int level) {
         switch (level) {
             case 1:
-                return createMonsters(MonsterType.SLIME);
+                return createMonsters(MonsterType.SLIME, );
             case 2:
                 return createMonsters(MonsterType.BABYSPIDERS);
             default:
