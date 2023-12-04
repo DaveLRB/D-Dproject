@@ -19,6 +19,9 @@ public enum CharacterType {
 
     }
 
+    public static void attackMonster(int attack){
+
+    }
 
 
 
