@@ -1,16 +1,16 @@
-import java.util.Random;
-
 public class Monster {
     private String name;
-    private int hitPoints;
+    private int hitDmg;
+    private int monsterHP;
     private boolean isFriendly;
     private String[] attacks;
     private String[] quotes;
     int level = 0;
 
-    public Monster(String name, int hitPoints, boolean isFriendly, String[] attacks, String[] quotes) {
+    public Monster(String name, int hitDmg, int monsterHP, boolean isFriendly, String[] attacks, String[] quotes) {
         this.name = name;
-        this.hitPoints = hitPoints;
+        this.hitDmg = hitDmg;
+        this.monsterHP = monsterHP;
         this.isFriendly = isFriendly;
         this.attacks = attacks;
         this.quotes = quotes;
@@ -24,12 +24,28 @@ public class Monster {
         this.name = name;
     }
 
-    public int getHitPoints() {
-        return hitPoints;
+    public int getHitDmg() {
+        return hitDmg;
     }
 
-    public void setHitPoints(int hitPoints) {
-        this.hitPoints = hitPoints;
+    public void setHitDmg(int hitDmg) {
+        this.hitDmg = hitDmg;
+    }
+
+    public int getMonsterHP() {
+        return monsterHP;
+    }
+
+    public void setMonsterHP(int monsterHP) {
+        this.monsterHP = monsterHP;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     public boolean isFriendly() {
