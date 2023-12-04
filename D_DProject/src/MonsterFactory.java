@@ -1,4 +1,5 @@
 class MonsterFactory {
+
     public static Monster createMonster(MonsterType monsterType) {
         return switch (monsterType) {
             case SLIME ->
