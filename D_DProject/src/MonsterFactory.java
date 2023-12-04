@@ -1,7 +1,5 @@
 class MonsterFactory {
-    // TODO: 04/12/2023 FÁTIMA, O NOME DE CADA MOB TENS QUE USAR O MONSTERTYPE, EX: MonsterType.SLIME. Podes deixar o nome, mas acrescenta, ex: 
-    // TODO: 04/12/2023  new Monster(MonsterType.SLIME, "Slime", 15, 100, false, new String[]{"Slap", "Bounce"}, new String[]{"I'm gooey!", "Bloop bloop!"});
-    // TODO: 04/12/2023 LEMBRA-TE DE ADICIONAR NO CONSTRUTOR DO MONSTRO: public Monster(MonsterType monsterType, String name, int hitDmg, int monsterHP, boolean isFriendly, String[] attacks, String[] quotes) { 
+
     public static Monster createMonster(MonsterType monsterType) {
         return switch (monsterType) {
             case SLIME ->
