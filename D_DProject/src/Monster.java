@@ -70,30 +70,34 @@ public class Monster {
 
     public void setQuotes(String[] quotes) {
         this.quotes = quotes;
+
     }
 
-
-   /* private Monster createRandomMonster() {
-        MonsterType randomMonsterType = MonsterType.values()[new Random().nextInt(MonsterType.values().length)];
-
-        switch (randomMonsterType) {
-            case SLIME:
-                return new SlimeMonster("Slime");
-            case BABYSPIDERS:
-                return new BabySpiders("Baby Spider");
-            default:
-                return null;
+    /*
+    private static Monster[] createMonsters(MonsterType... monsterTypes) {
+        List<Monster> monsters = new ArrayList<>();
+        for (MonsterType monsterType : monsterTypes) {
+            monsters.add(createMonster(monsterType));
         }
+        return monsters.toArray(new Monster[0]);
     }
+
+    */
 
     public static Monster[] createMonstersForLevel(int level) {
         switch (level) {
             case 1:
-                return createMonsters(MonsterType.SLIME, );
+                return createMonsters(MonsterType.SLIME, MonsterType.BABYSPIDERS, MonsterType.GOBLIN, MonsterType.SKELETON, MonsterType.ZOMBIE);
             case 2:
-                return createMonsters(MonsterType.BABYSPIDERS);
+                return createMonsters(MonsterType.SPECTRE, MonsterType.WEREWOLF, MonsterType.GHOST, MonsterType.WITCH, MonsterType.VAMPIRE);
+            case 3:
+                return createMonsters(MonsterType.MUMMY, MonsterType.CREEPER, MonsterType.HARPY, MonsterType.CENTAUR, MonsterType.MINOTAUR);
+            case 4:
+                return createMonsters(MonsterType.CYCLOPS, MonsterType.BASILISK, MonsterType.GRIFFIN, MonsterType.CHIMERA, MonsterType.MEDUSA);
+            case 5:
+                return createMonsters(MonsterType.WYVERN, MonsterType.PHOENIX, MonsterType.KRAKEN, MonsterType.BEHEMOTH, MonsterType.DRAGON);
             default:
                 return null;
         }
-    } */
+    }
 }
