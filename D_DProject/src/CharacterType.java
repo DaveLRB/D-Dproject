@@ -16,10 +16,7 @@ public enum CharacterType {
         this.dexterity = dexterity;
         this.charisma = charisma;
         this.intelligence = intelligence;
-
     }
-
-
 
 
 }
