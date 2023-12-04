@@ -13,6 +13,7 @@ public class Dungeon {
 
     public Dungeon(Player player) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         this.playerCharacter = player.getSELECTED_CHARACTER();
     }
 
@@ -30,6 +31,8 @@ public class Dungeon {
     }
 
 =======
+=======
+>>>>>>> f57d1c5 (added some things)
         this.playerCharacter = player.getSelectedCharacter();
     }
 
@@ -46,5 +49,8 @@ public class Dungeon {
         int random = (int) (Math.random() * 6) + 1;
     }
 
+<<<<<<< HEAD
+>>>>>>> f57d1c5 (added some things)
+=======
 >>>>>>> f57d1c5 (added some things)
 }
