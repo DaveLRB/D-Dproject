@@ -84,7 +84,13 @@ public class Monster {
         this.isMonsterAlive = isMonsterAlive;
     }
 
-    //public void monsterAttack(Character character) {
+    public int monsterAttack(Character character) {
+        int attackIndex = new Random().nextInt(attacks.length);
+        String attack = attacks[attackIndex];
+        System.out.println(name + " used " + attack + "! " + character.getName() + " took " + hitDmg + " damage.");
+        return hitDmg;
+    }
+
     public void takeDamage(Character character) {
         if (getIsMonsterAlive()) {
             monsterHP = Math.max(0, monsterHP - character.characterAttack());
