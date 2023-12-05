@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 public class Character {
@@ -10,6 +13,7 @@ public class Character {
     private int intelligence;
     private int healthPoints;
 
+
     public Character(CharacterType characterType) {
         switch (characterType) {
             case KNIGHT:
@@ -20,21 +24,21 @@ public class Character {
                 this.intelligence = 5;
                 break;
             case SORCERER:
-                this.name= "SORCERER";
+                this.name = "SORCERER";
                 this.strength = 5;
                 this.dexterity = 6;
                 this.charisma = 8;
                 this.intelligence = 12;
                 break;
             case BARD:
-                this.name= "BARD";
+                this.name = "BARD";
                 this.strength = 7;
                 this.dexterity = 8;
                 this.charisma = 12;
                 this.intelligence = 8;
                 break;
             case ASSASSIN:
-                this.name= "ASSASSIN";
+                this.name = "ASSASSIN";
                 this.strength = 8;
                 this.dexterity = 12;
                 this.charisma = 5;
@@ -42,6 +46,17 @@ public class Character {
                 break;
         }
         this.healthPoints = 100;
+    }
+
+    private String[] charQuotes = {
+            "Hello darling, i never seen such beautiful being",
+            "WOW am i blind? Or are you sunshine?!",
+    };
+
+    private void shuffleQuotes() {
+        List<String> quotesList = Arrays.asList(charQuotes);
+        Collections.shuffle(quotesList);
+        quotesList.toArray(charQuotes);
     }
 
     public int getStrength() {
@@ -83,6 +98,7 @@ public class Character {
     public void setHealthPoints(int healthPoints) {
         this.healthPoints += healthPoints;
     }
+
     public String getName() {
         return name;
     }
@@ -92,33 +108,38 @@ public class Character {
     }
 
     public void characterTakeDamage(Monster monster) {
-        this.healthPoints = healthPoints - monster.getHitDmg();
+        this.healthPoints -= monster.monsterAttack(this);
     }
 
-    public void  characterAttack() {
-        int attack;
+    public int characterAttack() {
+        int attack = 0;
         switch (characterType) {
             case KNIGHT -> attack = this.strength;
             case SORCERER -> attack = this.intelligence;
             case BARD -> attack = this.charisma;
             case ASSASSIN -> attack = this.dexterity;
         }
+
+        return attack;
+
     }
 
-    public void specialAttack() {
-        int special;
+    public int specialAttack() {
+        int special = 0;
         switch (characterType) {
             case KNIGHT -> special = this.strength * (int) (Math.random() * 3) + 1;
             case SORCERER -> special = this.intelligence * (int) (Math.random() * 3) + 1;
             case BARD -> special = this.charisma * (int) (Math.random() * 3) + 1;
             case ASSASSIN -> special = this.dexterity * (int) (Math.random() * 3) + 1;
         }
+
+        return special;
     }
 
-    public void ultimateAttack() {
+    public int ultimateAttack() {
         Random random = new Random();
         double chance = random.nextDouble();
-        int ultimate;
+        int ultimate = 0;
         if (chance <= 0.20 && healthPoints <= 20) {
             switch (characterType) {
                 case KNIGHT -> ultimate = this.strength * 10;
@@ -126,7 +147,17 @@ public class Character {
                 case BARD -> ultimate = this.charisma * 10;
                 case ASSASSIN -> ultimate = this.dexterity * 10;
             }
+
+            return ultimate;
         }
+        switch (characterType) {
+            case KNIGHT -> ultimate = this.strength;
+            case SORCERER -> ultimate = this.intelligence;
+            case BARD -> ultimate = this.charisma;
+            case ASSASSIN -> ultimate = this.dexterity;
+        }
+
+        return ultimate;
     }
 }
 
