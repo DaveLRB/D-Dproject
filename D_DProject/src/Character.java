@@ -95,7 +95,7 @@ public class Character {
         this.healthPoints = healthPoints - monster.getHitDmg();
     }
 
-    public void characterAttack() {
+    public void  characterAttack() {
         int attack;
         switch (characterType) {
             case KNIGHT -> attack = this.strength;

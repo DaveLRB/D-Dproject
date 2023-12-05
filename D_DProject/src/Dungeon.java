@@ -20,10 +20,18 @@ public class Dungeon {
 
     public void createTurn() {
         fillMonstersArray(monsters);
+        do{
+            for(int level=0; level< NUMBER_OF_LEVELS;level++){
+                for(int monster=0; monster<NUMBER_OF_MONSTERS;monster++){
+                    while(monsters.get(level).get(monster).getMonsterHP()>0){
 
+                    }
+                }
+            }
+        }while(player.getSELECTED_CHARACTER().getHealthPoints()>0 );
     }
 
-    //Creating and adding monsters to the list following your type
+    //Creating and adding monsters to the list
     private void fillMonstersArray(ArrayList<ArrayList<Monster>> monsters) {
         clearMonsterList();
         ArrayList<Integer> monstersOrder = getMonstersOrder();
