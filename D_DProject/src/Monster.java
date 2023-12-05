@@ -72,28 +72,13 @@ public class Monster {
         this.quotes = quotes;
     }
 
-
-   /* private Monster createRandomMonster() {
-        MonsterType randomMonsterType = MonsterType.values()[new Random().nextInt(MonsterType.values().length)];
-
-        switch (randomMonsterType) {
-            case SLIME:
-                return new SlimeMonster("Slime");
-            case BABYSPIDERS:
-                return new BabySpiders("Baby Spider");
-            default:
-                return null;
-        }
+    /*
+    private static Monster[] createMonsters(MonsterType... monsterTypes) {
+        List<Monster> monsters = new ArrayList<>();
+        for (MonsterType monsterType : monsterTypes) {
+            monsters.add(createMonster(monsterType));
+        }    return monsters.toArray(new Monster[0]);
     }
 
-    public static Monster[] createMonstersForLevel(int level) {
-        switch (level) {
-            case 1:
-                return createMonsters(MonsterType.SLIME, );
-            case 2:
-                return createMonsters(MonsterType.BABYSPIDERS);
-            default:
-                return null;
-        }
-    } */
+    */
 }
