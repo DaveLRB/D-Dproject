@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class CharacterNotFoundException {
+public class CharacterNotFoundException extends RuntimeException{
+    public CharacterNotFoundException(String message) {
+        super(message);
+    }
 }

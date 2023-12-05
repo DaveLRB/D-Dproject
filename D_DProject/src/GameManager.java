@@ -3,17 +3,22 @@ import java.util.Scanner;
 
 public class GameManager {
     private ArrayList<Character> characters;
-    private final Character character;
+    private Character character = null;
+    private Player player;
     private final Scanner sc;
     private int level;
+    private Dungeon dungeon;
     private boolean gameIsRunning;
+    private String playerName;
 
     public GameManager() {
         this.sc = new Scanner(System.in);
         this.characters = new ArrayList<>();
         addCharactersToList();
         this.character = playerSelectCharacter();
+        this.player = new Player(playerName, character);
         this.level = 0;
+        this.dungeon = new Dungeon(player);
         this.gameIsRunning = true;
     }
 
@@ -22,19 +27,38 @@ public class GameManager {
         GameMessage.getMenuBigMessage();
         GameMessage.getBlankSpace();
         while(gameIsRunning) {
-            GameMessage.getMenuMessage();
-            switch (sc.next()) {
-                case "1" -> System.out.println("1");
-                case "2" -> System.out.println("2");
+            if (player.getSELECTED_CHARACTER().getHealthPoints() > 0) {
+                GameMessage.getMenuMessage();
+                switch (sc.next()) {
+                    case "1" -> /*dungeon.init();*/System.out.println();
+                    case "2" -> checkCharacterStats(player);
+                }
+            } else {
+                GameMessage.getDeadMessage();
+                GameMessage.getMenuDead();
+                switch (sc.next()) {
+                    case "1":
+                        this.character = null;
+                        playerSelectCharacter();
+                        init();
+                        break;
+                    case "2":
+                        gameIsRunning = false;
+                        break;
+                }
             }
         }
     }
 
     //Method to start the game: player need select a character. When he select, the character is stored at character instance.
-    public Character playerSelectCharacter() {
+    private Character playerSelectCharacter() {
+        GameMessage.getPlayerName();
+        this.playerName = sc.next();
+        GameMessage.getOneBlankSpace();
+        GameMessage.getWelcomeMessage(playerName);
         int count = 1;
         for (Character character : characters) {
-            System.out.println(count++ + " | "+character.getStrength());
+            System.out.println(count++ + " | "+character.getName() + " | Strength: "+character.getStrength() + " | Dexterity: "+character.getDexterity() + " | Charisma: "+ character.getCharisma() + " | Intelligence: "+character.getIntelligence());
         }
         GameMessage.getPlayerSelectMessage();
         return switch (sc.nextInt()) {
@@ -56,5 +80,16 @@ public class GameManager {
 
     public Character getCharacter() {
         return character;
+    }
+
+    private void checkCharacterStats(Player player) {
+        try {
+            if (player.getSELECTED_CHARACTER() == null) throw new CharacterNotFoundException("Invalid character.");
+            GameMessage.getPlayerStats(player);
+        } catch (CharacterNotFoundException e) {
+            GameMessage.getOneBlankSpace();
+            GameMessage.getExceptionMessage(e.getMessage());
+            GameMessage.getOneBlankSpace();
+        }
     }
 }
