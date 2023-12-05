@@ -70,4 +70,5 @@ public class Monster {
 
     public void setQuotes(String[] quotes) {
         this.quotes = quotes;
+    }
 }
