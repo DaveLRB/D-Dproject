@@ -1,7 +1,6 @@
 public class Main {
-<<<<<<< HEAD
-=======
     public static void main(String[] args) {
+        GameManager gameManager = new GameManager();
+        gameManager.init();
     }
->>>>>>> f57d1c5 (added some things)
 }
