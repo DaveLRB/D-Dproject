@@ -27,6 +27,8 @@ public class GameManager {
                 case "1" -> System.out.println("1");
                 case "2" -> System.out.println("2");
             }
+            Dungeon dungeon = new Dungeon();
+            dungeon.createTurn();
         }
     }
 
