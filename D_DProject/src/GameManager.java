@@ -34,18 +34,7 @@ public class GameManager {
                     case "2" -> checkCharacterStats(player);
                 }
             } else {
-                GameMessage.getDeadMessage();
-                GameMessage.getMenuDead();
-                switch (sc.next()) {
-                    case "1":
-                        this.character = null;
-                        playerSelectCharacter();
-                        init();
-                        break;
-                    case "2":
-                        gameIsRunning = false;
-                        break;
-                }
+                playerDeadMenu();
             }
         }
     }
@@ -82,6 +71,7 @@ public class GameManager {
         return character;
     }
 
+    //Check the player character stats
     private void checkCharacterStats(Player player) {
         try {
             if (player.getSELECTED_CHARACTER() == null) throw new CharacterNotFoundException("Invalid character.");
@@ -90,6 +80,22 @@ public class GameManager {
             GameMessage.getOneBlankSpace();
             GameMessage.getExceptionMessage(e.getMessage());
             GameMessage.getOneBlankSpace();
+        }
+    }
+
+    //When player die he need choose if create a new character or just leave game
+    public void playerDeadMenu() {
+        GameMessage.getDeadMessage();
+        GameMessage.getMenuDead();
+        switch (sc.next()) {
+            case "1":
+                this.character = null;
+                playerSelectCharacter();
+                init();
+                break;
+            case "2":
+                gameIsRunning = false;
+                break;
         }
     }
 }
