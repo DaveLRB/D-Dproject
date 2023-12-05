@@ -20,15 +20,15 @@ public class Dungeon {
 
     public void createTurn() {
         fillMonstersArray(monsters);
-        do{
-            for(int level=0; level< NUMBER_OF_LEVELS;level++){
-                for(int monster=0; monster<NUMBER_OF_MONSTERS;monster++){
-                    while(monsters.get(level).get(monster).getMonsterHP()>0){
-
+        do {
+            for (int level = 0; level < NUMBER_OF_LEVELS; level++) {
+                for (int monster = 0; monster < NUMBER_OF_MONSTERS; monster++) {
+                    while (monsters.get(level).get(monster).getMonsterHP() > 0) {
+                        monsters.get(level).get(monster).takeDamage(player);
                     }
                 }
             }
-        }while(player.getSELECTED_CHARACTER().getHealthPoints()>0 );
+        } while (player.getSELECTED_CHARACTER().getHealthPoints() > 0);
     }
 
     //Creating and adding monsters to the list
@@ -49,12 +49,12 @@ public class Dungeon {
     private ArrayList<Integer> getMonstersOrder() {
         int counter = 0;
         ArrayList<Integer> monstersOrder = new ArrayList<>();
-        for (int i = 1; i <=MAXIMUM_NUMBER_OF_MONSTERS; i++) {
+        for (int i = 1; i <= MAXIMUM_NUMBER_OF_MONSTERS; i++) {
             if (!(i % 5 == 0)) {
                 monstersOrder.add(randomizeNumber(monstersOrder, counter, 5 + counter));
             } else {
                 monstersOrder.add(randomizeNumber(monstersOrder, counter, 5 + counter));
-                counter+=5;
+                counter += 5;
             }
         }
         return monstersOrder;
