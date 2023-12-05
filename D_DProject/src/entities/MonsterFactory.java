@@ -1,4 +1,8 @@
-class MonsterFactory {
+package entities;
+
+import entities.Monster;
+
+public class MonsterFactory {
     public static Monster createMonster(MonsterType monsterType) {
         return switch (monsterType) {
             case SLIME ->

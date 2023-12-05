@@ -1,3 +1,7 @@
+package entities;
+
+import entities.Character;
+
 import java.util.Random;
 
 public class Monster {

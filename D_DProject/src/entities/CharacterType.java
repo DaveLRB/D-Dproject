@@ -1,4 +1,4 @@
-import java.util.Random;
+package entities;
 
 public enum CharacterType {
     KNIGHT,

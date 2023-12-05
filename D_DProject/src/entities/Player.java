@@ -1,3 +1,7 @@
+package entities;
+
+import entities.Character;
+
 public class Player {
     private final String NAME;
     private final Character SELECTED_CHARACTER;

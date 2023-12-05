@@ -1,3 +1,10 @@
+package game;
+
+import entities.Character;
+import entities.CharacterType;
+import entities.Player;
+import exceptions.CharacterNotFoundException;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

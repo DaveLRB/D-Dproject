@@ -1,3 +1,8 @@
+package game;
+
+import entities.*;
+import entities.Character;
+
 import java.util.ArrayList;
 
 public class Dungeon {

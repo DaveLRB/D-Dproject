@@ -1,3 +1,7 @@
+package game;
+
+import entities.Player;
+
 public class GameMessage {
     public static void getMenuMessage() {
         System.out.println("1 - Enter the dungeon");
@@ -54,7 +58,7 @@ public class GameMessage {
 
     public static void getPlayerStats(Player player) {
         getOneBlankSpace();
-        System.out.println("Character: "+player.getSELECTED_CHARACTER().getName()+"\n" + "\n"+
+        System.out.println("entities.Character: "+player.getSELECTED_CHARACTER().getName()+"\n" + "\n"+
                 "Types of attack:\nStrength: "+player.getSELECTED_CHARACTER().getStrength()+"\nDexterity: "+player.getSELECTED_CHARACTER().getDexterity()+
                 "\nCharisma: "+player.getSELECTED_CHARACTER().getCharisma()+"\nIntelligence: "+player.getSELECTED_CHARACTER().getIntelligence());
         getOneBlankSpace();

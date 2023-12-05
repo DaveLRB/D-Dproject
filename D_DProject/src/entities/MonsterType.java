@@ -1,4 +1,6 @@
-enum MonsterType {
+package entities;
+
+public enum MonsterType {
     SLIME,
     BABYSPIDERS,
     GOBLIN,
