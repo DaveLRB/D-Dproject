@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 public class Character {
@@ -9,6 +12,7 @@ public class Character {
     private int charisma;
     private int intelligence;
     private int healthPoints;
+
 
     public Character(CharacterType characterType) {
         switch (characterType) {
@@ -42,6 +46,17 @@ public class Character {
                 break;
         }
         this.healthPoints = 100;
+    }
+
+    private String [] charQuotes = {
+            "Hello darling, i never seen such beautiful being",
+            "WOW am i blind? Or are you sunshine?!",
+    };
+
+    private void shuffleQuotes() {
+        List<String> quotesList = Arrays.asList(charQuotes);
+        Collections.shuffle(quotesList);
+        quotesList.toArray(charQuotes);
     }
 
     public int getStrength() {
