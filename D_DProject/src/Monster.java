@@ -70,15 +70,4 @@ public class Monster {
 
     public void setQuotes(String[] quotes) {
         this.quotes = quotes;
-    }
-
-    /*
-    private static Monster[] createMonsters(MonsterType... monsterTypes) {
-        List<Monster> monsters = new ArrayList<>();
-        for (MonsterType monsterType : monsterTypes) {
-            monsters.add(createMonster(monsterType));
-        }    return monsters.toArray(new Monster[0]);
-    }
-
-    */
 }
