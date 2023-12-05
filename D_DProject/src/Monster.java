@@ -91,10 +91,10 @@ public class Monster {
         return hitDmg;
     }
 
-    public void takeDamage(Character character) {
+    public void takeDamage(Player character) {
         if (getIsMonsterAlive()) {
-            monsterHP = Math.max(0, monsterHP - character.characterAttack());
-            System.out.println(name + " used " + "! " + character.getName() + " took " + hitDmg + " damage.");
+            monsterHP = Math.max(0, monsterHP - character.getSELECTED_CHARACTER().characterAttack());
+            System.out.println(name + " used " + "! " + character.getSELECTED_CHARACTER().getName() + " took " + hitDmg + " damage.");
         } else {
             System.out.println("\nThis creature is already defeated!");
         }
