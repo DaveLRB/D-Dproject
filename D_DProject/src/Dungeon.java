@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Dungeon {
@@ -12,7 +11,6 @@ public class Dungeon {
     private Character playerCharacter;
 
     public Dungeon(Player player) {
-
         this.playerCharacter = player.getSELECTED_CHARACTER();
     }
 
@@ -28,7 +26,4 @@ public class Dungeon {
     private void randomizeMonsters() {
         int random = (int) (Math.random() * 6) + 1;
     }
-
-
-
 }
