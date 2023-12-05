@@ -49,8 +49,12 @@ public class Character {
     }
 
     private String [] charQuotes = {
-            "Hello darling, i never seen such beautiful being",
-            "WOW am i blind? Or are you sunshine?!",
+            "Hey darling, i have never seen such beautiful being",
+            "WOW am i blind? Or are you a ray of sunshine?!",
+            "Can i sing you a song...of passion?",
+            "Is that a weapon? Or are you happy to see me?!",
+            "Beautiful eyes, in such a beautiful being..",
+            "WOWZA CHAWABANGA!!"
     };
 
     private void shuffleQuotes() {
