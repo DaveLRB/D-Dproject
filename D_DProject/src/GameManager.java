@@ -1,7 +1,9 @@
 import exceptions.CharacterListIsEmptyException;
 import exceptions.CharacterNotFoundException;
 import exceptions.InvalidTypeOfCharacterException;
+import exceptions.ListNotFoundException;
 
+import javax.management.ListenerNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -62,10 +64,14 @@ public class GameManager {
 
     //Adding characters to the list to player select one
     private void addCharactersToList() {
-        characters.add(new Character(CharacterType.KNIGHT));
-        characters.add(new Character(CharacterType.SORCERER));
-        characters.add(new Character(CharacterType.BARD));
-        characters.add(new Character(CharacterType.ASSASSIN));
+        try {
+            characters.add(new Character(CharacterType.KNIGHT));
+            characters.add(new Character(CharacterType.SORCERER));
+            characters.add(new Character(CharacterType.BARD));
+            characters.add(new Character(CharacterType.ASSASSIN));
+        } catch (ListNotFoundException e) {
+            GameMessage.getExceptionMessage(e.getMessage());
+        }
     }
 
     private Character getCharacterChoice() {
