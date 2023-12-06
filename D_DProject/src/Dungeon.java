@@ -55,7 +55,7 @@ public class Dungeon {
                 return;
             } else {
                 monsters.get(levelIndex).get(monsterIndex).takeDamage(player);
-                //player.getSELECTED_CHARACTER().setHP(monsters.get(levelIndex).get(monsterIndex).monsterAttack(player.getSELECTED_CHARACTER()));
+                player.getSELECTED_CHARACTER().setHP(monsters.get(levelIndex).get(monsterIndex).monsterAttack(player.getSELECTED_CHARACTER()));
             }
         }
     }
