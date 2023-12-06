@@ -3,9 +3,9 @@ import exceptions.CharacterNotFoundException;
 import exceptions.InvalidTypeOfCharacterException;
 import exceptions.ListNotFoundException;
 
-import javax.management.ListenerNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class GameManager {
     private ArrayList<Character> characters;
@@ -16,6 +16,7 @@ public class GameManager {
     private Dungeon dungeon;
     private boolean gameIsRunning;
     private String playerName;
+    private int count = 1;
 
     public GameManager() {
         this.sc = new Scanner(System.in);
@@ -27,6 +28,8 @@ public class GameManager {
         this.dungeon = new Dungeon(player);
         this.gameIsRunning = true;
     }
+
+
 
     public void init() {
         GameMessage.getBigBlankSpace();
@@ -92,10 +95,8 @@ public class GameManager {
     private void getListOfCharacters() {
         try {
             if (characters.isEmpty()) throw new CharacterListIsEmptyException("Empty character list.");
-            int count = 1;
-            for (Character character : characters) {
-                System.out.println(count++ + " | " + character.getName() + " | Strength: " + character.getStrength() + " | Dexterity: " + character.getDexterity() + " | Charisma: " + character.getCharisma() + " | Intelligence: " + character.getIntelligence());
-            }
+            count = 1;
+            characters.forEach((character) -> System.out.println(count++ + " | " + character.getName() + " | Strength: " + character.getStrength() + " | Dexterity: " + character.getDexterity() + " | Charisma: " + character.getCharisma() + " | Intelligence: " + character.getIntelligence()));
         } catch (CharacterListIsEmptyException e) {
             GameMessage.getExceptionMessage(e.getMessage());
         }
@@ -108,7 +109,7 @@ public class GameManager {
     //Check the player character stats
     private void checkCharacterStats(Player player) {
         try {
-            if (player.getSELECTED_CHARACTER() == null) throw new CharacterNotFoundException("Invalid character.");
+            if (player.getSELECTED_CHARACTER() == null) throw new CharacterNotFoundException();
             GameMessage.getPlayerStats(player);
         } catch (CharacterNotFoundException e) {
             GameMessage.getExceptionMessage(e.getMessage());
