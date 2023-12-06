@@ -5,21 +5,24 @@ public class Monster {
     private int hitDmg;
     private int monsterHP;
     private int experiencePoints;
+    private int level = 0;
     private boolean isFriendly;
-    private boolean isParalised;
+    private boolean isInvisible;
+    private boolean isSeduced;
     private String[] attacks;
     private String[] neutralQuotes;
     private String[] angerQuotes;
     private String[] seducedQuotes;
-    int level = 0;
 
-    public Monster(String name, int hitDmg, int monsterHP, boolean isParalised, boolean isFriendly, String[] attacks, String[] neutralQuotes, String[] angerQuotes, String[] seducedQuotes) {
+
+    public Monster(String name, int hitDmg, int monsterHP, boolean isInvisible, boolean isFriendly, boolean isSeduced, String[] attacks, String[] neutralQuotes, String[] angerQuotes, String[] seducedQuotes) {
         this.name = name;
         this.hitDmg = hitDmg;
         this.monsterHP = monsterHP;
         this.experiencePoints = 0;
-        this.isParalised = isParalised;
+        this.isInvisible = isInvisible;
         this.isFriendly = isFriendly;
+        this.isSeduced = isSeduced;
         this.attacks = attacks;
         this.neutralQuotes = neutralQuotes;
         this.angerQuotes = angerQuotes;
@@ -58,12 +61,12 @@ public class Monster {
         this.monsterHP = monsterHP;
     }
 
-    public boolean isParalised() {
-        return isParalised;
+    public boolean isInvisible() {
+        return isInvisible;
     }
 
-    public void setParalised(boolean paralised) {
-        isParalised = paralised;
+    public void setInvisible(boolean invisible) {
+        isInvisible = invisible;
     }
 
     public boolean isFriendly() {
@@ -114,15 +117,26 @@ public class Monster {
         this.level = level;
     }
 
+    public boolean isSeduced() {
+        return isSeduced;
+    }
+
+    public void setSeduced(boolean seduced) {
+        isSeduced = seduced;
+    }
+
     public boolean isMonsterAlive() {
         return monsterHP > 0;
     }
 
-    public int monsterAttack(Character character) {
-        int attackIndex = new Random().nextInt(attacks.length);
-        String attack = attacks[attackIndex];
-        System.out.println(name + " used " + attack + "! " + character.getName() + " took " + hitDmg + " damage.");
-        return hitDmg;
+    public int monsterAttack(Character character, MonsterType monsterType) {
+        if (!isInvisible) {
+            int attackIndex = new Random().nextInt(attacks.length);
+            String attack = attacks[attackIndex];
+            System.out.println(name + " used " + attack + "! " + character.getName() + " took " + hitDmg + " damage.");
+            return hitDmg;
+        }
+        return 0;
     }
 
     public void takeDamage(Player player) {
@@ -172,5 +186,18 @@ public class Monster {
         int quoteIndex = new Random().nextInt(seducedQuotes.length);
         String seducedQuote = seducedQuotes[quoteIndex];
         System.out.println(name + " (Seduced): " + seducedQuote);
+    }
+
+   public void printSeducedQuotes(){
+        if (isSeduced){
+            monsterSeducedSpeak();
+        }
+   }
+
+    public void revive(MonsterType monsterType) {
+        if (this.getMonsterHP() <= 0 && monsterType == MonsterType.SKELETON) {
+            this.setMonsterHP(100);
+            System.out.println(this.getName() + " has been revived with full health!");
+        }
     }
 }
