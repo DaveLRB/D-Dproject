@@ -17,7 +17,7 @@ public class Dungeon {
         this.monsters = new ArrayList<>();
     }
 
-    public void createTurn() {
+    public void init() {
         fillMonstersArray(monsters);
         boolean wantToLeave = false;
         int level = 1;
