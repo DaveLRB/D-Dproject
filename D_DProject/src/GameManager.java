@@ -36,7 +36,7 @@ public class GameManager {
             } else {
                 GameMessage.getMenuMessage();
                 switch (sc.next()) {
-                    case "1" -> /*dungeon.init();*/System.out.println();
+                    case "1" -> dungeon.init();
                     case "2" -> checkCharacterStats(player);
                 }
             }
@@ -121,6 +121,7 @@ public class GameManager {
         GameMessage.getMenuDead();
         switch (sc.next()) {
             case "1":
+                character.setHealthPoints(100);
                 this.character = null;
                 playerSelectCharacter();
                 init();
