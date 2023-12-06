@@ -117,7 +117,6 @@ public class GameManager {
 
     //When player die he need choose if create a new character or just leave game
     public void playerDeadMenu() {
-        GameMessage.getDeadMessage();
         GameMessage.getMenuDead();
         switch (sc.next()) {
             case "1":

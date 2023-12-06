@@ -67,11 +67,6 @@ public class GameMessage {
         System.out.println(message);
     }
 
-    public static void getDeadMessage() {
-        System.out.println("You're dead.");
-        getOneBlankSpace();
-    }
-
     public static void getMenuDead() {
         System.out.println("1 - Create a new character");
         System.out.println("2 - Leave game");
