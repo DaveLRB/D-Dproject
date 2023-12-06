@@ -15,6 +15,7 @@ public class Character {
 
 
     public Character(CharacterType characterType) {
+        this.characterType=characterType;
         switch (characterType) {
             case KNIGHT:
                 this.name = "KNIGHT";
@@ -48,19 +49,19 @@ public class Character {
         this.healthPoints = 100;
     }
 
-    private String [] charQuotes = {
+    private String [] charQuotesBard = {
             "Hey darling, i have never seen such beautiful being",
             "WOW am i blind? Or are you a ray of sunshine?!",
             "Can i sing you a song...of passion?",
             "Is that a weapon? Or are you happy to see me?!",
             "Beautiful eyes, in such a beautiful being..",
-            "WOWZA CHAWABANGA!!"
+            "WOWZA CHA-WA-BANGA!!"
     };
 
     private void shuffleQuotes() {
-        List<String> quotesList = Arrays.asList(charQuotes);
+        List<String> quotesList = Arrays.asList(charQuotesBard);
         Collections.shuffle(quotesList);
-        quotesList.toArray(charQuotes);
+        quotesList.toArray(charQuotesBard);
     }
 
     public int getStrength() {
@@ -103,6 +104,10 @@ public class Character {
         this.healthPoints += healthPoints;
     }
 
+    public void setHP(int healthPoints){
+        this.healthPoints-=healthPoints;
+    }
+
     public String getName() {
         return name;
     }
@@ -113,6 +118,11 @@ public class Character {
 
     public void characterTakeDamage(Monster monster) {
         this.healthPoints -= monster.monsterAttack(this);
+    }
+
+    public int BardTalk(CharacterType characterType){
+
+
     }
 
     public int characterAttack() {
