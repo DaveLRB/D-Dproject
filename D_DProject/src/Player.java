@@ -42,6 +42,5 @@ public class Player {
     public Character getSELECTED_CHARACTER() {
         return selectedCharacter;
     }
-    public void setCharacterNull(){this.selectedCharacter=null;}
     public void setCharacter(Character character){this.selectedCharacter=character;}
 }
