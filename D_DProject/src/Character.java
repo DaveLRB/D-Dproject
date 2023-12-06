@@ -177,11 +177,6 @@ public class Character {
             case BARD -> attack = this.charisma;
             case ASSASSIN -> attack = this.dexterity;
         }
-<<<<<<< HEAD
-
-=======
-        ;
->>>>>>> main
         return attack;
     }
 
