@@ -15,6 +15,7 @@ public class Character {
 
 
     public Character(CharacterType characterType) {
+        this.characterType=characterType;
         switch (characterType) {
             case KNIGHT:
                 this.name = "KNIGHT";
@@ -48,19 +49,58 @@ public class Character {
         this.healthPoints = 100;
     }
 
-    private String [] charQuotes = {
-            "Hey darling, i have never seen such beautiful being",
-            "WOW am i blind? Or are you a ray of sunshine?!",
+    private final String [] charQuotesBard = {
+            "Am i blind? Or are you a ray of sunshine?!",
             "Can i sing you a song...of passion?",
             "Is that a weapon? Or are you happy to see me?!",
-            "Beautiful eyes, in such a beautiful being..",
-            "WOWZA CHAWABANGA!!"
+            "WOWZA CHA-WA-BANGA!!"
     };
 
-    private void shuffleQuotes() {
-        List<String> quotesList = Arrays.asList(charQuotes);
+    private final String [] charQuotesKnight = {
+            "The valor of a knight will smite you!",
+            "With my weapon i shall cleanse the world of evil",
+            "Courage is the strength to face uncertainty.",
+            "Chivalry is not just a code, but a way of being."
+    };
+
+    private final String [] charQuotesAssassin = {
+            "My poison daggers will send you to the shadows..",
+            "In the dark i live..in the dark you shall die",
+            "Silence is the deadliest weapon in the arsenal of an assassin.",
+            "Darkness is the ally of shadows, and shadows breed the unseen strike."
+    };
+    private final String [] charQuotesSorcerer = {
+            "With my magic i shall turn you to ash!",
+            "Behold my migth..the Sorcerer Supreme!",
+            "Magic flows where intent meets will.",
+            "Knowledge is the staff of power wielded by the adept sorcerer."
+    };
+
+
+    private void shuffleQuotes(String[] quotes) {
+        List<String> quotesList = Arrays.asList(quotes);
         Collections.shuffle(quotesList);
-        quotesList.toArray(charQuotes);
+        quotesList.toArray(quotes);
+    }
+
+    private String getRandomQuote(String[] quotes) {
+        Random random = new Random();
+        shuffleQuotes(quotes);
+        int index = random.nextInt(quotes.length);
+        return quotes[index];
+    }
+
+    private String getRandomQuoteBard() {
+        return getRandomQuote(charQuotesBard);
+    }
+    private String getRandomQuoteKnight() {
+        return getRandomQuote(charQuotesKnight);
+    }
+    private String getRandomQuoteSorcerer() {
+        return getRandomQuote(charQuotesSorcerer);
+    }
+    private String getRandomQuoteAssassin() {
+        return getRandomQuote(charQuotesAssassin);
     }
 
     public int getStrength() {
@@ -103,12 +143,27 @@ public class Character {
         this.healthPoints += healthPoints;
     }
 
+    public void setHP(int healthPoints){
+        this.healthPoints-=healthPoints;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void characterTalk(CharacterType characterType) {
+        String randomQuote = "";
+        switch (characterType) {
+            case BARD -> randomQuote = getRandomQuoteBard();
+            case KNIGHT -> randomQuote = getRandomQuoteKnight();
+            case ASSASSIN -> randomQuote = getRandomQuoteAssassin();
+            case SORCERER -> randomQuote = getRandomQuoteSorcerer();
+        }
+        System.out.println(randomQuote);
     }
 
     public void characterTakeDamage(Monster monster) {
@@ -124,9 +179,7 @@ public class Character {
             case ASSASSIN -> attack = this.dexterity;
         }
         ;
-
         return attack;
-
     }
 
     public int specialAttack() {
