@@ -149,12 +149,13 @@ public class Monster {
     }
   
     public void takeDamage(Player character) {
-        if (getIsMonsterAlive()) {
+        if (isMonsterAlive()) {
             monsterHP = Math.max(0, monsterHP - character.getSELECTED_CHARACTER().characterAttack());
             System.out.println(name + " used " + "! " + character.getSELECTED_CHARACTER().getName() + " took " + hitDmg + " damage.");
         } else {
             System.out.println("\nThis creature is already defeated!");
         }
+    }
 
     public void monsterSeducedSpeak() {
         int quoteIndex = new Random().nextInt(seducedQuotes.length);
