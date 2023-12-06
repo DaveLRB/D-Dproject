@@ -145,6 +145,26 @@ public class Monster {
         }
     }
 
+    public void takeSpecialDamage(Player player) {
+        if (isMonsterAlive()) {
+            int playerAttack= player.getSELECTED_CHARACTER().specialAttack();
+            monsterHP = Math.max(0, monsterHP - playerAttack);
+            System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on "+this.name+ "!");
+        } else {
+            System.out.println("\nThis creature is already defeated!");
+        }
+    }
+
+    public void takeUltimateDamage(Player player) {
+        if (isMonsterAlive()) {
+            int playerAttack= player.getSELECTED_CHARACTER().ultimateAttack();
+            monsterHP = Math.max(0, monsterHP - playerAttack);
+            System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on "+this.name+ "!");
+        } else {
+            System.out.println("\nThis creature is already defeated!");
+        }
+    }
+
     public void monsterSpeak() {
         int quoteIndex = new Random().nextInt(neutralQuotes.length);
         String monsterQuote = neutralQuotes[quoteIndex];
