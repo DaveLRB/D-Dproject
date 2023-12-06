@@ -114,16 +114,6 @@ public class Monster {
         this.level = level;
     }
 
-
-    public void takeDamage(int attackDamage) {
-        if (isMonsterAlive()) {
-            monsterHP = Math.max(0, monsterHP - attackDamage);
-            System.out.println(name + " took " + attackDamage + " damage!");
-        } else {
-            System.out.println("\nThis creature is already defeated!");
-        }
-    }
-
     public boolean isMonsterAlive() {
         return monsterHP > 0;
     }
@@ -138,7 +128,7 @@ public class Monster {
     public void takeDamage(Player player) {
         if (isMonsterAlive()) {
             int playerAttack= player.getSELECTED_CHARACTER().characterAttack();
-            monsterHP = Math.max(0, monsterHP - playerAttack);
+            monsterHP -= playerAttack;
             System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on "+this.name+ "!");
         } else {
             System.out.println("\nThis creature is already defeated!");
@@ -148,7 +138,7 @@ public class Monster {
     public void takeSpecialDamage(Player player) {
         if (isMonsterAlive()) {
             int playerAttack= player.getSELECTED_CHARACTER().specialAttack();
-            monsterHP = Math.max(0, monsterHP - playerAttack);
+            monsterHP-=playerAttack;
             System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on "+this.name+ "!");
         } else {
             System.out.println("\nThis creature is already defeated!");
@@ -158,7 +148,7 @@ public class Monster {
     public void takeUltimateDamage(Player player) {
         if (isMonsterAlive()) {
             int playerAttack= player.getSELECTED_CHARACTER().ultimateAttack();
-            monsterHP = Math.max(0, monsterHP - playerAttack);
+            monsterHP -= playerAttack;
             System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on "+this.name+ "!");
         } else {
             System.out.println("\nThis creature is already defeated!");
