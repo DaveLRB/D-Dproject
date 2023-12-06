@@ -3,7 +3,6 @@ import exceptions.CharacterNotFoundException;
 import exceptions.InvalidTypeOfCharacterException;
 import exceptions.ListNotFoundException;
 
-import javax.management.ListenerNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,10 +11,10 @@ public class GameManager {
     private Character character = null;
     private Player player;
     private final Scanner sc;
-    private int level;
     private Dungeon dungeon;
     private boolean gameIsRunning;
     private String playerName;
+    private int count = 1;
 
     public GameManager() {
         this.sc = new Scanner(System.in);
@@ -23,7 +22,6 @@ public class GameManager {
         addCharactersToList();
         playerSelectCharacter();
         this.player = new Player(playerName, character);
-        this.level = 0;
         this.dungeon = new Dungeon(player);
         this.gameIsRunning = true;
     }
@@ -33,16 +31,20 @@ public class GameManager {
         GameMessage.getMenuBigMessage();
         GameMessage.getBlankSpace();
         while (gameIsRunning) {
-            if (player.getSELECTED_CHARACTER().getHealthPoints() > 0) {
+            if (isPlayerDead()) {
+                playerDeadMenu();
+            } else {
                 GameMessage.getMenuMessage();
                 switch (sc.next()) {
                     case "1" -> /*dungeon.init();*/System.out.println();
                     case "2" -> checkCharacterStats(player);
                 }
-            } else {
-                playerDeadMenu();
             }
         }
+    }
+
+    public boolean isPlayerDead() {
+        return player.getSELECTED_CHARACTER().getHealthPoints() <= 0;
     }
 
     //Method to start the game: player need select a character. When he select, the character is stored at character instance.
@@ -87,15 +89,13 @@ public class GameManager {
             GameMessage.getExceptionMessage(e.getMessage());
         }
         return null;
-     }
+    }
 
     private void getListOfCharacters() {
         try {
             if (characters.isEmpty()) throw new CharacterListIsEmptyException("Empty character list.");
-            int count = 1;
-            for (Character character : characters) {
-                System.out.println(count++ + " | " + character.getName() + " | Strength: " + character.getStrength() + " | Dexterity: " + character.getDexterity() + " | Charisma: " + character.getCharisma() + " | Intelligence: " + character.getIntelligence());
-            }
+            count = 1;
+            characters.forEach((character) -> System.out.println(count++ + " | " + character.getName() + " | Strength: " + character.getStrength() + " | Dexterity: " + character.getDexterity() + " | Charisma: " + character.getCharisma() + " | Intelligence: " + character.getIntelligence()));
         } catch (CharacterListIsEmptyException e) {
             GameMessage.getExceptionMessage(e.getMessage());
         }
@@ -108,7 +108,7 @@ public class GameManager {
     //Check the player character stats
     private void checkCharacterStats(Player player) {
         try {
-            if (player.getSELECTED_CHARACTER() == null) throw new CharacterNotFoundException("Invalid character.");
+            if (player.getSELECTED_CHARACTER() == null) throw new CharacterNotFoundException();
             GameMessage.getPlayerStats(player);
         } catch (CharacterNotFoundException e) {
             GameMessage.getExceptionMessage(e.getMessage());
