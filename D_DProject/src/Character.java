@@ -238,7 +238,7 @@ public class Character {
         Random random = new Random();
         double chance = random.nextDouble();
         int ultimate = 0;
-        if (isParalised) {
+        if (isParalised()) {
             if (chance <= 0.20 && healthPoints <= 20) {
                 switch (characterType) {
                     case KNIGHT -> ultimate = this.strength * 10;
