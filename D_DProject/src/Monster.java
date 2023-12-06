@@ -135,6 +135,15 @@ public class Monster {
         return hitDmg;
     }
 
+    public void takeDamage(Player player) {
+        if (isMonsterAlive()) {
+            int playerAttack= player.getSELECTED_CHARACTER().characterAttack();
+            monsterHP = Math.max(0, monsterHP - playerAttack);
+            System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on "+this.name+ "!");
+        } else {
+            System.out.println("\nThis creature is already defeated!");
+        }
+    }
 
     public void monsterSpeak() {
         int quoteIndex = new Random().nextInt(neutralQuotes.length);
@@ -146,19 +155,6 @@ public class Monster {
         int quoteIndex = new Random().nextInt(angerQuotes.length);
         String angerQuote = angerQuotes[quoteIndex];
         System.out.println(name + " (Angry): " + angerQuote);
-    }
-
-
-   
-  
-    public void takeDamage(Player character) {
-        if (isMonsterAlive()) {
-            monsterHP = Math.max(0, monsterHP - character.getSELECTED_CHARACTER().characterAttack());
-            System.out.println(name + " used " + "! " + character.getSELECTED_CHARACTER().getName() + " took " + hitDmg + " damage.");
-
-        } else {
-            System.out.println("\nThis creature is already defeated!");
-        }
     }
 
 
