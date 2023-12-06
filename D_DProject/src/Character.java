@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Random;
 
 public class Character {
-
     private CharacterType characterType;
     private String name;
     private int strength;
@@ -49,6 +48,7 @@ public class Character {
         }
         this.healthPoints = 100;
     }
+
 
     private final String[] charQuotesBard = {
             "Am i blind? Or are you a ray of sunshine?!",
@@ -211,7 +211,9 @@ public class Character {
             ;
             return attack;
         }
+
         return 0;
+
     }
 
     public int specialAttack() {
@@ -227,7 +229,9 @@ public class Character {
             return special;
 
         }
+
         return 0;
+
     }
 
     public int ultimateAttack() {
@@ -251,10 +255,12 @@ public class Character {
                 case BARD -> ultimate = this.charisma;
                 case ASSASSIN -> ultimate = this.dexterity;
             }
-            ;
+
             return ultimate;
         }
+
         return 0;
+
     }
 }
 

@@ -1,13 +1,13 @@
 public class Player {
     private final String NAME;
-    private final Character SELECTED_CHARACTER;
+    private Character selectedCharacter;
     private int xp;
     private int level;
 
 
     public Player(String NAME, Character SELECTED_CHARACTER) {
         this.NAME = NAME;
-        this.SELECTED_CHARACTER = SELECTED_CHARACTER;
+        this.selectedCharacter = SELECTED_CHARACTER;
 
         this.level=0;
     }
@@ -35,11 +35,12 @@ public class Player {
     }
 
 
-    public String getNAME() {
+    public String getName() {
         return NAME;
     }
 
     public Character getSELECTED_CHARACTER() {
-        return SELECTED_CHARACTER;
+        return selectedCharacter;
     }
+    public void setCharacter(Character character){this.selectedCharacter=character;}
 }

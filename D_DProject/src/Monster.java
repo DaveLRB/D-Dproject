@@ -130,7 +130,6 @@ public class Monster {
         return monsterHP > 0;
     }
 
-
     public int getTurnToBeInvisible() {
         return turnToBeInvisible;
     }
