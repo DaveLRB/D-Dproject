@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Random;
 
 public class Character {
-
     private CharacterType characterType;
     private String name;
     private int strength;
@@ -12,7 +11,6 @@ public class Character {
     private int charisma;
     private int intelligence;
     private int healthPoints;
-
 
     public Character(CharacterType characterType) {
         switch (characterType) {

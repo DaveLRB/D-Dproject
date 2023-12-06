@@ -87,14 +87,16 @@ public class Monster {
     public int monsterAttack(Character character) {
         int attackIndex = new Random().nextInt(attacks.length);
         String attack = attacks[attackIndex];
-        System.out.println(name + " used " + attack + "! " + character.getName() + " took " + hitDmg + " damage.");
+        System.out.println("\n"+name + " used " + attack + "! " + character.getName() + " took " + hitDmg + " damage.");
         return hitDmg;
     }
 
-    public void takeDamage(Player character) {
+    public void takeDamage(Player player) {
         if (getIsMonsterAlive()) {
-            monsterHP = Math.max(0, monsterHP - character.getSELECTED_CHARACTER().characterAttack());
-            System.out.println(name + " used " + "! " + character.getSELECTED_CHARACTER().getName() + " took " + hitDmg + " damage.");
+            //monsterHP = Math.max(0, monsterHP - player.getSELECTED_CHARACTER().characterAttack());
+            int playerAttack= player.getSELECTED_CHARACTER().characterAttack();
+            monsterHP-=playerAttack;
+            System.out.println("\n"+player.getSELECTED_CHARACTER().getName() + " inflicted " + playerAttack + " damage on "+this.name+ "!");
         } else {
             System.out.println("\nThis creature is already defeated!");
         }

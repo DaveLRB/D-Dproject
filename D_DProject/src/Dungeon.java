@@ -16,19 +16,57 @@ public class Dungeon {
 
     public Dungeon(Player player) {
         this.player = player;
+        this.monsters = new ArrayList<>();
     }
 
     public void createTurn() {
         fillMonstersArray(monsters);
+        boolean wantToLeave = false;
+        System.out.println("\nType 0 to go back");
         do {
-            for (int level = 0; level < NUMBER_OF_LEVELS; level++) {
-                for (int monster = 0; monster < NUMBER_OF_MONSTERS; monster++) {
-                    while (monsters.get(level).get(monster).getMonsterHP() > 0) {
-                        monsters.get(level).get(monster).takeDamage(player);
+            for (int levelIndex = 0; levelIndex < NUMBER_OF_LEVELS; levelIndex++) {
+                for (int monsterIndex = 0; monsterIndex < NUMBER_OF_MONSTERS; monsterIndex++) {
+                    handleBattleTurn(levelIndex, monsterIndex, wantToLeave);
+
+                    if (!(monsters.get(levelIndex).get(monsterIndex).getMonsterHP() > 0)) {
+                        handleMonsterDefeat(levelIndex, monsterIndex);
                     }
+
+                    if (!(player.getSELECTED_CHARACTER().getHealthPoints() > 0)) {
+                        handlePlayerDefeat();
+                        return;
+                    }
+
+                }
+                if(levelIndex==4){
+                    System.out.println("\nCongratulations, you completed the dungeon!\n");
                 }
             }
         } while (player.getSELECTED_CHARACTER().getHealthPoints() > 0);
+
+    }
+
+    private void handleBattleTurn(int levelIndex, int monsterIndex, boolean wantsToLeave) {
+        while (monsters.get(levelIndex).get(monsterIndex).getMonsterHP() > 0 && player.getSELECTED_CHARACTER().getHealthPoints() > 0 && !wantsToLeave) {
+            int option = InputHelper.getOptionFromUser();
+            System.out.println("The level of the dungeon: " + levelIndex + 1);
+            System.out.println("Monsters left: " + monsters.get(levelIndex).size());
+            if (option == 0) {
+                return;
+            } else {
+                monsters.get(levelIndex).get(monsterIndex).takeDamage(player);
+                //player.getSELECTED_CHARACTER().setHP(monsters.get(levelIndex).get(monsterIndex).monsterAttack(player.getSELECTED_CHARACTER()));
+            }
+        }
+    }
+
+    private void handleMonsterDefeat(int levelIndex, int monsterIndex) {
+        System.out.println("You killed the " + monsters.get(levelIndex).get(monsterIndex).getName());
+    }
+
+    private void handlePlayerDefeat() {
+        System.out.println("\nYour character died\n");
+        player.setCharacterNull();
     }
 
     //Creating and adding monsters to the list
@@ -83,7 +121,9 @@ public class Dungeon {
 
     //Remove all elements from monsterArray, generally to start a new level on createMonsters method
     private void clearMonsterList() {
-        monsters.clear();
+        if (monsters != null) {
+            monsters.clear();
+        }
     }
 
     private boolean isDungeonConcluded() {
