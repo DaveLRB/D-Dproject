@@ -147,14 +147,17 @@ public class Monster {
         String angerQuote = angerQuotes[quoteIndex];
         System.out.println(name + " (Angry): " + angerQuote);
     }
-  
-    public void takeDamage(Player character) {
-        if (getIsMonsterAlive()) {
-            monsterHP = Math.max(0, monsterHP - character.getSELECTED_CHARACTER().characterAttack());
-            System.out.println(name + " used " + "! " + character.getSELECTED_CHARACTER().getName() + " took " + hitDmg + " damage.");
+
+    public void takeDamage(Player player) {
+        if (isMonsterAlive()) {
+            int playerAttack= player.getSELECTED_CHARACTER().characterAttack();
+            monsterHP = Math.max(0, monsterHP - playerAttack);
+            System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on "+this.name+ "!");
         } else {
             System.out.println("\nThis creature is already defeated!");
         }
+    }
+
 
     public void monsterSeducedSpeak() {
         int quoteIndex = new Random().nextInt(seducedQuotes.length);
