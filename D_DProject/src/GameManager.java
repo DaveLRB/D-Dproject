@@ -5,14 +5,12 @@ import exceptions.ListNotFoundException;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class GameManager {
     private ArrayList<Character> characters;
     private Character character = null;
     private Player player;
     private final Scanner sc;
-    private int level;
     private Dungeon dungeon;
     private boolean gameIsRunning;
     private String playerName;
@@ -24,7 +22,6 @@ public class GameManager {
         addCharactersToList();
         playerSelectCharacter();
         this.player = new Player(playerName, character);
-        this.level = 0;
         this.dungeon = new Dungeon(player);
         this.gameIsRunning = true;
     }
