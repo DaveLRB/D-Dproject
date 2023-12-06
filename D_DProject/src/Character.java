@@ -200,24 +200,30 @@ public class Character {
     }
 
     public int characterAttack() {
+        Random random = new Random();
+        double chance = random.nextDouble();
+        int attack = 0;
         if (!isParalised()) {
-            int attack = 0;
-            switch (characterType) {
-                case KNIGHT -> attack = this.strength;
-                case SORCERER -> attack = this.intelligence;
-                case BARD -> attack = this.charisma;
-                case ASSASSIN -> attack = this.dexterity;
+            System.out.println("Bitch, Paralised");
+            if (chance <= 0.20 && healthPoints <= 20) {
+                return ultimateAttack();
+            } else {
+                switch (characterType) {
+                    case KNIGHT -> attack = this.strength;
+                    case SORCERER -> attack = this.intelligence;
+                    case BARD -> attack = this.charisma;
+                    case ASSASSIN -> attack = this.dexterity;
+                }
+                ;
+                return attack;
             }
-            ;
-            return attack;
         }
-
         return 0;
-
     }
 
     public int specialAttack() {
         if (!isParalised()) {
+            System.out.println("Bitch, Paralised");
             int special = 0;
             switch (characterType) {
                 case KNIGHT -> special = this.strength * (int) (Math.random() * 3) + 1;
@@ -238,29 +244,16 @@ public class Character {
         Random random = new Random();
         double chance = random.nextDouble();
         int ultimate = 0;
-        if (isParalised()) {
-            if (chance <= 0.20 && healthPoints <= 20) {
-                switch (characterType) {
-                    case KNIGHT -> ultimate = this.strength * 10;
-                    case SORCERER -> ultimate = this.intelligence * 10;
-                    case BARD -> ultimate = this.charisma * 10;
-                    case ASSASSIN -> ultimate = this.dexterity * 10;
-                }
-                ;
-                return ultimate;
-            }
+        if (chance <= 0.20 && healthPoints <= 20) {
             switch (characterType) {
-                case KNIGHT -> ultimate = this.strength;
-                case SORCERER -> ultimate = this.intelligence;
-                case BARD -> ultimate = this.charisma;
-                case ASSASSIN -> ultimate = this.dexterity;
+                case KNIGHT -> ultimate = this.strength * 10;
+                case SORCERER -> ultimate = this.intelligence * 10;
+                case BARD -> ultimate = this.charisma * 10;
+                case ASSASSIN -> ultimate = this.dexterity * 10;
             }
-
-            return ultimate;
+            ;
         }
-
-        return 0;
-
+        return ultimate;
     }
 }
 
