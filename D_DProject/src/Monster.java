@@ -148,11 +148,14 @@ public class Monster {
         System.out.println(name + " (Angry): " + angerQuote);
     }
 
-    public void takeDamage(Player player) {
+
+   
+  
+    public void takeDamage(Player character) {
         if (isMonsterAlive()) {
-            int playerAttack= player.getSELECTED_CHARACTER().characterAttack();
-            monsterHP = Math.max(0, monsterHP - playerAttack);
-            System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on "+this.name+ "!");
+            monsterHP = Math.max(0, monsterHP - character.getSELECTED_CHARACTER().characterAttack());
+            System.out.println(name + " used " + "! " + character.getSELECTED_CHARACTER().getName() + " took " + hitDmg + " damage.");
+
         } else {
             System.out.println("\nThis creature is already defeated!");
         }
