@@ -6,6 +6,7 @@ public class Monster {
     private int monsterHP;
     private int experiencePoints;
     private int level = 0;
+    private int turnToBeInvisible = 0;
     private boolean isFriendly;
     private boolean isInvisible;
     private boolean isSeduced;
@@ -129,23 +130,36 @@ public class Monster {
         return monsterHP > 0;
     }
 
-    public int monsterAttack(Character character, MonsterType monsterType) {
-        if (!isInvisible) {
-            int attackIndex = new Random().nextInt(attacks.length);
-            String attack = attacks[attackIndex];
-            System.out.println(name + " used " + attack + "! " + character.getName() + " took " + hitDmg + " damage.");
-            return hitDmg;
+    public int getTurnToBeInvisible() {
+        return turnToBeInvisible;
+    }
+
+    public void setTurnToBeInvisible(int turnToBeInvisible) {
+        this.turnToBeInvisible = turnToBeInvisible;
+    }
+
+    public int monsterAttack(Character character) {
+        if(getTurnToBeInvisible() % 2 == 0) {
+            if (name.equals("Ghost") || name.equals("Spectre")) {
+                isInvisible = true;
+            }
         }
-        return 0;
+        int attackIndex = new Random().nextInt(attacks.length);
+        String attack = attacks[attackIndex];
+        System.out.println(name + " used " + attack + "! " + character.getName() + " took " + hitDmg + " damage.");
+        return hitDmg;
     }
 
     public void takeDamage(Player player) {
-        if (isMonsterAlive()) {
-            int playerAttack= player.getSELECTED_CHARACTER().characterAttack();
+        if(!isInvisible) {
+            int playerAttack = player.getSELECTED_CHARACTER().characterAttack();
             monsterHP -= playerAttack;
-            System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on "+this.name+ "!");
+            System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on " + this.name + "!");
+            turnToBeInvisible++;
         } else {
-            System.out.println("\nThis creature is already defeated!");
+            isInvisible = false;
+            monsterAngerSpeak();
+            turnToBeInvisible++;
         }
     }
 
@@ -154,8 +168,7 @@ public class Monster {
             int playerAttack= player.getSELECTED_CHARACTER().specialAttack();
             monsterHP-=playerAttack;
             System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on "+this.name+ "!");
-        } else {
-            System.out.println("\nThis creature is already defeated!");
+            monsterAngerSpeak();
         }
     }
 
@@ -164,8 +177,7 @@ public class Monster {
             int playerAttack= player.getSELECTED_CHARACTER().ultimateAttack();
             monsterHP -= playerAttack;
             System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on "+this.name+ "!");
-        } else {
-            System.out.println("\nThis creature is already defeated!");
+            monsterAngerSpeak();
         }
     }
 
