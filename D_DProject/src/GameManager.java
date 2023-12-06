@@ -26,23 +26,25 @@ public class GameManager {
         this.gameIsRunning = true;
     }
 
-
-
     public void init() {
         GameMessage.getBigBlankSpace();
         GameMessage.getMenuBigMessage();
         GameMessage.getBlankSpace();
         while (gameIsRunning) {
-            if (player.getSELECTED_CHARACTER().getHealthPoints() > 0) {
+            if (isPlayerDead()) {
+                playerDeadMenu();
+            } else {
                 GameMessage.getMenuMessage();
                 switch (sc.next()) {
                     case "1" -> /*dungeon.init();*/System.out.println();
                     case "2" -> checkCharacterStats(player);
                 }
-            } else {
-                playerDeadMenu();
             }
         }
+    }
+
+    public boolean isPlayerDead() {
+        return player.getSELECTED_CHARACTER().getHealthPoints() <= 0;
     }
 
     //Method to start the game: player need select a character. When he select, the character is stored at character instance.
@@ -87,7 +89,7 @@ public class GameManager {
             GameMessage.getExceptionMessage(e.getMessage());
         }
         return null;
-     }
+    }
 
     private void getListOfCharacters() {
         try {
