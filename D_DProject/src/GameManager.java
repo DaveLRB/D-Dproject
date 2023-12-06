@@ -1,3 +1,9 @@
+import exceptions.CharacterListIsEmptyException;
+import exceptions.CharacterNotFoundException;
+import exceptions.InvalidTypeOfCharacterException;
+import exceptions.ListNotFoundException;
+
+import javax.management.ListenerNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,7 +21,7 @@ public class GameManager {
         this.sc = new Scanner(System.in);
         this.characters = new ArrayList<>();
         addCharactersToList();
-        this.character = playerSelectCharacter();
+        playerSelectCharacter();
         this.player = new Player(playerName, character);
         this.level = 0;
         this.dungeon = new Dungeon(player);
@@ -26,7 +32,7 @@ public class GameManager {
         GameMessage.getBigBlankSpace();
         GameMessage.getMenuBigMessage();
         GameMessage.getBlankSpace();
-        while(gameIsRunning) {
+        while (gameIsRunning) {
             if (player.getSELECTED_CHARACTER().getHealthPoints() > 0) {
                 GameMessage.getMenuMessage();
                 switch (sc.next()) {
@@ -40,31 +46,59 @@ public class GameManager {
     }
 
     //Method to start the game: player need select a character. When he select, the character is stored at character instance.
-    private Character playerSelectCharacter() {
+    private void playerSelectCharacter() {
         GameMessage.getPlayerName();
         this.playerName = sc.next();
         GameMessage.getOneBlankSpace();
         GameMessage.getWelcomeMessage(playerName);
-        int count = 1;
-        for (Character character : characters) {
-            System.out.println(count++ + " | "+character.getName() + " | Strength: "+character.getStrength() + " | Dexterity: "+character.getDexterity() + " | Charisma: "+ character.getCharisma() + " | Intelligence: "+character.getIntelligence());
+        try {
+            while (character == null) {
+                getListOfCharacters();
+                GameMessage.getPlayerSelectMessage();
+                this.character = getCharacterChoice();
+            }
+        } catch (InvalidTypeOfCharacterException e) {
+            GameMessage.getExceptionMessage(e.getMessage());
         }
-        GameMessage.getPlayerSelectMessage();
-        return switch (sc.nextInt()) {
-            case 1 -> new Character(CharacterType.KNIGHT);
-            case 2 -> new Character(CharacterType.SORCERER);
-            case 3 -> new Character(CharacterType.BARD);
-            case 4 -> new Character(CharacterType.ASSASSIN);
-            default -> throw new IllegalStateException("Unexpected value.");
-        };
     }
 
     //Adding characters to the list to player select one
     private void addCharactersToList() {
-        characters.add(new Character(CharacterType.KNIGHT));
-        characters.add(new Character(CharacterType.SORCERER));
-        characters.add(new Character(CharacterType.BARD));
-        characters.add(new Character(CharacterType.ASSASSIN));
+        try {
+            characters.add(new Character(CharacterType.KNIGHT));
+            characters.add(new Character(CharacterType.SORCERER));
+            characters.add(new Character(CharacterType.BARD));
+            characters.add(new Character(CharacterType.ASSASSIN));
+        } catch (ListNotFoundException e) {
+            GameMessage.getExceptionMessage(e.getMessage());
+        }
+    }
+
+    private Character getCharacterChoice() {
+        try {
+            return switch (sc.next()) {
+                case "1" -> new Character(CharacterType.KNIGHT);
+                case "2" -> new Character(CharacterType.SORCERER);
+                case "3" -> new Character(CharacterType.BARD);
+                case "4" -> new Character(CharacterType.ASSASSIN);
+                default -> throw new InvalidTypeOfCharacterException("Character not found.");
+            };
+        } catch (InvalidTypeOfCharacterException e) {
+            GameMessage.getExceptionMessage(e.getMessage());
+        }
+        return null;
+     }
+
+    private void getListOfCharacters() {
+        try {
+            if (characters.isEmpty()) throw new CharacterListIsEmptyException("Empty character list.");
+            int count = 1;
+            for (Character character : characters) {
+                System.out.println(count++ + " | " + character.getName() + " | Strength: " + character.getStrength() + " | Dexterity: " + character.getDexterity() + " | Charisma: " + character.getCharisma() + " | Intelligence: " + character.getIntelligence());
+            }
+        } catch (CharacterListIsEmptyException e) {
+            GameMessage.getExceptionMessage(e.getMessage());
+        }
     }
 
     public Character getCharacter() {
@@ -77,9 +111,7 @@ public class GameManager {
             if (player.getSELECTED_CHARACTER() == null) throw new CharacterNotFoundException("Invalid character.");
             GameMessage.getPlayerStats(player);
         } catch (CharacterNotFoundException e) {
-            GameMessage.getOneBlankSpace();
             GameMessage.getExceptionMessage(e.getMessage());
-            GameMessage.getOneBlankSpace();
         }
     }
 
