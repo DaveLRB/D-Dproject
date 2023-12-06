@@ -7,6 +7,7 @@ public class Monster {
     private int experiencePoints;
     private int level = 0;
     private int turnToBeInvisible = 0;
+    private boolean isAlive;
     private boolean isFriendly;
     private boolean isInvisible;
     private boolean isSeduced;
@@ -16,11 +17,12 @@ public class Monster {
     private String[] seducedQuotes;
 
 
-    public Monster(String name, int hitDmg, int monsterHP, boolean isInvisible, boolean isFriendly, boolean isSeduced, String[] attacks, String[] neutralQuotes, String[] angerQuotes, String[] seducedQuotes) {
+    public Monster(String name, int hitDmg, int monsterHP,boolean isAlive, boolean isInvisible, boolean isFriendly, boolean isSeduced, String[] attacks, String[] neutralQuotes, String[] angerQuotes, String[] seducedQuotes) {
         this.name = name;
         this.hitDmg = hitDmg;
         this.monsterHP = monsterHP;
         this.experiencePoints = 0;
+        this.isAlive = isAlive;
         this.isInvisible = isInvisible;
         this.isFriendly = isFriendly;
         this.isSeduced = isSeduced;
@@ -60,6 +62,14 @@ public class Monster {
 
     public void setMonsterHP(int monsterHP) {
         this.monsterHP = monsterHP;
+    }
+
+    public boolean isAlive() {
+        return isAlive;
+    }
+
+    public void setAlive(boolean alive) {
+        isAlive = alive;
     }
 
     public boolean isInvisible() {
@@ -207,8 +217,15 @@ public class Monster {
         }
    }
 
+    public void monsterIsOneshot(MonsterType monsterType) {
+        if (this.getMonsterHP() <= 0 && monsterType == MonsterType.CREEPER || monsterType == MonsterType.MEDUSA || monsterType == MonsterType.BASILISK) {
+            isAlive = false;
+            System.out.println(this.getName() + " killed you in a single blow...");
+        }
+    }
+
     public void revive(MonsterType monsterType) {
-        if (this.getMonsterHP() <= 0 && monsterType == MonsterType.SKELETON) {
+        if (!this.isAlive && monsterType == MonsterType.SKELETON) {
             this.setMonsterHP(100);
             System.out.println(this.getName() + " has been revived with full health!");
         }
