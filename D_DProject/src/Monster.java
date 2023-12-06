@@ -129,7 +129,7 @@ public class Monster {
         return monsterHP > 0;
     }
 
-    public int monsterAttack(Character character, MonsterType monsterType) {
+    public int monsterAttack(Character character) {
         if (!isInvisible) {
             int attackIndex = new Random().nextInt(attacks.length);
             String attack = attacks[attackIndex];
