@@ -130,6 +130,14 @@ public class Monster {
         return monsterHP > 0;
     }
 
+<<<<<<< HEAD
+    public int monsterAttack(Character character) {
+        if (!isInvisible) {
+            int attackIndex = new Random().nextInt(attacks.length);
+            String attack = attacks[attackIndex];
+            System.out.println(name + " used " + attack + "! " + character.getName() + " took " + hitDmg + " damage.");
+            return hitDmg;
+=======
     public int getTurnToBeInvisible() {
         return turnToBeInvisible;
     }
@@ -143,6 +151,7 @@ public class Monster {
             if (name.equals("Ghost") || name.equals("Spectre")) {
                 isInvisible = true;
             }
+>>>>>>> main
         }
         int attackIndex = new Random().nextInt(attacks.length);
         String attack = attacks[attackIndex];
