@@ -6,6 +6,7 @@ public class Monster {
     private int monsterHP;
     private int experiencePoints;
     private int level = 0;
+    private int gold = 0;
     private int turnToBeInvisible = 0;
     private boolean isAlive;
     private boolean isFriendly;
@@ -17,11 +18,12 @@ public class Monster {
     private String[] seducedQuotes;
 
 
-    public Monster(String name, int hitDmg, int monsterHP,boolean isAlive, boolean isInvisible, boolean isFriendly, boolean isSeduced, String[] attacks, String[] neutralQuotes, String[] angerQuotes, String[] seducedQuotes) {
+    public Monster(String name, int hitDmg, int monsterHP, int experiencePoints, int gold, boolean isAlive, boolean isInvisible, boolean isFriendly, boolean isSeduced, String[] attacks, String[] neutralQuotes, String[] angerQuotes, String[] seducedQuotes) {
         this.name = name;
         this.hitDmg = hitDmg;
         this.monsterHP = monsterHP;
-        this.experiencePoints = 0;
+        this.experiencePoints = experiencePoints;
+        this.gold = gold;
         this.isAlive = isAlive;
         this.isInvisible = isInvisible;
         this.isFriendly = isFriendly;
@@ -30,14 +32,6 @@ public class Monster {
         this.neutralQuotes = neutralQuotes;
         this.angerQuotes = angerQuotes;
         this.seducedQuotes = seducedQuotes;
-    }
-
-    public int getExperiencePoints() {
-        return experiencePoints;
-    }
-
-    public void setExperiencePoints(int experiencePoints) {
-        this.experiencePoints = experiencePoints;
     }
 
     public String getName() {
@@ -62,6 +56,21 @@ public class Monster {
 
     public void setMonsterHP(int monsterHP) {
         this.monsterHP = monsterHP;
+    }
+    public int getExperiencePoints() {
+        return experiencePoints;
+    }
+
+    public void setExperiencePoints(int experiencePoints) {
+        this.experiencePoints = experiencePoints;
+    }
+
+    public int getGold() {
+        return gold;
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
     }
 
     public boolean isAlive() {
@@ -179,6 +188,15 @@ public class Monster {
             int playerAttack= player.getSELECTED_CHARACTER().specialAttack();
             monsterHP-=playerAttack;
             System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on "+this.name+ "!");
+            monsterAngerSpeak();
+        }
+    }
+
+    public void takeUltimateDamage(Player player) {
+        if (isMonsterAlive()) {
+            int playerAttack = player.getSELECTED_CHARACTER().ultimateAttack();
+            monsterHP -= playerAttack;
+            System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on " + this.name + "!");
             monsterAngerSpeak();
         }
     }
