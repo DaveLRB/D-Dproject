@@ -76,4 +76,13 @@ public class GameMessage {
         System.out.println("1 - Create a new character");
         System.out.println("2 - Leave game");
     }
+
+    private static int count = 1;
+    public static void shopMenu(Shop shop) {
+        shop.getShopList().forEach((s) -> System.out.println(count++ + s.getName() + "\n"));
+    }
+
+    public static void getShopSuccessMessage(Item item) {
+        System.out.println("You bought "+ item.getName() + " for "+item.getPrice()+" gold.");
+    }
 }
