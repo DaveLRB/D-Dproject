@@ -11,7 +11,7 @@ class MonsterFactory {
                     new String[]{"Bite", "Web Spit"},
                     new String[]{"No need for arachnophobia; we can coexist.", "Skittering sounds", "Creeping up on you... quietly."},
                     new String[]{"My web is stronger than it looks!", "You're stuck in my trap now!"},
-                    new String[]{"I may be small, but I'm venomous!", "Creeping up on you... quietly."});
+                    new String[]{"I may be small, but I'm venomous!", "Creeping up on you... shyly."});
 
             case GOBLIN -> new Monster("Goblin", 25, 100, true, false, false,false,
                     new String[]{"Stab", "Throw Rock"},
@@ -27,7 +27,7 @@ class MonsterFactory {
 
             case ZOMBIE -> new Monster("Zombie", 35, 100, true, true, false,false,
                     new String[]{"Bite", "Grasp"},
-                    new String[]{"Braaaains!", "Uuuuuh!"},
+                    new String[]{"Braaaains!", "Grr , i mean Uuuuuh!"},
                     new String[]{"I want your brains... and your heart!", "The undead hunger never ends!"},
                     new String[]{"I may be slow, but I'm persistent!", "Join the zombie horde!"});
 
@@ -51,7 +51,7 @@ class MonsterFactory {
 
             case WITCH -> new Monster("Witch", 55, 100, true, false, false,false,
                     new String[]{"Spell Cast", "Potion Toss"},
-                    new String[]{"Double, double, toil and trouble!", "You're in my hex!"},
+                    new String[]{"Double, double, toil and trouble!", "You're in my ass!"},
                     new String[]{"Magic flows through my veins!", "The witch's brew will seal your fate."},
                     new String[]{"Enchanted by your presence, my dear!", "A spell of love is cast upon us."});
 

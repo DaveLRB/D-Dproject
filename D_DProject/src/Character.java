@@ -13,9 +13,11 @@ public class Character {
     private int healthPoints;
     private int seduce = 0;
     private boolean isParalised;
+    private Inventory inventory;
 
     public Character(CharacterType characterType) {
         this.characterType = characterType;
+        this.inventory = new Inventory();
         switch (characterType) {
             case KNIGHT:
                 this.name = "KNIGHT";
@@ -49,7 +51,6 @@ public class Character {
         this.healthPoints = 100;
     }
 
-
     private final String[] charQuotesBard = {
             "Am i blind? Or are you a ray of sunshine?!",
             "Can i sing you a song...of passion?",
@@ -70,13 +71,13 @@ public class Character {
             "Silence is the deadliest weapon in the arsenal of an assassin.",
             "Darkness is the ally of shadows, and shadows breed the unseen strike."
     };
+
     private final String[] charQuotesSorcerer = {
             "With my magic i shall turn you to ash!",
             "Behold my migth..the Sorcerer Supreme!",
             "Magic flows where intent meets will.",
             "Knowledge is the staff of power wielded by the adept sorcerer."
     };
-
 
     private void shuffleQuotes(String[] quotes) {
         List<String> quotesList = Arrays.asList(quotes);
@@ -175,6 +176,10 @@ public class Character {
         isParalised = paralised;
     }
 
+    public Inventory getInventory() {
+        return inventory;
+    }
+
     public void characterTalk(CharacterType characterType, Monster monster) {
         String randomQuote = "";
 
@@ -214,7 +219,6 @@ public class Character {
                     case BARD -> attack = this.charisma;
                     case ASSASSIN -> attack = this.dexterity;
                 }
-                ;
                 return attack;
             }
         }
@@ -251,9 +255,14 @@ public class Character {
                 case BARD -> ultimate = this.charisma * 10;
                 case ASSASSIN -> ultimate = this.dexterity * 10;
             }
-            ;
-        }
-        return ultimate;
+            return ultimate;
+
+        }switch (characterType) {
+            case KNIGHT -> ultimate = this.strength;
+            case SORCERER -> ultimate = this.intelligence;
+            case BARD -> ultimate = this.charisma;
+            case ASSASSIN -> ultimate = this.dexterity;
+
+        }return ultimate;
     }
 }
-
