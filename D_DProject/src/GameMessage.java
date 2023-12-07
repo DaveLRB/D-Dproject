@@ -89,7 +89,7 @@ public class GameMessage {
     }
 
     public static void getShopSuccessMessage(Item item) {
-        System.out.println("You bought "+ item.getName() + " for "+item.getPrice()+" gold.");
+        System.out.println("You bought "+ item.getName() + " for "+item.getPriceToBuy()+" gold.");
     }
 
     public static void getOption() {

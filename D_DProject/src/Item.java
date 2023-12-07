@@ -1,34 +1,40 @@
 public class Item {
     private String name;
-    private Integer price;
+    private Integer priceToBuy;
+    private Integer priceToUpgrade;
     private Integer strength;
     private Integer charisma;
     private Integer dexterity;
     private Integer intelligence;
 
-    public Item(String name, Integer price, Integer strength, Integer charisma, Integer dexterity, Integer intelligence) {
+    public Item(String name, Integer priceToBuy, Integer priceToUpgrade, Integer strength, Integer charisma, Integer dexterity, Integer intelligence) {
         this.name = name;
-        this.price = price;
+        this.priceToBuy = priceToBuy;
         this.strength = strength;
         this.charisma = charisma;
         this.dexterity = dexterity;
         this.intelligence = intelligence;
+        this.priceToUpgrade = priceToUpgrade;
     }
 
     public String getName() {
         return name;
     }
 
+    public Integer getPriceToUpgrade() {
+        return priceToUpgrade;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    public Integer getPrice() {
-        return price;
+    public Integer getPriceToBuy() {
+        return priceToBuy;
     }
 
     public void setPrice(Integer price) {
-        this.price = price;
+        this.priceToBuy = price;
     }
 
     public Integer getStrength() {
