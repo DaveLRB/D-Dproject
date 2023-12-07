@@ -99,6 +99,6 @@ public class GameMessage {
     private static int count2 = 0;
 
     public static void getPlayerInventoryList(Player player) {
-        //player.getSELECTED_CHARACTER().getInventory((inv) -> System.out.println(count2++ + " " + inv.getName()));
+        player.getSELECTED_CHARACTER().getInventory((inv) -> System.out.println(count2++ + " " + inv.getName()));
     }
 }
