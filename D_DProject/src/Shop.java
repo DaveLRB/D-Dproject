@@ -21,9 +21,17 @@ public class Shop {
     }
 
     public void enter(Player player) {
-        GameMessage.shopMenu(this);
-        int choice = sc.nextInt()-1;
-        sell(choice, player);
+        GameMessage.shopMenu();
+        int choice = sc.nextInt();
+        switch (choice) {
+            case 1:
+                GameMessage.itemListShop(this);
+                GameMessage.getOption();
+                sell(sc.nextInt()-1, player);
+            case 2:
+
+
+        }
     }
 
     private void sell(int choice, Player player) {
@@ -40,6 +48,10 @@ public class Shop {
         } catch (ShopIsEmptyException | ShopItemDontExistException | DontHaveGoldException e) {
             GameMessage.getExceptionMessage(e.getMessage());
         }
+    }
+
+    public void upgrade(Player player) {
+        GameMessage.getPlayerInventoryList(player);
     }
 
     public LinkedList<Item> getShopList() {
