@@ -183,15 +183,6 @@ public class Monster {
         }
     }
 
-    public void takeUltimateDamage(Player player) {
-        if (isMonsterAlive()) {
-            int playerAttack= player.getSELECTED_CHARACTER().ultimateAttack();
-            monsterHP -= playerAttack;
-            System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on "+this.name+ "!");
-            monsterAngerSpeak();
-        }
-    }
-
     public void monsterSpeak() {
         int quoteIndex = new Random().nextInt(neutralQuotes.length);
         String monsterQuote = neutralQuotes[quoteIndex];
@@ -217,7 +208,7 @@ public class Monster {
         }
    }
 
-    public void monsterIsOneshot(MonsterType monsterType) {
+    public void monsterDoesOneshot(MonsterType monsterType) {
         if (this.getMonsterHP() <= 0 && monsterType == MonsterType.CREEPER || monsterType == MonsterType.MEDUSA || monsterType == MonsterType.BASILISK) {
             isAlive = false;
             System.out.println(this.getName() + " killed you in a single blow...");
