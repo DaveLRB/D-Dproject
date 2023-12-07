@@ -1,3 +1,4 @@
+import exceptions.HealthPointsGreaterThan20Exception;
 import exceptions.OperationCancelledException;
 
 import java.util.ArrayList;
@@ -61,19 +62,36 @@ public class Dungeon {
     }
 
     private void handleBattleTurn(int level, boolean wantsToLeave) {
+        Monster currentMonster = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX);
+        Character selectedCharacter = player.getSELECTED_CHARACTER();
+
         while (monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getMonsterHP() > 0 && player.getSELECTED_CHARACTER().getHealthPoints() > 0 && !wantsToLeave) {
             int option = InputHelper.getOptionFromUser();
-            if (option == 0) {
-                throw new OperationCancelledException();
+            switch (option) {
+                case 0:
+                    throw new OperationCancelledException();
+                case 1:
+                    currentMonster.takeDamage(player);
+                    break;
+                case 2:
+                    currentMonster.takeSpecialDamage(player);
+                    break;
+                case 3:
+                    try {
+                        currentMonster.takeUltimateDamage(player);
+                    } catch (HealthPointsGreaterThan20Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
             }
-            System.out.println("The level of the dungeon: " + level);
+
+            selectedCharacter.setHP(currentMonster.monsterAttack(selectedCharacter));
+
+            System.out.println("\nThe level of the dungeon: " + level);
             System.out.println("Monsters left: " + monsters.get(LEVEL_INDEX).size());
-
-            monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).takeDamage(player);
-            player.getSELECTED_CHARACTER().setHP(monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).monsterAttack(player.getSELECTED_CHARACTER()));
-
         }
     }
+
 
     private void handleMonsterDefeat() {
         System.out.println("\nYou killed the " + monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getName());

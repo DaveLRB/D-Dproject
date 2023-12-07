@@ -54,11 +54,11 @@ public class Shop {
         try {
             int choice = sc.nextInt()-1;
 
-            if (player.getSELECTED_CHARACTER().getInventory().get(choice) == null)
+            /*if (player.getSELECTED_CHARACTER().getInventory().get(choice) == null)
                 throw new InvalidPlayerItemException();
             if (player.getGold() < player.getInventory().get(choice).getPriceToUpgrade())
                 throw new NotEnoughFundsToUpgradeException();
-
+            */
             // TODO: 07/12/2023 logica para aumentar os status do item (se tiver que dar mais força, só pode aumentar a força) 
 
         } catch (InvalidPlayerItemException | NotEnoughFundsToUpgradeException e) {

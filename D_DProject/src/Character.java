@@ -1,3 +1,5 @@
+import exceptions.HealthPointsGreaterThan20Exception;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -256,7 +258,7 @@ public class Character {
                 case ASSASSIN -> ultimate = this.dexterity * 10;
             }
         } else {
-            throw new HealthPointsGreaterThan20();
+            throw new HealthPointsGreaterThan20Exception();
         }
         return ultimate;
     }
