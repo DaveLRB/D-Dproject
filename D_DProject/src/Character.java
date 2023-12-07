@@ -255,14 +255,9 @@ public class Character {
                 case BARD -> ultimate = this.charisma * 10;
                 case ASSASSIN -> ultimate = this.dexterity * 10;
             }
-            return ultimate;
-
-        }switch (characterType) {
-            case KNIGHT -> ultimate = this.strength;
-            case SORCERER -> ultimate = this.intelligence;
-            case BARD -> ultimate = this.charisma;
-            case ASSASSIN -> ultimate = this.dexterity;
-
-        }return ultimate;
+        } else {
+            throw new HealthPointsGreaterThan20();
+        }
+        return ultimate;
     }
 }
