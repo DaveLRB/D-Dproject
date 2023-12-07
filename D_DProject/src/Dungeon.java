@@ -81,6 +81,7 @@ public class Dungeon {
                         currentMonster.takeUltimateDamage(player);
                     } catch (HealthPointsGreaterThan20Exception e) {
                         System.out.println(e.getMessage());
+                        return;
                     }
                     break;
             }
@@ -91,7 +92,6 @@ public class Dungeon {
             System.out.println("Monsters left: " + monsters.get(LEVEL_INDEX).size());
         }
     }
-
 
     private void handleMonsterDefeat() {
         System.out.println("\nYou killed the " + monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getName());
