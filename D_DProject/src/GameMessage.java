@@ -76,4 +76,29 @@ public class GameMessage {
         System.out.println("1 - Create a new character");
         System.out.println("2 - Leave game");
     }
+
+    private static int count = 1;
+    public static void itemListShop(Shop shop) {
+        shop.getShopList().forEach((s) -> System.out.println(count++ + s.getName() + "\n"));
+    }
+
+    public static void shopMenu() {
+        System.out.println("1 - BUY");
+        System.out.println("2 - UPGRADE");
+        System.out.println("3 - LEAVE");
+    }
+
+    public static void getShopSuccessMessage(Item item) {
+        System.out.println("You bought "+ item.getName() + " for "+item.getPriceToBuy()+" gold.");
+    }
+
+    public static void getOption() {
+        System.out.print("Option: ");
+    }
+
+    private static int count2 = 0;
+
+    public static void getPlayerInventoryList(Player player) {
+        player.getSELECTED_CHARACTER().getInventory((inv) -> System.out.println(count2++ + " " + inv.getName()));
+    }
 }

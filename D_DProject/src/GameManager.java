@@ -15,6 +15,7 @@ public class GameManager {
     private boolean gameIsRunning;
     private String playerName;
     private int count = 1;
+    private Shop shop;
 
     public GameManager() {
         this.sc = new Scanner(System.in);
@@ -24,6 +25,7 @@ public class GameManager {
         this.player = new Player(playerName, character);
         this.dungeon = new Dungeon(player);
         this.gameIsRunning = true;
+        shop = new Shop();
     }
 
     public void init() {
@@ -38,6 +40,7 @@ public class GameManager {
                 switch (sc.next()) {
                     case "1" -> dungeon.init();
                     case "2" -> checkCharacterStats(player);
+                    case "3" -> shop.enter(player);
                 }
             }
         }
