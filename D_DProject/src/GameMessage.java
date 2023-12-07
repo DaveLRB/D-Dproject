@@ -54,11 +54,11 @@ public class GameMessage {
 
     public static void getPlayerStats(Player player) {
         getOneBlankSpace();
-        System.out.println("Character: "+player.getSELECTED_CHARACTER().getName()+"\n" + "\n"+
-                "Types of attack:\nStrength: "+player.getSELECTED_CHARACTER().getStrength()+"\nDexterity: "+player.getSELECTED_CHARACTER().getDexterity()+
-                "\nCharisma: "+player.getSELECTED_CHARACTER().getCharisma()+"\nIntelligence: "+player.getSELECTED_CHARACTER().getIntelligence());
+        System.out.println("Character: "+player.getSelectedCharacter().getName()+"\n" + "\n"+
+                "Types of attack:\nStrength: "+player.getSelectedCharacter().getStrength()+"\nDexterity: "+player.getSelectedCharacter().getDexterity()+
+                "\nCharisma: "+player.getSelectedCharacter().getCharisma()+"\nIntelligence: "+player.getSelectedCharacter().getIntelligence());
         getOneBlankSpace();
-        System.out.println("HP: "+player.getSELECTED_CHARACTER().getHealthPoints());
+        System.out.println("HP: "+player.getSelectedCharacter().getHealthPoints());
         System.out.println("XP: "+player.getXp());
         getOneBlankSpace();
     }

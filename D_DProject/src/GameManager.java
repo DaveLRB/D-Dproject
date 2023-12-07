@@ -47,7 +47,7 @@ public class GameManager {
     }
 
     public boolean isPlayerDead() {
-        return player.getSELECTED_CHARACTER().getHealthPoints() <= 0;
+        return player.getSelectedCharacter().getHealthPoints() <= 0;
     }
 
     //Method to start the game: player need select a character. When he select, the character is stored at character instance.
@@ -111,7 +111,7 @@ public class GameManager {
     //Check the player character stats
     private void checkCharacterStats(Player player) {
         try {
-            if (player.getSELECTED_CHARACTER() == null) throw new CharacterNotFoundException();
+            if (player.getSelectedCharacter() == null) throw new CharacterNotFoundException();
             GameMessage.getPlayerStats(player);
         } catch (CharacterNotFoundException e) {
             GameMessage.getExceptionMessage(e.getMessage());

@@ -39,7 +39,7 @@ public class Player {
         return NAME;
     }
 
-    public Character getSELECTED_CHARACTER() {
+    public Character getSelectedCharacter() {
         return selectedCharacter;
     }
     public void setCharacter(Character character){this.selectedCharacter=character;}
