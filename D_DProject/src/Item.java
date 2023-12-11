@@ -6,6 +6,7 @@ public class Item {
     private Integer charisma;
     private Integer dexterity;
     private Integer intelligence;
+    private boolean bought;
 
     public Item(String name, Integer priceToBuy, Integer priceToUpgrade, Integer strength, Integer charisma, Integer dexterity, Integer intelligence) {
         this.name = name;
@@ -15,6 +16,15 @@ public class Item {
         this.dexterity = dexterity;
         this.intelligence = intelligence;
         this.priceToUpgrade = priceToUpgrade;
+    }
+
+    public String getSkillToMenu() {
+        if (charisma > 0) return charisma + " charisma";
+        if (dexterity > 0) return dexterity + " dexterity";
+        if (intelligence > 0) return intelligence + " intelligence";
+        if (strength > 0) return strength + " strength";
+
+        return null;
     }
 
     public String getName() {

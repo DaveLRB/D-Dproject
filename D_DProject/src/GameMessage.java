@@ -2,6 +2,8 @@ public class GameMessage {
     public static void getMenuMessage() {
         System.out.println("1 - Enter the dungeon");
         System.out.println("2 - Check character stats");
+        System.out.println("3 - Check inventory");
+        System.out.println("4 - Shop");
         System.out.print("Option: ");
     }
 
@@ -58,6 +60,7 @@ public class GameMessage {
                 "Types of attack:\nStrength: "+player.getSelectedCharacter().getStrength()+"\nDexterity: "+player.getSelectedCharacter().getDexterity()+
                 "\nCharisma: "+player.getSelectedCharacter().getCharisma()+"\nIntelligence: "+player.getSelectedCharacter().getIntelligence());
         getOneBlankSpace();
+        System.out.println("Equiped: " + player.getWhatIsEquiped());
         System.out.println("HP: "+player.getSelectedCharacter().getHealthPoints());
         System.out.println("XP: "+player.getXp());
         getOneBlankSpace();
@@ -79,7 +82,8 @@ public class GameMessage {
 
     private static int count = 1;
     public static void itemListShop(Shop shop) {
-        shop.getShopList().forEach((s) -> System.out.println(count++ + s.getName() + "\n"));
+        count = 1;
+        shop.getShopList().forEach((s) -> System.out.println(count++ + " | " + s.getName() + " | Price: " + s.getPriceToBuy() + " | Skill: +" + s.getSkillToMenu()));
     }
 
     public static void shopMenu() {
@@ -99,6 +103,14 @@ public class GameMessage {
     private static int count2 = 0;
 
     public static void getPlayerInventoryList(Player player) {
-        player.getSELECTED_CHARACTER().getInventory((inv) -> System.out.println(count2++ + " " + inv.getName()));
+        for (Item item : player.getSelectedCharacter().getInventory().getItemList()) {
+            System.out.println(count2++ + " " + item.getName());
+        }
+    }
+
+    public static void getInventoryMenu() {
+        System.out.println("1 - Equip item");
+        System.out.println("2 - Unquip item");
+        System.out.println("2 - Exit");
     }
 }
