@@ -32,28 +32,46 @@ public class Character {
             "Am i blind? Or are you a ray of sunshine?!",
             "Can i sing you a song...of passion?",
             "Is that a weapon? Or are you happy to see me?!",
-            "WOWZA CHA-WA-BANGA!!"
+            "WOWZA CHA-WA-BANGA!!",
+            "In tales of old, valor blooms.",
+            "With every dawn, a new legend unfolds.",
+            "Melodies weave the fabric of our stories.",
+            "Words, the bard's sword; songs, the bard's shield."
+
     };
 
     private final String[] charQuotesKnight = {
             "The valor of a knight will smite you!",
             "With my weapon i shall cleanse the world of evil",
             "Courage is the strength to face uncertainty.",
-            "Chivalry is not just a code, but a way of being."
+            "Chivalry is not just a code, but a way of being.",
+            "Strength shields the weak, to the evils might.",
+            "Valor knows no fear, in the face of darkness.",
+            "Honor guides every deed, an honest heart makes.",
+            "Adversity forges nobility, were cowardice sows fragility."
     };
 
     private final String[] charQuotesAssassin = {
             "My poison daggers will send you to the shadows..",
             "In the dark i live..in the dark you shall die",
             "Silence is the deadliest weapon in the arsenal of an assassin.",
-            "Darkness is the ally of shadows, and shadows breed the unseen strike."
+            "Darkness is the ally of shadows, and shadows breed the unseen strike.",
+            "Silence speaks louder than steel.",
+            "Shadows are my allies, darkness my cloak.",
+            "Precision is my art, stealth my dance.",
+            "In the quiet, I am deadliest."
     };
 
     private final String[] charQuotesSorcerer = {
             "With my magic i shall turn you to ash!",
-            "Behold my migth..the Sorcerer Supreme!",
+            "Behold my might..the Sorcerer Supreme!",
             "Magic flows where intent meets will.",
-            "Knowledge is the staff of power wielded by the adept sorcerer."
+            "Knowledge is the staff of power wielded by the adept sorcerer.",
+            "Magic bends to my will, the elements dance at my command.",
+            "Arcane secrets whisper in every spell.",
+            "Power courses through my veins, shaped by incantations.",
+            "The unseen forces are my allies, shaping reality to my design."
+
     };
 
     private void shuffleQuotes(String[] quotes) {
