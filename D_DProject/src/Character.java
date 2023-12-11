@@ -14,42 +14,17 @@ public class Character {
     private int intelligence;
     private int healthPoints;
     private int seduce = 0;
-    private boolean isParalised;
+    private boolean isParalysed;
     private Inventory inventory;
 
     public Character(CharacterType characterType) {
         this.characterType = characterType;
+        this.name = characterType.getName();
+        this.strength = characterType.getStrength();
+        this.dexterity = characterType.getDexterity();
+        this.charisma = characterType.getCharisma();
+        this.intelligence = characterType.getIntelligence();
         this.inventory = new Inventory();
-        switch (characterType) {
-            case KNIGHT:
-                this.name = "KNIGHT";
-                this.strength = 12;
-                this.dexterity = 7;
-                this.charisma = 8;
-                this.intelligence = 5;
-                break;
-            case SORCERER:
-                this.name = "SORCERER";
-                this.strength = 5;
-                this.dexterity = 6;
-                this.charisma = 8;
-                this.intelligence = 12;
-                break;
-            case BARD:
-                this.name = "BARD";
-                this.strength = 7;
-                this.dexterity = 8;
-                this.charisma = 12;
-                this.intelligence = 8;
-                break;
-            case ASSASSIN:
-                this.name = "ASSASSIN";
-                this.strength = 8;
-                this.dexterity = 12;
-                this.charisma = 5;
-                this.intelligence = 7;
-                break;
-        }
         this.healthPoints = 100;
     }
 
@@ -170,12 +145,12 @@ public class Character {
         this.seduce = seduce;
     }
 
-    public boolean isParalised() {
-        return isParalised;
+    public boolean isParalysed() {
+        return isParalysed;
     }
 
-    public void setParalised(boolean paralised) {
-        isParalised = paralised;
+    public void setParalysed(boolean paralysed) {
+        isParalysed = paralysed;
     }
 
     public Inventory getInventory() {
@@ -207,29 +182,23 @@ public class Character {
     }
 
     public int characterAttack() {
-        Random random = new Random();
-        double chance = random.nextDouble();
         int attack = 0;
-        if (!isParalised()) {
-            System.out.println("Bitch, Paralised");
-            if (chance <= 0.20 && healthPoints <= 20) {
-                return ultimateAttack();
-            } else {
-                switch (characterType) {
-                    case KNIGHT -> attack = this.strength;
-                    case SORCERER -> attack = this.intelligence;
-                    case BARD -> attack = this.charisma;
-                    case ASSASSIN -> attack = this.dexterity;
-                }
-                return attack;
+        if (!isParalysed()) {
+            switch (characterType) {
+                case KNIGHT -> attack = this.strength;
+                case SORCERER -> attack = this.intelligence;
+                case BARD -> attack = this.charisma;
+                case ASSASSIN -> attack = this.dexterity;
             }
+            return attack;
+        } else {
+            System.out.println("Cannot attack, you are paralysed!");
         }
         return 0;
     }
 
     public int specialAttack() {
-        if (!isParalised()) {
-            System.out.println("Bitch, Paralised");
+        if (!isParalysed()) {
             int special = 0;
             switch (characterType) {
                 case KNIGHT -> special = this.strength * (int) (Math.random() * 3) + 1;
@@ -237,29 +206,33 @@ public class Character {
                 case BARD -> special = this.charisma * (int) (Math.random() * 3) + 1;
                 case ASSASSIN -> special = this.dexterity * (int) (Math.random() * 3) + 1;
             }
-            ;
             return special;
-
+        } else {
+            System.out.println("Cannot attack, you are paralysed!");
         }
-
         return 0;
-
     }
 
     public int ultimateAttack() {
         Random random = new Random();
         double chance = random.nextDouble();
         int ultimate = 0;
-        if (chance <= 0.20 && healthPoints <= 20) {
-            switch (characterType) {
-                case KNIGHT -> ultimate = this.strength * 10;
-                case SORCERER -> ultimate = this.intelligence * 10;
-                case BARD -> ultimate = this.charisma * 10;
-                case ASSASSIN -> ultimate = this.dexterity * 10;
+        if (!isParalysed()) {
+            if (chance <= 0.20 && healthPoints <= 20) {
+                switch (characterType) {
+                    case KNIGHT -> ultimate = this.strength * 10;
+                    case SORCERER -> ultimate = this.intelligence * 10;
+                    case BARD -> ultimate = this.charisma * 10;
+                    case ASSASSIN -> ultimate = this.dexterity * 10;
+                }
+            } else{
+                throw new HealthPointsGreaterThan20Exception();
             }
+            return ultimate/10;
         } else {
-            throw new HealthPointsGreaterThan20Exception();
+            System.out.println("Cannot attack, you are paralysed!");
+
         }
-        return ultimate;
+        return 0;
     }
 }
