@@ -1,3 +1,4 @@
+import exceptions.HealthPointsGreaterThan20Exception;
 import exceptions.OperationCancelledException;
 
 import java.util.ArrayList;
@@ -21,12 +22,10 @@ public class Dungeon {
         fillMonstersArray(monsters);
         boolean wantToLeave = false;
         int level = 1;
+
         System.out.println("\nType 0 to go back");
-        boolean isPlayerAlive = true;
-        boolean isMonsterAlive;
-        boolean isLevelCompleted;
         do {
-            if (!isPlayerAlive) {
+            if (!isPlayerAlive()) {
                 handlePlayerDefeat();
                 return;
             }
@@ -38,16 +37,11 @@ public class Dungeon {
                 return;
             }
 
-            isPlayerAlive = player.getSELECTED_CHARACTER().getHealthPoints() > 0;
-            isMonsterAlive = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getMonsterHP() > 0;
-
-            if (!isMonsterAlive) {
+            if (!isMonsterAlive()) {
                 handleMonsterDefeat();
             }
 
-            isLevelCompleted = monsters.get(LEVEL_INDEX).isEmpty();
-
-            if (isLevelCompleted) {
+            if (isLevelCompleted()) {
                 if (level == 5) {
                     System.out.println("You completed the dungeon!");
                 } else {
@@ -60,18 +54,47 @@ public class Dungeon {
 
     }
 
+    private boolean isPlayerAlive() {
+        return player.getSelectedCharacter().getHealthPoints() > 0;
+    }
+
+    private boolean isMonsterAlive() {
+        return monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getMonsterHP() > 0;
+    }
+
+    private boolean isLevelCompleted() {
+        return monsters.get(LEVEL_INDEX).isEmpty();
+    }
+
     private void handleBattleTurn(int level, boolean wantsToLeave) {
-        while (monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getMonsterHP() > 0 && player.getSELECTED_CHARACTER().getHealthPoints() > 0 && !wantsToLeave) {
+        Monster currentMonster = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX);
+        Character selectedCharacter = player.getSelectedCharacter();
+
+        while (monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getMonsterHP() > 0 && player.getSelectedCharacter().getHealthPoints() > 0 && !wantsToLeave) {
             int option = InputHelper.getOptionFromUser();
-            if (option == 0) {
-                throw new OperationCancelledException();
+            switch (option) {
+                case 0:
+                    throw new OperationCancelledException();
+                case 1:
+                    currentMonster.takeDamage(player);
+                    break;
+                case 2:
+                    currentMonster.takeSpecialDamage(player);
+                    break;
+                case 3:
+                    try {
+                        currentMonster.takeUltimateDamage(player);
+                    } catch (HealthPointsGreaterThan20Exception e) {
+                        System.out.println(e.getMessage());
+                        return;
+                    }
+                    break;
             }
-            System.out.println("The level of the dungeon: " + level);
+
+            selectedCharacter.setHP(currentMonster.monsterAttack(selectedCharacter));
+
+            System.out.println("\nThe level of the dungeon: " + level);
             System.out.println("Monsters left: " + monsters.get(LEVEL_INDEX).size());
-
-            monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).takeDamage(player);
-            player.getSELECTED_CHARACTER().setHP(monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).monsterAttack(player.getSELECTED_CHARACTER()));
-
         }
     }
 
@@ -88,45 +111,43 @@ public class Dungeon {
     private void fillMonstersArray(ArrayList<ArrayList<Monster>> monsters) {
         ArrayList<Integer> monstersOrder = getMonstersOrder();
         int counter = 0;
-        int NUMBER_OF_LEVELS = 5;
-        for (int level = 0; level < NUMBER_OF_LEVELS; level++) {
+        int numberOfLevels = 5;
+        int numberOfMonsters = 5;
+
+        for (int level = 0; level < numberOfLevels; level++) {
             ArrayList<Monster> monstersLevel = new ArrayList<>();
-            int NUMBER_OF_MONSTERS = 5;
-            for (int monster = 0; monster < NUMBER_OF_MONSTERS; monster++) {
-                monstersLevel.add(MonsterFactory.createMonster(MonsterType.values()[monstersOrder.get(counter)]));
-                counter++;
+
+            for (int monster = 0; monster < numberOfMonsters; monster++) {
+                monstersLevel.add(MonsterFactory.createMonster(MonsterType.values()[monstersOrder.get(counter++)]));
             }
+
             monsters.add(monstersLevel);
         }
     }
 
     private ArrayList<Integer> getMonstersOrder() {
-        int counter = 0;
         ArrayList<Integer> monstersOrder = new ArrayList<>();
-        int MAXIMUM_NUMBER_OF_MONSTERS = 25;
-        for (int i = 1; i <= MAXIMUM_NUMBER_OF_MONSTERS; i++) {
+        int maximumNumberOfMonsters = 25;
+
+        for (int i = 1, counter = 0; i <= maximumNumberOfMonsters; i++) {
             monstersOrder.add(randomizeNumber(monstersOrder, counter, 5 + counter));
+
             if (i % 5 == 0) {
                 counter += 5;
             }
         }
+
         return monstersOrder;
     }
 
     private int randomizeNumber(ArrayList<Integer> monstersOrder, int origin, int bound) {
         Random randomize = new Random();
-        boolean doesNumberAlreadyExist;
         int randomNumber;
+
         do {
             randomNumber = randomize.nextInt(origin, bound);
-            doesNumberAlreadyExist = false;
-            for (Integer number : monstersOrder) {
-                if (number.equals(randomNumber)) {
-                    doesNumberAlreadyExist = true;
-                    break;
-                }
-            }
-        } while (doesNumberAlreadyExist);
+        } while (monstersOrder.contains(randomNumber));
+
         return randomNumber;
     }
 }

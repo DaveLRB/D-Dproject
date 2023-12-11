@@ -172,9 +172,9 @@ public class Monster {
 
     public void takeDamage(Player player) {
         if(!isInvisible) {
-            int playerAttack = player.getSELECTED_CHARACTER().characterAttack();
+            int playerAttack = player.getSelectedCharacter().characterAttack();
             monsterHP -= playerAttack;
-            System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on " + this.name + "!");
+            System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + playerAttack + " damage on " + this.name + "!");
             turnToBeInvisible++;
         } else {
             isInvisible = false;
@@ -185,18 +185,18 @@ public class Monster {
 
     public void takeSpecialDamage(Player player) {
         if (isMonsterAlive()) {
-            int playerAttack= player.getSELECTED_CHARACTER().specialAttack();
+            int playerAttack= player.getSelectedCharacter().specialAttack();
             monsterHP-=playerAttack;
-            System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on "+this.name+ "!");
+            System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + playerAttack + " damage on "+this.name+ "!");
             monsterAngerSpeak();
         }
     }
 
     public void takeUltimateDamage(Player player) {
         if (isMonsterAlive()) {
-            int playerAttack = player.getSELECTED_CHARACTER().ultimateAttack();
+            int playerAttack = player.getSelectedCharacter().ultimateAttack();
             monsterHP -= playerAttack;
-            System.out.println("\n" + player.getSELECTED_CHARACTER().getName() + " gave " + playerAttack + " damage on " + this.name + "!");
+            System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + playerAttack + " damage on " + this.name + "!");
             monsterAngerSpeak();
         }
     }
