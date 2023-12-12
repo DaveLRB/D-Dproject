@@ -47,35 +47,43 @@ public class GameManager {
     private int inventoryCount = 1;
 
     private void getPlayerInventory() {
-        if (player.getSelectedCharacter().getInventory().getItemList().isEmpty()) throw new EmptyInventoryException();
+        try {
+            if (player.getSelectedCharacter().getInventory().getItemList().isEmpty())
+                throw new EmptyInventoryException();
 
-        inventoryCount = 1;
-        player.getSelectedCharacter().getInventory().getItemList().forEach((i) -> System.out.println(i.getName()));
+            inventoryCount = 1;
+            player.getSelectedCharacter().getInventory().getItemList().forEach((i) -> System.out.println(inventoryCount++ + " | " + i.getName()));
+            GameMessage.getInventoryMenu();
 
-        GameMessage.getInventoryMenu();
-        int choice = sc.nextInt();
-        switch (choice) {
-            case 1 -> {
-                player.getSelectedCharacter().getInventory().getItemList().forEach((i) -> System.out.println(inventoryCount++ + " | " + i.getName()));
-                int choiceEquip = sc.nextInt();
-                if (player.isEquiped()) throw new AlreadyEquipedException();
-                player.setEquiped(true);
-                player.setWhatIsEquiped(player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip - 1).getName());
-                player.getSelectedCharacter().setCharisma(player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip - 1).getCharisma());
-                player.getSelectedCharacter().setIntelligence(player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip - 1).getIntelligence());
-                player.getSelectedCharacter().setDexterity(player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip - 1).getDexterity());
-                player.getSelectedCharacter().setStrength(player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip - 1).getStrength());
+            Item playerItem;
+
+            int choice = sc.nextInt();
+            switch (choice) {
+                case 1 -> {
+                    int choiceEquip = sc.nextInt() - 1;
+                    playerItem = player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip);
+                    if (player.isEquiped()) throw new AlreadyEquipedException();
+                    player.setEquiped(true);
+                    player.setWhatIsEquiped(playerItem.getName());
+                    player.getSelectedCharacter().setCharisma(playerItem.getCharisma());
+                    player.getSelectedCharacter().setIntelligence(playerItem.getIntelligence());
+                    player.getSelectedCharacter().setDexterity(playerItem.getDexterity());
+                    player.getSelectedCharacter().setStrength(playerItem.getStrength());
+                }
+                case 2 -> {
+                    int choiceEquip = sc.nextInt() - 1;
+                    playerItem = player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip);
+                    if (!player.isEquiped()) throw new NothingEquipedException();
+                    player.setEquiped(false);
+                    player.setWhatIsEquiped("Nothing");
+                    player.getSelectedCharacter().removeCharisma(playerItem.getCharisma());
+                    player.getSelectedCharacter().removeIntelligence(playerItem.getIntelligence());
+                    player.getSelectedCharacter().removeDexterity(playerItem.getDexterity());
+                    player.getSelectedCharacter().removeStrength(playerItem.getStrength());
+                }
             }
-            case 2 -> {
-                int choiceEquip = sc.nextInt();
-                if (!player.isEquiped()) throw new NothingEquipedException();
-                player.setEquiped(false);
-                player.setWhatIsEquiped("Nothing");
-                player.getSelectedCharacter().setCharisma(player.getSelectedCharacter().getCharisma() - player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip - 1).getCharisma());
-                player.getSelectedCharacter().setIntelligence(player.getSelectedCharacter().getIntelligence() - player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip - 1).getIntelligence());
-                player.getSelectedCharacter().setDexterity(player.getSelectedCharacter().getDexterity() - player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip - 1).getDexterity());
-                player.getSelectedCharacter().setStrength(player.getSelectedCharacter().getStrength() - player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip - 1).getStrength());
-            }
+        } catch (EmptyInventoryException | AlreadyEquipedException | NothingEquipedException e) {
+            System.err.println(e.getMessage());
         }
     }
 

@@ -56,9 +56,28 @@ public class GameMessage {
 
     public static void getPlayerStats(Player player) {
         getOneBlankSpace();
+
+        Item playerItem = null;
+
+        if(player.isEquiped()) {
+            for (Item item : player.getSelectedCharacter().getInventory().getItemList()) {
+                if(player.getWhatIsEquiped().equals(item.getName())) {
+                    playerItem = item;
+                }
+            }
+        }
+
+        int str = playerItem != null ? playerItem.getStrength() : 0;
+        int dex = playerItem != null ? playerItem.getDexterity() : 0;
+        int cha = playerItem != null ? playerItem.getCharisma() : 0;
+        int ite = playerItem != null ? playerItem.getIntelligence() : 0;
+
         System.out.println("Character: "+player.getSelectedCharacter().getName()+"\n" + "\n"+
-                "Types of attack:\nStrength: "+player.getSelectedCharacter().getStrength()+"\nDexterity: "+player.getSelectedCharacter().getDexterity()+
-                "\nCharisma: "+player.getSelectedCharacter().getCharisma()+"\nIntelligence: "+player.getSelectedCharacter().getIntelligence());
+                "Types of attack:" +
+                "\nStrength: "+player.getSelectedCharacter().getStrength() + " (+"+ str +")"
+                +"\nDexterity: " +player.getSelectedCharacter().getDexterity() + " (+"+ dex +")"
+                + "\nCharisma: "+player.getSelectedCharacter().getCharisma() + " (+"+ cha +")"
+                +"\nIntelligence: "+player.getSelectedCharacter().getIntelligence() + " (+"+ ite +")");
         getOneBlankSpace();
         System.out.println("Equiped: " + player.getWhatIsEquiped());
         System.out.println("HP: "+player.getSelectedCharacter().getHealthPoints());
@@ -67,7 +86,7 @@ public class GameMessage {
     }
 
     public static void getExceptionMessage(String message) {
-        System.out.println(message);
+        System.err.println(message);
     }
 
     public static void getDeadMessage() {
@@ -100,11 +119,22 @@ public class GameMessage {
         System.out.print("Option: ");
     }
 
-    private static int count2 = 0;
+    private static int count2 = 1;
 
     public static void getPlayerInventoryList(Player player) {
         for (Item item : player.getSelectedCharacter().getInventory().getItemList()) {
-            System.out.println(count2++ + " " + item.getName());
+            System.out.println(count2++ + " | " + item.getName());
+        }
+    }
+
+    public static void getPlayerInventoryListToUpgrade(Player player) {
+        count2=1;
+        for (Item item : player.getSelectedCharacter().getInventory().getItemList()) {
+            if(item.getWeaponBetterSkill() != 50) {
+                System.out.println(count2++ + " | " + item.getName() + " (" + item.getPriceToUpgrade() + " gold to upgrade)");
+            } else {
+                System.out.println(count2++ + " | " + item.getName() + " (Can't upgrade anymore)");
+            }
         }
     }
 
@@ -112,5 +142,9 @@ public class GameMessage {
         System.out.println("1 - Equip item");
         System.out.println("2 - Unquip item");
         System.out.println("2 - Exit");
+    }
+
+    public static void upgradeSuccess(Item item) {
+        System.out.println("You upgraded your "+item.getName()+".");
     }
 }

@@ -18,13 +18,44 @@ public class Item {
         this.priceToUpgrade = priceToUpgrade;
     }
 
+    public void setPriceToUpgrade(Integer priceToUpgrade) {
+        this.priceToUpgrade += priceToUpgrade;
+    }
+
     public String getSkillToMenu() {
-        if (charisma > 0) return charisma + " charisma";
-        if (dexterity > 0) return dexterity + " dexterity";
-        if (intelligence > 0) return intelligence + " intelligence";
-        if (strength > 0) return strength + " strength";
+        if (charisma > 0) return charisma + " Charisma";
+        if (dexterity > 0) return dexterity + " Dexterity";
+        if (intelligence > 0) return intelligence + " Intelligence";
+        if (strength > 0) return strength + " Strength";
 
         return null;
+    }
+
+    public int getWeaponBetterSkill() {
+        if (charisma > 4) return charisma;
+        if (dexterity > 4) return dexterity;
+        if (intelligence > 4) return intelligence;
+        if (strength > 4) return strength;
+
+        return 0;
+    }
+
+    public void addToSkill(int howMuch) {
+        if (dexterity > 4) {
+            dexterity += howMuch;
+        }
+
+        if (charisma > 4) {
+            charisma += howMuch;
+        }
+
+        if (intelligence > 4) {
+            intelligence += howMuch;
+        }
+
+        if (strength > 4) {
+            strength += howMuch;
+        }
     }
 
     public String getName() {
