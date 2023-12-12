@@ -37,10 +37,6 @@ public class Dungeon {
                 return;
             }
 
-            if (!isMonsterAlive()) {
-                handleMonsterDefeat();
-            }
-
             if (isLevelCompleted()) {
                 if (level == 5) {
                     System.out.println("You completed the dungeon!");
@@ -67,23 +63,26 @@ public class Dungeon {
     }
 
     private void handleBattleTurn(int level, boolean wantsToLeave) {
-        Monster currentMonster = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX);
         Character selectedCharacter = player.getSelectedCharacter();
 
         while (monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getMonsterHP() > 0 && player.getSelectedCharacter().getHealthPoints() > 0 && !wantsToLeave) {
+            Monster currentMonster = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX);
             int option = InputHelper.getOptionFromUser();
             switch (option) {
                 case 0:
                     throw new OperationCancelledException();
                 case 1:
                     currentMonster.takeDamage(player);
+                    printDeathMessageIfDead();
                     break;
                 case 2:
                     currentMonster.takeSpecialDamage(player);
+                    printDeathMessageIfDead();
                     break;
                 case 3:
                     try {
                         currentMonster.takeUltimateDamage(player);
+                        printDeathMessageIfDead();
                     } catch (HealthPointsGreaterThan20Exception e) {
                         System.out.println(e.getMessage());
                         return;
@@ -91,19 +90,24 @@ public class Dungeon {
                     break;
             }
 
-            selectedCharacter.setHP(currentMonster.monsterAttack(selectedCharacter));
+            if (isMonsterAlive()) {
+                selectedCharacter.setHP(currentMonster.monsterAttack(selectedCharacter));
+            } else {
+                monsters.get(LEVEL_INDEX).remove(currentMonster);
+            }
 
             System.out.println("\nThe level of the dungeon: " + level);
             System.out.println("Monsters left: " + monsters.get(LEVEL_INDEX).size());
         }
     }
 
-    private void handleMonsterDefeat() {
-        Monster currentMonster = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX);
-        System.out.println("\nYou killed the " + currentMonster.getName() +
-                " and you earned " + currentMonster.getGold() + " gold!");
-        player.addGold(currentMonster.getGold());
-        monsters.get(LEVEL_INDEX).remove(currentMonster);
+    private void printDeathMessageIfDead() {
+        if (!isMonsterAlive()) {
+            Monster currentMonster = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX);
+            System.out.println("\nYou killed the " + currentMonster.getName() +
+                    " and you earned " + currentMonster.getGold() + " gold!");
+            player.addGold(currentMonster.getGold());
+        }
     }
 
     private void handlePlayerDefeat() {

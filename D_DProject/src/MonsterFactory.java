@@ -1,7 +1,7 @@
 class MonsterFactory {
     public static Monster createMonster(MonsterType monsterType) {
         return switch (monsterType) {
-            case SLIME -> new Monster("Slime", 15, 30, 15, 35, true, false, false, false,
+            case SLIME -> new Monster("Slime", 5, 30, 15, 35, true, false, false, false,
                     new String[]{"Gelatinous Grasp", "Slime Splash", "Bouncy Bop", "Ooze Overture", "Squishy Slam"},
                     new String[]{"Let's keep it slimey.", "I'm gooey!", "Bloop bloop!",
                             "Feel the squish of my attacks!", "Prepare for a slimy surprise."},
@@ -10,7 +10,7 @@ class MonsterFactory {
                     new String[]{"Even slimes have feelings, you know?", "I'm feeling a bit...bubblieee.",
                             "Our connection is as gooey as love.", "I love our slimy bond.", "I'm gonna love the goo'out of you."});
 
-            case BABYSPIDERS -> new Monster("Baby Spider", 20, 35, 15, 35, true, false, false, false,
+            case BABYSPIDERS -> new Monster("Baby Spider", 5, 35, 15, 35, true, false, false, false,
                     new String[]{"Venomous Bite", "Web Spit", "Silk Wrap", "Arachnid Assault", "Spider Squeeze"},
                     new String[]{"No need to fear, we can coexist.", "Skittering sounds",
                             "Creeping up on you... quietly.", "Watch out, I'm quick!", "I have a venomous bite!"},
@@ -19,19 +19,19 @@ class MonsterFactory {
                     new String[]{"Captivated by spider charm.", "The silk of love binds us.", "You're tangled in my love's web.",
                             "Feel this delicate touch of mine", "In the web of love, we're entwined."});
 
-            case GOBLIN -> new Monster("Goblin", 25, 40, 15, 35, true, false, false, false,
+            case GOBLIN -> new Monster("Goblin", 5, 40, 15, 35, true, false, false, false,
                     new String[]{"Vicious Stab", "Rock Throw", "Goblin Ambush", "Sneaky Strike", "Mischief Slash"},
                     new String[]{"You disturb my home!", "Grrr!", "Beware the goblin mischief!", "Goblins UNITE!", "What are you doing here?"},
                     new String[]{"This is goblin territory!", "Time to face the goblin wrath!", "You've angered the goblin horde!", "Prepare for goblin mayhem!", "Goblin rage is unleashed!"},
                     new String[]{"Captivated by goblin charm.", "I like shiny things, and mischief ;)", "Hope you don't resist me", "Feel the mischievous touch of goblin affection.", "Why fight... let's make a pleasurable arrangement?"});
 
-            case SKELETON -> new Monster("Skeleton", 30, 45, 15, 35, true, false, false, false,
+            case SKELETON -> new Monster("Skeleton", 5, 45, 15, 35, true, false, false, false,
                     new String[]{"Boner Attack", "Rattle", "Bone Crush", "Spooky Strike", "Graveyard Slam"},
                     new String[]{"Click clack!", "Beware the bones!", "Skeletons arise!", "Rattling bones in the darkness.", "The undead march."},
                     new String[]{"You can't defeat what's already dead!", "Skeletons have the best bone-chilling jokes.", "Feel the chill of the grave!", "Bones of fury!", "Dance with the skeletons!"},
                     new String[]{"Enthralled by skeletal charm.", "Embrace the bone-chilling love.", "Caught in the dance of the undead.", "Feel the skeletal passion.", "In the arms of the skeletal embrace."});
 
-            case ZOMBIE -> new Monster("Zombie", 35, 50, 15, 35, true, false, false, false,
+            case ZOMBIE -> new Monster("Zombie", 5, 50, 15, 35, true, false, false, false,
                     new String[]{"Bite", "Grasp", "Lurch", "Flesh Tear", "Rotting Slam"},
                     new String[]{"Braaaains!", "Uuuuuh!", "Zombie shuffle.", "Graveyard whispers.", "Decay and despair."},
                     new String[]{"I want your brains... and your heart!", "The undead hunger never ends!", "Flesh is my favorite snack!", "Zombie rage!", "Rotting and relentless!"},
