@@ -3,7 +3,7 @@ public class Player {
     private Character selectedCharacter;
     private int xp;
     private int level;
-    private int gold = 100000;
+    private int gold;
     private boolean isEquiped;
     private String whatIsEquiped;
 
@@ -48,9 +48,7 @@ public class Player {
         return gold;
     }
 
-    public void setGold(int gold) {
-        this.gold = gold;
-    }
+    public void addGold(int gold) {this.gold += gold;}
 
     public void addLevelToPlayer(int levelToAdd){
         this.level+=levelToAdd;
