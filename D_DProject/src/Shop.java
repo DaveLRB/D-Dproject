@@ -21,21 +21,25 @@ public class Shop {
                 shopList.add(ItemFactory.create(ItemType.REGULAR_SWORD));
                 shopList.add(ItemFactory.create(ItemType.ZWEINHANDER));
                 shopList.add(ItemFactory.create(ItemType.BATTLE_AXE));
+                shopList.add(ItemFactory.create(ItemType.HEAL_POTION));
             }
             case "ASSASSIN" -> {
                 shopList.add(ItemFactory.create(ItemType.DAGGERS));
                 shopList.add(ItemFactory.create(ItemType.SAI));
                 shopList.add(ItemFactory.create(ItemType.SHORT_SWORD));
+                shopList.add(ItemFactory.create(ItemType.HEAL_POTION));
             }
             case "SORCERER" -> {
                 shopList.add(ItemFactory.create(ItemType.MAGIC_STAFF));
                 shopList.add(ItemFactory.create(ItemType.MAGIC_BOOK));
                 shopList.add(ItemFactory.create(ItemType.WAND));
+                shopList.add(ItemFactory.create(ItemType.HEAL_POTION));
             }
             case "BARD" -> {
                 shopList.add(ItemFactory.create(ItemType.SMALL_KNIFE));
                 shopList.add(ItemFactory.create(ItemType.CROSSBOW));
                 shopList.add(ItemFactory.create(ItemType.RAPIER));
+                shopList.add(ItemFactory.create(ItemType.HEAL_POTION));
             }
         }
     }

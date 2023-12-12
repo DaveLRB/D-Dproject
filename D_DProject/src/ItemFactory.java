@@ -13,6 +13,7 @@ public class ItemFactory {
             case SMALL_KNIFE -> new Item("SMALL KNIFE", 140, 160, 0, 5, 0, 0);
             case CROSSBOW -> new Item("CROSSBOW", 150, 170, 0, 9, 0, 0);
             case RAPIER -> new Item("RAPIER", 160, 180, 0, 8, 0, 0);
+            case HEAL_POTION -> new Item("HEAL POTION", 100, 50);
         };
     }
 }

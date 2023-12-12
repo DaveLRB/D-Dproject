@@ -102,7 +102,13 @@ public class GameMessage {
     private static int count = 1;
     public static void itemListShop(Shop shop) {
         count = 1;
-        shop.getShopList().forEach((s) -> System.out.println(count++ + " | " + s.getName() + " | Price: " + s.getPriceToBuy() + " | Skill: +" + s.getSkillToMenu()));
+        for (Item item : shop.getShopList()) {
+            if(item.getCharisma() != null) {
+                System.out.println(count++ + " | " + item.getName() + " | Price: " + item.getPriceToBuy() + " | Skill: +" + item.getSkillToMenu());
+            } else {
+                System.out.println(count++ + " | " + item.getName() + " | Price: " + item.getPriceToBuy());
+            }
+        }
     }
 
     public static void shopMenu() {
