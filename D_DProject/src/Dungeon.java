@@ -99,8 +99,11 @@ public class Dungeon {
     }
 
     private void handleMonsterDefeat() {
-        System.out.println("\nYou killed the " + monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getName());
-        monsters.get(LEVEL_INDEX).remove(monsters.get(LEVEL_INDEX).get(MONSTER_INDEX));
+        Monster currentMonster = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX);
+        System.out.println("\nYou killed the " + currentMonster.getName() +
+                " and you earned " + currentMonster.getGold() + " gold!");
+        player.addGold(currentMonster.getGold());
+        monsters.get(LEVEL_INDEX).remove(currentMonster);
     }
 
     private void handlePlayerDefeat() {

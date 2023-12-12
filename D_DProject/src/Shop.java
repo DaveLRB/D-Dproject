@@ -60,7 +60,7 @@ public class Shop {
             if (shopList.get(choice) == null) throw new ShopItemDontExistException();
             if(player.getGold() < shopList.get(choice).getPriceToBuy()) throw new DontHaveGoldException();
 
-            player.setGold(player.getGold() - shopList.get(choice).getPriceToBuy());
+            player.addGold(player.getGold() - shopList.get(choice).getPriceToBuy());
             player.getSelectedCharacter().getInventory().getItemList().add(shopList.get(choice));
             GameMessage.getShopSuccessMessage(shopList.get(choice));
             shopList.remove(choice);
