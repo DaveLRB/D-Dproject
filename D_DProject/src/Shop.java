@@ -48,9 +48,11 @@ public class Shop {
                 GameMessage.itemListShop(this);
                 GameMessage.getOption();
                 sell(sc.nextInt()-1);
+                break;
             case 2:
-
-
+                GameMessage.getPlayerInventoryListToUpgrade(player);
+                upgrade();
+                break;
         }
     }
 
@@ -70,20 +72,28 @@ public class Shop {
         }
     }
 
-    public void upgrade(Player player) {
-        GameMessage.getPlayerInventoryList(player);
-
+    public void upgrade() {
         try {
+            if(player.getSelectedCharacter().getInventory().getItemList().isEmpty()) throw new EmptyInventoryException();
+            GameMessage.getOption();
             int choice = sc.nextInt()-1;
-
             if (player.getSelectedCharacter().getInventory().getItemList().get(choice) == null)
                 throw new InvalidPlayerItemException();
             if (player.getGold() < player.getSelectedCharacter().getInventory().getItemList().get(choice).getPriceToUpgrade())
                 throw new NotEnoughFundsToUpgradeException();
+            if(player.getSelectedCharacter().getInventory().getItemList().get(choice).getWeaponBetterSkill() >= 50)
+                throw new CantUpgradeAnymoreException();
 
-            // TODO: 07/12/2023 logica para aumentar os status do item (se tiver que dar mais força, só pode aumentar a força) 
+            if(player.getSelectedCharacter().getInventory().getItemList().get(choice).getWeaponBetterSkill() < 47) {
+                player.getSelectedCharacter().getInventory().getItemList().get(choice).addToSkill(5);
+            } else {
+                player.getSelectedCharacter().getInventory().getItemList().get(choice).addToSkill(3);
+            }
 
-        } catch (InvalidPlayerItemException | NotEnoughFundsToUpgradeException e) {
+            GameMessage.upgradeSuccess(player.getSelectedCharacter().getInventory().getItemList().get(choice));
+            player.getSelectedCharacter().getInventory().getItemList().get(choice).setPriceToUpgrade((int) (player.getSelectedCharacter().getInventory().getItemList().get(choice).getPriceToUpgrade() * 0.35));
+
+        } catch (InvalidPlayerItemException | NotEnoughFundsToUpgradeException | EmptyInventoryException | CantUpgradeAnymoreException e) {
             GameMessage.getExceptionMessage(e.getMessage());
         }
     }

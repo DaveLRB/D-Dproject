@@ -253,4 +253,20 @@ public class Character {
         }
         return 0;
     }
+
+    public void removeCharisma(Integer charisma) {
+        this.charisma-=charisma;
+    }
+
+    public void removeDexterity(Integer dexterity) {
+        this.dexterity-=dexterity;
+    }
+
+    public void removeIntelligence(Integer intelligence) {
+        this.intelligence-=intelligence;
+    }
+
+    public void removeStrength(Integer strength) {
+        this.strength-=strength;
+    }
 }

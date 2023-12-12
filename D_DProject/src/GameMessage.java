@@ -67,7 +67,7 @@ public class GameMessage {
     }
 
     public static void getExceptionMessage(String message) {
-        System.out.println(message);
+        System.err.println(message);
     }
 
     public static void getDeadMessage() {
@@ -100,11 +100,22 @@ public class GameMessage {
         System.out.print("Option: ");
     }
 
-    private static int count2 = 0;
+    private static int count2 = 1;
 
     public static void getPlayerInventoryList(Player player) {
         for (Item item : player.getSelectedCharacter().getInventory().getItemList()) {
-            System.out.println(count2++ + " " + item.getName());
+            System.out.println(count2++ + " | " + item.getName());
+        }
+    }
+
+    public static void getPlayerInventoryListToUpgrade(Player player) {
+        count2=1;
+        for (Item item : player.getSelectedCharacter().getInventory().getItemList()) {
+            if(item.getWeaponBetterSkill() != 50) {
+                System.out.println(count2++ + " | " + item.getName() + " (" + item.getPriceToUpgrade() + " gold to upgrade)");
+            } else {
+                System.out.println(count2++ + " | " + item.getName() + " (Can't upgrade anymore)");
+            }
         }
     }
 
@@ -112,5 +123,9 @@ public class GameMessage {
         System.out.println("1 - Equip item");
         System.out.println("2 - Unquip item");
         System.out.println("2 - Exit");
+    }
+
+    public static void upgradeSuccess(Item item) {
+        System.out.println("You upgraded your "+item.getName()+".");
     }
 }
