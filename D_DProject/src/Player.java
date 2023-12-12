@@ -3,17 +3,18 @@ public class Player {
     private Character selectedCharacter;
     private int xp;
     private int level;
-    private int gold = 1000;
+    private int gold;
     private boolean isEquiped;
     private String whatIsEquiped;
-
+    private final int STARTING_LEVEL = 0;
+    private final int STARTING_GOLD = 25;
 
     public Player(String NAME, Character SELECTED_CHARACTER) {
         this.NAME = NAME;
         this.selectedCharacter = SELECTED_CHARACTER;
         this.whatIsEquiped = "Nothing";
-
-        this.level=0;
+        this.level = STARTING_LEVEL;
+        this.gold = STARTING_GOLD;
     }
 
     public void setWhatIsEquiped(String whatIsEquiped) {
@@ -40,24 +41,24 @@ public class Player {
         isEquiped = equiped;
     }
 
-    public void addXP(int xp){
-        this.xp+=xp;
+    public void addXP(int xp) {
+        this.xp += xp;
     }
 
     public int getGold() {
         return gold;
     }
 
-    public void setGold(int gold) {
-        this.gold = gold;
+    public void addGold(int gold) {
+        this.gold += gold;
     }
 
-    public void addLevelToPlayer(int levelToAdd){
-        this.level+=levelToAdd;
+    public void addLevelToPlayer(int levelToAdd) {
+        this.level += levelToAdd;
     }
 
-    public void addLevelToPlayer(){
-        this.level+=1;
+    public void addLevelToPlayer() {
+        this.level += 1;
     }
 
 
@@ -68,5 +69,8 @@ public class Player {
     public Character getSelectedCharacter() {
         return selectedCharacter;
     }
-    public void setCharacter(Character character){this.selectedCharacter=character;}
+
+    public void setCharacter(Character character) {
+        this.selectedCharacter = character;
+    }
 }
