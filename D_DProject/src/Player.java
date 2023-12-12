@@ -50,6 +50,7 @@ public class Player {
     }
 
     public void addGold(int gold) {this.gold += gold;}
+    public void removeGold(int gold){this.gold-=gold;}
 
 
     public void addLevelToPlayer(int levelToAdd) {
