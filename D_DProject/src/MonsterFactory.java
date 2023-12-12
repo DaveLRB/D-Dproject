@@ -5,25 +5,25 @@ class MonsterFactory {
                     new String[]{"Gelatinous Grasp", "Slime Splash", "Bouncy Bop", "Ooze Overture", "Squishy Slam"},
                     new String[]{"Let's keep it slimey.", "I'm gooey!", "Bloop bloop!",
                             "Feel the squish of my attacks!", "Prepare for a slimy surprise."},
-                    new String[]{"I'm not just a puddle of goo, you know!", "You've angered the slime!",
-                            "Get ready to be slimed!", "Gooey wrath incoming!", "In the dance of slime, we fight."},
-                    new String[]{"Even slimes have feelings, you know?", "I'm feeling a bit...bubblie.",
-                            "Our connection is as gooey as love.", "Seduction enhances our slimy bond.", "Slime embraces the dance of love."});
+                    new String[]{"I'm not just a puddle of goo, you know!", "I'm angry!",
+                            "Get ready to be slimed!", "Gooey wrath coming!", "GLO GLO oohuuuh"},
+                    new String[]{"Even slimes have feelings, you know?", "I'm feeling a bit...bubblieee.",
+                            "Our connection is as gooey as love.", "I love our slimy bond.", "I'm gonna love the goo'out of you."});
 
             case BABYSPIDERS -> new Monster("Baby Spider", 20, 35, 15, 35, true, false, false, false,
                     new String[]{"Venomous Bite", "Web Spit", "Silk Wrap", "Arachnid Assault", "Spider Squeeze"},
-                    new String[]{"No need for arachnophobia; we can coexist.", "Skittering sounds",
-                            "Creeping up on you... quietly.", "Watch out, I'm quick!", "You can't escape my silk!"},
-                    new String[]{"You've angered the arachnid!", "My patience is wearing thin!", "Feel my venomous wrath!",
-                            "My web is a trap of fury!", "I'll weave your demise with anger!"},
-                    new String[]{"Captivated by spider charm.", "The silk of love binds us.", "You're tangled in love's web.",
-                            "Feel the delicate touch of spider affection.", "In the web of love, we're entwined."});
+                    new String[]{"No need to fear, we can coexist.", "Skittering sounds",
+                            "Creeping up on you... quietly.", "Watch out, I'm quick!", "I have a venomous bite!"},
+                    new String[]{"You've angered the arachnid!", "My patience is wearing thin!", "You can't escape my silk!",
+                            "My web is a trap of fury!", "I'll weave your demise!"},
+                    new String[]{"Captivated by spider charm.", "The silk of love binds us.", "You're tangled in my love's web.",
+                            "Feel this delicate touch of mine", "In the web of love, we're entwined."});
 
             case GOBLIN -> new Monster("Goblin", 25, 40, 15, 35, true, false, false, false,
                     new String[]{"Vicious Stab", "Rock Throw", "Goblin Ambush", "Sneaky Strike", "Mischief Slash"},
-                    new String[]{"You disturb our home!", "Grrr!", "Beware the goblin mischief!", "Goblins unite!", "What are you doing here?"},
+                    new String[]{"You disturb my home!", "Grrr!", "Beware the goblin mischief!", "Goblins UNITE!", "What are you doing here?"},
                     new String[]{"This is goblin territory!", "Time to face the goblin wrath!", "You've angered the goblin horde!", "Prepare for goblin mayhem!", "Goblin rage is unleashed!"},
-                    new String[]{"Captivated by goblin charm.", "The mischief of goblins beckons.", "You're ensnared in goblin trickery.", "Feel the mischievous touch of goblin affection.", "In the web of goblin pranks, we're entwined."});
+                    new String[]{"Captivated by goblin charm.", "I like shiny things, and mischief ;)", "Hope you don't resist me", "Feel the mischievous touch of goblin affection.", "Why fight... let's make a pleasurable arrangement?"});
 
             case SKELETON -> new Monster("Skeleton", 30, 45, 15, 35, true, false, false, false,
                     new String[]{"Boner Attack", "Rattle", "Bone Crush", "Spooky Strike", "Graveyard Slam"},
@@ -39,9 +39,9 @@ class MonsterFactory {
 
             case SPECTRE -> new Monster("Spectre", 40, 55, 35, 55, true, true, false, false,
                     new String[]{"Ethereal Touch", "Soul Drain", "Shadow Strike", "Ghostly Wail", "Phantom Embrace"},
-                    new String[]{"Haunting your dreams!", "Wandering spirit!", "Whispers in the dark.", "Ephemeral presence.", "Chilling spectre."},
+                    new String[]{"Haunting your dreams!", "Wandering spirit!", "Whispers in the dark.", "Ephemeral presence.", "Chilling."},
                     new String[]{"I'm the whisper in the shadows!", "Your nightmares brought to life!", "Fear the ethereal touch!", "Spectral wrath unleashed!", "Ghostly vengeance!"},
-                    new String[]{"Enveloped in the spectral allure.", "Dancing with shadows.", "Embrace the ghostly love.", "Bewitched by the spectre.", "Soul entwined with the spectre's essence."});
+                    new String[]{"Enveloped in the spectral allure.", "Dancing with shadows.", "Embrace the ghostly love.", "By me, you will bewitched", "Soul entwined."});
 
             case WEREWOLF -> new Monster("Werewolf", 45, 60, 35, 55, true, false, false, false,
                     new String[]{"Claw Slash", "Howl", "Moonlit Pounce", "Feral Lunge", "Lunar Fury"},
@@ -51,9 +51,9 @@ class MonsterFactory {
 
             case GHOST -> new Monster("Ghost", 50, 65, 35, 55, true, true, false, false,
                     new String[]{"Haunt", "Vanish", "Ethereal Grasp", "Spectral Wail", "Ghostly Embrace"},
-                    new String[]{"Boo!", "Can't touch me!", "Whispers in the shadows.", "Dancing in the ethereal realm.", "Spectral echoes."},
-                    new String[]{"In the realm between life and death, I am unstoppable!", "You cannot escape the ghost's presence.", "Haunting the living with ethereal power!", "Spectral vengeance is swift!", "Feel the ghostly wrath!"},
-                    new String[]{"Your love warms my spectral heart!", "Eternally bound by ghostly affection.", "In the dance of the spirits, we unite.", "Feel the haunting beauty of our connection.", "Love transcends even death."});
+                    new String[]{"Boo!", "Can't touch me!", "Whispers in the shadows.", "Dancing in the ethereal realm.", "Ghostly echoes."},
+                    new String[]{"In the realm between life and death, I am unstoppable!", "You cannot escape the ghost's grasp.", "Hunting the living with ethereal power!", "A ghosts vengeance is swift!", "Feel the ghostly wrath!"},
+                    new String[]{"Your love warms my spectral heart!", "Eternally bound by ghostly affection.", "In the dance of the spirits, we unite.", "The haunting beauty of our connection.", "Love transcends even death."});
 
             case WITCH -> new Monster("Witch", 55, 70, 35, 55, true, false, false, false,
                     new String[]{"Spell Cast", "Potion Toss", "Enchanting Hex", "Mystic Blast", "Witch's Embrace"},
@@ -63,8 +63,8 @@ class MonsterFactory {
 
             case VAMPIRE -> new Monster("Vampire", 60, 75, 35, 55, true, false, false, false,
                     new String[]{"Bite", "Hypnotize", "Night's Embrace", "Dark Kiss", "Eternal Thirst"},
-                    new String[]{"I vant to suck your blood!", "Night is eternal!", "Whispers of the nocturnal creatures.", "Moonlight glimmers on immortal skin.", "Bats herald my nocturnal presence."},
-                    new String[]{"Beware the allure of the vampire!", "My bite is worse than my bark!", "In the shadows, I reveal my true nature.", "The dark side of immortality beckons.", "Feel the cold grip of eternal darkness."},
+                    new String[]{"I vant to suck your blood!", "Night is eternal!", "Whispers of the nocturnal creatures.", "Moonlight glimmers", "Bats herald my nocturnal presence."},
+                    new String[]{"Beware the allure of the vampire!", "My bite will cause endless pain!", "In the shadows, I reveal my true self.", "The dark side of immortality beckons.", "Feel the cold grip of eternal darkness."},
                     new String[]{"I thrive in the darkness, and so will you!", "Feel the embrace of the eternal night!", "Eternity in the gaze of a vampire.", "Our hearts beat in sync with the night.", "Join me in the everlasting dance of shadows."});
 
             case MUMMY -> new Monster("Mummy", 65, 80, 55, 75, true, false, false, false,
@@ -151,7 +151,7 @@ class MonsterFactory {
                     new String[]{"Behemoth's stomp causes earthquakes, and meteor shower descends!", "Feel the colossal power of the mighty behemoth!", "Colossal roar echoes through the battlefield.", "Mighty tremor, the ground shakes in fear.", "Behemoth's wrath, a force to be reckoned with."},
                     new String[]{"Stomping the earth and showering meteors!", "Behemoth, the embodiment of colossal might!", "Colossal roar, a symphony of power.", "Mighty tremor, the ground quakes in submission.", "Behemoth's wrath, a testament to its unstoppable might."});
 
-            case DRAGON -> new Monster("Dragon", 150, 150, 95, 105, true, false, false, false,
+            case DRAGON -> new Monster("Dragon", 150, 150, 95, 500, true, false, false, false,
                     new String[]{"Dragon Breath", "Wing Gust", "Fiery Roar", "Inferno Sweep", "Eternal Soar"},
                     new String[]{"Roar!", "Wings of fire!", "Dragon unleashes a fiery roar.", "Inferno sweep engulfs the battlefield.", "Eternal soar on the wings of the dragon."},
                     new String[]{"The dragon's breath engulfs all!", "Feel the gust of the dragon's wings.", "Fiery roar echoes through the skies.", "Inferno sweep, a blaze of draconic fury.", "Eternal soar, the dragon's wings carry our love."},
