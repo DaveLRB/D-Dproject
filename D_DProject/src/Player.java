@@ -3,7 +3,7 @@ public class Player {
     private Character selectedCharacter;
     private int xp;
     private int level;
-    private int gold;
+    private int gold = 1000;
     private boolean isEquiped;
     private String whatIsEquiped;
 

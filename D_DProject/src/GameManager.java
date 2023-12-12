@@ -64,7 +64,7 @@ public class GameManager {
                     playerItem = player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip);
                     if (player.isEquiped()) throw new AlreadyEquipedException();
                     player.setEquiped(true);
-                    player.setWhatIsEquiped(player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip).getName());
+                    player.setWhatIsEquiped(playerItem.getName());
                     player.getSelectedCharacter().setCharisma(playerItem.getCharisma());
                     player.getSelectedCharacter().setIntelligence(playerItem.getIntelligence());
                     player.getSelectedCharacter().setDexterity(playerItem.getDexterity());

@@ -23,10 +23,10 @@ public class Item {
     }
 
     public String getSkillToMenu() {
-        if (charisma > 0) return charisma + " charisma";
-        if (dexterity > 0) return dexterity + " dexterity";
-        if (intelligence > 0) return intelligence + " intelligence";
-        if (strength > 0) return strength + " strength";
+        if (charisma > 0) return charisma + " Charisma";
+        if (dexterity > 0) return dexterity + " Dexterity";
+        if (intelligence > 0) return intelligence + " Intelligence";
+        if (strength > 0) return strength + " Strength";
 
         return null;
     }

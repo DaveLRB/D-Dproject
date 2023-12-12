@@ -56,9 +56,28 @@ public class GameMessage {
 
     public static void getPlayerStats(Player player) {
         getOneBlankSpace();
+
+        Item playerItem = null;
+
+        if(player.isEquiped()) {
+            for (Item item : player.getSelectedCharacter().getInventory().getItemList()) {
+                if(player.getWhatIsEquiped().equals(item.getName())) {
+                    playerItem = item;
+                }
+            }
+        }
+
+        int str = playerItem != null ? playerItem.getStrength() : 0;
+        int dex = playerItem != null ? playerItem.getDexterity() : 0;
+        int cha = playerItem != null ? playerItem.getCharisma() : 0;
+        int ite = playerItem != null ? playerItem.getIntelligence() : 0;
+
         System.out.println("Character: "+player.getSelectedCharacter().getName()+"\n" + "\n"+
-                "Types of attack:\nStrength: "+player.getSelectedCharacter().getStrength()+"\nDexterity: "+player.getSelectedCharacter().getDexterity()+
-                "\nCharisma: "+player.getSelectedCharacter().getCharisma()+"\nIntelligence: "+player.getSelectedCharacter().getIntelligence());
+                "Types of attack:" +
+                "\nStrength: "+player.getSelectedCharacter().getStrength() + " (+"+ str +")"
+                +"\nDexterity: " +player.getSelectedCharacter().getDexterity() + " (+"+ dex +")"
+                + "\nCharisma: "+player.getSelectedCharacter().getCharisma() + " (+"+ cha +")"
+                +"\nIntelligence: "+player.getSelectedCharacter().getIntelligence() + " (+"+ ite +")");
         getOneBlankSpace();
         System.out.println("Equiped: " + player.getWhatIsEquiped());
         System.out.println("HP: "+player.getSelectedCharacter().getHealthPoints());
