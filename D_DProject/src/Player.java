@@ -1,16 +1,16 @@
 public class Player {
-    private final String NAME;
+    private static final int STARTING_LEVEL = 0;
+    private static final int STARTING_GOLD = 25; //static because is related to the class instead of the object
     private Character selectedCharacter;
+    private final String name; //variable because it's being used in the constructor and the name variable varies between objects
     private int xp;
     private int level;
     private int gold;
     private boolean isEquiped;
     private String whatIsEquiped;
-    private final int STARTING_LEVEL = 0;
-    private final int STARTING_GOLD = 25;
 
-    public Player(String NAME, Character SELECTED_CHARACTER) {
-        this.NAME = NAME;
+    public Player(String name, Character SELECTED_CHARACTER) {
+        this.name = name;
         this.selectedCharacter = SELECTED_CHARACTER;
         this.whatIsEquiped = "Nothing";
         this.level = STARTING_LEVEL;
@@ -63,7 +63,7 @@ public class Player {
 
 
     public String getName() {
-        return NAME;
+        return name;
     }
 
     public Character getSelectedCharacter() {
