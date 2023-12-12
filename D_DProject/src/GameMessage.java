@@ -147,10 +147,19 @@ public class GameMessage {
     public static void getInventoryMenu() {
         System.out.println("1 - Equip item");
         System.out.println("2 - Unquip item");
+        System.out.println("3 - USE");
         System.out.println("2 - Exit");
     }
 
     public static void upgradeSuccess(Item item) {
         System.out.println("You upgraded your "+item.getName()+".");
+    }
+
+    public static void errorUsingSomething(Player player) {
+        System.out.println("Interesting " + player.getSelectedCharacter().getInventory().getItemList() + "... but this cannot be used, only equipped.");
+    }
+
+    public static void usedHealPotion() {
+        System.out.println("You drinked the potion and restored your HP to 100!");
     }
 }

@@ -71,10 +71,12 @@ public class Shop {
             if (player.getGold() < shopList.get(choice).getPriceToBuy()) throw new DontHaveGoldException();
 
             player.addGold(shopList.get(choice).getPriceToBuy());
-            player.addGold(player.getGold() - shopList.get(choice).getPriceToBuy());
+            player.removeGold(shopList.get(choice).getPriceToBuy());
             player.getSelectedCharacter().getInventory().getItemList().add(shopList.get(choice));
             GameMessage.getShopSuccessMessage(shopList.get(choice));
-            shopList.remove(choice);
+            if(!shopList.get(choice).getName().equals("HEAL POTION")) {
+                shopList.remove(choice);
+            }
 
         } catch (ShopIsEmptyException | ShopItemDontExistException | DontHaveGoldException e) {
             GameMessage.getExceptionMessage(e.getMessage());

@@ -63,6 +63,9 @@ public class GameManager {
                     int choiceEquip = sc.nextInt() - 1;
                     playerItem = player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip);
                     if (player.isEquiped()) throw new AlreadyEquipedException();
+                    if (choiceEquip < 0 || choiceEquip >= player.getSelectedCharacter().getInventory().getItemList().size()) {
+                        throw new UnableToEquipAnUnknownItem();
+                    }
                     player.setEquiped(true);
                     player.setWhatIsEquiped(playerItem.getName());
                     player.getSelectedCharacter().setCharisma(playerItem.getCharisma());
@@ -74,12 +77,29 @@ public class GameManager {
                     int choiceEquip = sc.nextInt() - 1;
                     playerItem = player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip);
                     if (!player.isEquiped()) throw new NothingEquipedException();
+                    if (choiceEquip < 0 || choiceEquip >= player.getSelectedCharacter().getInventory().getItemList().size()) {
+                        throw new UnableToEquipAnUnknownItem();
+                    }
                     player.setEquiped(false);
                     player.setWhatIsEquiped("Nothing");
                     player.getSelectedCharacter().removeCharisma(playerItem.getCharisma());
                     player.getSelectedCharacter().removeIntelligence(playerItem.getIntelligence());
                     player.getSelectedCharacter().removeDexterity(playerItem.getDexterity());
                     player.getSelectedCharacter().removeStrength(playerItem.getStrength());
+                }
+                case 3 -> {
+                    int choicePotion = sc.nextInt() - 1;
+                    playerItem = player.getSelectedCharacter().getInventory().getItemList().get(choicePotion);
+                    if (choicePotion < 0 || choicePotion >= player.getSelectedCharacter().getInventory().getItemList().size()) {
+                        throw new UnableToEquipAnUnknownItem();
+                    }
+                    if(playerItem.getName().equals("HEAL POTION")) {
+                        player.getSelectedCharacter().setHP(100);
+                        GameMessage.usedHealPotion();
+                        player.getSelectedCharacter().getInventory().getItemList().remove(choicePotion);
+                    } else {
+                        GameMessage.errorUsingSomething(player);
+                    }
                 }
             }
         } catch (EmptyInventoryException | AlreadyEquipedException | NothingEquipedException e) {
