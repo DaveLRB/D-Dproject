@@ -3,7 +3,7 @@ public class ItemFactory {
         return switch (itemType) {
             case REGULAR_SWORD -> new Item("REGULAR SWORD", 140, 160, 7, 0, 0 ,0);
             case MAGIC_STAFF -> new Item("MAGIC STAFF", 150, 170, 0, 0 ,0, 11);
-            case ZWEINHANDER -> new Item("ZWEINHAND", 150, 160, 12, 0, 0, 0);
+            case ZWEINHANDER -> new Item("ZWEINHANDER", 150, 160, 12, 0, 0, 0);
             case BATTLE_AXE -> new Item("BATTLE AXE", 170, 190, 10, 0, 0, 0);
             case DAGGERS -> new Item("DAGGERS", 170, 190, 0, 0, 8, 0);
             case SHORT_SWORD -> new Item("SHORT SWORD", 160, 190, 0, 0, 7, 0);

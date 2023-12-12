@@ -88,7 +88,10 @@ public class Shop {
             GameMessage.getOption();
             int choice = sc.nextInt() - 1;
 
-            if (playerItem.get(choice) == null) throw new InvalidPlayerItemException();
+            if (choice < 0 || choice >= shopList.size()) {
+                throw new InvalidPlayerItemException();
+            }
+
             if (player.getGold() < playerItem.get(choice).getPriceToUpgrade())
                 throw new NotEnoughFundsToUpgradeException();
             if (playerItem.get(choice).getWeaponBetterSkill() >= 50) throw new CantUpgradeAnymoreException();

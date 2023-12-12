@@ -18,6 +18,11 @@ public class Item {
         this.priceToUpgrade = priceToUpgrade;
     }
 
+    public Item(String name, int heal) {
+        this.name = name;
+
+    }
+
     public void setPriceToUpgrade(Integer priceToUpgrade) {
         this.priceToUpgrade += priceToUpgrade;
     }
