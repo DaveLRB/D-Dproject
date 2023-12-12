@@ -1,19 +1,20 @@
 public class Player {
-    private final String NAME;
+    private static final int STARTING_LEVEL = 0;
+    private static final int STARTING_GOLD = 25; //static because is related to the class instead of the object
     private Character selectedCharacter;
+    private final String name; //variable because it's being used in the constructor and the name variable varies between objects
     private int xp;
     private int level;
-    private int gold = 1000;
+    private int gold;
     private boolean isEquiped;
     private String whatIsEquiped;
 
-
-    public Player(String NAME, Character SELECTED_CHARACTER) {
-        this.NAME = NAME;
+    public Player(String name, Character SELECTED_CHARACTER) {
+        this.name = name;
         this.selectedCharacter = SELECTED_CHARACTER;
         this.whatIsEquiped = "Nothing";
-
-        this.level=0;
+        this.level = STARTING_LEVEL;
+        this.gold = STARTING_GOLD;
     }
 
     public void setWhatIsEquiped(String whatIsEquiped) {
@@ -40,33 +41,36 @@ public class Player {
         isEquiped = equiped;
     }
 
-    public void addXP(int xp){
-        this.xp+=xp;
+    public void addXP(int xp) {
+        this.xp += xp;
     }
 
     public int getGold() {
         return gold;
     }
 
-    public void setGold(int gold) {
-        this.gold = gold;
+    public void addGold(int gold) {this.gold += gold;}
+    public void removeGold(int gold){this.gold-=gold;}
+
+
+    public void addLevelToPlayer(int levelToAdd) {
+        this.level += levelToAdd;
     }
 
-    public void addLevelToPlayer(int levelToAdd){
-        this.level+=levelToAdd;
-    }
-
-    public void addLevelToPlayer(){
-        this.level+=1;
+    public void addLevelToPlayer() {
+        this.level += 1;
     }
 
 
     public String getName() {
-        return NAME;
+        return name;
     }
 
     public Character getSelectedCharacter() {
         return selectedCharacter;
     }
-    public void setCharacter(Character character){this.selectedCharacter=character;}
+
+    public void setCharacter(Character character) {
+        this.selectedCharacter = character;
+    }
 }
