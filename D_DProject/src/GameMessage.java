@@ -82,6 +82,7 @@ public class GameMessage {
         System.out.println("Equiped: " + player.getWhatIsEquiped());
         System.out.println("HP: "+player.getSelectedCharacter().getHealthPoints());
         System.out.println("XP: "+player.getXp());
+        System.out.println("GOLD: "+player.getGold());
         getOneBlankSpace();
     }
 
@@ -160,6 +161,6 @@ public class GameMessage {
     }
 
     public static void usedHealPotion() {
-        System.out.println("You drinked the potion and restored your HP to 100!");
+        System.out.println("You drank the potion and fully restored your HP.");
     }
 }

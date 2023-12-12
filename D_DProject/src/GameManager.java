@@ -94,7 +94,7 @@ public class GameManager {
                         throw new UnableToEquipAnUnknownItem();
                     }
                     if(playerItem.getName().equals("HEAL POTION")) {
-                        player.getSelectedCharacter().setHP(100);
+                        player.getSelectedCharacter().setHealthPoints(100);
                         GameMessage.usedHealPotion();
                         player.getSelectedCharacter().getInventory().getItemList().remove(choicePotion);
                     } else {
