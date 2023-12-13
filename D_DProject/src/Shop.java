@@ -2,6 +2,7 @@ import exceptions.*;
 
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Shop {
     private LinkedList<Item> shopList;
