@@ -60,6 +60,7 @@ public class GameManager {
             int choice = sc.nextInt();
             switch (choice) {
                 case 1 -> {
+                    GameMessage.getOption();
                     int choiceEquip = sc.nextInt() - 1;
                     playerItem = player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip);
                     if (player.isEquiped()) throw new AlreadyEquipedException();
@@ -74,6 +75,7 @@ public class GameManager {
                     player.getSelectedCharacter().setStrength(playerItem.getStrength());
                 }
                 case 2 -> {
+                    GameMessage.getOption();
                     int choiceEquip = sc.nextInt() - 1;
                     playerItem = player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip);
                     if (!player.isEquiped()) throw new NothingEquipedException();
@@ -114,7 +116,7 @@ public class GameManager {
     //Method to start the game: player need select a character. When he select, the character is stored at character instance.
     private void playerSelectCharacter() {
         GameMessage.getPlayerName();
-        this.playerName = sc.next();
+        this.playerName = sc.nextLine();
         GameMessage.getOneBlankSpace();
         GameMessage.getWelcomeMessage(playerName);
         try {
@@ -181,7 +183,6 @@ public class GameManager {
 
     //When player die he need choose if create a new character or just leave game
     public void playerDeadMenu() {
-        GameMessage.getDeadMessage();
         GameMessage.getMenuDead();
         switch (sc.next()) {
             case "1":

@@ -57,6 +57,11 @@ public class Shop {
                 GameMessage.getPlayerInventoryListToUpgrade(player);
                 upgrade();
                 break;
+            case 3:
+                buy();
+                break;
+            case 4:
+                break;
         }
     }
 
@@ -85,8 +90,6 @@ public class Shop {
 
     public void upgrade() {
         try {
-
-
             LinkedList<Item> playerItem = player.getSelectedCharacter().getInventory().getItemList();
 
             if (playerItem.isEmpty()) throw new EmptyInventoryException();
@@ -109,11 +112,12 @@ public class Shop {
             }
 
             GameMessage.upgradeSuccess(playerItem.get(choice));
+            player.removeGold(playerItem.get(choice).getPriceToUpgrade());
             playerItem.get(choice).setPriceToUpgrade((int) (playerItem.get(choice).getPriceToUpgrade() * 0.35));
 
             if (player.isEquiped()) {
                 Item getPlayerItem = null;
-                for (Item item : player.getSelectedCharacter().getInventory().getItemList()) {
+                for (Item item : playerItem) {
                     if (player.getWhatIsEquiped().equals(item.getName())) getPlayerItem = item;
                 }
 
@@ -130,6 +134,26 @@ public class Shop {
 
         } catch (InvalidPlayerItemException | NotEnoughFundsToUpgradeException | EmptyInventoryException |
                  CantUpgradeAnymoreException e) {
+            GameMessage.getExceptionMessage(e.getMessage());
+        }
+    }
+
+    public void buy() {
+        try {
+            LinkedList<Item> playerItem = player.getSelectedCharacter().getInventory().getItemList();
+            if (playerItem.isEmpty()) throw new EmptyInventoryException();
+
+            GameMessage.getPlayerInventoryList(player);
+            GameMessage.whatItemYouWantToSell();
+            GameMessage.getOption();
+            int choice = sc.nextInt() - 1;
+
+            if (playerItem.get(choice) == null) throw new InvalidPlayerItemException();
+
+            player.addGold(playerItem.get(choice).getPriceToBuy() / 2);
+            GameMessage.successSell(playerItem, choice);
+            playerItem.remove(choice);
+        } catch (EmptyInventoryException | InvalidPlayerItemException e){
             GameMessage.getExceptionMessage(e.getMessage());
         }
     }
