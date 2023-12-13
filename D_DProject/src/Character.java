@@ -140,7 +140,7 @@ public class Character {
     }
 
     public void setHealthPoints(int healthPoints) {
-        this.healthPoints += healthPoints;
+        this.healthPoints = healthPoints;
     }
 
     public void setHP(int healthPoints) {

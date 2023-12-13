@@ -10,5 +10,6 @@ public enum ItemType {
     WAND,
     SMALL_KNIFE,
     CROSSBOW,
-    RAPIER;
+    RAPIER,
+    HEAL_POTION;
 }

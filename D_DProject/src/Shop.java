@@ -2,6 +2,7 @@ import exceptions.*;
 
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Shop {
     private LinkedList<Item> shopList;
@@ -21,21 +22,25 @@ public class Shop {
                 shopList.add(ItemFactory.create(ItemType.REGULAR_SWORD));
                 shopList.add(ItemFactory.create(ItemType.ZWEINHANDER));
                 shopList.add(ItemFactory.create(ItemType.BATTLE_AXE));
+                shopList.add(ItemFactory.create(ItemType.HEAL_POTION));
             }
             case "ASSASSIN" -> {
                 shopList.add(ItemFactory.create(ItemType.DAGGERS));
                 shopList.add(ItemFactory.create(ItemType.SAI));
                 shopList.add(ItemFactory.create(ItemType.SHORT_SWORD));
+                shopList.add(ItemFactory.create(ItemType.HEAL_POTION));
             }
             case "SORCERER" -> {
                 shopList.add(ItemFactory.create(ItemType.MAGIC_STAFF));
                 shopList.add(ItemFactory.create(ItemType.MAGIC_BOOK));
                 shopList.add(ItemFactory.create(ItemType.WAND));
+                shopList.add(ItemFactory.create(ItemType.HEAL_POTION));
             }
             case "BARD" -> {
                 shopList.add(ItemFactory.create(ItemType.SMALL_KNIFE));
                 shopList.add(ItemFactory.create(ItemType.CROSSBOW));
                 shopList.add(ItemFactory.create(ItemType.RAPIER));
+                shopList.add(ItemFactory.create(ItemType.HEAL_POTION));
             }
         }
     }
@@ -53,6 +58,11 @@ public class Shop {
                 GameMessage.getPlayerInventoryListToUpgrade(player);
                 upgrade();
                 break;
+            case 3:
+                buy();
+                break;
+            case 4:
+                break;
         }
     }
 
@@ -67,10 +77,12 @@ public class Shop {
             if (player.getGold() < shopList.get(choice).getPriceToBuy()) throw new DontHaveGoldException();
 
             player.addGold(shopList.get(choice).getPriceToBuy());
-            player.addGold(player.getGold() - shopList.get(choice).getPriceToBuy());
+            player.removeGold(shopList.get(choice).getPriceToBuy());
             player.getSelectedCharacter().getInventory().getItemList().add(shopList.get(choice));
             GameMessage.getShopSuccessMessage(shopList.get(choice));
-            shopList.remove(choice);
+            if(!shopList.get(choice).getName().equals("HEAL POTION")) {
+                shopList.remove(choice);
+            }
 
         } catch (ShopIsEmptyException | ShopItemDontExistException | DontHaveGoldException e) {
             GameMessage.getExceptionMessage(e.getMessage());
@@ -79,8 +91,6 @@ public class Shop {
 
     public void upgrade() {
         try {
-
-
             LinkedList<Item> playerItem = player.getSelectedCharacter().getInventory().getItemList();
 
             if (playerItem.isEmpty()) throw new EmptyInventoryException();
@@ -88,7 +98,10 @@ public class Shop {
             GameMessage.getOption();
             int choice = sc.nextInt() - 1;
 
-            if (playerItem.get(choice) == null) throw new InvalidPlayerItemException();
+            if (choice < 0 || choice >= shopList.size()) {
+                throw new InvalidPlayerItemException();
+            }
+
             if (player.getGold() < playerItem.get(choice).getPriceToUpgrade())
                 throw new NotEnoughFundsToUpgradeException();
             if (playerItem.get(choice).getWeaponBetterSkill() >= 50) throw new CantUpgradeAnymoreException();
@@ -100,11 +113,12 @@ public class Shop {
             }
 
             GameMessage.upgradeSuccess(playerItem.get(choice));
+            player.removeGold(playerItem.get(choice).getPriceToUpgrade());
             playerItem.get(choice).setPriceToUpgrade((int) (playerItem.get(choice).getPriceToUpgrade() * 0.35));
 
             if (player.isEquiped()) {
                 Item getPlayerItem = null;
-                for (Item item : player.getSelectedCharacter().getInventory().getItemList()) {
+                for (Item item : playerItem) {
                     if (player.getWhatIsEquiped().equals(item.getName())) getPlayerItem = item;
                 }
 
@@ -121,6 +135,26 @@ public class Shop {
 
         } catch (InvalidPlayerItemException | NotEnoughFundsToUpgradeException | EmptyInventoryException |
                  CantUpgradeAnymoreException e) {
+            GameMessage.getExceptionMessage(e.getMessage());
+        }
+    }
+
+    public void buy() {
+        try {
+            LinkedList<Item> playerItem = player.getSelectedCharacter().getInventory().getItemList();
+            if (playerItem.isEmpty()) throw new EmptyInventoryException();
+
+            GameMessage.getPlayerInventoryList(player);
+            GameMessage.whatItemYouWantToSell();
+            GameMessage.getOption();
+            int choice = sc.nextInt() - 1;
+
+            if (playerItem.get(choice) == null) throw new InvalidPlayerItemException();
+
+            player.addGold(playerItem.get(choice).getPriceToBuy() / 2);
+            GameMessage.successSell(playerItem, choice);
+            playerItem.remove(choice);
+        } catch (EmptyInventoryException | InvalidPlayerItemException e){
             GameMessage.getExceptionMessage(e.getMessage());
         }
     }
