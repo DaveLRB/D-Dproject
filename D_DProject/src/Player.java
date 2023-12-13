@@ -5,7 +5,7 @@ public class Player {
     private final String name; //variable because it's being used in the constructor and the name variable varies between objects
     private int xp;
     private int level;
-    private int gold = 1000;
+    private int gold;
     private boolean isEquiped;
     private String whatIsEquiped;
 
@@ -14,7 +14,7 @@ public class Player {
         this.selectedCharacter = SELECTED_CHARACTER;
         this.whatIsEquiped = "Nothing";
         this.level = STARTING_LEVEL;
-        this.gold = STARTING_GOLD;
+        this.gold = 10000;
     }
 
     public void setWhatIsEquiped(String whatIsEquiped) {

@@ -6,7 +6,7 @@ public class Item {
     private Integer charisma;
     private Integer dexterity;
     private Integer intelligence;
-    private boolean bought;
+    private Integer heal;
 
     public Item(String name, Integer priceToBuy, Integer priceToUpgrade, Integer strength, Integer charisma, Integer dexterity, Integer intelligence) {
         this.name = name;
@@ -16,6 +16,12 @@ public class Item {
         this.dexterity = dexterity;
         this.intelligence = intelligence;
         this.priceToUpgrade = priceToUpgrade;
+    }
+
+    public Item(String name, Integer heal, Integer price) {
+        this.name = name;
+        this.heal = heal;
+        this.priceToBuy = price;
     }
 
     public void setPriceToUpgrade(Integer priceToUpgrade) {

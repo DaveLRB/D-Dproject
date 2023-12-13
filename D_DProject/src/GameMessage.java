@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 public class GameMessage {
     public static void getMenuMessage() {
         System.out.println("1 - Enter the dungeon");
@@ -90,8 +92,12 @@ public class GameMessage {
                 + "\nIntelligence: " + player.getSelectedCharacter().getIntelligence() + " (+" + ite + ")");
         getOneBlankSpace();
         System.out.println("Equiped: " + player.getWhatIsEquiped());
-        System.out.println("HP: " + player.getSelectedCharacter().getHealthPoints());
-        System.out.println("XP: " + player.getXp());
+
+        System.out.println("HP: "+player.getSelectedCharacter().getHealthPoints());
+        System.out.println("XP: "+player.getXp());
+        System.out.println("GOLD: "+player.getGold());
+
+        
         getOneBlankSpace();
     }
 
@@ -113,13 +119,20 @@ public class GameMessage {
 
     public static void itemListShop(Shop shop) {
         count = 1;
-        shop.getShopList().forEach((s) -> System.out.println(count++ + " | " + s.getName() + " | Price: " + s.getPriceToBuy() + " | Skill: +" + s.getSkillToMenu()));
+        for (Item item : shop.getShopList()) {
+            if(item.getCharisma() != null) {
+                System.out.println(count++ + " | " + item.getName() + " | Price: " + item.getPriceToBuy() + " | Skill: +" + item.getSkillToMenu());
+            } else {
+                System.out.println(count++ + " | " + item.getName() + " | Price: " + item.getPriceToBuy());
+            }
+        }
     }
 
     public static void shopMenu() {
         System.out.println("1 - BUY");
         System.out.println("2 - UPGRADE");
-        System.out.println("3 - LEAVE");
+        System.out.println("3 - SELL");
+        System.out.println("4 - LEAVE");
     }
 
     public static void getShopSuccessMessage(Item item) {
@@ -157,10 +170,28 @@ public class GameMessage {
     public static void getInventoryMenu() {
         System.out.println("1 - Equip item");
         System.out.println("2 - Unquip item");
-        System.out.println("2 - Exit");
+        System.out.println("3 - USE");
+        System.out.println("4 - Exit");
     }
 
     public static void upgradeSuccess(Item item) {
         System.out.println("You upgraded your " + item.getName() + ".");
+    }
+
+    public static void errorUsingSomething(Player player) {
+        System.out.println("Interesting " + player.getSelectedCharacter().getInventory().getItemList() + "... but this cannot be used, only equipped.");
+    }
+
+    public static void usedHealPotion() {
+        System.out.println("You drank the potion and fully restored your HP.");
+    }
+
+    public static void whatItemYouWantToSell() {
+        System.out.println("What item you want to sell?");
+    }
+
+    public static void successSell(LinkedList<Item> playerItem, int index) {
+        Item item = playerItem.get(index);
+        System.out.println("You sold "+item.getName() + " for " + item.getPriceToBuy()/2 + " gold.");
     }
 }
