@@ -25,6 +25,7 @@ git clone https://github.com/DaveLRB/D-Dproject/
 ```
 
 Open the project in IntelliJ or your preferred IDE.
+
 ## Contributors
 
 - [David Barrela](https://www.github.com/DaveLRB)
