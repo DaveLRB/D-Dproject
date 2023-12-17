@@ -33,9 +33,9 @@ class MonsterFactory {
 
             case ZOMBIE -> new Monster("Zombie", 35, 50, 15, 35, true, false, false, false,
                     new String[]{"Bite", "Grasp", "Lurch", "Flesh Tear", "Rotting Slam"},
-                    new String[]{"Braaaains!", "Uuuuuh!", "Zombie shuffle.", "Graveyard whispers.", "Decay and despair."},
-                    new String[]{"I want your brains... and your heart!", "The undead hunger never ends!", "Flesh is my favorite snack!", "Zombie rage!", "Rotting and relentless!"},
-                    new String[]{"Ensnared by the undead charm.", "In the cold embrace of the zombie.", "Resistless allure of the undead.", "Feel the decaying love.", "Dance with the zombie horde."});
+                    new String[]{"Braaaains! The undead hunger.", "This is the thriller", "Graveyard whispers linger.", "Flesh Tear, a gruesome delight.", "Echoes of decay."},
+                    new String[]{"The undead hunger never ends!", "Flesh is my favorite snack!", "Zombie rage!", "Rotting and restless!", "With your bodies I feast"},
+                    new String[]{"Ensnared by the undead charm.", "Sleep in my cold embrace.", "I want your brains... and your heart!", "Feel the decaying love.", "Watch these moves. (;"});
 
             case SPECTRE -> new Monster("Spectre", 40, 55, 35, 55, true, true, false, false,
                     new String[]{"Ethereal Touch", "Soul Drain", "Shadow Strike", "Ghostly Wail", "Phantom Embrace"},
@@ -58,7 +58,7 @@ class MonsterFactory {
             case WITCH -> new Monster("Witch", 55, 70, 35, 55, true, false, false, false,
                     new String[]{"Spell Cast", "Potion Toss", "Enchanting Hex", "Mystic Blast", "Witch's Embrace"},
                     new String[]{"Double, double, toil and trouble!", "You're in my hex!", "Whispers of ancient incantations.", "Potion bubbling in the cauldron.", "Mystical energies surround us."},
-                    new String[]{"Magic flows through my veins!", "The witch's brew will seal your fate.", "Hexes and curses, my arsenal of power!", "Feel the magical wrath of a sorceress!", "Doomed by the mystic forces!"},
+                    new String[]{"Magic flows through my veins!", "The witch's brew will seal your fate.", "Hexes and curses!", "Feel the magical wrath of a witch", "Doomed by the mystic forces!"},
                     new String[]{"Enchanted by your presence, my dear!", "A spell of love is cast upon us.", "In the dance of enchantment, we are entwined.", "Feel the magical embrace of love.", "Our love is a potion of eternal bliss."});
 
             case VAMPIRE -> new Monster("Vampire", 60, 75, 35, 55, true, false, false, false,
@@ -81,13 +81,13 @@ class MonsterFactory {
 
             case HARPY -> new Monster("Harpy", 75, 90, 55, 75, true, false, false, false,
                     new String[]{"Talon Slash", "Wind Gust", "Feather Dance", "Aerial Assault", "Sky's Embrace"},
-                    new String[]{"Caw caw!", "Feathers in the wind!", "Dance of the feathers.", "Whispers in the breeze.", "Feel the gentle touch of my wings."},
+                    new String[]{"Approaching silently on wings.", "Whispers carried by the breeze.", "Feathers gently rustle in the air.", "Subtle touch of wings in motion.", "Embracing the calm carried by the breeze."},
                     new String[]{"High above, the harpy descends!", "The talons of the harpy know no mercy.", "Winds carry the harpy's fury.", "Aerial dominance in every gust.", "Feel the storm of the harpy's wrath."},
                     new String[]{"Our love soars on the wings of my voice!", "Feel the tender breeze of our connection.", "In the embrace of the sky, love takes flight.", "Whispers of love in the wind.", "Our love, like feathers, dances in the air."});
 
             case CENTAUR -> new Monster("Centaur", 80, 95, 55, 75, true, false, false, false,
                     new String[]{"Bow Shot", "Hoof Kick", "Rapid Arrows", "Thundering Charge", "Nature's Wrath"},
-                    new String[]{"Half human, half horse!", "Galloping charge!", "Echoes of hooves in the forest.", "The centaur's arrow whispers death.", "Feel the earth shake beneath my hooves."},
+                    new String[]{"Half human, half horse i am!", "Galloping charge!", "Echoes of hooves in the forest.", "The centaur's arrow whispers death.", "Feel the earth shake beneath my hooves."},
                     new String[]{"The centaur's bow strikes true!", "Trample beneath the hooves of the centaur.", "Nature itself lends strength to the charge.", "Swift as the wind, deadly as the storm.", "The forest echoes with the centaur's fury."},
                     new String[]{"Swift as the wind, powerful as the storm!", "Our love gallops with the grace of a centaur.", "Feel the heartbeat of nature in our love.", "The centaur's love is as wild as the forest.", "In the dance of hooves, our love finds rhythm."});
 
@@ -111,9 +111,9 @@ class MonsterFactory {
 
             case GRIFFIN -> new Monster("Griffin", 100, 115, 75, 95, true, false, false, false,
                     new String[]{"Claw Swipe", "Wing Buffet", "Sky Roar", "Talon Gust", "Feather Frenzy"},
-                    new String[]{"Screech!", "Feathers in the storm!", "The griffin's screech echoes across the sky.", "Gust of wind from the beating wings.", "A feathered symphony of fury."},
+                    new String[]{"---Screech!", "Feathers in the storm!", "The griffin's screech echoes across the sky.", "Gust of wind from the beating wings.", "A feathered symphony of fury."},
                     new String[]{"Griffin soars through the heavens, talons ready!", "Feel the might of the griffin's wings and claws!", "Sky-roaring fury descends from above.", "Talon gust, a tempest on the wind.", "Feather frenzy, the dance of a mythical storm."},
-                    new String[]{"Aerial onslaught from the king of mythical beasts!", "I'm the storm that sweeps you off your feet!", "Our love soars high, like the griffin's majestic wings.", "Feel the gust of passion, like the griffin's wing buffet.", "In the feathered embrace, our connection takes flight."});
+                    new String[]{"Aerial onslaught from the king!", "I'm the storm that sweeps you off your feet!", "Our love soars high, like my majestic wings.", "Feel the gust of passion.", "In the feathered embrace, our connection takes flight."});
 
             case CHIMERA -> new Monster("Chimera", 105, 120, 75, 95, true, false, false, false,
                     new String[]{"Fire Breath", "Tail Whip", "Venomous Bite", "Triple Roar", "Inferno Claw"},
@@ -123,7 +123,7 @@ class MonsterFactory {
 
             case MEDUSA -> new Monster("Medusa", 110, 125, 75, 95, true, false, false, false,
                     new String[]{"Snake Bite", "Stone Gaze", "Venomous Hiss", "Coiled Strike", "Heart of Stone"},
-                    new String[]{"Serpent hiss!", "Petrifying stare!", "A venomous hiss echoes through the abyss.", "Coiled strike, the serpent prepares to strike.", "Heart of stone, the gaze that petrifies."},
+                    new String[]{"Hiss of the serpent, a symphony of danger.", "The abyss shivers with the echo of my venomous hiss.", "Turn away, mortal, or feel the sting of serpent's fang.", "Coiled strike, witness the swift and deadly dance of the serpent.", "Heart of stone, my gaze freezes the very essence of time."},
                     new String[]{"Avoid the gaze or turn to stone!", "Feel the serpentine strike of Medusa.", "Venomous bite, a strike from the serpent's fang.", "Coiled strike, the serpent's swift and deadly attack.", "Heart of stone, the gaze that freezes time."},
                     new String[]{"Our love petrifies the heart with joy!", "Gaze into my eyes and feel the love, not the stone.", "In the venomous embrace, our connection strengthens.", "Coiled strike, the dance of serpentine love.", "Heart of stone, the love that lasts an eternity."});
 
