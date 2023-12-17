@@ -194,4 +194,8 @@ public class GameMessage {
         Item item = playerItem.get(index);
         System.out.println("You sold "+item.getName() + " for " + item.getPriceToBuy()/2 + " gold.");
     }
+
+    public static void chestFound() {
+        System.out.println("Oh, you found a chest! Checking things inside..");
+    }
 }
