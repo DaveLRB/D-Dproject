@@ -166,7 +166,6 @@ public class GameMessage {
                 });
     }
 
-
     public static void getInventoryMenu() {
         System.out.println("1 - Equip item");
         System.out.println("2 - Unquip item");
@@ -1035,6 +1034,10 @@ public class GameMessage {
                 "                                    @                                           \n" +
                 "                                                                                \n" +
                 "                                                                                \n");
+    }
+
+    public static void chestFound() {
+        System.out.println("Oh, you found a chest! Checking things inside..");
     }
 }
 
