@@ -55,19 +55,22 @@ public class GameManager {
             inventoryCount = 1;
             player.getSelectedCharacter().getInventory().getItemList().forEach((i) -> System.out.println(inventoryCount++ + " | " + i.getName()));
             GameMessage.getInventoryMenu();
+            GameMessage.getOption();
 
             Item playerItem;
 
             int choice = sc.nextInt();
             switch (choice) {
                 case 1 -> {
-                    GameMessage.getOption();
+                    GameMessage.getOptionInventory();
                     int choiceEquip = sc.nextInt() - 1;
                     playerItem = player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip);
                     if (player.isEquiped()) throw new AlreadyEquipedException();
                     if (choiceEquip < 0 || choiceEquip >= player.getSelectedCharacter().getInventory().getItemList().size()) {
                         throw new UnableToEquipAnUnknownItem();
                     }
+
+                    if(playerItem.getCharisma() == null) throw new UnableToEquipAnUnknownItem();
                     player.setEquiped(true);
                     player.setWhatIsEquiped(playerItem.getName());
                     player.getSelectedCharacter().setCharisma(playerItem.getCharisma());
@@ -76,7 +79,7 @@ public class GameManager {
                     player.getSelectedCharacter().setStrength(playerItem.getStrength());
                 }
                 case 2 -> {
-                    GameMessage.getOption();
+                    GameMessage.getOptionInventory();
                     int choiceEquip = sc.nextInt() - 1;
                     playerItem = player.getSelectedCharacter().getInventory().getItemList().get(choiceEquip);
                     if (!player.isEquiped()) throw new NothingEquipedException();
@@ -101,11 +104,11 @@ public class GameManager {
                         GameMessage.usedHealPotion();
                         player.getSelectedCharacter().getInventory().getItemList().remove(choicePotion);
                     } else {
-                        GameMessage.errorUsingSomething(player);
+                        GameMessage.errorUsingSomething(player, choicePotion);
                     }
                 }
             }
-        } catch (EmptyInventoryException | AlreadyEquipedException | NothingEquipedException e) {
+        } catch (EmptyInventoryException | AlreadyEquipedException | NothingEquipedException | UnableToEquipAnUnknownItem e) {
             System.err.println(e.getMessage());
         }
     }

@@ -159,8 +159,8 @@ public class GameMessage {
         System.out.println("You upgraded your "+item.getName()+".");
     }
 
-    public static void errorUsingSomething(Player player) {
-        System.out.println("Interesting " + player.getSelectedCharacter().getInventory().getItemList() + "... but this cannot be used, only equipped.");
+    public static void errorUsingSomething(Player player, int index) {
+        System.out.println("Hmm... " + player.getSelectedCharacter().getInventory().getItemList().get(index).getDescription());
     }
 
     public static void usedHealPotion() {
@@ -178,5 +178,9 @@ public class GameMessage {
 
     public static void chestFound() {
         System.out.println("Oh, you found a chest! Checking things inside..");
+    }
+
+    public static void getOptionInventory() {
+        System.out.print("Please select the item of the inventory: ");
     }
 }

@@ -18,20 +18,20 @@ public class Chest {
 
     public void create(Player player) {
         try {
-            GameMessage.chestFound();
-            if (chest.isEmpty()) throw new EmptyChestException();
-            chest.forEach(e -> {
-                System.out.println(e.getDescription());
-                player.getSelectedCharacter().getInventory().getItemList().add(e);
-            });
-        } catch (EmptyInventoryException e) {
+                GameMessage.chestFound();
+                if (chest.isEmpty()) throw new EmptyChestException();
+                chest.forEach(e -> {
+                    System.out.println(e.getDescription());
+                    player.getSelectedCharacter().getInventory().getItemList().add(e);
+                });
+        } catch (EmptyChestException e) {
             GameMessage.getExceptionMessage(e.getMessage());
         }
     }
 
     private void addItemsToChest() {
         for (Item item : itemList) {
-            if (random() < 15) {
+            if (item.getDescription() != null && random() < 15) {
                 chest.add(item);
             }
         }
