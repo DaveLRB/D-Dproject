@@ -12,52 +12,52 @@ public class Music {
      */
 
     public void griffinNeutral2 (){
-        Music start = new Music("featherinstorm.wav");
+        Music start = new Music("Music/featherinstorm.wav");
         start.play();
     }
 
     public void griffinNeutral3 (){
-        Music start = new Music("griffinsscreech.wav");
+        Music start = new Music("Music/griffinsscreech.wav");
         start.play();
     }
 
     public void griffinNeutral4 (){
-        Music start = new Music("gustofwind.wav");
+        Music start = new Music("Music/gustofwind.wav");
         start.play();
     }
 
     public void griffinNeutral5 (){
-        Music start = new Music("afeatheredsymphony.wav");
+        Music start = new Music("Music/afeatheredsymphony.wav");
         start.play();
     }
 
     public void griffinAnger1 (){
-        Music start = new Music("griffinsoars.wav");
+        Music start = new Music("Music/griffinsoars.wav");
         start.play();
     }
 
     public void griffinAnger2 (){
-        Music start = new Music("feelthemight.wav");
+        Music start = new Music("Music/feelthemight.wav");
         start.play();
     }
 
     public void griffinAnger3 (){
-        Music start = new Music("skyroaring.wav");
+        Music start = new Music("Music/skyroaring.wav");
         start.play();
     }
 
     public void griffinAnger4 (){
-        Music start = new Music("talongust.wav");
+        Music start = new Music("Music/talongust.wav");
         start.play();
     }
 
     public void griffinAnger5 (){
-        Music start = new Music("featherfrenzy.wav");
+        Music start = new Music("Music/featherfrenzy.wav");
         start.play();
     }
 
     public void griffinSeduce1(){
-        Music start = new Music("aerialonslaugth.wav");
+        Music start = new Music("Music/aerialonslaugth.wav");
         start.play();
     }
 
@@ -67,17 +67,17 @@ public class Music {
     }
 
     public void griffinSeduce3(){
-        Music start = new Music("stormthatsweeps.wav");
+        Music start = new Music("Music/stormthatsweeps.wav");
         start.play();
     }
 
     public void griffinSeduce4(){
-        Music start = new Music("lovesoarshigh.wav");
+        Music start = new Music("Music/lovesoarshigh.wav");
         start.play();
     }
 
     public void griffinSeduce5(){
-        Music start = new Music("inthefeatheredembrace.wav");
+        Music start = new Music("Music/inthefeatheredembrace.wav");
         start.play();
     }
 
