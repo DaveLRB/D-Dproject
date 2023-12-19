@@ -89,9 +89,8 @@ public class Dungeon {
                     }
                     break;
                 case 4:
-                    //
+                    //selectedCharacter.characterTalk(currentMonster);
             }
-
             if (isMonsterAlive()) {
                 selectedCharacter.setHP(currentMonster.monsterAttack(selectedCharacter));
             } else {
