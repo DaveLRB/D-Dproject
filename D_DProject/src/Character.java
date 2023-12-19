@@ -188,6 +188,8 @@ public class Character {
                 if (seduce == 2) {
                     if (!monster.isSeduced()) {
                         monster.setSeduced(true);
+                        System.out.println(randomQuote);
+                        monster.printSeducedQuotes();
                     }
                 }
             }
@@ -195,7 +197,9 @@ public class Character {
             case ASSASSIN -> randomQuote = getRandomQuoteAssassin();
             case SORCERER -> randomQuote = getRandomQuoteSorcerer();
         }
-        System.out.println(randomQuote);
+        if(!monster.isSeduced()){
+            System.out.println(randomQuote);
+        }
     }
 
     public void characterTakeDamage(Monster monster) {
@@ -273,3 +277,15 @@ public class Character {
         this.strength-=strength;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

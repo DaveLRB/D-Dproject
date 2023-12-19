@@ -1,5 +1,6 @@
 class MonsterFactory {
     public static Monster createMonster(MonsterType monsterType) {
+        Quote quote;
         return switch (monsterType) {
             case SLIME -> new Monster("Slime", 15, 30, 15, 35, true, false, false, false,
                     new String[]{"Gelatinous Grasp", "Slime Splash", "Bouncy Bop", "Ooze Overture", "Squishy Slam"},
@@ -12,8 +13,8 @@ class MonsterFactory {
 
             case BABYSPIDERS -> new Monster("Baby Spider", 20, 35, 15, 35, true, false, false, false,
                     new String[]{"Venomous Bite", "Web Spit", "Silk Wrap", "Arachnid Assault", "Spider Squeeze"},
-                    new String[]{"No need to fear, we can coexist.", "Skittering sounds",
-                            "Creeping up on you... quietly.", "Watch out, I'm quick!", "I have a venomous bite!"},
+                    new String[]{ "No need to fear, we can coexist.","Skittering sounds","Creeping up on you... quietly.",
+                    "Watch out, I'm quick!" , "I have a venomous bite!"},
                     new String[]{"You've angered the arachnid!", "My patience is wearing thin!", "You can't escape my silk!",
                             "My web is a trap of fury!", "I'll weave your demise!"},
                     new String[]{"Captivated by spider charm.", "The silk of love binds us.", "You're tangled in my love's web.",
@@ -159,7 +160,3 @@ class MonsterFactory {
         };
     }
 } // audio needed for Dragon, Kraken, Phoenix, Wyvern, Chimera, Harpy, Creeper, Mummy
-
-
-
-

@@ -4,82 +4,11 @@ public class Music {
     private Clip clip;
     private int pause;
 
-
     /*
         ATENZIONE: é assim que tem que ser chamado
         Music start = new Music("musica.wav");
         start.play();
      */
-
-    public void griffinNeutral2 (){
-        Music start = new Music("Music/featherinstorm.wav");
-        start.play();
-    }
-
-    public void griffinNeutral3 (){
-        Music start = new Music("Music/griffinsscreech.wav");
-        start.play();
-    }
-
-    public void griffinNeutral4 (){
-        Music start = new Music("Music/gustofwind.wav");
-        start.play();
-    }
-
-    public void griffinNeutral5 (){
-        Music start = new Music("Music/afeatheredsymphony.wav");
-        start.play();
-    }
-
-    public void griffinAnger1 (){
-        Music start = new Music("Music/griffinsoars.wav");
-        start.play();
-    }
-
-    public void griffinAnger2 (){
-        Music start = new Music("Music/feelthemight.wav");
-        start.play();
-    }
-
-    public void griffinAnger3 (){
-        Music start = new Music("Music/skyroaring.wav");
-        start.play();
-    }
-
-    public void griffinAnger4 (){
-        Music start = new Music("Music/talongust.wav");
-        start.play();
-    }
-
-    public void griffinAnger5 (){
-        Music start = new Music("Music/featherfrenzy.wav");
-        start.play();
-    }
-
-    public void griffinSeduce1(){
-        Music start = new Music("Music/aerialonslaugth.wav");
-        start.play();
-    }
-
-    public void griffinSeduce2(){
-        Music start = new Music(".wav");
-        start.play();
-    }
-
-    public void griffinSeduce3(){
-        Music start = new Music("Music/stormthatsweeps.wav");
-        start.play();
-    }
-
-    public void griffinSeduce4(){
-        Music start = new Music("Music/lovesoarshigh.wav");
-        start.play();
-    }
-
-    public void griffinSeduce5(){
-        Music start = new Music("Music/inthefeatheredembrace.wav");
-        start.play();
-    }
 
     public Music(String musicFile) {
         try {

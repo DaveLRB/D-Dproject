@@ -1,6 +1,7 @@
 import java.util.Random;
 
 public class Monster {
+    private int timesAttacked;
     private String name;
     private int hitDmg;
     private int monsterHP;
@@ -162,20 +163,37 @@ public class Monster {
             if (name.equals("Ghost") || name.equals("Spectre")) {
                 isInvisible = true;
             }
-
         }
-        int attackIndex = new Random().nextInt(attacks.length);
-        String attack = attacks[attackIndex];
-        System.out.println(name + " used " + attack + "! " + character.getName() + " took " + hitDmg + " damage.");
+        if(!this.isSeduced){
+            int attackIndex = new Random().nextInt(attacks.length);
+            String attack = attacks[attackIndex];
+            System.out.println(name + " used " + attack + "! " + character.getName() + " took " + hitDmg + " damage.");
+        }else{
+            this.isSeduced=false;
+        }
         return hitDmg;
     }
 
     public void takeDamage(Player player) {
+        timesAttacked++;
+        if(timesAttacked==1){
+            monsterSpeak();
+        }
         if(!isInvisible) {
             int playerAttack = player.getSelectedCharacter().characterAttack();
             monsterHP -= playerAttack;
-            System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + playerAttack + " damage on " + this.name + "!");
-            turnToBeInvisible++;
+            player.getSelectedCharacter().characterTalk(this);
+            if (!this.isSeduced){
+                System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + playerAttack + " damage on " + this.name + "!");
+                monsterAngerSpeak();
+                turnToBeInvisible++;
+            }else{
+                monsterSpeak();
+                System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + playerAttack + " damage on " + this.name + "!");
+                monsterAngerSpeak();
+                turnToBeInvisible++;
+                player.getSelectedCharacter().setSeduce(0);
+            }
         } else {
             isInvisible = false;
             monsterAngerSpeak();
@@ -225,11 +243,11 @@ public class Monster {
             monsterAngerSpeak();
         }
     }
-   public void printSeducedQuotes(){
+    public void printSeducedQuotes(){
         if (isSeduced){
             monsterSeducedSpeak();
         }
-   }
+    }
 
     public void monsterDoesOneshot(MonsterType monsterType) {
         if (this.getMonsterHP() <= 0 && monsterType == MonsterType.CREEPER || monsterType == MonsterType.MEDUSA || monsterType == MonsterType.BASILISK) {
