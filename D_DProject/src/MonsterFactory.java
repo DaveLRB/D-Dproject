@@ -129,9 +129,9 @@ class MonsterFactory {
 
             case WYVERN -> new Monster("Wyvern", 115, 130, 95, 105, true, false, false, false,
                     new String[]{"Tail Sweep", "Dive Bomb", "Wing Slash", "Fiery Roar", "Aerial Dominance"},
-                    new String[]{"Roar!", "Wings of fury!", "A slash of wyvern's mighty wings.", "Fiery roar echoes through the skies.", "Aerial dominance, the wyvern rules the air."},
-                    new String[]{"Wyvern's tail sweeps and wings buffet with furious might!", "Feel the wind from the wyvern's dive bomb!", "Wing slash, a swift and deadly blow.", "Fiery roar, the breath of the wyvern's inferno.", "Aerial dominance, the wyvern's reign continues."},
-                    new String[]{"I'm the winged terror of the skies!", "Dive-bombing wyvern, ready for the kill!", "Wing slash, the wyvern's dance in the sky.", "Fiery roar, our connection burns with passion.", "Aerial dominance, our love soars above all."});
+                    new String[]{"Roarrr!", "Roarrrararaara!", "Grgrgraaaa!", "Raaaaaaaaaaaaa ru", "Rauuuuuuuuuu gaaa"},
+                    new String[]{"RAAAAAAAAAAAAAAAAAAA", "Rura daaaaaaaa!!", "Raooo!!", "RU VA DAAA", " RUAMMM"},
+                    new String[]{"Ra ra u gagaaa", "Rommm rommm", "Raurrr!", "Riauuuu", "Ri re ro rauuu ro rauu!"});
 
             case PHOENIX -> new Monster("Phoenix", 120, 135, 95, 105, true, false, false, false,
                     new String[]{"Fire Burst", "Rebirth", "Inferno Dance", "Eternal Flame", "Blazing Resurgence"},
@@ -158,4 +158,4 @@ class MonsterFactory {
                     new String[]{"Our love roars with the fury of the dragon!", "Fly with me on the wings of eternal passion.", "Fiery roar, a symphony of draconic affection.", "Inferno sweep, the flames of our love burn bright.", "Eternal soar, our love transcends the highest peaks."});
         };
     }
-}
+} // audio needed for Dragon, Kraken, Phoenix, Wyvern, Chimera, Harpy, Creeper, Mummy

@@ -32,7 +32,7 @@ public class ItemFactory {
             case BROKEN_GLASSES -> new Item("BROKEN GLASSES", "A broken glasses...", 40);
             case DRAGON_CLAW -> new Item("DRAGON CLAW", "A rare weapon!", 150, 21, 0, 0, 0);
             case DRAGONITE_HEAD -> new Item("DRAGONITE HEAD", "Something... strange...", 150);
-            case MINECRAFT_DEAD_STEVE -> new Item("MINCRAFT DEAD STEVE", "Something like what a fuck is this?", 100);
+            case MINECRAFT_DEAD_STEVE -> new Item("MINECRAFT DEAD STEVE", "Something like what a fuck is this?", 100);
         };
     }
 }
