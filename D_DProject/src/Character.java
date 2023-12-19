@@ -175,6 +175,10 @@ public class Character {
         return inventory;
     }
 
+    public CharacterType getCharacterType() {
+        return characterType;
+    }
+
     public void characterTalk(CharacterType characterType, Monster monster) {
         String randomQuote = "";
 
