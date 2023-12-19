@@ -72,24 +72,31 @@ public class Dungeon {
                 case 0:
                     throw new OperationCancelledException();
                 case 1:
+                    currentMonster.monsterSpeak();
+                    selectedCharacter.characterTalk(currentMonster);
                     currentMonster.takeDamage(player);
+                    currentMonster.monsterAngerSpeak();
                     printDeathMessageIfDead();
                     break;
                 case 2:
+                    currentMonster.monsterSpeak();
+                    selectedCharacter.characterTalk(currentMonster);
                     currentMonster.takeSpecialDamage(player);
+                    currentMonster.monsterAngerSpeak();
                     printDeathMessageIfDead();
                     break;
                 case 3:
                     try {
+                        currentMonster.monsterSpeak();
+                        selectedCharacter.characterTalk(currentMonster);
                         currentMonster.takeUltimateDamage(player);
+                        currentMonster.monsterAngerSpeak();
                         printDeathMessageIfDead();
                     } catch (HealthPointsGreaterThan20Exception e) {
                         System.out.println(e.getMessage());
                         return;
                     }
                     break;
-                case 4:
-                    //selectedCharacter.characterTalk(currentMonster);
             }
             if (isMonsterAlive()) {
                 selectedCharacter.setHP(currentMonster.monsterAttack(selectedCharacter));
