@@ -179,10 +179,9 @@ public class Character {
         return characterType;
     }
 
-    public void characterTalk(CharacterType characterType, Monster monster) {
+    public void characterTalk(Monster monster) {
         String randomQuote = "";
-
-        switch (characterType) {
+        switch (this.getCharacterType()) {
             case BARD -> {
                 randomQuote = getRandomQuoteBard();
                 seduce++;
