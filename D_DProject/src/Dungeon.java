@@ -88,6 +88,8 @@ public class Dungeon {
                         return;
                     }
                     break;
+                case 4:
+                    //selectedCharacter.characterTalk(currentMonster);
             }
 
             if (isMonsterAlive()) {
