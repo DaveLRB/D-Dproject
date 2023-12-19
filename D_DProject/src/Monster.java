@@ -9,7 +9,7 @@ public class Monster {
     private int gold = 0;
     private int turnToBeInvisible = 0;
     private boolean isAlive;
-    private boolean isFriendly;
+    private boolean isAngered;
     private boolean isInvisible;
     private boolean isSeduced;
     private String[] attacks;
@@ -18,7 +18,7 @@ public class Monster {
     private String[] seducedQuotes;
 
 
-    public Monster(String name, int hitDmg, int monsterHP, int experiencePoints, int gold, boolean isAlive, boolean isInvisible, boolean isFriendly, boolean isSeduced, String[] attacks, String[] neutralQuotes, String[] angerQuotes, String[] seducedQuotes) {
+    public Monster(String name, int hitDmg, int monsterHP, int experiencePoints, int gold, boolean isAlive, boolean isInvisible, boolean isAngered, boolean isSeduced, String[] attacks, String[] neutralQuotes, String[] angerQuotes, String[] seducedQuotes) {
         this.name = name;
         this.hitDmg = hitDmg;
         this.monsterHP = monsterHP;
@@ -26,7 +26,7 @@ public class Monster {
         this.gold = gold;
         this.isAlive = isAlive;
         this.isInvisible = isInvisible;
-        this.isFriendly = isFriendly;
+        this.isAngered = isAngered;
         this.isSeduced = isSeduced;
         this.attacks = attacks;
         this.neutralQuotes = neutralQuotes;
@@ -89,12 +89,12 @@ public class Monster {
         isInvisible = invisible;
     }
 
-    public boolean isFriendly() {
-        return isFriendly;
+    public boolean isAngered() {
+        return isAngered;
     }
 
-    public void setFriendly(boolean friendly) {
-        isFriendly = friendly;
+    public void setAngered(boolean angered) {
+        isAngered = angered;
     }
 
     public String[] getAttacks() {
@@ -220,6 +220,11 @@ public class Monster {
         System.out.println(name + " (Seduced): " + seducedQuote);
     }
 
+    public void printAngeredQuotes(){
+        if (isAngered){
+            monsterAngerSpeak();
+        }
+    }
    public void printSeducedQuotes(){
         if (isSeduced){
             monsterSeducedSpeak();
