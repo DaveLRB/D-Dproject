@@ -9,6 +9,7 @@ public class Monster {
     private int gold = 0;
     private int turnToBeInvisible = 0;
     private boolean isAlive;
+    private boolean hasBeenRevived = false;
     private boolean isAngered;
     private boolean isInvisible;
     private boolean isSeduced;
@@ -33,6 +34,7 @@ public class Monster {
         this.angerQuotes = angerQuotes;
         this.seducedQuotes = seducedQuotes;
     }
+
 
     public String getName() {
         return name;
@@ -79,6 +81,13 @@ public class Monster {
 
     public void setAlive(boolean alive) {
         isAlive = alive;
+    }
+    public boolean isHasBeenRevived() {
+        return hasBeenRevived;
+    }
+
+    public void setHasBeenRevived(boolean hasBeenRevived) {
+        this.hasBeenRevived = hasBeenRevived;
     }
 
     public boolean isInvisible() {
@@ -214,15 +223,22 @@ public class Monster {
    }
 
     public void monsterDoesOneshot(MonsterType monsterType) {
-        if (this.getMonsterHP() <= 0 && monsterType == MonsterType.CREEPER || monsterType == MonsterType.MEDUSA || monsterType == MonsterType.BASILISK) {
+        Random random = new Random();
+        int chance = random.nextInt(100);
+        if (this.getMonsterHP() <= 0
+                && (monsterType == MonsterType.CREEPER
+                || monsterType == MonsterType.MEDUSA
+                || monsterType == MonsterType.BASILISK)
+                && chance < 10) {
             isAlive = false;
             System.out.println(this.getName() + " killed you in a single blow...");
         }
     }
-
     public void revive(MonsterType monsterType) {
-        if (!this.isAlive && monsterType == MonsterType.SKELETON) {
+        if (!this.isAlive && monsterType == MonsterType.SKELETON && !hasBeenRevived) {
             this.setMonsterHP(100);
+            this.isAlive = true;
+            hasBeenRevived = true;
             System.out.println(this.getName() + " has been revived with full health!");
         }
     }
