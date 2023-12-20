@@ -13,12 +13,12 @@ public class Monster {
     private boolean isInvisible;
     private boolean isSeduced;
     private String[] attacks;
-    private String[] neutralQuotes;
-    private String[] angerQuotes;
-    private String[] seducedQuotes;
+    private Quote[] neutralQuotes;
+    private Quote[] angerQuotes;
+    private Quote[] seducedQuotes;
 
 
-    public Monster(String name, int hitDmg, int monsterHP, int experiencePoints, int gold, boolean isAlive, boolean isInvisible, boolean isAngered, boolean isSeduced, String[] attacks, String[] neutralQuotes, String[] angerQuotes, String[] seducedQuotes) {
+    public Monster(String name, int hitDmg, int monsterHP, int experiencePoints, int gold, boolean isAlive, boolean isInvisible, boolean isAngered, boolean isSeduced, String[] attacks, Quote[] neutralQuotes, Quote[] angerQuotes, Quote[] seducedQuotes) {
         this.name = name;
         this.hitDmg = hitDmg;
         this.monsterHP = monsterHP;
@@ -105,27 +105,27 @@ public class Monster {
         this.attacks = attacks;
     }
 
-    public String[] getNeutralQuotes() {
+    public Quote[] getNeutralQuotes() {
         return neutralQuotes;
     }
 
-    public void setNeutralQuotes(String[] neutralQuotes) {
+    public void setNeutralQuotes(Quote[] neutralQuotes) {
         this.neutralQuotes = neutralQuotes;
     }
 
-    public String[] getAngerQuotes() {
+    public Quote[] getAngerQuotes() {
         return angerQuotes;
     }
 
-    public void setAngerQuotes(String[] angerQuotes) {
+    public void setAngerQuotes(Quote[] angerQuotes) {
         this.angerQuotes = angerQuotes;
     }
 
-    public String[] getSeducedQuotes() {
+    public Quote[] getSeducedQuotes() {
         return seducedQuotes;
     }
 
-    public void setSeducedQuotes(String[] seducedQuotes) {
+    public void setSeducedQuotes(Quote[] seducedQuotes) {
         this.seducedQuotes = seducedQuotes;
     }
 
@@ -180,27 +180,25 @@ public class Monster {
             turnToBeInvisible++;
         } else {
             isInvisible = false;
-            monsterAngerSpeak();
             turnToBeInvisible++;
         }
     }
 
     public void monsterSpeak() {
         int quoteIndex = new Random().nextInt(neutralQuotes.length);
-        String monsterQuote = neutralQuotes[quoteIndex];
+        Quote monsterQuote = neutralQuotes[quoteIndex];
         System.out.println(name + ": " + monsterQuote);
     }
 
     public void monsterAngerSpeak() {
         int quoteIndex = new Random().nextInt(angerQuotes.length);
-        String angerQuote = angerQuotes[quoteIndex];
+        Quote angerQuote = angerQuotes[quoteIndex];
         System.out.println(name + " (Angry): " + angerQuote);
     }
 
-
     public void monsterSeducedSpeak() {
         int quoteIndex = new Random().nextInt(seducedQuotes.length);
-        String seducedQuote = seducedQuotes[quoteIndex];
+        Quote seducedQuote = seducedQuotes[quoteIndex];
         System.out.println(name + " (Seduced): " + seducedQuote);
     }
 
