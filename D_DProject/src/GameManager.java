@@ -47,7 +47,7 @@ public class GameManager {
 
     private int inventoryCount = 1;
 
-    private void getPlayerInventory() {
+    public void getPlayerInventory() {
         try {
             if (player.getSelectedCharacter().getInventory().getItemList().isEmpty())
                 throw new EmptyInventoryException();
