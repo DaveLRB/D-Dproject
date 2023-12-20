@@ -170,14 +170,26 @@ public class Monster {
         return hitDmg;
     }
 
-    public void takeDamage(Player player) {
+    public void takeDamage(Player player, String attackType) {
         int damage = 0;
-        if(!isInvisible) { //perguntar que se passa aqui, incrementa tds os attacks
-            damage = player.getSelectedCharacter().attack("light");
-            damage += player.getSelectedCharacter().attack("heavy");
-            damage += player.getSelectedCharacter().attack("ultimate");
+
+        if (!isInvisible) {
+            switch (attackType) {
+                case "light":
+                    damage = player.getSelectedCharacter().attack("light");
+                    break;
+                case "heavy":
+                    damage = player.getSelectedCharacter().attack("heavy");
+                    break;
+                case "ultimate":
+                    damage = player.getSelectedCharacter().attack("ultimate");
+                    break;
+                default:
+                    System.out.println("Invalid attack type!");
+                    return;
+            }
             monsterHP -= damage;
-            System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + damage + " damage on " + this.name + "!");
+            System.out.println("\n" + player.getSelectedCharacter().getName() + " used " + attackType + " attack and dealt " + damage + " damage to " + this.name + "!");
             turnToBeInvisible++;
         } else {
             isInvisible = false;
