@@ -186,8 +186,10 @@ public class Character {
                 randomQuote = getRandomQuoteBard();
                 seduce++;
                 if (seduce == 2) {
+                    seduce=0;
                     if (!monster.isSeduced()) {
                         monster.setSeduced(true);
+                        System.out.println(randomQuote);
                         monster.printSeducedQuotes();
                     }
                 }
@@ -196,14 +198,16 @@ public class Character {
             case ASSASSIN -> randomQuote = getRandomQuoteAssassin();
             case SORCERER -> randomQuote = getRandomQuoteSorcerer();
         }
+        if(!monster.isSeduced()){
             System.out.println(randomQuote);
+        }
     }
 
     public void characterTakeDamage(Monster monster) {
         this.healthPoints -= monster.monsterAttack(this);
     }
 
-    public int attack(String attackType) {
+    public int attack(Monster monster,String attackType) {
         if (isParalysed()) {
             System.out.println("Cannot attack, you are paralysed!");
             return 0;
@@ -211,7 +215,7 @@ public class Character {
         int attack = 0;
         Random random = new Random();
         double chance = random.nextDouble();
-
+        characterTalk(monster);
         switch (attackType) {
             case "light":
                 attack = switch (characterType) {

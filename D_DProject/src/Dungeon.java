@@ -63,6 +63,7 @@ public class Dungeon {
 
     private void handleBattleTurn(int level, boolean wantsToLeave) {
         Character selectedCharacter = player.getSelectedCharacter();
+        int attackCounter = 0;
         while (monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getMonsterHP() > 0 && player.getSelectedCharacter().getHealthPoints() > 0 && !wantsToLeave) {
             Monster currentMonster = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX);
             int option = InputHelper.getOptionFromUser();
@@ -70,16 +71,29 @@ public class Dungeon {
                 case 0:
                     throw new OperationCancelledException();
                 case 1:
-                    currentMonster.takeDamage(player);
+                    if (attackCounter == 0) {
+                        currentMonster.monsterSpeak();
+                    }
+                    currentMonster.takeDamage(player, "light");
+                    currentMonster.monsterAngerSpeak();
+                    attackCounter++;
                     printDeathMessageIfDead();
                     break;
                 case 2:
-                    //currentMonster.takeSpecialDamage(player);
+                    if (attackCounter == 0) {
+                        currentMonster.monsterSpeak();
+                    }
+                    currentMonster.takeDamage(player, "heavy");
+                    currentMonster.monsterAngerSpeak();
                     printDeathMessageIfDead();
                     break;
                 case 3:
                     try {
-                        //currentMonster.takeUltimateDamage(player);
+                        if (attackCounter == 0) {
+                            currentMonster.monsterSpeak();
+                        }
+                        currentMonster.takeDamage(player, "ultimate");
+                        currentMonster.monsterAngerSpeak();
                         printDeathMessageIfDead();
                     } catch (HealthPointsGreaterThan20Exception e) {
                         System.out.println(e.getMessage());
@@ -87,9 +101,11 @@ public class Dungeon {
                     }
                     break;
             }
-            if (isMonsterAlive()) {
+            if (isMonsterAlive() && !currentMonster.isSeduced()) {
                 selectedCharacter.setHP(currentMonster.monsterAttack(selectedCharacter));
-            } else {
+            }
+            if(currentMonster.isSeduced()) currentMonster.setSeduced(false);
+            if (!isMonsterAlive()) {
                 monsters.get(LEVEL_INDEX).remove(currentMonster);
             }
 
