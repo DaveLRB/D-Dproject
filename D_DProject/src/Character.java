@@ -28,63 +28,63 @@ public class Character {
         this.healthPoints = 100;
     }
 
-    private final String[] charQuotesBard = {
-            "Am i blind? Or are you a ray of sunshine?!",
-            "Can i sing you a song...of passion?",
-            "Is that a weapon? Or are you happy to see me?!",
-            "WOWZA CHA-WA-BANGA!!",
-            "In tales of old, valor blooms.",
-            "With every dawn, a new legend unfolds.",
-            "Melodies weave the fabric of our stories.",
-            "Words, the bard's sword; songs, the bard's shield."
+    private final Quote[] charQuotesBard = {
+            new Quote("bard_quote_1.wav","Am i blind? Or are you a ray of sunshine?!"),
+            new Quote("bard_quote_2.wav","Can i sing you a song...of passion?"),
+            new Quote("bard_quote_3.wav","Is that a weapon? Or are you happy to see me?!"),
+            new Quote("bard_quote_4.wav","WOWZA CHA-WA-BANGA!!"),
+            new Quote("bard_quote_5.wav","In tales of old, valor blooms."),
+            new Quote("bard_quote_1.wav","With every dawn, a new legend unfolds."),
+            new Quote("bard_quote_1.wav","Melodies weave the fabric of our stories."),
+            new Quote("bard_quote_1.wav","Words, the bard's sword; songs, the bard's shield.")
 
     };
 
-    private final String[] charQuotesKnight = {
-            "The valor of a knight will smite you!",
-            "With my weapon i shall cleanse the world of evil",
-            "Courage is the strength to face uncertainty.",
-            "Chivalry is not just a code, but a way of being.",
-            "Strength shields the weak, to the evils might.",
-            "Valor knows no fear, in the face of darkness.",
-            "Honor guides every deed, an honest heart makes.",
-            "Adversity forges nobility, were cowardice sows fragility."
+    private final Quote[] charQuotesKnight = {
+            new Quote("knight_quote_1","The valor of a knight will smite you!"),
+            new Quote("knight_quote_2","With my weapon i shall cleanse the world of evil"),
+            new Quote("knight_quote_3","Courage is the strength to face uncertainty."),
+            new Quote("knight_quote_4","Chivalry is not just a code, but a way of being."),
+            new Quote("knight_quote_5","Strength shields the weak, to the evils might."),
+            new Quote("knight_quote_6","Valor knows no fear, in the face of darkness."),
+            new Quote("knight_quote_7","Honor guides every deed, an honest heart makes."),
+            new Quote("knight_quote_8","Adversity forges nobility, were cowardice sows fragility.")
     };
 
-    private final String[] charQuotesAssassin = {
-            "My poison daggers will send you to the shadows..",
-            "In the dark i live..in the dark you shall die",
-            "Silence is the deadliest weapon in the arsenal of an assassin.",
-            "Darkness is the ally of shadows, and shadows breed the unseen strike.",
-            "Silence speaks louder than steel.",
-            "Shadows are my allies, darkness my cloak.",
-            "Precision is my art, stealth my dance.",
-            "In the quiet, I am deadliest."
+    private final Quote[] charQuotesAssassin = {
+            new Quote("assassin_quote_1","My poison daggers will send you to the shadows.."),
+            new Quote("assassin_quote_2","In the dark i live..in the dark you shall die"),
+            new Quote("assassin_quote_3","Silence is the deadliest weapon in the arsenal of an assassin."),
+            new Quote("assassin_quote_4","Darkness is the ally of shadows, and shadows breed the unseen strike."),
+            new Quote("assassin_quote_5","Silence speaks louder than steel."),
+            new Quote("assassin_quote_6","Shadows are my allies, darkness my cloak."),
+            new Quote("assassin_quote_7","Precision is my art, stealth my dance."),
+            new Quote("assassin_quote_8","In the quiet, I am deadliest.")
     };
 
-    private final String[] charQuotesSorcerer = {
-            "With my magic i shall turn you to ash!",
-            "Behold my might..the Sorcerer Supreme!",
-            "Magic flows where intent meets will.",
-            "Knowledge is the staff of power wielded by the adept sorcerer.",
-            "Magic bends to my will, the elements dance at my command.",
-            "Arcane secrets whisper in every spell.",
-            "Power courses through my veins, shaped by incantations.",
-            "The unseen forces are my allies, shaping reality to my design."
+    private final Quote[] charQuotesSorcerer = {
+            new Quote("sorcerer_quote_1","With my magic i shall turn you to ash!"),
+            new Quote("sorcerer_quote_2","Behold my might..the Sorcerer Supreme!"),
+            new Quote("sorcerer_quote_3","Magic flows where intent meets will."),
+            new Quote("sorcerer_quote_4","Knowledge is the staff of power wielded by the adept sorcerer."),
+            new Quote("sorcerer_quote_5","Magic bends to my will, the elements dance at my command."),
+            new Quote("sorcerer_quote_6","Arcane secrets whisper in every spell."),
+            new Quote("sorcerer_quote_7","Power courses through my veins, shaped by incantations."),
+            new Quote("sorcerer_quote_8","The unseen forces are my allies, shaping reality to my design.")
 
     };
 
-    private void shuffleQuotes(String[] quotes) {
-        List<String> quotesList = Arrays.asList(quotes);
+    private void shuffleQuotes(Quote[] quotes) {
+        List<Quote> quotesList = Arrays.asList(quotes);
         Collections.shuffle(quotesList);
         quotesList.toArray(quotes);
     }
 
-    private String getRandomQuote(String[] quotes) {
+    private String getRandomQuote(Quote[] quotes) {
         Random random = new Random();
         shuffleQuotes(quotes);
         int index = random.nextInt(quotes.length);
-        return quotes[index];
+        return quotes[index].getText();
     }
 
     private String getRandomQuoteBard() {

@@ -20,7 +20,7 @@ public class GameManager {
         addCharactersToList();
         playerSelectCharacter();
         this.player = new Player(playerName, character);
-        this.dungeon = new Dungeon(player);
+        this.dungeon = new Dungeon(player,this);
         this.gameIsRunning = true;
         shop = new Shop(player);
     }
