@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Dungeon {
-
     private final ArrayList<ArrayList<Monster>> monsters;
 
     public static final int LEVEL_INDEX = 0;
@@ -64,7 +63,6 @@ public class Dungeon {
 
     private void handleBattleTurn(int level, boolean wantsToLeave) {
         Character selectedCharacter = player.getSelectedCharacter();
-
         while (monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getMonsterHP() > 0 && player.getSelectedCharacter().getHealthPoints() > 0 && !wantsToLeave) {
             Monster currentMonster = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX);
             int option = InputHelper.getOptionFromUser();
@@ -72,25 +70,16 @@ public class Dungeon {
                 case 0:
                     throw new OperationCancelledException();
                 case 1:
-                    currentMonster.monsterSpeak();
-                    selectedCharacter.characterTalk(currentMonster);
                     currentMonster.takeDamage(player);
-                    currentMonster.monsterAngerSpeak();
                     printDeathMessageIfDead();
                     break;
                 case 2:
-                    currentMonster.monsterSpeak();
-                    selectedCharacter.characterTalk(currentMonster);
                     currentMonster.takeSpecialDamage(player);
-                    currentMonster.monsterAngerSpeak();
                     printDeathMessageIfDead();
                     break;
                 case 3:
                     try {
-                        currentMonster.monsterSpeak();
-                        selectedCharacter.characterTalk(currentMonster);
                         currentMonster.takeUltimateDamage(player);
-                        currentMonster.monsterAngerSpeak();
                         printDeathMessageIfDead();
                     } catch (HealthPointsGreaterThan20Exception e) {
                         System.out.println(e.getMessage());

@@ -195,7 +195,7 @@ public class Character {
             case ASSASSIN -> randomQuote = getRandomQuoteAssassin();
             case SORCERER -> randomQuote = getRandomQuoteSorcerer();
         }
-        System.out.println(randomQuote);
+            System.out.println(randomQuote);
     }
 
     public void characterTakeDamage(Monster monster) {
