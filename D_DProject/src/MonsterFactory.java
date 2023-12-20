@@ -50,7 +50,7 @@ class MonsterFactory {
                             new Quote("Baby+spider+seduce+3_out.wav", "You're tangled in my love's web."),
                             new Quote("Baby+spider+seduce+4_out.wav", "Feel this delicate touch of mine"),
                             new Quote("Baby+spider+seduce+5_out.wav", "In the web of love, we're entwined.")
-                    }
+                    });
                                             
             case GOBLIN -> new Monster("Goblin", 25, 40, 15, 35, true, false, false, false,
                     new String[]{"Vicious Stab", "Rock Throw", "Goblin Ambush", "Sneaky Strike", "Mischief Slash"},
