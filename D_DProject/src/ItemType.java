@@ -30,6 +30,5 @@ public enum ItemType {
     BROKEN_GLASSES,
     DRAGON_CLAW,
     DRAGONITE_HEAD,
-    MINECRAFT_DEAD_STEVE;
-
-}
+    MINECRAFT_DEAD_STEVE
+    }
