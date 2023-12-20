@@ -195,7 +195,7 @@ public class GameMessage {
 
     public static void getInventoryMenu() {
         System.out.println("1 - Equip item");
-        System.out.println("2 - Unquip item");
+        System.out.println("2 - Unequip item");
         System.out.println("3 - USE");
         System.out.println("4 - Exit");
     }
