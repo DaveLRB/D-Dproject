@@ -821,7 +821,7 @@ public class GameMessage {
                 "     &&&&&&&&&%               &&&&&                        &&&&&&&&&&&&&&&     ");
     }
 
-    public static void medusa() {
+    public static void medusaPic() {
         System.out.println("                                                                                \n" +
                 "                                  @@@@      &@@@@@@@@@@@#@@                     \n" +
                 "                               @@@    @#  @@@%        .@@@@ %                   \n" +
@@ -858,7 +858,7 @@ public class GameMessage {
                 "@@@@    ( @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
     }
 
-    public static void wyvern() {
+    public static void wyvernPic() {
         System.out.println("                                                                                \n" +
                 "                                                                                \n" +
                 "                                                   @.              @@           \n" +
@@ -896,7 +896,7 @@ public class GameMessage {
                 "  (                                                                             ");
     }
 
-    public static void phoenix() {
+    public static void phoenixPic() {
         System.out.println("                                                                                \n" +
                 "                                                                                \n" +
                 "                                                      /                         \n" +
@@ -929,7 +929,7 @@ public class GameMessage {
                 "                                                                                ");
     }
 
-    public static void kraken() {
+    public static void krakenPic() {
         System.out.println("                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
@@ -964,7 +964,7 @@ public class GameMessage {
                 "                                                                                ");
     }
 
-    public static void behemoth() {
+    public static void behemothPic() {
         System.out.println("                                                                                \n" +
                 "            @@@@@@%                                                     @@@@@@. \n" +
                 "         @@@@@@@@@@@@@@@@@                                         .@@@@@@      \n" +
@@ -994,7 +994,7 @@ public class GameMessage {
                 "             @@@@@@@@@@@                           @@& @@@ @@@@@                ");
     }
 
-    public static void dragon() {
+    public static void dragonPic() {
         System.out.println("                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +

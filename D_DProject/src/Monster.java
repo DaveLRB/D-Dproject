@@ -162,7 +162,6 @@ public class Monster {
             if (name.equals("Ghost") || name.equals("Spectre")) {
                 isInvisible = true;
             }
-
         }
         int attackIndex = new Random().nextInt(attacks.length);
         String attack = attacks[attackIndex];
@@ -171,33 +170,18 @@ public class Monster {
     }
 
     public void takeDamage(Player player) {
+        int damage = 0;
         if(!isInvisible) {
-            int playerAttack = player.getSelectedCharacter().characterAttack();
-            monsterHP -= playerAttack;
-            System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + playerAttack + " damage on " + this.name + "!");
+            damage = player.getSelectedCharacter().attack("light");
+            damage += player.getSelectedCharacter().attack("heavy");
+            damage += player.getSelectedCharacter().attack("ultimate");
+            monsterHP -= damage;
+            System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + damage + " damage on " + this.name + "!");
             turnToBeInvisible++;
         } else {
             isInvisible = false;
             monsterAngerSpeak();
             turnToBeInvisible++;
-        }
-    }
-
-    public void takeSpecialDamage(Player player) {
-        if (isMonsterAlive()) {
-            int playerAttack= player.getSelectedCharacter().specialAttack();
-            monsterHP-=playerAttack;
-            System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + playerAttack + " damage on "+this.name+ "!");
-            monsterAngerSpeak();
-        }
-    }
-
-    public void takeUltimateDamage(Player player) {
-        if (isMonsterAlive()) {
-            int playerAttack = player.getSelectedCharacter().ultimateAttack();
-            monsterHP -= playerAttack;
-            System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + playerAttack + " damage on " + this.name + "!");
-            monsterAngerSpeak();
         }
     }
 
