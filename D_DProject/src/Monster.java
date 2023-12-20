@@ -1,6 +1,7 @@
 import java.util.Random;
 
 public class Monster {
+    private int timesAttacked;
     private String name;
     private int hitDmg;
     private int monsterHP;
@@ -167,7 +168,7 @@ public class Monster {
     }
 
     public int monsterAttack(Character character) {
-        if(getTurnToBeInvisible() % 2 == 0) {
+        if (getTurnToBeInvisible() % 2 == 0) {
             if (name.equals("Ghost") || name.equals("Spectre")) {
                 isInvisible = true;
             }
@@ -178,14 +179,26 @@ public class Monster {
         return hitDmg;
     }
 
-    public void takeDamage(Player player) {
+    public void takeDamage(Player player, String attackType) {
         int damage = 0;
-        if(!isInvisible) {
-            damage = player.getSelectedCharacter().attack("light");
-            damage += player.getSelectedCharacter().attack("heavy");
-            damage += player.getSelectedCharacter().attack("ultimate");
+
+        if (!isInvisible) {
+            switch (attackType) {
+                case "light":
+                    damage = player.getSelectedCharacter().attack(this,"light");
+                    break;
+                case "heavy":
+                    damage = player.getSelectedCharacter().attack(this,"heavy");
+                    break;
+                case "ultimate":
+                    damage = player.getSelectedCharacter().attack(this,"ultimate");
+                    break;
+                default:
+                    System.out.println("Invalid attack type!");
+                    return;
+            }
             monsterHP -= damage;
-            System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + damage + " damage on " + this.name + "!");
+            System.out.println("\n" + player.getSelectedCharacter().getName() + " used " + attackType + " attack and dealt " + damage + " damage to " + this.name + "!");
             turnToBeInvisible++;
         } else {
             isInvisible = false;
@@ -211,16 +224,16 @@ public class Monster {
         System.out.println(name + " (Seduced): " + seducedQuote.getText());
     }
 
-    public void printAngeredQuotes(){
-        if (isAngered){
+    public void printAngeredQuotes() {
+        if (isAngered) {
             monsterAngerSpeak();
         }
     }
-   public void printSeducedQuotes(){
-        if (isSeduced){
+    public void printSeducedQuotes() {
+        if (isSeduced) {
             monsterSeducedSpeak();
         }
-   }
+    }
 
     public void monsterDoesOneshot(MonsterType monsterType) {
         Random random = new Random();
