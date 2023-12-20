@@ -1,7 +1,6 @@
 import java.util.Random;
 
 public class Monster {
-    private int timesAttacked;
     private String name;
     private int hitDmg;
     private int monsterHP;
@@ -164,58 +163,25 @@ public class Monster {
                 isInvisible = true;
             }
         }
-        if(!this.isSeduced){
-            int attackIndex = new Random().nextInt(attacks.length);
-            String attack = attacks[attackIndex];
-            System.out.println(name + " used " + attack + "! " + character.getName() + " took " + hitDmg + " damage.");
-        }else{
-            this.isSeduced=false;
-        }
+        int attackIndex = new Random().nextInt(attacks.length);
+        String attack = attacks[attackIndex];
+        System.out.println(name + " used " + attack + "! " + character.getName() + " took " + hitDmg + " damage.");
         return hitDmg;
     }
 
     public void takeDamage(Player player) {
-        timesAttacked++;
-        if(timesAttacked==1){
-            monsterSpeak();
-        }
+        int damage = 0;
         if(!isInvisible) {
-            int playerAttack = player.getSelectedCharacter().characterAttack();
-            monsterHP -= playerAttack;
-            player.getSelectedCharacter().characterTalk(this);
-            if (!this.isSeduced){
-                System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + playerAttack + " damage on " + this.name + "!");
-                monsterAngerSpeak();
-                turnToBeInvisible++;
-            }else{
-                monsterSpeak();
-                System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + playerAttack + " damage on " + this.name + "!");
-                monsterAngerSpeak();
-                turnToBeInvisible++;
-                player.getSelectedCharacter().setSeduce(0);
-            }
+            damage = player.getSelectedCharacter().attack("light");
+            damage += player.getSelectedCharacter().attack("heavy");
+            damage += player.getSelectedCharacter().attack("ultimate");
+            monsterHP -= damage;
+            System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + damage + " damage on " + this.name + "!");
+            turnToBeInvisible++;
         } else {
             isInvisible = false;
             monsterAngerSpeak();
             turnToBeInvisible++;
-        }
-    }
-
-    public void takeSpecialDamage(Player player) {
-        if (isMonsterAlive()) {
-            int playerAttack= player.getSelectedCharacter().specialAttack();
-            monsterHP-=playerAttack;
-            System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + playerAttack + " damage on "+this.name+ "!");
-            monsterAngerSpeak();
-        }
-    }
-
-    public void takeUltimateDamage(Player player) {
-        if (isMonsterAlive()) {
-            int playerAttack = player.getSelectedCharacter().ultimateAttack();
-            monsterHP -= playerAttack;
-            System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + playerAttack + " damage on " + this.name + "!");
-            monsterAngerSpeak();
         }
     }
 
@@ -243,11 +209,11 @@ public class Monster {
             monsterAngerSpeak();
         }
     }
-    public void printSeducedQuotes(){
+   public void printSeducedQuotes(){
         if (isSeduced){
             monsterSeducedSpeak();
         }
-    }
+   }
 
     public void monsterDoesOneshot(MonsterType monsterType) {
         if (this.getMonsterHP() <= 0 && monsterType == MonsterType.CREEPER || monsterType == MonsterType.MEDUSA || monsterType == MonsterType.BASILISK) {
