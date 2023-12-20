@@ -12,6 +12,8 @@ public enum Colors {
     CYAN("\033[0;36m"),     // CYAN
     WHITE("\033[0;37m"),    // WHITE
 
+    FATIMAS_RED("\u001B[38;2;193;33;31m "), //REDREDRED
+
     // Bold
     BLACK_BOLD("\033[1;30m"),   // BLACK
     RED_BOLD("\033[1;31m"),     // RED

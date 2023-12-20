@@ -1,4 +1,5 @@
 import javax.sound.sampled.*;
+import java.util.Objects;
 
 public class Music {
     private Clip clip;
@@ -12,7 +13,7 @@ public class Music {
 
     public Music(String musicFile) {
         try {
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResourceAsStream(musicFile));
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(Objects.requireNonNull(getClass().getResourceAsStream(musicFile)));
             clip = AudioSystem.getClip();
             clip.open(audioInputStream);
         } catch (Exception e) {

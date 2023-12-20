@@ -24,7 +24,7 @@ public class Chest {
                 System.out.println(e.getDescription());
                 player.getSelectedCharacter().getInventory().getItemList().add(e);
             });
-        } catch (EmptyInventoryException e) {
+        } catch (EmptyChestException e) {
             GameMessage.getExceptionMessage(e.getMessage());
         }
     }
