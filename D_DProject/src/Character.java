@@ -190,7 +190,7 @@ public class Character {
                     if (!monster.isSeduced()) {
                         monster.setSeduced(true);
                         System.out.println(randomQuote);
-                        monster.printSeducedQuotes();
+                        monster.monsterSeducedSpeak();
                     }
                 }
             }
