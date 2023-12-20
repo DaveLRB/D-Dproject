@@ -18,7 +18,8 @@ public class Monster {
     private Quote[] neutralQuotes;
     private Quote[] angerQuotes;
     private Quote[] seducedQuotes;
-
+    private static final int ONE_SHOT_CHANCE = 10;
+    private static final int REVIVE_HEALTH = 100;
 
     public Monster(String name, int hitDmg, int monsterHP, int experiencePoints, int gold, boolean isAlive, boolean isInvisible, boolean isAngered, boolean isSeduced, String[] attacks, Quote[] neutralQuotes, Quote[] angerQuotes, Quote[] seducedQuotes) {
         this.name = name;
@@ -60,6 +61,7 @@ public class Monster {
     public void setMonsterHP(int monsterHP) {
         this.monsterHP = monsterHP;
     }
+
     public int getExperiencePoints() {
         return experiencePoints;
     }
@@ -83,6 +85,7 @@ public class Monster {
     public void setAlive(boolean alive) {
         isAlive = alive;
     }
+
     public boolean isHasBeenRevived() {
         return hasBeenRevived;
     }
@@ -168,10 +171,10 @@ public class Monster {
     }
 
     public int monsterAttack(Character character) {
-        if (getTurnToBeInvisible() % 2 == 0) {
-            if (name.equals("Ghost") || name.equals("Spectre")) {
-                isInvisible = true;
-            }
+        if (getTurnToBeInvisible() % 2 == 0
+                && (name.equals("Ghost")
+                || name.equals("Spectre"))) {
+            isInvisible = true;
         }
         int attackIndex = new Random().nextInt(attacks.length);
         String attack = attacks[attackIndex];
@@ -180,18 +183,15 @@ public class Monster {
     }
 
     public void takeDamage(Player player, String attackType) {
-        int damage = 0;
-
-        if (!isInvisible) {
+        if (isInvisible) {
+            isInvisible = false;
+        } else {
+            int damage = 0;
             switch (attackType) {
                 case "light":
-                    damage = player.getSelectedCharacter().attack(this,"light");
-                    break;
                 case "heavy":
-                    damage = player.getSelectedCharacter().attack(this,"heavy");
-                    break;
                 case "ultimate":
-                    damage = player.getSelectedCharacter().attack(this,"ultimate");
+                    damage = player.getSelectedCharacter().attack(this, attackType);
                     break;
                 default:
                     System.out.println("Invalid attack type!");
@@ -200,39 +200,28 @@ public class Monster {
             monsterHP -= damage;
             System.out.println("\n" + player.getSelectedCharacter().getName() + " used " + attackType + " attack and dealt " + damage + " damage to " + this.name + "!");
             turnToBeInvisible++;
-        } else {
-            isInvisible = false;
-            turnToBeInvisible++;
         }
+        turnToBeInvisible++;
+    }
+
+    private void speak(Quote[] quotes, String emotion) {
+        int quoteIndex = new Random().nextInt(quotes.length);
+        Quote monsterQuote = quotes[quoteIndex];
+        Music music = new Music(monsterQuote.getFilename());
+        music.play();
+        System.out.println(name + emotion + monsterQuote.getText());
     }
 
     public void monsterSpeak() {
-        int quoteIndex = new Random().nextInt(neutralQuotes.length);
-        Quote monsterQuote = neutralQuotes[quoteIndex];
-        System.out.println(name + ": " + monsterQuote.getText());
+        speak(neutralQuotes, " (Neutral): ");
     }
 
     public void monsterAngerSpeak() {
-        int quoteIndex = new Random().nextInt(angerQuotes.length);
-        Quote angerQuote = angerQuotes[quoteIndex];
-        System.out.println(name + " (Angry): " + angerQuote.getText());
+        speak(angerQuotes, " (Angry): ");
     }
 
     public void monsterSeducedSpeak() {
-        int quoteIndex = new Random().nextInt(seducedQuotes.length);
-        Quote seducedQuote = seducedQuotes[quoteIndex];
-        System.out.println(name + " (Seduced): " + seducedQuote.getText());
-    }
-
-    public void printAngeredQuotes() {
-        if (isAngered) {
-            monsterAngerSpeak();
-        }
-    }
-    public void printSeducedQuotes() {
-        if (isSeduced) {
-            monsterSeducedSpeak();
-        }
+        speak(seducedQuotes, " (Seduced): ");
     }
 
     public void monsterDoesOneshot(MonsterType monsterType) {
@@ -242,14 +231,15 @@ public class Monster {
                 && (monsterType == MonsterType.CREEPER
                 || monsterType == MonsterType.MEDUSA
                 || monsterType == MonsterType.BASILISK)
-                && chance < 10) {
+                && chance < ONE_SHOT_CHANCE) {
             isAlive = false;
             System.out.println(this.getName() + " killed you in a single blow...");
         }
     }
+
     public void revive(MonsterType monsterType) {
         if (!this.isAlive && monsterType == MonsterType.SKELETON && !hasBeenRevived) {
-            this.setMonsterHP(100);
+            this.setMonsterHP(REVIVE_HEALTH);
             this.isAlive = true;
             hasBeenRevived = true;
             System.out.println(this.getName() + " has been revived with full health!");
