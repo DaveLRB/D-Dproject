@@ -29,7 +29,6 @@ class MonsterFactory {
 
             case BABYSPIDERS -> new Monster("Baby Spider", 20, 35, 15, 35, true, false, false, false,
                     new String[]{"Venomous Bite", "Web Spit", "Silk Wrap", "Arachnid Assault", "Spider Squeeze"},
-
                     new Quote[]{
                             new Quote("Baby+spider+neutral+1_out.wav", "No need to fear, we can coexist."),
                             new Quote("Baby+spider+neutral+2_out.wav", "Skittering sounds"),
@@ -50,7 +49,7 @@ class MonsterFactory {
                             new Quote("Baby+spider+seduce+3_out.wav", "You're tangled in my love's web."),
                             new Quote("Baby+spider+seduce+4_out.wav", "Feel this delicate touch of mine"),
                             new Quote("Baby+spider+seduce+5_out.wav", "In the web of love, we're entwined.")
-                    }
+                    });
                                             
             case GOBLIN -> new Monster("Goblin", 25, 40, 15, 35, true, false, false, false,
                     new String[]{"Vicious Stab", "Rock Throw", "Goblin Ambush", "Sneaky Strike", "Mischief Slash"},

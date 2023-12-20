@@ -187,19 +187,19 @@ public class Monster {
     public void monsterSpeak() {
         int quoteIndex = new Random().nextInt(neutralQuotes.length);
         Quote monsterQuote = neutralQuotes[quoteIndex];
-        System.out.println(name + ": " + monsterQuote);
+        System.out.println(name + ": " + monsterQuote.getText());
     }
 
     public void monsterAngerSpeak() {
         int quoteIndex = new Random().nextInt(angerQuotes.length);
         Quote angerQuote = angerQuotes[quoteIndex];
-        System.out.println(name + " (Angry): " + angerQuote);
+        System.out.println(name + " (Angry): " + angerQuote.getText());
     }
 
     public void monsterSeducedSpeak() {
         int quoteIndex = new Random().nextInt(seducedQuotes.length);
         Quote seducedQuote = seducedQuotes[quoteIndex];
-        System.out.println(name + " (Seduced): " + seducedQuote);
+        System.out.println(name + " (Seduced): " + seducedQuote.getText());
     }
 
     public void printAngeredQuotes(){
