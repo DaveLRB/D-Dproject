@@ -8,7 +8,7 @@ class InputHelper {
     private static final String INVENTORY = "4";
     public static int getOptionFromUser() {
         Scanner scan = new Scanner(System.in);
-        System.out.println("\nOptions\n\n0.Run Away\n1.Attack Monster\n2.Special Attack\n3.Ultimate Attack\n4.Inventory");
+        System.out.println("\nOptions\n\n0.Run Away\n1.Light Attack\n2.Heavy Attack\n3.Ultimate Attack\n4.Inventory");
         String selectedOption;
         while (true) {
             selectedOption = scan.nextLine();
