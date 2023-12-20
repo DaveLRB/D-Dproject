@@ -6,11 +6,11 @@ class MonsterFactory {
             case SLIME -> new Monster("Slime", 15, 30, 15, 35, true, false, false, false,
                     new String[]{"Gelatinous Grasp", "Slime Splash", "Bouncy Bop", "Ooze Overture", "Squishy Slam"},
                     new Quote[]{
-                            new Quote("Slime+neutral+1_out.wav", "Let's keep it slimey."),
-                            new Quote("Slime+neutral+2_out.wav", "I'm gooey!"),
-                            new Quote("Slime+neutral+3_out.wav", "Bloop bloop!"),
-                            new Quote("Slime+neutral+4_out.wav", "Feel the squish of my attacks!"),
-                            new Quote("Slime+neutral+5_out.wav", "Prepare for a slimy surprise.")
+                            new Quote("MonsterAudio/Slime+neutral+1_out.wav", "Let's keep it slimey."),
+                            new Quote("MonsterAudio/Slime+neutral+2_out.wav", "I'm gooey!"),
+                            new Quote("MonsterAudio/Slime+neutral+3_out.wav", "Bloop bloop!"),
+                            new Quote("MonsterAudio/Slime+neutral+4_out.wav", "Feel the squish of my attacks!"),
+                            new Quote("MonsterAudio/Slime+neutral+5_out.wav", "Prepare for a slimy surprise.")
                     },
                     new Quote[]{
                             new Quote("Slime+anger+1_out.wav", "I'm not just a puddle of goo, you know!"),
@@ -604,4 +604,4 @@ class MonsterFactory {
                     });
         };
     }
-} // audio needed for Dragon, Kraken, Phoenix, Wyvern, Chimera, Harpy, Creeper, Mummy
+} // audio needed for Kraken, Phoenix, Chimera, Harpy,
