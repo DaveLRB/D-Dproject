@@ -29,7 +29,6 @@ class MonsterFactory {
 
             case BABYSPIDERS -> new Monster("Baby Spider", 20, 35, 15, 35, true, false, false, false,
                     new String[]{"Venomous Bite", "Web Spit", "Silk Wrap", "Arachnid Assault", "Spider Squeeze"},
-
                     new Quote[]{
                             new Quote("Baby+spider+neutral+1_out.wav", "No need to fear, we can coexist."),
                             new Quote("Baby+spider+neutral+2_out.wav", "Skittering sounds"),
