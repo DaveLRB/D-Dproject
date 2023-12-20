@@ -74,12 +74,12 @@ public class Dungeon {
                     printDeathMessageIfDead();
                     break;
                 case 2:
-                    currentMonster.takeSpecialDamage(player);
+                    //currentMonster.takeSpecialDamage(player);
                     printDeathMessageIfDead();
                     break;
                 case 3:
                     try {
-                        currentMonster.takeUltimateDamage(player);
+                        //currentMonster.takeUltimateDamage(player);
                         printDeathMessageIfDead();
                     } catch (HealthPointsGreaterThan20Exception e) {
                         System.out.println(e.getMessage());

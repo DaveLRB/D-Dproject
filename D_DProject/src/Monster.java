@@ -14,12 +14,12 @@ public class Monster {
     private boolean isInvisible;
     private boolean isSeduced;
     private String[] attacks;
-    private String[] neutralQuotes;
-    private String[] angerQuotes;
-    private String[] seducedQuotes;
+    private Quote[] neutralQuotes;
+    private Quote[] angerQuotes;
+    private Quote[] seducedQuotes;
 
 
-    public Monster(String name, int hitDmg, int monsterHP, int experiencePoints, int gold, boolean isAlive, boolean isInvisible, boolean isAngered, boolean isSeduced, String[] attacks, String[] neutralQuotes, String[] angerQuotes, String[] seducedQuotes) {
+    public Monster(String name, int hitDmg, int monsterHP, int experiencePoints, int gold, boolean isAlive, boolean isInvisible, boolean isAngered, boolean isSeduced, String[] attacks, Quote[] neutralQuotes, Quote[] angerQuotes, Quote[] seducedQuotes) {
         this.name = name;
         this.hitDmg = hitDmg;
         this.monsterHP = monsterHP;
@@ -106,27 +106,27 @@ public class Monster {
         this.attacks = attacks;
     }
 
-    public String[] getNeutralQuotes() {
+    public Quote[] getNeutralQuotes() {
         return neutralQuotes;
     }
 
-    public void setNeutralQuotes(String[] neutralQuotes) {
+    public void setNeutralQuotes(Quote[] neutralQuotes) {
         this.neutralQuotes = neutralQuotes;
     }
 
-    public String[] getAngerQuotes() {
+    public Quote[] getAngerQuotes() {
         return angerQuotes;
     }
 
-    public void setAngerQuotes(String[] angerQuotes) {
+    public void setAngerQuotes(Quote[] angerQuotes) {
         this.angerQuotes = angerQuotes;
     }
 
-    public String[] getSeducedQuotes() {
+    public Quote[] getSeducedQuotes() {
         return seducedQuotes;
     }
 
-    public void setSeducedQuotes(String[] seducedQuotes) {
+    public void setSeducedQuotes(Quote[] seducedQuotes) {
         this.seducedQuotes = seducedQuotes;
     }
 
@@ -163,7 +163,6 @@ public class Monster {
             if (name.equals("Ghost") || name.equals("Spectre")) {
                 isInvisible = true;
             }
-
         }
         int attackIndex = new Random().nextInt(attacks.length);
         String attack = attacks[attackIndex];
@@ -172,52 +171,35 @@ public class Monster {
     }
 
     public void takeDamage(Player player) {
-        if (!isInvisible) {
-            int playerAttack = player.getSelectedCharacter().characterAttack();
-            monsterHP -= playerAttack;
-            System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + playerAttack + " damage on " + this.name + "!");
+        int damage = 0;
+        if(!isInvisible) { //perguntar que se passa aqui, incrementa tds os attacks
+            damage = player.getSelectedCharacter().attack("light");
+            damage += player.getSelectedCharacter().attack("heavy");
+            damage += player.getSelectedCharacter().attack("ultimate");
+            monsterHP -= damage;
+            System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + damage + " damage on " + this.name + "!");
             turnToBeInvisible++;
         } else {
             isInvisible = false;
-            monsterAngerSpeak();
             turnToBeInvisible++;
-        }
-    }
-
-    public void takeSpecialDamage(Player player) {
-        if (isMonsterAlive()) {
-            int playerAttack = player.getSelectedCharacter().specialAttack();
-            monsterHP -= playerAttack;
-            System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + playerAttack + " damage on " + this.name + "!");
-            monsterAngerSpeak();
-        }
-    }
-
-    public void takeUltimateDamage(Player player) {
-        if (isMonsterAlive()) {
-            int playerAttack = player.getSelectedCharacter().ultimateAttack();
-            monsterHP -= playerAttack;
-            System.out.println("\n" + player.getSelectedCharacter().getName() + " gave " + playerAttack + " damage on " + this.name + "!");
-            monsterAngerSpeak();
         }
     }
 
     public void monsterSpeak() {
         int quoteIndex = new Random().nextInt(neutralQuotes.length);
-        String monsterQuote = neutralQuotes[quoteIndex];
+        Quote monsterQuote = neutralQuotes[quoteIndex];
         System.out.println(name + ": " + monsterQuote);
     }
 
     public void monsterAngerSpeak() {
         int quoteIndex = new Random().nextInt(angerQuotes.length);
-        String angerQuote = angerQuotes[quoteIndex];
+        Quote angerQuote = angerQuotes[quoteIndex];
         System.out.println(name + " (Angry): " + angerQuote);
     }
 
-
     public void monsterSeducedSpeak() {
         int quoteIndex = new Random().nextInt(seducedQuotes.length);
-        String seducedQuote = seducedQuotes[quoteIndex];
+        Quote seducedQuote = seducedQuotes[quoteIndex];
         System.out.println(name + " (Seduced): " + seducedQuote);
     }
 

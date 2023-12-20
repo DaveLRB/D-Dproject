@@ -10,7 +10,6 @@ public class Quote {
     public String getText() {
         return text;
     }
-
     public String getFilename() {
         return filename;
     }
