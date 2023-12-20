@@ -179,16 +179,16 @@ public class Character {
         return characterType;
     }
 
-    public void characterTalk(CharacterType characterType, Monster monster) {
+    public void characterTalk(Monster monster) {
         String randomQuote = "";
-
-        switch (characterType) {
+        switch (this.getCharacterType()) {
             case BARD -> {
                 randomQuote = getRandomQuoteBard();
                 seduce++;
                 if (seduce == 2) {
                     if (!monster.isSeduced()) {
                         monster.setSeduced(true);
+                        monster.printSeducedQuotes();
                     }
                 }
             }
@@ -203,59 +203,49 @@ public class Character {
         this.healthPoints -= monster.monsterAttack(this);
     }
 
-    public int characterAttack() {
+    public int attack(String attackType) {
+        if (isParalysed()) {
+            System.out.println("Cannot attack, you are paralysed!");
+            return 0;
+        }
         int attack = 0;
-        if (!isParalysed()) {
-            switch (characterType) {
-                case KNIGHT -> attack = this.strength;
-                case SORCERER -> attack = this.intelligence;
-                case BARD -> attack = this.charisma;
-                case ASSASSIN -> attack = this.dexterity;
-            }
-            return attack;
-        } else {
-            System.out.println("Cannot attack, you are paralysed!");
-        }
-        return 0;
-    }
-
-    public int specialAttack() {
-        if (!isParalysed()) {
-            int special = 0;
-            switch (characterType) {
-                case KNIGHT -> special = this.strength * (int) (Math.random() * 3) + 1;
-                case SORCERER -> special = this.intelligence * (int) (Math.random() * 3) + 1;
-                case BARD -> special = this.charisma * (int) (Math.random() * 3) + 1;
-                case ASSASSIN -> special = this.dexterity * (int) (Math.random() * 3) + 1;
-            }
-            return special;
-        } else {
-            System.out.println("Cannot attack, you are paralysed!");
-        }
-        return 0;
-    }
-
-    public int ultimateAttack() {
         Random random = new Random();
         double chance = random.nextDouble();
-        int ultimate = 0;
-        if (!isParalysed()) {
-            if (chance <= 0.20 && healthPoints <= 20) {
-                switch (characterType) {
-                    case KNIGHT -> ultimate = this.strength * 10;
-                    case SORCERER -> ultimate = this.intelligence * 10;
-                    case BARD -> ultimate = this.charisma * 10;
-                    case ASSASSIN -> ultimate = this.dexterity * 10;
-                }
-            } else{
-                throw new HealthPointsGreaterThan20Exception();
-            }
-            return ultimate/10;
-        } else {
-            System.out.println("Cannot attack, you are paralysed!");
 
+        switch (attackType) {
+            case "light":
+                attack = switch (characterType) {
+                    case KNIGHT -> this.strength;
+                    case SORCERER -> this.intelligence;
+                    case BARD -> this.charisma;
+                    case ASSASSIN -> this.dexterity;
+                };
+                break;
+            case "heavy":
+                attack = switch (characterType) {
+                    case KNIGHT -> this.strength * (int) (Math.random() * 3) + 1;
+                    case SORCERER -> this.intelligence * (int) (Math.random() * 3) + 1;
+                    case BARD -> this.charisma * (int) (Math.random() * 3) + 1;
+                    case ASSASSIN -> this.dexterity * (int) (Math.random() * 3) + 1;
+                };
+                break;
+            case "ultimate":
+                if (chance <= 0.20 && healthPoints <= 20) {
+                    attack = switch (characterType) {
+                        case KNIGHT -> this.strength * 10;
+                        case SORCERER -> this.intelligence * 10;
+                        case BARD -> this.charisma * 10;
+                        case ASSASSIN -> this.dexterity * 10;
+                    };
+                } else {
+                    throw new HealthPointsGreaterThan20Exception();
+                }
+                break;
+            default:
+                System.out.println("Invalid attack type!");
+                break;
         }
-        return 0;
+        return attack;
     }
 
     public void removeCharisma(Integer charisma) {
