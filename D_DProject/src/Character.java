@@ -41,36 +41,36 @@ public class Character {
     };
 
     private final Quote[] charQuotesKnight = {
-            new Quote("MonsterAudio/knight_quote_1", "The valor of a knight will smite you!"),
-            new Quote("MonsterAudio/knight_quote_2", "With my weapon i shall cleanse the world of evil"),
-            new Quote("MonsterAudio/knight_quote_3", "Courage is the strength to face uncertainty."),
-            new Quote("MonsterAudio/knight_quote_4", "Chivalry is not just a code, but a way of being."),
-            new Quote("MonsterAudio/knight_quote_5", "Strength shields the weak, to the evils might."),
-            new Quote("MonsterAudio/knight_quote_6", "Valor knows no fear, in the face of darkness."),
-            new Quote("MonsterAudio/knight_quote_7", "Honor guides every deed, an honest heart makes."),
-            new Quote("MonsterAudio/knight_quote_8", "Adversity forges nobility, were cowardice sows fragility.")
+            new Quote("MonsterAudio/knight_quote_1.wav", "The valor of a knight will smite you!"),
+            new Quote("MonsterAudio/knight_quote_2.wav", "With my weapon i shall cleanse the world of evil"),
+            new Quote("MonsterAudio/knight_quote_3.wav", "Courage is the strength to face uncertainty."),
+            new Quote("MonsterAudio/knight_quote_4.wav", "Chivalry is not just a code, but a way of being."),
+            new Quote("MonsterAudio/knight_quote_5.wav", "Strength shields the weak, to the evils might."),
+            new Quote("MonsterAudio/knight_quote_6.wav", "Valor knows no fear, in the face of darkness."),
+            new Quote("MonsterAudio/knight_quote_7.wav", "Honor guides every deed, an honest heart makes."),
+            new Quote("MonsterAudio/knight_quote_8.wav", "Adversity forges nobility, were cowardice sows fragility.")
     };
 
     private final Quote[] charQuotesAssassin = {
-            new Quote("MonsterAudio/assassin_quote_1", "My poison daggers will send you to the shadows.."),
-            new Quote("MonsterAudio/assassin_quote_2", "In the dark i live..in the dark you shall die"),
-            new Quote("MonsterAudio/assassin_quote_3", "Silence is the deadliest weapon in the arsenal of an assassin."),
-            new Quote("MonsterAudio/assassin_quote_4", "Darkness is the ally of shadows, and shadows breed the unseen strike."),
-            new Quote("MonsterAudio/assassin_quote_5", "Silence speaks louder than steel."),
-            new Quote("MonsterAudio/assassin_quote_6", "Shadows are my allies, darkness my cloak."),
-            new Quote("MonsterAudio/assassin_quote_7", "Precision is my art, stealth my dance."),
-            new Quote("MonsterAudio/assassin_quote_8", "In the quiet, I am deadliest.")
+            new Quote("MonsterAudio/assassin_quote_1.wav", "My poison daggers will send you to the shadows.."),
+            new Quote("MonsterAudio/assassin_quote_2.wav", "In the dark i live..in the dark you shall die"),
+            new Quote("MonsterAudio/assassin_quote_3.wav", "Silence is the deadliest weapon in the arsenal of an assassin."),
+            new Quote("MonsterAudio/assassin_quote_4.wav", "Darkness is the ally of shadows, and shadows breed the unseen strike."),
+            new Quote("MonsterAudio/assassin_quote_5.wav", "Silence speaks louder than steel."),
+            new Quote("MonsterAudio/assassin_quote_6.wav", "Shadows are my allies, darkness my cloak."),
+            new Quote("MonsterAudio/assassin_quote_7.wav", "Precision is my art, stealth my dance."),
+            new Quote("MonsterAudio/assassin_quote_8.wav", "In the quiet, I am deadliest.")
     };
 
     private final Quote[] charQuotesSorcerer = {
-            new Quote("MonsterAudio/sorcerer_quote_1", "With my magic i shall turn you to ash!"),
-            new Quote("MonsterAudio/sorcerer_quote_2", "Behold my might..the Sorcerer Supreme!"),
-            new Quote("MonsterAudio/sorcerer_quote_3", "Magic flows where intent meets will."),
-            new Quote("MonsterAudio/sorcerer_quote_4", "Knowledge is the staff of power wielded by the adept sorcerer."),
-            new Quote("MonsterAudio/sorcerer_quote_5", "Magic bends to my will, the elements dance at my command."),
-            new Quote("MonsterAudio/sorcerer_quote_6", "Arcane secrets whisper in every spell."),
-            new Quote("MonsterAudio/sorcerer_quote_7", "Power courses through my veins, shaped by incantations."),
-            new Quote("MonsterAudio/sorcerer_quote_8", "The unseen forces are my allies, shaping reality to my design.")
+            new Quote("MonsterAudio/sorcerer_quote_1.wav", "With my magic i shall turn you to ash!"),
+            new Quote("MonsterAudio/sorcerer_quote_2.wav", "Behold my might..the Sorcerer Supreme!"),
+            new Quote("MonsterAudio/sorcerer_quote_3.wav", "Magic flows where intent meets will."),
+            new Quote("MonsterAudio/sorcerer_quote_4.wav", "Knowledge is the staff of power wielded by the adept sorcerer."),
+            new Quote("MonsterAudio/sorcerer_quote_5.wav", "Magic bends to my will, the elements dance at my command."),
+            new Quote("MonsterAudio/sorcerer_quote_6.wav", "Arcane secrets whisper in every spell."),
+            new Quote("MonsterAudio/sorcerer_quote_7.wav", "Power courses through my veins, shaped by incantations."),
+            new Quote("MonsterAudio/sorcerer_quote_8.wav", "The unseen forces are my allies, shaping reality to my design.")
 
     };
 
