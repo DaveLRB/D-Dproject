@@ -605,5 +605,5 @@ class MonsterFactory {
         };
     }
 
-} // audio needed for Kraken, Phoenix, Chimera, Harpy
+} // audio needed for Harpy
 
