@@ -1,4 +1,5 @@
 import javax.sound.sampled.*;
+import java.io.InputStream;
 import java.util.Objects;
 
 public class Music {
@@ -13,13 +14,23 @@ public class Music {
 
     public Music(String musicFile) {
         try {
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(Objects.requireNonNull(getClass().getResourceAsStream(musicFile)));
+            if (musicFile == null) {
+                throw new IllegalArgumentException("Music file cannot be null");
+            }
+
+            InputStream inputStream = getClass().getResourceAsStream(musicFile);
+            if (inputStream == null) {
+                throw new IllegalArgumentException("Unable to load music file: " + musicFile);
+            }
+
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(inputStream);
             clip = AudioSystem.getClip();
             clip.open(audioInputStream);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
     public void play() {
         if (clip != null && !clip.isRunning()) {
