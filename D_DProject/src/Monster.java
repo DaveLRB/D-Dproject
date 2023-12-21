@@ -170,6 +170,14 @@ public class Monster {
         this.turnToBeInvisible = turnToBeInvisible;
     }
 
+    public int getTimesAttacked() {
+        return timesAttacked;
+    }
+
+    public void setTimesAttacked(int timesAttacked) {
+        this.timesAttacked = timesAttacked;
+    }
+
     public int monsterAttack(Character character) {
         if (getTurnToBeInvisible() % 2 == 0
                 && (name.equals("Ghost")
