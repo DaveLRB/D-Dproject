@@ -43,7 +43,6 @@ public class GameManager {
                         gameIsRunning = false;
                         GameMessage.getFinalGameMessage();
                     }
-                    case "5" -> new Chest(player);
                 }
             }
         }
