@@ -13,6 +13,10 @@
 
 Entering the game you will have the main menu where you will have to pick a character, each have different stats; Entering the dungeon you will need to kill monsters to get XP and gold, which will help you level up, increasing stats and the money on your pocket; You can leave the dungeon whenever you want during your turns; You have as said before, the option to leave, check inventory, attack in several ways, talk and show mercy monsters. You will have access to the shop where you will be able to buy items to help on your adventure; In each level you need to kill all the monsters to get to the next level; You need to defeat all levels in order to win the game.
 
+## Diagram
+
+<img width="1408" alt="Captura de ecrã 2023-12-21, às 12 21 56" src="https://github.com/DaveLRB/D-Dproject/assets/108300486/4cf950e4-3143-464f-9c64-cb6b72008735">
+
 
 ## Installation
 
