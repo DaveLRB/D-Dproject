@@ -39,7 +39,10 @@ public class GameManager {
                     case "2" -> checkCharacterStats(player);
                     case "3" -> getPlayerInventory();
                     case "4" -> shop.enter();
-                    case "5" -> new Chest(player);
+                    case "5" -> {
+                        gameIsRunning = false;
+                        GameMessage.getFinalGameMessage();
+                    }
                 }
             }
         }
