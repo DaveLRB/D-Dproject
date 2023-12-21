@@ -13,7 +13,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Slime+neutral+5_out.wav", "Prepare for a slimy surprise.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/Slime+anger+1_out.wav", "I'm not just a puddle of goo, you know!"),
+                            new Quote("MonsterAudio/Slime+angry+1_out.wav", "I'm not just a puddle of goo, you know!"),
                             new Quote("MonsterAudio/Slime+angry+2_out.wav", "I'm angry!"),
                             new Quote("MonsterAudio/Slime+angry+3_out.wav", "Get ready to be slimed!"),
                             new Quote("MonsterAudio/Slime+angry+4_out.wav", "Gooey wrath coming!"),
@@ -78,25 +78,25 @@ class MonsterFactory {
             case SKELETON -> new Monster("Skeleton", 30, 45, 15, 35, true, false, false, false,
                     new String[]{"Boner Attack", "Rattle", "Bone Crush", "Spooky Strike", "Graveyard Slam"},
                     new Quote[]{
-                            new Quote("MonsterAudio/skeleton_neutral_1.wav", "Click clack!"),
-                            new Quote("MonsterAudio/skeleton_neutral_2.wav", "Beware the bones!"),
-                            new Quote("MonsterAudio/skeleton_neutral_3.wav", "Skeletons arise!"),
-                            new Quote("MonsterAudio/skeleton_neutral_4.wav", "Rattling bones in the darkness."),
-                            new Quote("MonsterAudio/skeleton_neutral_5.wav", "The undead march.")
+                            new Quote("MonsterAudio/skeleton_neutral_1_out.wav", "Click clack!"),
+                            new Quote("MonsterAudio/skeleton_neutral_2_out.wav", "Beware the bones!"),
+                            new Quote("MonsterAudio/skeleton_neutral_3_out.wav", "Skeletons arise!"),
+                            new Quote("MonsterAudio/skeleton_neutral_4_out.wav", "Rattling bones in the darkness."),
+                            new Quote("MonsterAudio/skeleton_neutral_5_out.wav", "The undead march.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/skeleton_anger_1.wav", "You can't defeat what's already dead!"),
-                            new Quote("MonsterAudio/skeleton_anger_2.wav", "Skeletons have the best bone-chilling jokes."),
-                            new Quote("MonsterAudio/skeleton_anger_3.wav", "Feel the chill of the grave!"),
-                            new Quote("MonsterAudio/skeleton_anger_4.wav", "Bones of fury!"),
-                            new Quote("MonsterAudio/skeleton_anger_5.wav", "Dance with the skeletons!")
+                            new Quote("MonsterAudio/skeleton_angry_1_out.wav", "You can't defeat what's already dead!"),
+                            new Quote("MonsterAudio/skeleton_angry_2_out.wav", "Skeletons have the best bone-chilling jokes."),
+                            new Quote("MonsterAudio/skeleton_angry_3_out.wav", "Feel the chill of the grave!"),
+                            new Quote("MonsterAudio/skeleton_angry_4_out.wav", "Bones of fury!"),
+                            new Quote("MonsterAudio/skeleton_angry_5_out.wav", "Dance with the skeletons!")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/skeleton_seduce_1.wav", "Enthralled by skeletal charm."),
-                            new Quote("MonsterAudio/skeleton_seduce_2.wav", "Embrace the bone-chilling love."),
-                            new Quote("MonsterAudio/skeleton_seduce_3.wav", "Caught in the dance of the undead."),
-                            new Quote("MonsterAudio/skeleton_seduce_4.wav", "Feel the skeletal passion."),
-                            new Quote("MonsterAudio/skeleton_seduce_5.wav", "In the arms of the skeletal embrace.")
+                            new Quote("MonsterAudio/skeleton_seduce_1_out.wav", "Enthralled by skeletal charm."),
+                            new Quote("MonsterAudio/skeleton_seduce_2_out.wav", "Embrace the bone-chilling love."),
+                            new Quote("MonsterAudio/skeleton_seduce_3_out.m4a", "Caught in the dance of the undead."),
+                            new Quote("MonsterAudio/skeleton_seduce_4_out.wav", "Feel the skeletal passion."),
+                            new Quote("MonsterAudio/skeleton_seduce_5_out.wav", "In the arms of the skeletal embrace.")
                     });
 
             case ZOMBIE -> new Monster("Zombie", 35, 50, 15, 35, true, false, false, false,
@@ -109,11 +109,11 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Zombie+neutral+5_out.wav", "Echoes of decay.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/Zombie+anger+1_out.wav", "The undead hunger never ends!"),
-                            new Quote("MonsterAudio/Zombie+anger+2_out.wav", "Flesh is my favorite snack!"),
-                            new Quote("MonsterAudio/Zombie+anger+3_out.wav", "Zombie rage!"),
-                            new Quote("MonsterAudio/Zombie+anger+4_out.wav", "Rotting and restless!"),
-                            new Quote("MonsterAudio/Zombie+anger+5_out.wav", "With your bodies I feast")
+                            new Quote("MonsterAudio/Zombie+angry+1_out.wav", "The undead hunger never ends!"),
+                            new Quote("MonsterAudio/Zombie+angry+2_out.wav", "Flesh is my favorite snack!"),
+                            new Quote("MonsterAudio/Zombie+angry+3_out.wav", "Zombie rage!"),
+                            new Quote("MonsterAudio/Zombie+angry+4_out.wav", "Rotting and restless!"),
+                            new Quote("MonsterAudio/Zombie+angry+5_out.wav", "With your bodies I feast")
                     },
                     new Quote[]{
                             new Quote("MonsterAudio/Zombie+seduce+1_out.wav", "Ensnared by the undead charm."),
@@ -157,11 +157,11 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Werewolf+neutral+5_out.wav", "Wild and untamed.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/Werewolf+rage+1_out.wav", "The moon empowers me!"),
-                            new Quote("MonsterAudio/Werewolf+rage+2_out.wav", "Beware the fury of the werewolf!"),
-                            new Quote("MonsterAudio/Werewolf+rage+3_out.wav", "Lunar wrath unleashed!"),
-                            new Quote("MonsterAudio/Werewolf+rage+4_out.wav", "Feel the feral rage!"),
-                            new Quote("MonsterAudio/Werewolf+rage+5_out.wav", "Embrace the moonlit savagery!")
+                            new Quote("MonsterAudio/Werewolf+angry+1_out.wav", "The moon empowers me!"),
+                            new Quote("MonsterAudio/Werewolf+angry+2_out.wav", "Beware the fury of the werewolf!"),
+                            new Quote("MonsterAudio/Werewolf+angry+3_out.wav", "Lunar wrath unleashed!"),
+                            new Quote("MonsterAudio/Werewolf+angry+4_out.wav", "Feel the feral rage!"),
+                            new Quote("MonsterAudio/Werewolf+angry+5_out.wav", "Embrace the moonlit savagery!")
                     },
                     new Quote[]{
                             new Quote("MonsterAudio/Werewolf+seduced+1_out.wav", "In the moonlight's tender embrace."),
@@ -205,11 +205,11 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Witch+neutral+5_out.wav", "Mystical energies surround us.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/Witch+anger+1_out.wav", "Magic flows through my veins!"),
-                            new Quote("MonsterAudio/Witch+anger+2_out.wav", "The witch's brew will seal your fate."),
-                            new Quote("MonsterAudio/Witch+anger+3_out.wav", "Hexes and curses!"),
-                            new Quote("MonsterAudio/Witch+anger+4_out.wav", "Feel the magical wrath of a witch"),
-                            new Quote("MonsterAudio/Witch+anger+5_out.wav", "Doomed by the mystic forces!")
+                            new Quote("MonsterAudio/Witch+angry+1_out.wav", "Magic flows through my veins!"),
+                            new Quote("MonsterAudio/Witch+angry+2_out.wav", "The witch's brew will seal your fate."),
+                            new Quote("MonsterAudio/Witch+angry+3_out.wav", "Hexes and curses!"),
+                            new Quote("MonsterAudio/Witch+angry+4_out.wav", "Feel the magical wrath of a witch"),
+                            new Quote("MonsterAudio/Witch+angry+5_out.wav", "Doomed by the mystic forces!")
                     },
                     new Quote[]{
                             new Quote("MonsterAudio/Witch+seduced+1_out.wav", "Enchanted by your presence, my dear!"),
@@ -246,49 +246,49 @@ class MonsterFactory {
             case MUMMY -> new Monster("Mummy", 65, 80, 55, 75, true, false, false, false,
                     new String[]{"Bandage Wrap", "Ancient Curse", "Sands of Time", "Tomb's Embrace", "Eternal Rest"},
                     new Quote[]{
-                            new Quote("MonsterAudio/mummy_neutral_1.wav", "Unwrapping the past!"),
-                            new Quote("MonsterAudio/mummy_neutral_2.wav", "Eternal slumber disturbed!"),
-                            new Quote("MonsterAudio/mummy_neutral_3.wav", "Whispers of the ancient sands."),
-                            new Quote("MonsterAudio/mummy_neutral_4.wav", "Silent echoes from the burial chamber."),
-                            new Quote("MonsterAudio/mummy_neutral_5.wav", "Wrapped in the bandages of time.")
+                            new Quote("MonsterAudio/mummy_neutral_1_out.wav", "Unwrapping the past!"),
+                            new Quote("MonsterAudio/mummy_neutral_2_out.wav", "Eternal slumber disturbed!"),
+                            new Quote("MonsterAudio/mummy_neutral_3_out.wav", "Whispers of the ancient sands."),
+                            new Quote("MonsterAudio/mummy_neutral_4_out.wav", "Silent echoes from the burial chamber."),
+                            new Quote("MonsterAudio/mummy_neutral_5_out.wav", "Wrapped in the bandages of time.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/mummy_anger_1.wav", "Ancient curses awaken!"),
-                            new Quote("MonsterAudio/mummy_anger_2.wav", "The mummy's wrath knows no bounds."),
-                            new Quote("MonsterAudio/mummy_anger_3.wav", "Sands of time bury the unworthy."),
-                            new Quote("MonsterAudio/mummy_anger_4.wav", "Tomb's embrace tightens its grip."),
-                            new Quote("MonsterAudio/mummy_anger_5.wav", "Eternal rest disturbed.")
+                            new Quote("MonsterAudio/mummy_angry_1_out.wav", "Ancient curses awaken!"),
+                            new Quote("MonsterAudio/mummy_angry_2_out.wav", "The mummy's wrath knows no bounds."),
+                            new Quote("MonsterAudio/mummy_angry_3_out.wav", "Sands of time bury the unworthy."),
+                            new Quote("MonsterAudio/mummy_angry_4_out.wav", "Tomb's embrace tightens its grip."),
+                            new Quote("MonsterAudio/mummy_angry_5_out.wav", "Eternal rest disturbed.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/mummy_seduce_1.wav", "Wrapped in the warmth of our love!"),
-                            new Quote("MonsterAudio/mummy_seduce_2.wav", "Feel the eternity in the mummy's tomb."),
-                            new Quote("MonsterAudio/mummy_seduce_3.wav", "Love sealed in the embrace of the ancient curse."),
-                            new Quote("MonsterAudio/mummy_seduce_4.wav", "Our love echoes through the corridors of time."),
-                            new Quote("MonsterAudio/mummy_seduce_5.wav", "Together in the eternity of the afterlife.")
+                            new Quote("MonsterAudio/mummy_seduce_1_out.wav", "Wrapped in the warmth of our love!"),
+                            new Quote("MonsterAudio/mummy_seduce_2_out.wav", "Feel the eternity in the mummy's tomb."),
+                            new Quote("MonsterAudio/mummy_seduce_3_out.wav", "Love sealed in the embrace of the ancient curse."),
+                            new Quote("MonsterAudio/mummy_seduce_4_out.wav", "Our love echoes through the corridors of time."),
+                            new Quote("MonsterAudio/mummy_seduce_5_out.wav", "Together in the eternity of the afterlife.")
                     });
 
             case CREEPER -> new Monster("Creeper", 70, 85, 55, 75, true, false, false, false,
                     new String[]{"Explode", "Sssss", "Creeper's Fury", "Boom Boom!", "Silent Blast"},
                     new Quote[]{
-                            new Quote("MonsterAudio/creeper_neutral_1.wav", "Hiss!"),
-                            new Quote("MonsterAudio/creeper_neutral_2.wav", "Sizzle sizzle!"),
-                            new Quote("MonsterAudio/creeper_neutral_3.wav", "Creeping in the shadows."),
-                            new Quote("MonsterAudio/creeper_neutral_4.wav", "Feel the tension before the explosion."),
-                            new Quote("MonsterAudio/creeper_neutral_5.wav", "Silent steps, explosive surprise.")
+                            new Quote("MonsterAudio/creeper_neutral_1_out.wav", "Hiss!"),
+                            new Quote("MonsterAudio/creeper_neutral_2_out.wav", "Sizzle sizzle!"),
+                            new Quote("MonsterAudio/creeper_neutral_3_out.wav", "Creeping in the shadows."),
+                            new Quote("MonsterAudio/creeper_neutral_4_out.wav", "Feel the tension before the explosion."),
+                            new Quote("MonsterAudio/creeper_neutral_5_out.wav", "Silent steps, explosive surprise.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/creeper_anger_1.wav", "Watch out for the creeper's explosion!"),
-                            new Quote("MonsterAudio/creeper_anger_2.wav", "I'm about to blow your mind... and everything else!"),
-                            new Quote("MonsterAudio/creeper_anger_3.wav", "The blast of the creeper echoes."),
-                            new Quote("MonsterAudio/creeper_anger_4.wav", "Boom Boom! You're in the danger zone."),
-                            new Quote("MonsterAudio/creeper_anger_5.wav", "Silent steps, explosive reveal!")
+                            new Quote("MonsterAudio/creeper_angry_1_out.wav", "Watch out for the creeper's explosion!"),
+                            new Quote("MonsterAudio/creeper_angry_2_out.wav", "I'm about to blow your mind... and everything else!"),
+                            new Quote("MonsterAudio/creeper_angry_3_out.wav", "The blast of the creeper echoes."),
+                            new Quote("MonsterAudio/creeper_angry_4_out.wav", "Boom Boom! You're in the danger zone."),
+                            new Quote("MonsterAudio/creeper_angry_5_out.wav", "Silent steps, explosive reveal!")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/creeper_seduce_1.wav", "Creeping silently, until the big reveal!"),
-                            new Quote("MonsterAudio/creeper_seduce_2.wav", "I'm the surprise in the shadows!"),
-                            new Quote("MonsterAudio/creeper_seduce_3.wav", "In the quiet before the blast, feel our connection."),
-                            new Quote("MonsterAudio/creeper_seduce_4.wav", "Silent steps, explosive love!"),
-                            new Quote("MonsterAudio/creeper_seduce_5.wav", "Boom! Love explodes in the creeper's heart.")
+                            new Quote("MonsterAudio/creeper_seduce_1_out.wav", "Creeping silently, until the big reveal!"),
+                            new Quote("MonsterAudio/creeper_seduce_2_out.wav", "I'm the surprise in the shadows!"),
+                            new Quote("MonsterAudio/creeper_seduce_3_out.wav", "In the quiet before the blast, feel our connection."),
+                            new Quote("MonsterAudio/creeper_seduce_4_out.wav", "Silent steps, explosive love!"),
+                            new Quote("MonsterAudio/creeper_seduce_5_out.wav", "Boom! Love explodes in the creeper's heart.")
                     });
 
             case HARPY -> new Monster("Harpy", 75, 90, 55, 75, true, false, false, false,
@@ -349,11 +349,11 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Minotaur+neutral+5_out.wav", "My labyrinth hungers for the lost.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/Minotaur+rage+1_out.wav", "In the maze of my rage, you'll find no escape!"),
-                            new Quote("MonsterAudio/Minotaur+rage+2_out.wav", "Minotaur's fury unleashed!"),
-                            new Quote("MonsterAudio/Minotaur+rage+3_out.wav", "Labyrinthine paths twist in my anger."),
-                            new Quote("MonsterAudio/Minotaur+rage+4_out.wav", "Feel the maze closing in around you."),
-                            new Quote("MonsterAudio/Minotaur+rage+5_out.wav", "Rage of the minotaur, unstoppable and wild.")
+                            new Quote("MonsterAudio/Minotaur+angry+1_out.wav", "In the maze of my rage, you'll find no escape!"),
+                            new Quote("MonsterAudio/Minotaur+angry+2_out.wav", "Minotaur's fury unleashed!"),
+                            new Quote("MonsterAudio/Minotaur+angry+3_out.wav", "Labyrinthine paths twist in my anger."),
+                            new Quote("MonsterAudio/Minotaur+angry+4_out.wav", "Feel the maze closing in around you."),
+                            new Quote("MonsterAudio/Minotaur+angry+5_out.wav", "Rage of the minotaur, unstoppable and wild.")
                     },
                     new Quote[]{
                             new Quote("MonsterAudio/Minotaur+seduce+1_out.wav", "My axe cleaves through the strongest armor!"),
@@ -373,11 +373,11 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Cyclops+neutral+5_out.wav", "Boulders whisper tales of the cyclops's might.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/Cyclops+rage+1_out.wav", "A boulder descends upon you!"),
-                            new Quote("MonsterAudio/Cyclops+rage+2_out.wav", "The cyclops glare pierces through!"),
-                            new Quote("MonsterAudio/Cyclops+rage+3_out.wav", "Titanic stomp echoes through the battlefield."),
-                            new Quote("MonsterAudio/Cyclops+rage+4_out.wav", "Cyclopean fury, unmatched and relentless."),
-                            new Quote("MonsterAudio/Cyclops+rage+5_out.wav", "Rocks tremble in the cyclops's wrath.")
+                            new Quote("MonsterAudio/Cyclops+angry+1_out.wav", "A boulder descends upon you!"),
+                            new Quote("MonsterAudio/Cyclops+angry+2_out.wav", "The cyclops glare pierces through!"),
+                            new Quote("MonsterAudio/Cyclops+angry+3_out.wav", "Titanic stomp echoes through the battlefield."),
+                            new Quote("MonsterAudio/Cyclops+angry+4_out.wav", "Cyclopean fury, unmatched and relentless."),
+                            new Quote("MonsterAudio/Cyclops+angry+5_out.wav", "Rocks tremble in the cyclops's wrath.")
                     },
                     new Quote[]{
                             new Quote("MonsterAudio/Cyclops+seduce+1_out.wav", "Feel the tremor of love in the cyclops's stomp!"),
@@ -486,25 +486,25 @@ class MonsterFactory {
             case WYVERN -> new Monster("Wyvern", 115, 130, 95, 105, true, false, false, false,
                     new String[]{"Tail Sweep", "Dive Bomb", "Wing Slash", "Fiery Roar", "Aerial Dominance"},
                     new Quote[]{
-                            new Quote("MonsterAudio/wyvern_neutral_1.wav", "Roarrr!"),
-                            new Quote("MonsterAudio/wyvern_neutral_2.wav", "Roarrrararaara!"),
-                            new Quote("MonsterAudio/wyvern_neutral_3.wav", "Grgrgraaaa!"),
-                            new Quote("MonsterAudio/wyvern_neutral_4.wav", "Raaaaaaaaaaaaa ru"),
-                            new Quote("MonsterAudio/wyvern_neutral_5.wav", "Rauuuuuuuuuu gaaa")
+                            new Quote("MonsterAudio/wyvern_neutral_1_out.wav", "Roarrr!"),
+                            new Quote("MonsterAudio/wyvern_neutral_2_out.wav", "Roarrrararaara!"),
+                            new Quote("MonsterAudio/wyvern_neutral_3_out.wav", "Grgrgraaaa!"),
+                            new Quote("MonsterAudio/wyvern_neutral_4_out.wav", "Raaaaaaaaaaaaa ru"),
+                            new Quote("MonsterAudio/wyvern_neutral_5_out.wav", "Rauuuuuuuuuu gaaa")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/wyvern_anger_1.wav", "RAAAAAAAAAAAAAAAAAAA"),
-                            new Quote("MonsterAudio/wyvern_anger_2.wav", "Rura daaaaaaaa!!"),
-                            new Quote("MonsterAudio/wyvern_anger_3.wav", "Raooo!!"),
-                            new Quote("MonsterAudio/wyvern_anger_4.wav", "RU VA DAAA"),
-                            new Quote("MonsterAudio/wyvern_anger_5.wav", "RUAMMM")
+                            new Quote("MonsterAudio/wyvern_angry_1_out.wav", "RAAAAAAAAAAAAAAAAAAA"),
+                            new Quote("MonsterAudio/wyvern_angry_2_out.wav", "Rura daaaaaaaa!!"),
+                            new Quote("MonsterAudio/wyvern_angry_3_out.wav", "Raooo!!"),
+                            new Quote("MonsterAudio/wyvern_angry_4_out.wav", "RU VA DAAA"),
+                            new Quote("MonsterAudio/wyvern_angry_5_out.wav", "RUAMMM")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/wyvern_seduce_1.wav", "Ra ra u gagaaa"),
-                            new Quote("MonsterAudio/wyvern_seduce_2.wav", "Rommm rommm"),
-                            new Quote("MonsterAudio/wyvern_seduce_3.wav", "Raurrr!"),
-                            new Quote("MonsterAudio/wyvern_seduce_4.wav", "Riauuuu"),
-                            new Quote("MonsterAudio/wyvern_seduce_5.wav", "Ri re ro rauuu ro rauu!")
+                            new Quote("MonsterAudio/wyvern_seduce_1_out.wav", "Ra ra u gagaaa"),
+                            new Quote("MonsterAudio/wyvern_seduce_2_out.wav", "Rommm rommm"),
+                            new Quote("MonsterAudio/wyvern_seduce_3_out.wav", "Raurrr!"),
+                            new Quote("MonsterAudio/wyvern_seduce_4_out.wav", "Riauuuu"),
+                            new Quote("MonsterAudio/wyvern_seduce_5_out.wav", "Ri re ro rauuu ro rauu!")
                     });
 
             case PHOENIX -> new Monster("Phoenix", 120, 135, 95, 105, true, false, false, false,
@@ -565,11 +565,11 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Behemoth+neutral+5_out.wav", "Behemoth's wrath descends upon you.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/Behemoth+rage+1_out.wav", "Behemoth's stomp causes earthquakes, and meteor shower descends!"),
-                            new Quote("MonsterAudio/Behemoth+rage+2_out.wav", "Feel the colossal power of the mighty behemoth!"),
-                            new Quote("MonsterAudio/Behemoth+rage+3_out.wav", "Colossal roar echoes through the battlefield."),
-                            new Quote("MonsterAudio/Behemoth+rage+4_out.wav", "Mighty tremor, the ground shakes in fear."),
-                            new Quote("MonsterAudio/Behemoth+rage+5_out.wav", "Behemoth's wrath, a force to be reckoned with.")
+                            new Quote("MonsterAudio/Behemoth+angry+1_out.wav", "Behemoth's stomp causes earthquakes, and meteor shower descends!"),
+                            new Quote("MonsterAudio/Behemoth+angry+2_out.wav", "Feel the colossal power of the mighty behemoth!"),
+                            new Quote("MonsterAudio/Behemoth+angry+3_out.wav", "Colossal roar echoes through the battlefield."),
+                            new Quote("MonsterAudio/Behemoth+angry+4_out.wav", "Mighty tremor, the ground shakes in fear."),
+                            new Quote("MonsterAudio/Behemoth+angry+5_out.wav", "Behemoth's wrath, a force to be reckoned with.")
                     },
                     new Quote[]{
                             new Quote("MonsterAudio/Behemoth+seduced+1_out.wav", "Stomping the earth and showering meteors!"),
@@ -589,11 +589,11 @@ class MonsterFactory {
                             new Quote("MonsterAudio/dragon_neutral_5.wav", "Eternal soar on the wings of the dragon.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/dragon_anger_1.wav", "The dragon's breath engulfs all!"),
-                            new Quote("MonsterAudio/dragon_anger_2.wav", "Feel the gust of the dragon's wings."),
-                            new Quote("MonsterAudio/dragon_anger_3.wav", "Fiery roar echoes through the skies."),
-                            new Quote("MonsterAudio/dragon_anger_4.wav", "Inferno sweep, a blaze of draconic fury."),
-                            new Quote("MonsterAudio/dragon_anger_5.wav", "Eternal soar, the dragon's wings carry our love.")
+                            new Quote("MonsterAudio/dragon_angry_1.wav", "The dragon's breath engulfs all!"),
+                            new Quote("MonsterAudio/dragon_angry_2.wav", "Feel the gust of the dragon's wings."),
+                            new Quote("MonsterAudio/dragon_angry_3.wav", "Fiery roar echoes through the skies."),
+                            new Quote("MonsterAudio/dragon_angry_4.wav", "Inferno sweep, a blaze of draconic fury."),
+                            new Quote("MonsterAudio/dragon_angry_5.wav", "Eternal soar, the dragon's wings carry our love.")
                     },
                     new Quote[]{
                             new Quote("MonsterAudio/dragon_seduce_1.wav", "Our love roars with the fury of the dragon!"),
