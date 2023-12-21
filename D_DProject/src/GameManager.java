@@ -190,7 +190,7 @@ public class GameManager {
         GameMessage.getMenuDead();
         switch (sc.next()) {
             case "1":
-                character.setHealthPoints(100);
+                player.getSelectedCharacter().setHealthPoints(100);
                 this.character = null;
                 playerSelectCharacter();
                 init();

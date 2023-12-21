@@ -20,7 +20,11 @@ public class Music {
 
             InputStream inputStream = getClass().getResourceAsStream(musicFile);
             if (inputStream == null) {
-                throw new IllegalArgumentException("Unable to load music file: " + musicFile);
+                try {
+                    throw new IllegalArgumentException("Unable to load music file: " + musicFile);
+                } catch (IllegalArgumentException e) {
+                    GameMessage.getExceptionMessage(e.getMessage());
+                }
             }
 
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(inputStream);
