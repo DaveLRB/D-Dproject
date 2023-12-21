@@ -421,11 +421,11 @@ class MonsterFactory {
                             new Quote("MonsterAudio/griffin_neutral_5.wav", "A feathered symphony of fury.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/griffin_anger_1.wav", "Griffin soars through the heavens, talons ready!"),
-                            new Quote("MonsterAudio/griffin_anger_2.wav", "Feel the might of the griffin's wings and claws!"),
-                            new Quote("MonsterAudio/griffin_anger_3.wav", "Sky-roaring fury descends from above."),
-                            new Quote("MonsterAudio/griffin_anger_4.wav", "Talon gust, a tempest on the wind."),
-                            new Quote("MonsterAudio/griffin_anger_5.wav", "Feather frenzy, the dance of a mythical storm.")
+                            new Quote("MonsterAudio/griffin_angry_1.wav", "Griffin soars through the heavens, talons ready!"),
+                            new Quote("MonsterAudio/griffin_angry_2.wav", "Feel the might of the griffin's wings and claws!"),
+                            new Quote("MonsterAudio/griffin_angry_3.wav", "Sky-roaring fury descends from above."),
+                            new Quote("MonsterAudio/griffin_angry_4.wav", "Talon gust, a tempest on the wind."),
+                            new Quote("MonsterAudio/griffin_angry_5.wav", "Feather frenzy, the dance of a mythical storm.")
                     },
                     new Quote[]{
                             new Quote("MonsterAudio/griffin_seduce_1.wav", "Aerial onslaught from the king!"),
@@ -445,11 +445,11 @@ class MonsterFactory {
                             new Quote("MonsterAudio/chimera_neutral_5.wav", "Inferno claws scorch the earth.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/chimera_anger_1.wav", "Chimera breathes fire and whips with serpent's tail!"),
-                            new Quote("MonsterAudio/chimera_anger_2.wav", "Feel the wrath of the three-headed beast!"),
-                            new Quote("MonsterAudio/chimera_anger_3.wav", "Venomous bite, a strike from the serpent's fang."),
-                            new Quote("MonsterAudio/chimera_anger_4.wav", "Triple roar, a cacophony of chaos."),
-                            new Quote("MonsterAudio/chimera_anger_5.wav", "Inferno claw, the fiery embrace of the chimera.")
+                            new Quote("MonsterAudio/chimera_angry_1.wav", "Chimera breathes fire and whips with serpent's tail!"),
+                            new Quote("MonsterAudio/chimera_angry_2.wav", "Feel the wrath of the three-headed beast!"),
+                            new Quote("MonsterAudio/chimera_angry_3.wav", "Venomous bite, a strike from the serpent's fang."),
+                            new Quote("MonsterAudio/chimera_angry_4.wav", "Triple roar, a cacophony of chaos."),
+                            new Quote("MonsterAudio/chimera_angry_5.wav", "Inferno claw, the fiery embrace of the chimera.")
                     },
                     new Quote[]{
                             new Quote("MonsterAudio/chimera_seduce_1.wav", "A fusion of flame, venom, and claws!"),
@@ -517,11 +517,11 @@ class MonsterFactory {
                             new Quote("MonsterAudio/phoenix_neutral_5.wav", "Blazing resurgence, a rebirth in the inferno.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/phoenix_anger_1.wav", "Burning flames engulf you!"),
-                            new Quote("MonsterAudio/phoenix_anger_2.wav", "Witness the rebirth of the phoenix."),
-                            new Quote("MonsterAudio/phoenix_anger_3.wav", "Inferno dance, the phoenix's fiery ballet."),
-                            new Quote("MonsterAudio/phoenix_anger_4.wav", "Eternal flame, our connection never extinguished."),
-                            new Quote("MonsterAudio/phoenix_anger_5.wav", "Blazing resurgence, the phoenix's triumphant return.")
+                            new Quote("MonsterAudio/phoenix_angry_1.wav", "Burning flames engulf you!"),
+                            new Quote("MonsterAudio/phoenix_angry_2.wav", "Witness the rebirth of the phoenix."),
+                            new Quote("MonsterAudio/phoenix_angry_3.wav", "Inferno dance, the phoenix's fiery ballet."),
+                            new Quote("MonsterAudio/phoenix_angry_4.wav", "Eternal flame, our connection never extinguished."),
+                            new Quote("MonsterAudio/phoenix_angry_5.wav", "Blazing resurgence, the phoenix's triumphant return.")
                     },
                     new Quote[]{
                             new Quote("MonsterAudio/phoenix_seduce_1.wav", "Our love rises from the ashes!"),
@@ -541,11 +541,11 @@ class MonsterFactory {
                             new Quote("MonsterAudio/kraken_neutral_5.wav", "Squid's embrace, a watery hug.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/kraken_anger_1.wav", "Kraken's tentacles grasp and ink clouds obscure!"),
-                            new Quote("MonsterAudio/kraken_anger_2.wav", "Feel the deep-sea menace of the legendary kraken!"),
-                            new Quote("MonsterAudio/kraken_anger_3.wav", "Abyssal slam, the kraken's mighty strike."),
-                            new Quote("MonsterAudio/kraken_anger_4.wav", "Abyssal ensnare, your fate entwined."),
-                            new Quote("MonsterAudio/kraken_anger_5.wav", "Squid's embrace, a tender moment in the deep.")
+                            new Quote("MonsterAudio/kraken_angry_1.wav", "Kraken's tentacles grasp and ink clouds obscure!"),
+                            new Quote("MonsterAudio/kraken_angry_2.wav", "Feel the deep-sea menace of the legendary kraken!"),
+                            new Quote("MonsterAudio/kraken_angry_3.wav", "Abyssal slam, the kraken's mighty strike."),
+                            new Quote("MonsterAudio/kraken_angry_4.wav", "Abyssal ensnare, your fate entwined."),
+                            new Quote("MonsterAudio/kraken_angry_5.wav", "Squid's embrace, a tender moment in the deep.")
                     },
                     new Quote[]{
                             new Quote("MonsterAudio/kraken_seduce_1.wav", "Tentacles that ensnare, and ink that blinds!"),
