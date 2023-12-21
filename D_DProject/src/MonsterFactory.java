@@ -14,10 +14,10 @@ class MonsterFactory {
                     },
                     new Quote[]{
                             new Quote("MonsterAudio/Slime+angry+1_out.wav", "I'm not just a puddle of goo, you know!"),
-                            new Quote("MonsterAudio/Slime+anger+2_out.wav", "I'm angry!"),
-                            new Quote("MonsterAudio/Slime+anger+3_out.wav", "Get ready to be slimed!"),
-                            new Quote("MonsterAudio/Slime+anger+4_out.wav", "Gooey wrath coming!"),
-                            new Quote("MonsterAudio/Slime+anger+5_out.wav", "GLO GLO oohuuuh")
+                            new Quote("MonsterAudio/Slime+angry+2_out.wav", "I'm angry!"),
+                            new Quote("MonsterAudio/Slime+angry+3_out.wav", "Get ready to be slimed!"),
+                            new Quote("MonsterAudio/Slime+angry+4_out.wav", "Gooey wrath coming!"),
+                            new Quote("MonsterAudio/Slime+angry+5_out.wav", "GLO GLO oohuuuh")
                     },
                     new Quote[]{
                             new Quote("MonsterAudio/Slime+seduce+1_out.wav", "Even slimes have feelings, you know?"),
@@ -605,5 +605,5 @@ class MonsterFactory {
         };
     }
 
-} // audio needed for Kraken, Phoenix, Chimera, Harpy,
+} // audio needed for Harpy
 

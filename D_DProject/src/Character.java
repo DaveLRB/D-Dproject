@@ -29,48 +29,48 @@ public class Character {
     }
 
     private final Quote[] charQuotesBard = {
-            new Quote("bard_quote_1.wav","Am i blind? Or are you a ray of sunshine?!"),
-            new Quote("bard_quote_2.wav","Can i sing you a song...of passion?"),
-            new Quote("bard_quote_3.wav","Is that a weapon? Or are you happy to see me?!"),
-            new Quote("bard_quote_4.wav","WOWZA CHA-WA-BANGA!!"),
-            new Quote("bard_quote_5.wav","In tales of old, valor blooms."),
-            new Quote("bard_quote_1.wav","With every dawn, a new legend unfolds."),
-            new Quote("bard_quote_1.wav","Melodies weave the fabric of our stories."),
-            new Quote("bard_quote_1.wav","Words, the bard's sword; songs, the bard's shield.")
+            new Quote("MonsterAudio/bard_quote_1.wav", "Am i blind? Or are you a ray of sunshine?!"),
+            new Quote("MonsterAudio/bard_quote_2.wav", "Can i sing you a song...of passion?"),
+            new Quote("MonsterAudio/bard_quote_3.wav", "Is that a weapon? Or are you happy to see me?!"),
+            new Quote("MonsterAudio/bard_quote_4.wav", "WOWZA CHA-WA-BANGA!!"),
+            new Quote("MonsterAudio/bard_quote_5.wav", "In tales of old, valor blooms."),
+            new Quote("MonsterAudio/bard_quote_6.wav", "With every dawn, a new legend unfolds."),
+            new Quote("MonsterAudio/bard_quote_7.wav", "Melodies weave the fabric of our stories."),
+            new Quote("MonsterAudio/bard_quote_8.wav", "Words, the bard's sword; songs, the bard's shield.")
 
     };
 
     private final Quote[] charQuotesKnight = {
-            new Quote("knight_quote_1","The valor of a knight will smite you!"),
-            new Quote("knight_quote_2","With my weapon i shall cleanse the world of evil"),
-            new Quote("knight_quote_3","Courage is the strength to face uncertainty."),
-            new Quote("knight_quote_4","Chivalry is not just a code, but a way of being."),
-            new Quote("knight_quote_5","Strength shields the weak, to the evils might."),
-            new Quote("knight_quote_6","Valor knows no fear, in the face of darkness."),
-            new Quote("knight_quote_7","Honor guides every deed, an honest heart makes."),
-            new Quote("knight_quote_8","Adversity forges nobility, were cowardice sows fragility.")
+            new Quote("MonsterAudio/knight_quote_1", "The valor of a knight will smite you!"),
+            new Quote("MonsterAudio/knight_quote_2", "With my weapon i shall cleanse the world of evil"),
+            new Quote("MonsterAudio/knight_quote_3", "Courage is the strength to face uncertainty."),
+            new Quote("MonsterAudio/knight_quote_4", "Chivalry is not just a code, but a way of being."),
+            new Quote("MonsterAudio/knight_quote_5", "Strength shields the weak, to the evils might."),
+            new Quote("MonsterAudio/knight_quote_6", "Valor knows no fear, in the face of darkness."),
+            new Quote("MonsterAudio/knight_quote_7", "Honor guides every deed, an honest heart makes."),
+            new Quote("MonsterAudio/knight_quote_8", "Adversity forges nobility, were cowardice sows fragility.")
     };
 
     private final Quote[] charQuotesAssassin = {
-            new Quote("assassin_quote_1","My poison daggers will send you to the shadows.."),
-            new Quote("assassin_quote_2","In the dark i live..in the dark you shall die"),
-            new Quote("assassin_quote_3","Silence is the deadliest weapon in the arsenal of an assassin."),
-            new Quote("assassin_quote_4","Darkness is the ally of shadows, and shadows breed the unseen strike."),
-            new Quote("assassin_quote_5","Silence speaks louder than steel."),
-            new Quote("assassin_quote_6","Shadows are my allies, darkness my cloak."),
-            new Quote("assassin_quote_7","Precision is my art, stealth my dance."),
-            new Quote("assassin_quote_8","In the quiet, I am deadliest.")
+            new Quote("MonsterAudio/assassin_quote_1", "My poison daggers will send you to the shadows.."),
+            new Quote("MonsterAudio/assassin_quote_2", "In the dark i live..in the dark you shall die"),
+            new Quote("MonsterAudio/assassin_quote_3", "Silence is the deadliest weapon in the arsenal of an assassin."),
+            new Quote("MonsterAudio/assassin_quote_4", "Darkness is the ally of shadows, and shadows breed the unseen strike."),
+            new Quote("MonsterAudio/assassin_quote_5", "Silence speaks louder than steel."),
+            new Quote("MonsterAudio/assassin_quote_6", "Shadows are my allies, darkness my cloak."),
+            new Quote("MonsterAudio/assassin_quote_7", "Precision is my art, stealth my dance."),
+            new Quote("MonsterAudio/assassin_quote_8", "In the quiet, I am deadliest.")
     };
 
     private final Quote[] charQuotesSorcerer = {
-            new Quote("sorcerer_quote_1","With my magic i shall turn you to ash!"),
-            new Quote("sorcerer_quote_2","Behold my might..the Sorcerer Supreme!"),
-            new Quote("sorcerer_quote_3","Magic flows where intent meets will."),
-            new Quote("sorcerer_quote_4","Knowledge is the staff of power wielded by the adept sorcerer."),
-            new Quote("sorcerer_quote_5","Magic bends to my will, the elements dance at my command."),
-            new Quote("sorcerer_quote_6","Arcane secrets whisper in every spell."),
-            new Quote("sorcerer_quote_7","Power courses through my veins, shaped by incantations."),
-            new Quote("sorcerer_quote_8","The unseen forces are my allies, shaping reality to my design.")
+            new Quote("MonsterAudio/sorcerer_quote_1", "With my magic i shall turn you to ash!"),
+            new Quote("MonsterAudio/sorcerer_quote_2", "Behold my might..the Sorcerer Supreme!"),
+            new Quote("MonsterAudio/sorcerer_quote_3", "Magic flows where intent meets will."),
+            new Quote("MonsterAudio/sorcerer_quote_4", "Knowledge is the staff of power wielded by the adept sorcerer."),
+            new Quote("MonsterAudio/sorcerer_quote_5", "Magic bends to my will, the elements dance at my command."),
+            new Quote("MonsterAudio/sorcerer_quote_6", "Arcane secrets whisper in every spell."),
+            new Quote("MonsterAudio/sorcerer_quote_7", "Power courses through my veins, shaped by incantations."),
+            new Quote("MonsterAudio/sorcerer_quote_8", "The unseen forces are my allies, shaping reality to my design.")
 
     };
 
@@ -80,27 +80,11 @@ public class Character {
         quotesList.toArray(quotes);
     }
 
-    private String getRandomQuote(Quote[] quotes) {
+    private Quote getRandomQuote(Quote[] quotes) {
         Random random = new Random();
         shuffleQuotes(quotes);
         int index = random.nextInt(quotes.length);
-        return quotes[index].getText();
-    }
-
-    private String getRandomQuoteBard() {
-        return getRandomQuote(charQuotesBard);
-    }
-
-    private String getRandomQuoteKnight() {
-        return getRandomQuote(charQuotesKnight);
-    }
-
-    private String getRandomQuoteSorcerer() {
-        return getRandomQuote(charQuotesSorcerer);
-    }
-
-    private String getRandomQuoteAssassin() {
-        return getRandomQuote(charQuotesAssassin);
+        return quotes[index];
     }
 
     public int getStrength() {
@@ -180,26 +164,40 @@ public class Character {
     }
 
     public void characterTalk(Monster monster) {
-        String randomQuote = "";
+        Quote randomQuote = null;
+        Music music = null;
         switch (this.getCharacterType()) {
             case BARD -> {
-                randomQuote = getRandomQuoteBard();
+                randomQuote = getRandomQuote(charQuotesBard);
                 seduce++;
                 if (seduce == 2) {
-                    seduce=0;
+                    seduce = 0;
                     if (!monster.isSeduced()) {
                         monster.setSeduced(true);
-                        System.out.println(randomQuote);
+                        System.out.println(randomQuote.getText());
                         monster.monsterSeducedSpeak();
+                        music = new Music(randomQuote.getFilename());
                     }
                 }
             }
-            case KNIGHT -> randomQuote = getRandomQuoteKnight();
-            case ASSASSIN -> randomQuote = getRandomQuoteAssassin();
-            case SORCERER -> randomQuote = getRandomQuoteSorcerer();
+            case KNIGHT -> {
+                randomQuote = getRandomQuote(charQuotesKnight);
+                music = new Music(randomQuote.getFilename());
+            }
+            case ASSASSIN -> {
+                randomQuote = getRandomQuote(charQuotesAssassin);
+                music = new Music(randomQuote.getFilename());
+            }
+            case SORCERER -> {
+                randomQuote = getRandomQuote(charQuotesSorcerer);
+                music = new Music(randomQuote.getFilename());
+            }
         }
-        if(!monster.isSeduced()){
-            System.out.println(randomQuote);
+        if (randomQuote != null && !monster.isSeduced()) {
+            System.out.println(randomQuote.getText());
+            if (music != null) {
+                music.play();
+            }
         }
     }
 
@@ -207,7 +205,7 @@ public class Character {
         this.healthPoints -= monster.monsterAttack(this);
     }
 
-    public int attack(Monster monster,String attackType) {
+    public int attack(Monster monster, String attackType) {
         if (isParalysed()) {
             System.out.println("Cannot attack, you are paralysed!");
             return 0;
@@ -253,18 +251,18 @@ public class Character {
     }
 
     public void removeCharisma(Integer charisma) {
-        this.charisma-=charisma;
+        this.charisma -= charisma;
     }
 
     public void removeDexterity(Integer dexterity) {
-        this.dexterity-=dexterity;
+        this.dexterity -= dexterity;
     }
 
     public void removeIntelligence(Integer intelligence) {
-        this.intelligence-=intelligence;
+        this.intelligence -= intelligence;
     }
 
     public void removeStrength(Integer strength) {
-        this.strength-=strength;
+        this.strength -= strength;
     }
 }
