@@ -20,7 +20,7 @@ public class GameManager {
         addCharactersToList();
         playerSelectCharacter();
         this.player = new Player(playerName, character);
-        this.dungeon = new Dungeon(player);
+        this.dungeon = new Dungeon(player,this);
         this.gameIsRunning = true;
         shop = new Shop(player);
     }
@@ -43,6 +43,7 @@ public class GameManager {
                         gameIsRunning = false;
                         GameMessage.getFinalGameMessage();
                     }
+                    case "5" -> new Chest(player);
                 }
             }
         }
@@ -50,7 +51,7 @@ public class GameManager {
 
     private int inventoryCount = 1;
 
-    private void getPlayerInventory() {
+    public void getPlayerInventory() {
         try {
             if (player.getSelectedCharacter().getInventory().getItemList().isEmpty())
                 throw new EmptyInventoryException();

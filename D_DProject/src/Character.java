@@ -28,79 +28,63 @@ public class Character {
         this.healthPoints = 100;
     }
 
-    private final String[] charQuotesBard = {
-            "Am i blind? Or are you a ray of sunshine?!",
-            "Can i sing you a song...of passion?",
-            "Is that a weapon? Or are you happy to see me?!",
-            "WOWZA CHA-WA-BANGA!!",
-            "In tales of old, valor blooms.",
-            "With every dawn, a new legend unfolds.",
-            "Melodies weave the fabric of our stories.",
-            "Words, the bard's sword; songs, the bard's shield."
+    private final Quote[] charQuotesBard = {
+            new Quote("MonsterAudio/bard_quote_1.wav", "Am i blind? Or are you a ray of sunshine?!"),
+            new Quote("MonsterAudio/bard_quote_2.wav", "Can i sing you a song...of passion?"),
+            new Quote("MonsterAudio/bard_quote_3.wav", "Is that a weapon? Or are you happy to see me?!"),
+            new Quote("MonsterAudio/bard_quote_4.wav", "WOWZA CHA-WA-BANGA!!"),
+            new Quote("MonsterAudio/bard_quote_5.wav", "In tales of old, valor blooms."),
+            new Quote("MonsterAudio/bard_quote_6.wav", "With every dawn, a new legend unfolds."),
+            new Quote("MonsterAudio/bard_quote_7.wav", "Melodies weave the fabric of our stories."),
+            new Quote("MonsterAudio/bard_quote_8.wav", "Words, the bard's sword; songs, the bard's shield.")
 
     };
 
-    private final String[] charQuotesKnight = {
-            "The valor of a knight will smite you!",
-            "With my weapon i shall cleanse the world of evil",
-            "Courage is the strength to face uncertainty.",
-            "Chivalry is not just a code, but a way of being.",
-            "Strength shields the weak, to the evils might.",
-            "Valor knows no fear, in the face of darkness.",
-            "Honor guides every deed, an honest heart makes.",
-            "Adversity forges nobility, were cowardice sows fragility."
+    private final Quote[] charQuotesKnight = {
+            new Quote("MonsterAudio/knight_quote_1", "The valor of a knight will smite you!"),
+            new Quote("MonsterAudio/knight_quote_2", "With my weapon i shall cleanse the world of evil"),
+            new Quote("MonsterAudio/knight_quote_3", "Courage is the strength to face uncertainty."),
+            new Quote("MonsterAudio/knight_quote_4", "Chivalry is not just a code, but a way of being."),
+            new Quote("MonsterAudio/knight_quote_5", "Strength shields the weak, to the evils might."),
+            new Quote("MonsterAudio/knight_quote_6", "Valor knows no fear, in the face of darkness."),
+            new Quote("MonsterAudio/knight_quote_7", "Honor guides every deed, an honest heart makes."),
+            new Quote("MonsterAudio/knight_quote_8", "Adversity forges nobility, were cowardice sows fragility.")
     };
 
-    private final String[] charQuotesAssassin = {
-            "My poison daggers will send you to the shadows..",
-            "In the dark i live..in the dark you shall die",
-            "Silence is the deadliest weapon in the arsenal of an assassin.",
-            "Darkness is the ally of shadows, and shadows breed the unseen strike.",
-            "Silence speaks louder than steel.",
-            "Shadows are my allies, darkness my cloak.",
-            "Precision is my art, stealth my dance.",
-            "In the quiet, I am deadliest."
+    private final Quote[] charQuotesAssassin = {
+            new Quote("MonsterAudio/assassin_quote_1", "My poison daggers will send you to the shadows.."),
+            new Quote("MonsterAudio/assassin_quote_2", "In the dark i live..in the dark you shall die"),
+            new Quote("MonsterAudio/assassin_quote_3", "Silence is the deadliest weapon in the arsenal of an assassin."),
+            new Quote("MonsterAudio/assassin_quote_4", "Darkness is the ally of shadows, and shadows breed the unseen strike."),
+            new Quote("MonsterAudio/assassin_quote_5", "Silence speaks louder than steel."),
+            new Quote("MonsterAudio/assassin_quote_6", "Shadows are my allies, darkness my cloak."),
+            new Quote("MonsterAudio/assassin_quote_7", "Precision is my art, stealth my dance."),
+            new Quote("MonsterAudio/assassin_quote_8", "In the quiet, I am deadliest.")
     };
 
-    private final String[] charQuotesSorcerer = {
-            "With my magic i shall turn you to ash!",
-            "Behold my might..the Sorcerer Supreme!",
-            "Magic flows where intent meets will.",
-            "Knowledge is the staff of power wielded by the adept sorcerer.",
-            "Magic bends to my will, the elements dance at my command.",
-            "Arcane secrets whisper in every spell.",
-            "Power courses through my veins, shaped by incantations.",
-            "The unseen forces are my allies, shaping reality to my design."
+    private final Quote[] charQuotesSorcerer = {
+            new Quote("MonsterAudio/sorcerer_quote_1", "With my magic i shall turn you to ash!"),
+            new Quote("MonsterAudio/sorcerer_quote_2", "Behold my might..the Sorcerer Supreme!"),
+            new Quote("MonsterAudio/sorcerer_quote_3", "Magic flows where intent meets will."),
+            new Quote("MonsterAudio/sorcerer_quote_4", "Knowledge is the staff of power wielded by the adept sorcerer."),
+            new Quote("MonsterAudio/sorcerer_quote_5", "Magic bends to my will, the elements dance at my command."),
+            new Quote("MonsterAudio/sorcerer_quote_6", "Arcane secrets whisper in every spell."),
+            new Quote("MonsterAudio/sorcerer_quote_7", "Power courses through my veins, shaped by incantations."),
+            new Quote("MonsterAudio/sorcerer_quote_8", "The unseen forces are my allies, shaping reality to my design.")
 
     };
 
-    private void shuffleQuotes(String[] quotes) {
-        List<String> quotesList = Arrays.asList(quotes);
+    private void shuffleQuotes(Quote[] quotes) {
+        List<Quote> quotesList = Arrays.asList(quotes);
         Collections.shuffle(quotesList);
         quotesList.toArray(quotes);
     }
 
-    private String getRandomQuote(String[] quotes) {
+    private Quote getRandomQuote(Quote[] quotes) {
         Random random = new Random();
         shuffleQuotes(quotes);
         int index = random.nextInt(quotes.length);
         return quotes[index];
-    }
-
-    private String getRandomQuoteBard() {
-        return getRandomQuote(charQuotesBard);
-    }
-
-    private String getRandomQuoteKnight() {
-        return getRandomQuote(charQuotesKnight);
-    }
-
-    private String getRandomQuoteSorcerer() {
-        return getRandomQuote(charQuotesSorcerer);
-    }
-
-    private String getRandomQuoteAssassin() {
-        return getRandomQuote(charQuotesAssassin);
     }
 
     public int getStrength() {
@@ -175,98 +159,110 @@ public class Character {
         return inventory;
     }
 
-    public void characterTalk(CharacterType characterType, Monster monster) {
-        String randomQuote = "";
+    public CharacterType getCharacterType() {
+        return characterType;
+    }
 
-        switch (characterType) {
+    public void characterTalk(Monster monster) {
+        Quote randomQuote = null;
+        Music music = null;
+        switch (this.getCharacterType()) {
             case BARD -> {
-                randomQuote = getRandomQuoteBard();
+                randomQuote = getRandomQuote(charQuotesBard);
                 seduce++;
                 if (seduce == 2) {
+                    seduce = 0;
                     if (!monster.isSeduced()) {
                         monster.setSeduced(true);
+                        System.out.println(randomQuote.getText());
+                        monster.monsterSeducedSpeak();
+                        music = new Music(randomQuote.getFilename());
                     }
                 }
             }
-            case KNIGHT -> randomQuote = getRandomQuoteKnight();
-            case ASSASSIN -> randomQuote = getRandomQuoteAssassin();
-            case SORCERER -> randomQuote = getRandomQuoteSorcerer();
+            case KNIGHT -> {
+                randomQuote = getRandomQuote(charQuotesKnight);
+                music = new Music(randomQuote.getFilename());
+            }
+            case ASSASSIN -> {
+                randomQuote = getRandomQuote(charQuotesAssassin);
+                music = new Music(randomQuote.getFilename());
+            }
+            case SORCERER -> {
+                randomQuote = getRandomQuote(charQuotesSorcerer);
+                music = new Music(randomQuote.getFilename());
+            }
         }
-        System.out.println(randomQuote);
+        if (randomQuote != null && !monster.isSeduced()) {
+            System.out.println(randomQuote.getText());
+            if (music != null) {
+                music.play();
+            }
+        }
     }
 
     public void characterTakeDamage(Monster monster) {
         this.healthPoints -= monster.monsterAttack(this);
     }
 
-    public int characterAttack() {
+    public int attack(Monster monster, String attackType) {
+        if (isParalysed()) {
+            System.out.println("Cannot attack, you are paralysed!");
+            return 0;
+        }
         int attack = 0;
-        if (!isParalysed()) {
-            switch (characterType) {
-                case KNIGHT -> attack = this.strength;
-                case SORCERER -> attack = this.intelligence;
-                case BARD -> attack = this.charisma;
-                case ASSASSIN -> attack = this.dexterity;
-            }
-            return attack;
-        } else {
-            System.out.println("Cannot attack, you are paralysed!");
-        }
-        return 0;
-    }
-
-    public int specialAttack() {
-        if (!isParalysed()) {
-            int special = 0;
-            switch (characterType) {
-                case KNIGHT -> special = this.strength * (int) (Math.random() * 3) + 1;
-                case SORCERER -> special = this.intelligence * (int) (Math.random() * 3) + 1;
-                case BARD -> special = this.charisma * (int) (Math.random() * 3) + 1;
-                case ASSASSIN -> special = this.dexterity * (int) (Math.random() * 3) + 1;
-            }
-            return special;
-        } else {
-            System.out.println("Cannot attack, you are paralysed!");
-        }
-        return 0;
-    }
-
-    public int ultimateAttack() {
         Random random = new Random();
         double chance = random.nextDouble();
-        int ultimate = 0;
-        if (!isParalysed()) {
-            if (chance <= 0.20 && healthPoints <= 20) {
-                switch (characterType) {
-                    case KNIGHT -> ultimate = this.strength * 10;
-                    case SORCERER -> ultimate = this.intelligence * 10;
-                    case BARD -> ultimate = this.charisma * 10;
-                    case ASSASSIN -> ultimate = this.dexterity * 10;
+        characterTalk(monster);
+        switch (attackType) {
+            case "light":
+                attack = switch (characterType) {
+                    case KNIGHT -> this.strength;
+                    case SORCERER -> this.intelligence;
+                    case BARD -> this.charisma;
+                    case ASSASSIN -> this.dexterity;
+                };
+                break;
+            case "heavy":
+                attack = switch (characterType) {
+                    case KNIGHT -> this.strength * (int) (Math.random() * 3) + 1;
+                    case SORCERER -> this.intelligence * (int) (Math.random() * 3) + 1;
+                    case BARD -> this.charisma * (int) (Math.random() * 3) + 1;
+                    case ASSASSIN -> this.dexterity * (int) (Math.random() * 3) + 1;
+                };
+                break;
+            case "ultimate":
+                if (chance <= 0.20 && healthPoints <= 20) {
+                    attack = switch (characterType) {
+                        case KNIGHT -> this.strength * 10;
+                        case SORCERER -> this.intelligence * 10;
+                        case BARD -> this.charisma * 10;
+                        case ASSASSIN -> this.dexterity * 10;
+                    };
+                } else {
+                    throw new HealthPointsGreaterThan20Exception();
                 }
-            } else{
-                throw new HealthPointsGreaterThan20Exception();
-            }
-            return ultimate/10;
-        } else {
-            System.out.println("Cannot attack, you are paralysed!");
-
+                break;
+            default:
+                System.out.println("Invalid attack type!");
+                break;
         }
-        return 0;
+        return attack;
     }
 
     public void removeCharisma(Integer charisma) {
-        this.charisma-=charisma;
+        this.charisma -= charisma;
     }
 
     public void removeDexterity(Integer dexterity) {
-        this.dexterity-=dexterity;
+        this.dexterity -= dexterity;
     }
 
     public void removeIntelligence(Integer intelligence) {
-        this.intelligence-=intelligence;
+        this.intelligence -= intelligence;
     }
 
     public void removeStrength(Integer strength) {
-        this.strength-=strength;
+        this.strength -= strength;
     }
 }
