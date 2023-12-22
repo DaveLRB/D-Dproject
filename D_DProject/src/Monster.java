@@ -21,6 +21,7 @@ public class Monster {
     private static final int ONE_SHOT_CHANCE = 10;
     private static final int REVIVE_HEALTH = 100;
     private MonsterType monsterType;
+
     public Monster(String name, int hitDmg, int monsterHP, int experiencePoints, int gold, boolean isAlive, boolean isInvisible, boolean isAngered, boolean isSeduced, String[] attacks, Quote[] neutralQuotes, Quote[] angerQuotes, Quote[] seducedQuotes, MonsterType monsterType) {
         this.name = name;
         this.hitDmg = hitDmg;

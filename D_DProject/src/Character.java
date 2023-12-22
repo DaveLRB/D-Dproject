@@ -169,8 +169,9 @@ public class Character {
         switch (this.getCharacterType()) {
             case BARD -> {
                 randomQuote = getRandomQuote(charQuotesBard);
+                music = new Music(randomQuote.getFilename());
                 seduce++;
-                if (seduce == 2) {
+                if (seduce == 4) {
                     seduce = 0;
                     if (!monster.isSeduced()) {
                         monster.setSeduced(true);
@@ -178,6 +179,8 @@ public class Character {
                         music = new Music(randomQuote.getFilename());
                         music.play();
                     }
+                } else {
+                    music.play();
                 }
             }
             case KNIGHT -> {
