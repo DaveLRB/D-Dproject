@@ -124,7 +124,7 @@ public class Dungeon {
                     try {
                         Character selectedCharacter = player.getSelectedCharacter();
                         selectedCharacter.characterTalk(currentMonster);
-                        Thread.sleep(3500);
+                        Thread.sleep(1700);
                         if (currentMonster.isSeduced()) {
                             currentMonster.monsterSeducedSpeak();
                         } else {
