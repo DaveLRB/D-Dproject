@@ -25,7 +25,6 @@ public class Dungeon {
         boolean wantToLeave = false;
         int level = 1;
 
-        System.out.println("\nType 0 to go back");
         do {
             if (!isPlayerAlive()) {
                 monsters.clear();
@@ -151,6 +150,8 @@ public class Dungeon {
                     itemsMenu(level);
                     break;
                 case 4:
+                    GAME_MANAGER.init();
+                    monsters.clear();
                     wantsToLeave = true;
                     break;
                 default:
@@ -268,6 +269,7 @@ public class Dungeon {
                     break;
                 case 4:
                     actMenu(currentMonster);
+                    break;
 
             }
             if (!isInventoryOpen) {
