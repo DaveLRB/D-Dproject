@@ -122,7 +122,6 @@ public class Dungeon {
                     try {
                         Character selectedCharacter = player.getSelectedCharacter();
                         selectedCharacter.characterTalk(currentMonster);
-                        Thread.sleep(3500);
                         if (currentMonster.isSeduced()) {
                             currentMonster.monsterSeducedSpeak();
                         } else {
@@ -134,7 +133,10 @@ public class Dungeon {
                         GameMessage.getExceptionMessage(e.getMessage());
                     }
                 case 2:
-                    // Mercy
+                    if(currentMonster.isSeduced()) {
+                        monsters.remove(monsters.get(LEVEL_INDEX));
+                        GameMessage.getMercyMessage();
+                    }
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
@@ -167,10 +169,21 @@ public class Dungeon {
                     throw new OperationCancelledException();
                 case 1:
                     if (attackCounter == 0) {
-                        currentMonster.monsterSpeak();
+                        try {
+                            currentMonster.monsterSpeak();
+                            Thread.sleep(2000);
+                        } catch (Exception e) {
+                            GameMessage.getExceptionMessage(e.getMessage());
+                        }
                     }
                     currentMonster.takeDamage(player, "light");
-                    currentMonster.monsterAngerSpeak();
+                    try {
+                        Thread.sleep(1000);
+                        currentMonster.monsterAngerSpeak();
+                        Thread.sleep(2000);
+                    } catch (Exception e) {
+                        GameMessage.getExceptionMessage(e.getMessage());
+                    }
                     attackCounter++;
                     printDeathMessageIfDead();
                     break;

@@ -1086,5 +1086,8 @@ public class GameMessage {
     public static void getFinalGameMessage() {
         System.out.println("Meh. Goodbye.");
     }
+
+    public static void getMercyMessage() {
+    }
 }
 
