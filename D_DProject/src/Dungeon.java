@@ -270,7 +270,6 @@ public class Dungeon {
                 case 4:
                     actMenu(currentMonster);
                     break;
-
             }
             if (!isInventoryOpen) {
                 if (isMonsterAlive() && !currentMonster.isSeduced()) {
@@ -279,6 +278,7 @@ public class Dungeon {
                 if (currentMonster.isSeduced()) currentMonster.setSeduced(false);
                 if (!isMonsterAlive()) {
                     monsters.get(LEVEL_INDEX).remove(monsters.get(LEVEL_INDEX).get(MONSTER_INDEX));
+                    count = 0;
                     if (monsters.get(LEVEL_INDEX).isEmpty()) {
                         monsters.remove(monsters.get(LEVEL_INDEX));
                         level++;
@@ -289,10 +289,16 @@ public class Dungeon {
                     }
                 }
 
-                System.out.println(Colors.FATIMAS_RED + "\nThe level of the dungeon: " + level + Colors.RESET);
+                System.out.println();
+                System.out.println(Colors.FATIMAS_RED + "Your current HP: " + Colors.RESET + selectedCharacter.getHealthPoints());
+                System.out.println();
+                System.out.println(Colors.FATIMAS_RED + "The level of the dungeon: " + level + Colors.RESET);
                 System.out.println(Colors.FATIMAS_RED + "Monsters left: " + monsters.get(LEVEL_INDEX).size() + Colors.RESET);
+                GameMessage.getOneBlankSpace();
             }
+            break;
         }
+        handleBattleTurn(level, false);
     }
 
 

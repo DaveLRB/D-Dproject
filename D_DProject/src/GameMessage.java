@@ -75,7 +75,8 @@ public class GameMessage {
     }
 
     public static void getPlayerName() {
-        System.out.print(Colors.FATIMAS_RED + "Welcome, welcome! Whats your name? " + Colors.RESET);
+        System.out.println("A turn-based dungeon crawler as you choose from 4 unique characters, battle 25 diverse monsters, and navigate 5 challenging levels.\nUpgrade your stats, acquire items from the in-game shop, and strategically conquer each level to emerge victorious in this PvE adventure.\n");
+        System.out.print(Colors.FATIMAS_RED + "Insert your name: " + Colors.RESET);
     }
 
     public static void getMercyMessage() {
