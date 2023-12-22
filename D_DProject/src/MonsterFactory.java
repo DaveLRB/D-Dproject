@@ -68,11 +68,11 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Goblin+angry+5_out.wav", "Goblin rage is unleashed!")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/Goblin+seduce+1_out.wav", "Captivated by goblin charm."),
-                            new Quote("MonsterAudio/Goblin+seduce+2_out.wav", "I like shiny things, and mischief ;)"),
-                            new Quote("MonsterAudio/Goblin+seduce+3_out.wav", "Hope you don't resist me"),
-                            new Quote("MonsterAudio/Goblin+seduce+4_out.wav", "Feel the mischievous touch of goblin affection."),
-                            new Quote("MonsterAudio/Goblin+seduce+5_out.wav", "Why fight... let's make a pleasurable arrangement?")
+                            new Quote("MonsterAudio/Goblin+seduced+1_out.wav", "Captivated by goblin charm."),
+                            new Quote("MonsterAudio/Goblin+seduced+2_out.wav", "I like shiny things, and mischief ;)"),
+                            new Quote("MonsterAudio/Goblin+seduced+3_out.wav", "Hope you don't resist me"),
+                            new Quote("MonsterAudio/Goblin+seduced+4_out.wav", "Feel the mischievous touch of goblin affection."),
+                            new Quote("MonsterAudio/Goblin+seduced+5_out.wav", "Why fight... let's make a pleasurable arrangement?")
                     }, MonsterType.GOBLIN);
 
             case SKELETON -> new Monster("Skeleton", 30, 45, 15, 35, true, false, false, false,

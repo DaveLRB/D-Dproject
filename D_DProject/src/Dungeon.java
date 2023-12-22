@@ -171,6 +171,8 @@ public class Dungeon {
                     if (attackCounter == 0) {
                         currentMonster.monsterSpeak();
                     }
+                    currentMonster.monsterDoesOneshot(currentMonster.getMonsterType());
+                    currentMonster.revive(currentMonster.getMonsterType());
                     currentMonster.takeDamage(player, "light");
                     currentMonster.monsterAngerSpeak();
                     attackCounter++;
