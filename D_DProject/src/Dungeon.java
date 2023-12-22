@@ -28,6 +28,7 @@ public class Dungeon {
         System.out.println("\nType 0 to go back");
         do {
             if (!isPlayerAlive()) {
+                monsters.clear();
                 handlePlayerDefeat();
                 return;
             }
@@ -41,9 +42,63 @@ public class Dungeon {
 
             if (isLevelCompleted()) {
                 if (level == 5) {
-                    System.out.println("You completed the dungeon!");
+                    System.out.println(Colors.FATIMAS_RED +
+                            "▄██   ▄    ▄██████▄  ███    █▄                              \n" +
+                            "███   ██▄ ███    ███ ███    ███                             \n" +
+                            "███▄▄▄███ ███    ███ ███    ███                             \n" +
+                            "▀▀▀▀▀▀███ ███    ███ ███    ███                             \n" +
+                            "▄██   ███ ███    ███ ███    ███                             \n" +
+                            "███   ███ ███    ███ ███    ███                             \n" +
+                            "███   ███ ███    ███ ███    ███                             \n" +
+                            " ▀█████▀   ▀██████▀  ████████▀                              \n" +
+                            "                                                            \n" +
+                            "   ▄████████    ▄████████  ▄█    █▄     ▄████████ ████████▄ \n" +
+                            "  ███    ███   ███    ███ ███    ███   ███    ███ ███   ▀███\n" +
+                            "  ███    █▀    ███    ███ ███    ███   ███    █▀  ███    ███\n" +
+                            "  ███          ███    ███ ███    ███  ▄███▄▄▄     ███    ███\n" +
+                            "▀███████████ ▀███████████ ███    ███ ▀▀███▀▀▀     ███    ███\n" +
+                            "         ███   ███    ███ ███    ███   ███    █▄  ███    ███\n" +
+                            "   ▄█    ███   ███    ███ ███    ███   ███    ███ ███   ▄███\n" +
+                            " ▄████████▀    ███    █▀   ▀██████▀    ██████████ ████████▀ \n" +
+                            "                                                            \n" +
+                            "    ███        ▄█    █▄       ▄████████                     \n" +
+                            "▀█████████▄   ███    ███     ███    ███                     \n" +
+                            "   ▀███▀▀██   ███    ███     ███    █▀                      \n" +
+                            "    ███   ▀  ▄███▄▄▄▄███▄▄  ▄███▄▄▄                         \n" +
+                            "    ███     ▀▀███▀▀▀▀███▀  ▀▀███▀▀▀                         \n" +
+                            "    ███       ███    ███     ███    █▄                      \n" +
+                            "    ███       ███    ███     ███    ███                     \n" +
+                            "   ▄████▀     ███    █▀      ██████████                     \n" +
+                            "                                                            \n" +
+                            " ▄█     █▄   ▄██████▄     ▄████████  ▄█          ▄████████  \n" +
+                            "███     ███ ███    ███   ███    ███ ███         ███    ███  \n" +
+                            "███     ███ ███    ███   ███    ███ ███         ███    █▀   \n" +
+                            "███     ███ ███    ███  ▄███▄▄▄▄██▀ ███         ███         \n" +
+                            "███     ███ ███    ███ ▀▀███▀▀▀▀▀   ███       ▀███████████  \n" +
+                            "███     ███ ███    ███ ▀███████████ ███                ███  \n" +
+                            "███ ▄█▄ ███ ███    ███   ███    ███ ███▌    ▄    ▄█    ███  \n" +
+                            " ▀███▀███▀   ▀██████▀    ███    ███ █████▄▄██  ▄████████▀   \n" +
+                            "                         ███    ███ ▀                       " + Colors.RESET);
                 } else {
-                    System.out.println("You passed the level");
+                    System.out.println(Colors.FATIMAS_RED +
+                            "███▄▄▄▄      ▄████████ ▀████    ▐████▀     ███          \n" +
+                            "███▀▀▀██▄   ███    ███   ███▌   ████▀  ▀█████████▄      \n" +
+                            "███   ███   ███    █▀     ███  ▐███       ▀███▀▀██      \n" +
+                            "███   ███  ▄███▄▄▄        ▀███▄███▀        ███   ▀      \n" +
+                            "███   ███ ▀▀███▀▀▀        ████▀██▄         ███          \n" +
+                            "███   ███   ███    █▄    ▐███  ▀███        ███          \n" +
+                            "███   ███   ███    ███  ▄███     ███▄      ███          \n" +
+                            " ▀█   █▀    ██████████ ████       ███▄    ▄████▀        \n" +
+                            "                                                        \n" +
+                            " ▄█          ▄████████  ▄█    █▄     ▄████████  ▄█      \n" +
+                            "███         ███    ███ ███    ███   ███    ███ ███      \n" +
+                            "███         ███    █▀  ███    ███   ███    █▀  ███      \n" +
+                            "███        ▄███▄▄▄     ███    ███  ▄███▄▄▄     ███      \n" +
+                            "███       ▀▀███▀▀▀     ███    ███ ▀▀███▀▀▀     ███      \n" +
+                            "███         ███    █▄  ███    ███   ███    █▄  ███      \n" +
+                            "███▌    ▄   ███    ███ ███    ███   ███    ███ ███▌    ▄\n" +
+                            "█████▄▄██   ██████████  ▀██████▀    ██████████ █████▄▄██\n" +
+                            "▀                                              ▀        " + Colors.RESET);
                     level++;
                 }
                 monsters.remove(monsters.get(LEVEL_INDEX));
@@ -65,6 +120,7 @@ public class Dungeon {
     }
 
     int count = 0;
+
     private void handleBattleTurn(int level, boolean wantsToLeave) {
         Scanner scanner = new Scanner(System.in);
         Character selectedCharacter = player.getSelectedCharacter();
@@ -72,7 +128,7 @@ public class Dungeon {
         while (monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getMonsterHP() > 0
                 && player.getSelectedCharacter().getHealthPoints() > 0 && !wantsToLeave) {
             Monster currentMonster = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX);
-            if(count < 1) {
+            if (count < 1) {
                 currentMonster.printMonsterArt();
                 count++;
             }
@@ -81,6 +137,7 @@ public class Dungeon {
             isInventoryOpen = false;
             switch (option) {
                 case 0:
+                    monsters.clear();
                     throw new OperationCancelledException();
                 case 1:
                     fightMenu(level, wantsToLeave);
@@ -94,76 +151,77 @@ public class Dungeon {
                     itemsMenu(level);
                     break;
                 case 4:
-                    System.out.println("You ran away. Game over.");
-                    System.exit(0);
+                    wantsToLeave = true;
                     break;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.out.println(Colors.RED_BOLD_BRIGHT + "Invalid choice. Please try again." + Colors.RESET);
             }
-        }}
-        public static void displayMenu() {
-            System.out.println("✧✦✧ Stay determinate ✧✦✧");
-            System.out.println("1✧ Fight");
-            System.out.println("2✦ Act");
-            System.out.println("3✧ Inventory");
-            System.out.println("4✦ Run Away");
-            System.out.print("Enter your choice: ");
         }
+    }
 
-        public void actMenu(Monster currentMonster) {
-           Scanner scanner = new Scanner(System.in);
-            System.out.println("✧✦✧ Act Menu ✧✦✧");
-            System.out.println("1✧ Talk");
-            System.out.println("2✦ Mercy");
-            System.out.print("Enter your choice: ");
-            int choice = scanner.nextInt();
-            switch (choice) {
-                case 1:
-                    try {
-                        Character selectedCharacter = player.getSelectedCharacter();
-                        selectedCharacter.characterTalk(currentMonster);
-                        if (currentMonster.isSeduced()) {
-                            currentMonster.monsterSeducedSpeak();
-                        } else {
-                            currentMonster.monsterSpeak();
-                        }
-                        Thread.sleep(2000);
-                        break;
-                    }catch (Exception e) {
-                        GameMessage.getExceptionMessage(e.getMessage());
+    public static void displayMenu() {
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "✧✦✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Stay determinate " + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " ✧✦✧" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Fight" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + "Act" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "3✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + "Inventory" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "4✦" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + "Run Away" + Colors.RESET);
+        System.out.print(Colors.FATIMAS_RED + "Enter your choice: \n" + Colors.RESET);
+    }
+
+    public void actMenu(Monster currentMonster) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "✧✦✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Act Menu " + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " ✧✦✧");
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Talk" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Mercy" + Colors.RESET);
+        System.out.print(Colors.FATIMAS_RED + "Enter your choice: \n" + Colors.RESET);
+        int choice = scanner.nextInt();
+        switch (choice) {
+            case 1:
+                try {
+                    Character selectedCharacter = player.getSelectedCharacter();
+                    selectedCharacter.characterTalk(currentMonster);
+                    Thread.sleep(3500);
+                    if (currentMonster.isSeduced()) {
+                        currentMonster.monsterSeducedSpeak();
+                    } else {
+                        currentMonster.monsterSpeak();
                     }
-                case 2:
-                    if(currentMonster.isSeduced()) {
-                        monsters.remove(monsters.get(LEVEL_INDEX));
-                        GameMessage.getMercyMessage();
-                    }
+                    Thread.sleep(2000);
                     break;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
-            }
+                } catch (Exception e) {
+                    GameMessage.getExceptionMessage(e.getMessage());
+                }
+            case 2:
+                if(currentMonster.isSeduced()) {
+                    monsters.remove(monsters.get(LEVEL_INDEX));
+                    GameMessage.getMercyMessage();
+                }
+                break;
+            default:
+                System.out.println(Colors.RED_BOLD_BRIGHT + "Invalid choice. Please try again.\n" + Colors.RESET);
         }
+    }
 
-        public void itemsMenu(int level) {
-            GAME_MANAGER.getPlayerInventory();
-            isInventoryOpen = true;
-        }
+    public void itemsMenu(int level) {
+        GAME_MANAGER.getPlayerInventory();
+        isInventoryOpen = true;
+    }
+
     public void fightMenu(int level, boolean wantsToLeave) {
         int attackCounter = 0;
         Random random = new Random();
         Character selectedCharacter = player.getSelectedCharacter();
-        while (monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getMonsterHP() > 0 &&
-                player.getSelectedCharacter().getHealthPoints() > 0 &&
-                !wantsToLeave) {
+        while (monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getMonsterHP() > 0 && player.getSelectedCharacter().getHealthPoints() > 0 && !wantsToLeave) {
             Monster currentMonster = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX);
             Scanner scan = new Scanner(System.in);
             Boolean isInventoryOpen = false;
 
-            System.out.println("✧✦✧ Choose an attack ✧✦✧");
-            System.out.println("1✧ Light Attack");
-            System.out.println("2✦ Heavy Attack");
-            System.out.println("3✧ Ultimate Attack");
-            System.out.println("4✧ Back to menu");
-            System.out.print("Enter your choice: ");
+            System.out.println(Colors.YELLOW_BOLD_BRIGHT + "✧✦✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Choose an attack " + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " ✧✦✧" + Colors.RESET);
+            System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Light Attack" + Colors.RESET);
+            System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Heavy Attack" + Colors.RESET);
+            System.out.println(Colors.YELLOW_BOLD_BRIGHT + "3✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Ultimate Attack" + Colors.RESET);
+            System.out.println(Colors.YELLOW_BOLD_BRIGHT + "4✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Ultimate Attack" + Colors.RESET);
+            System.out.print(Colors.FATIMAS_RED + "Enter your choice: \n" + Colors.RESET);
             switch (scan.nextInt()) {
                 case 0:
                     throw new OperationCancelledException();
@@ -208,88 +266,99 @@ public class Dungeon {
                         return;
                     }
                     break;
-            }
+                case 4:
+                    actMenu(currentMonster);
 
+            }
             if (!isInventoryOpen) {
-                    if (isMonsterAlive() && !currentMonster.isSeduced()) {
-                        selectedCharacter.setHP(currentMonster.monsterAttack(selectedCharacter));
-                    }
-                    if (currentMonster.isSeduced()) currentMonster.setSeduced(false);
-                    if (!isMonsterAlive()) {
-                        count = 0;
-                        monsters.get(LEVEL_INDEX).remove(monsters.get(LEVEL_INDEX).get(MONSTER_INDEX));
-                        if(monsters.get(LEVEL_INDEX).isEmpty()){
-                            monsters.remove(monsters.get(LEVEL_INDEX));
-                            level++;
-                        }
-                        int randomNumber = random.nextInt(101);
-                        if(randomNumber<=15){
-                            new Chest(player);
-                        }
-                    }
-
-                    System.out.println("\nThe level of the dungeon: " + level);
-                    System.out.println("Monsters left: " + monsters.get(LEVEL_INDEX).size());
+                if (isMonsterAlive() && !currentMonster.isSeduced()) {
+                    selectedCharacter.setHP(currentMonster.monsterAttack(selectedCharacter));
                 }
-            handleBattleTurn(level, false);
-            }
-        }
-
-            private void printDeathMessageIfDead () {
+                if (currentMonster.isSeduced()) currentMonster.setSeduced(false);
                 if (!isMonsterAlive()) {
-                    Monster currentMonster = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX);
-                    System.out.println("\nYou killed the " + currentMonster.getName() +
-                            " and you earned " + currentMonster.getGold() + " gold!");
-                    player.addGold(currentMonster.getGold());
-                }
-            }
-
-            private void handlePlayerDefeat () {
-                System.out.println("\nYour character died\n");
-            }
-
-            //Creating and adding monsters to the list
-            private void fillMonstersArray (ArrayList < ArrayList < Monster >> monsters) {
-                ArrayList<Integer> monstersOrder = getMonstersOrder();
-                int counter = 0;
-                int numberOfLevels = 5;
-                int numberOfMonsters = 5;
-
-                for (int level = 0; level < numberOfLevels; level++) {
-                    ArrayList<Monster> monstersLevel = new ArrayList<>();
-
-                    for (int monster = 0; monster < numberOfMonsters; monster++) {
-                        monstersLevel.add(MonsterFactory.createMonster(MonsterType.values()[monstersOrder.get(counter++)]));
+                    monsters.get(LEVEL_INDEX).remove(monsters.get(LEVEL_INDEX).get(MONSTER_INDEX));
+                    if (monsters.get(LEVEL_INDEX).isEmpty()) {
+                        monsters.remove(monsters.get(LEVEL_INDEX));
+                        level++;
                     }
-
-                    monsters.add(monstersLevel);
-                }
-            }
-
-            private ArrayList<Integer> getMonstersOrder () {
-                ArrayList<Integer> monstersOrder = new ArrayList<>();
-                int maximumNumberOfMonsters = 25;
-
-                for (int i = 1, counter = 0; i <= maximumNumberOfMonsters; i++) {
-                    monstersOrder.add(randomizeNumber(monstersOrder, counter, 5 + counter));
-
-                    if (i % 5 == 0) {
-                        counter += 5;
+                    int randomNumber = random.nextInt(101);
+                    if (randomNumber <= 15) {
+                        new Chest(player);
                     }
                 }
 
-                return monstersOrder;
-            }
-
-            private int randomizeNumber (ArrayList < Integer > monstersOrder,int origin, int bound){
-                Random randomize = new Random();
-                int randomNumber;
-
-                do {
-                    randomNumber = randomize.nextInt(origin, bound);
-                } while (monstersOrder.contains(randomNumber));
-
-                return randomNumber;
+                System.out.println(Colors.FATIMAS_RED + "\nThe level of the dungeon: " + level + Colors.RESET);
+                System.out.println(Colors.FATIMAS_RED + "Monsters left: " + monsters.get(LEVEL_INDEX).size() + Colors.RESET);
             }
         }
+    }
+
+
+    private void printDeathMessageIfDead() {
+        if (!isMonsterAlive()) {
+            Monster currentMonster = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX);
+            System.out.println(Colors.FATIMAS_RED + "\nYou killed the " + currentMonster.getName() +
+                    " and you earned " + currentMonster.getGold() + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " gold!" + Colors.RESET);
+            player.addGold(currentMonster.getGold());
+        }
+    }
+
+    private void handlePlayerDefeat() {
+        System.out.println("Colors.RED_BOLD_BRIGHT +\n" +
+                "                \"▓██   ██▓ ▒█████   █    ██    ▓█████▄  ██▓▓█████ ▓█████▄ \\n\" +\n" +
+                "                \" ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▒██▀ ██▌▓██▒▓█   ▀ ▒██▀ ██▌\\n\" +\n" +
+                "                \"  ▒██ ██░▒██░  ██▒▓██  ▒██░   ░██   █▌▒██▒▒███   ░██   █▌\\n\" +\n" +
+                "                \"  ░ ▐██▓░▒██   ██░▓▓█  ░██░   ░▓█▄   ▌░██░▒▓█  ▄ ░▓█▄   ▌\\n\" +\n" +
+                "                \"  ░ ██▒▓░░ ████▓▒░▒▒█████▓    ░▒████▓ ░██░░▒████▒░▒████▓ \\n\" +\n" +
+                "                \"   ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒     ▒▒▓  ▒ ░▓  ░░ ▒░ ░ ▒▒▓  ▒ \\n\" +\n" +
+                "                \" ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░     ░ ▒  ▒  ▒ ░ ░ ░  ░ ░ ▒  ▒ \\n\" +\n" +
+                "                \" ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░     ░ ░  ░  ▒ ░   ░    ░ ░  ░ \\n\" +\n" +
+                "                \" ░ ░         ░ ░     ░           ░     ░     ░  ░   ░    \\n\" +\n" +
+                "                \" ░ ░                           ░                  ░      \" + Colors.RESET");
+    }
+
+    //Creating and adding monsters to the list
+    private void fillMonstersArray(ArrayList<ArrayList<Monster>> monsters) {
+        ArrayList<Integer> monstersOrder = getMonstersOrder();
+        int counter = 0;
+        int numberOfLevels = 5;
+        int numberOfMonsters = 5;
+
+        for (int level = 0; level < numberOfLevels; level++) {
+            ArrayList<Monster> monstersLevel = new ArrayList<>();
+
+            for (int monster = 0; monster < numberOfMonsters; monster++) {
+                monstersLevel.add(MonsterFactory.createMonster(MonsterType.values()[monstersOrder.get(counter++)]));
+            }
+
+            monsters.add(monstersLevel);
+        }
+    }
+
+    private ArrayList<Integer> getMonstersOrder() {
+        ArrayList<Integer> monstersOrder = new ArrayList<>();
+        int maximumNumberOfMonsters = 25;
+
+        for (int i = 1, counter = 0; i <= maximumNumberOfMonsters; i++) {
+            monstersOrder.add(randomizeNumber(monstersOrder, counter, 5 + counter));
+
+            if (i % 5 == 0) {
+                counter += 5;
+            }
+        }
+
+        return monstersOrder;
+    }
+
+    private int randomizeNumber(ArrayList<Integer> monstersOrder, int origin, int bound) {
+        Random randomize = new Random();
+        int randomNumber;
+
+        do {
+            randomNumber = randomize.nextInt(origin, bound);
+        } while (monstersOrder.contains(randomNumber));
+
+        return randomNumber;
+    }
+}
 

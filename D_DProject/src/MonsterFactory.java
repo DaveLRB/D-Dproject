@@ -301,11 +301,11 @@ class MonsterFactory {
                             new Quote("MonsterAudio/harpy_neutral_5.wav", "Embracing the calm carried by the breeze.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/harpy_anger_1.wav", "High above, the harpy descends!"),
-                            new Quote("MonsterAudio/harpy_anger_2.wav", "The talons of the harpy know no mercy."),
-                            new Quote("MonsterAudio/harpy_anger_3.wav", "Winds carry the harpy's fury."),
-                            new Quote("MonsterAudio/harpy_anger_4.wav", "Aerial dominance in every gust."),
-                            new Quote("MonsterAudio/harpy_anger_5.wav", "Feel the storm of the harpy's wrath.")
+                            new Quote("MonsterAudio/harpy_angry_1.wav", "High above, the harpy descends!"),
+                            new Quote("MonsterAudio/harpy_angry_2.wav", "The talons of the harpy know no mercy."),
+                            new Quote("MonsterAudio/harpy_angry_3.wav", "Winds carry the harpy's fury."),
+                            new Quote("MonsterAudio/harpy_angry_4.wav", "Aerial dominance in every gust."),
+                            new Quote("MonsterAudio/harpy_angry_5.wav", "Feel the storm of the harpy's wrath.")
                     },
                     new Quote[]{
                             new Quote("MonsterAudio/harpy_seduce_1.wav", "Our love soars on the wings of my voice!"),
@@ -397,11 +397,11 @@ class MonsterFactory {
                             new Quote("MonsterAudio/basilisk_neutral_5.wav", "A hiss as silent as the stone it creates.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/basilisk_anger_1.wav", "Basilisk's gaze turns flesh to stone!"),
-                            new Quote("MonsterAudio/basilisk_anger_2.wav", "Feel the venomous bite of the serpent's kiss!"),
-                            new Quote("MonsterAudio/basilisk_anger_3.wav", "Stone's cold embrace, an eternal stillness."),
-                            new Quote("MonsterAudio/basilisk_anger_4.wav", "Serpentine glare freezes the bravest hearts."),
-                            new Quote("MonsterAudio/basilisk_anger_5.wav", "Silent hiss, the harbinger of stony fate.")
+                            new Quote("MonsterAudio/basilisk_angry_1.wav", "Basilisk's gaze turns flesh to stone!"),
+                            new Quote("MonsterAudio/basilisk_angry_2.wav", "Feel the venomous bite of the serpent's kiss!"),
+                            new Quote("MonsterAudio/basilisk_angry_3.wav", "Stone's cold embrace, an eternal stillness."),
+                            new Quote("MonsterAudio/basilisk_angry_4.wav", "Serpentine glare freezes the bravest hearts."),
+                            new Quote("MonsterAudio/basilisk_angry_5.wav", "Silent hiss, the harbinger of stony fate.")
                     },
                     new Quote[]{
                             new Quote("MonsterAudio/basilisk_seduce_1.wav", "A stare that petrifies and a bite that paralyzes!"),
@@ -469,11 +469,11 @@ class MonsterFactory {
                             new Quote("MonsterAudio/medusa_neutral_5.wav", "Heart of stone, my gaze freezes the very essence of time.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/medusa_anger_1.wav", "Avoid the gaze or turn to stone!"),
-                            new Quote("MonsterAudio/medusa_anger_2.wav", "Feel the serpentine strike of Medusa."),
-                            new Quote("MonsterAudio/medusa_anger_3.wav", "Venomous bite, a strike from the serpent's fang."),
-                            new Quote("MonsterAudio/medusa_anger_4.wav", "Coiled strike, the serpent's swift and deadly attack."),
-                            new Quote("MonsterAudio/medusa_anger_5.wav", "Heart of stone, the gaze that freezes time.")
+                            new Quote("MonsterAudio/medusa_angry_1.wav", "Avoid the gaze or turn to stone!"),
+                            new Quote("MonsterAudio/medusa_angry_2.wav", "Feel the serpentine strike of Medusa."),
+                            new Quote("MonsterAudio/medusa_angry_3.wav", "Venomous bite, a strike from the serpent's fang."),
+                            new Quote("MonsterAudio/medusa_angry_4.wav", "Coiled strike, the serpent's swift and deadly attack."),
+                            new Quote("MonsterAudio/medusa_angry_5.wav", "Heart of stone, the gaze that freezes time.")
                     },
                     new Quote[]{
                             new Quote("MonsterAudio/medusa_seduce_1.wav", "Our love petrifies the heart with joy!"),
@@ -589,11 +589,11 @@ class MonsterFactory {
                             new Quote("MonsterAudio/dragon_neutral_5.wav", "Eternal soar on the wings of the dragon.")
                     },
                     new Quote[]{
-                            new Quote("MonsterAudio/dragon_angry_1.wav", "The dragon's breath engulfs all!"),
-                            new Quote("MonsterAudio/dragon_angry_2.wav", "Feel the gust of the dragon's wings."),
-                            new Quote("MonsterAudio/dragon_angry_3.wav", "Fiery roar echoes through the skies."),
-                            new Quote("MonsterAudio/dragon_angry_4.wav", "Inferno sweep, a blaze of draconic fury."),
-                            new Quote("MonsterAudio/dragon_angry_5.wav", "Eternal soar, the dragon's wings carry our love.")
+                            new Quote("MonsterAudio/dragon_angry_1_out.wav", "The dragon's breath engulfs all!"),
+                            new Quote("MonsterAudio/dragon_angry_2_out.wav", "Feel the gust of the dragon's wings."),
+                            new Quote("MonsterAudio/dragon_angry_3_out.wav", "Fiery roar echoes through the skies."),
+                            new Quote("MonsterAudio/dragon_angry_4_out.wav", "Inferno sweep, a blaze of draconic fury."),
+                            new Quote("MonsterAudio/dragon_angry_5_out.wav", "Eternal soar, the dragon's wings carry our love.")
                     },
                     new Quote[]{
                             new Quote("MonsterAudio/dragon_seduce_1.wav", "Our love roars with the fury of the dragon!"),
