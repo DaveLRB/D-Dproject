@@ -1,13 +1,15 @@
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Scanner;
 
 public class GameMessage {
     public static void getMenuMessage() {
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧" +Colors.RESET + Colors.WHITE_BOLD_BRIGHT+  " Enter the dungeon" + Colors.RESET);
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT +"2✦"+Colors.RESET + Colors.WHITE_BOLD_BRIGHT+" Check character stats"+ Colors.RESET);
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT +"3✧"+Colors.RESET + Colors.WHITE_BOLD_BRIGHT+" Check inventory"+ Colors.RESET);
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT +"4✦"+Colors.RESET + Colors.WHITE_BOLD_BRIGHT+" Shop"+ Colors.RESET);
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT +"5✧"+Colors.RESET + Colors.WHITE_BOLD_BRIGHT+" Leave game"+ Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Enter the dungeon" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Check character stats" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "3✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Check inventory" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "4✦" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Shop" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "5✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Leave game" + Colors.RESET);
         System.out.print(Colors.FATIMAS_RED + "Option: \n" + Colors.RESET);
     }
 
@@ -113,13 +115,13 @@ public class GameMessage {
         int ite = playerItem != null ? playerItem.getIntelligence() : 0;
 
         System.out.println(Colors.YELLOW_BOLD_BRIGHT + "Character: " + Colors.RESET + player.getSelectedCharacter().getName() + "\n" + "\n" +
-                Colors.YELLOW_BOLD_BRIGHT + "Types of attack:" +Colors.RESET +
-                Colors.YELLOW_BOLD_BRIGHT +"\nStrength: " + Colors.RESET + player.getSelectedCharacter().getStrength() + " (+" + str + ")" +
+                Colors.YELLOW_BOLD_BRIGHT + "Types of attack:" + Colors.RESET +
+                Colors.YELLOW_BOLD_BRIGHT + "\nStrength: " + Colors.RESET + player.getSelectedCharacter().getStrength() + " (+" + str + ")" +
                 Colors.YELLOW_BOLD_BRIGHT + "\nDexterity: " + Colors.RESET + player.getSelectedCharacter().getDexterity() + " (+" + dex + ")" +
                 Colors.YELLOW_BOLD_BRIGHT + "\nCharisma: " + Colors.RESET + player.getSelectedCharacter().getCharisma() + " (+" + cha + ")" +
                 Colors.YELLOW_BOLD_BRIGHT + "\nIntelligence: " + Colors.RESET + player.getSelectedCharacter().getIntelligence() + " (+" + ite + ")");
         getOneBlankSpace();
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "Equiped: " + player.getWhatIsEquiped()+Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "Equiped: " + player.getWhatIsEquiped() + Colors.RESET);
 
         System.out.println(Colors.YELLOW_BOLD_BRIGHT + "HP: " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + player.getSelectedCharacter().getHealthPoints() + Colors.RESET);
         System.out.println(Colors.YELLOW_BOLD_BRIGHT + "XP: " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + player.getXp() + Colors.RESET);
@@ -159,9 +161,9 @@ public class GameMessage {
         count = 1;
         for (Item item : shop.getShopList()) {
             if (item.getCharisma() != null) {
-                System.out.println(Colors.YELLOW_BOLD_BRIGHT + "" + count++ +Colors.RESET +Colors.WHITE_BOLD_BRIGHT +  " | " + item.getName() + " | Price: " + item.getPriceToBuy() + " | Skill: +" + item.getSkillToMenu() + Colors.RESET);
+                System.out.println(Colors.YELLOW_BOLD_BRIGHT + "" + count++ + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " | " + item.getName() + " | Price: " + item.getPriceToBuy() + " | Skill: +" + item.getSkillToMenu() + Colors.RESET);
             } else {
-                System.out.println(Colors.YELLOW_BOLD_BRIGHT + "" + count++ +Colors.RESET +Colors.WHITE_BOLD_BRIGHT + " | " + item.getName() + " | Price: " + item.getPriceToBuy() + Colors.RESET);
+                System.out.println(Colors.YELLOW_BOLD_BRIGHT + "" + count++ + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " | " + item.getName() + " | Price: " + item.getPriceToBuy() + Colors.RESET);
             }
         }
     }
@@ -232,8 +234,10 @@ public class GameMessage {
         System.out.println(Colors.WHITE_BOLD_BRIGHT + "You sold " + item.getName() + " for " + item.getPriceToBuy() / 2 + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " gold." + Colors.RESET);
     }
 
-    public static void slimePic() {
-        System.out.println(Colors.CYAN_BOLD_BRIGHT +
+
+   public static final Map<MonsterType, String> MONSTER_ART_MAP = new HashMap<>();
+    static {
+        MONSTER_ART_MAP.put(MonsterType.SLIME, "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
@@ -245,7 +249,7 @@ public class GameMessage {
                 "                    ......       . ............................/                \n" +
                 "                 /..   .......*************************.... ......              \n" +
                 "               ...........****,*************************,,..........            \n" + Colors.RESET +
-                "             ,..........************************************..........          \n" +Colors.CYAN_BOLD_BRIGHT +
+                "             ,..........************************************..........          \n" + Colors.CYAN_BOLD_BRIGHT +
                 "            ..........,******(**************(****************..........         \n" +
                 "           ..........***************************************............        \n" +
                 "          .......... ..***********************************,......*.......       \n" +
@@ -253,7 +257,7 @@ public class GameMessage {
                 "         .......,.........**************************..............,,,,...*      \n" +
                 "         .....,........,*****************************,,,.........,,,,,,..       \n" +
                 "         *...,,,,,,,,**,*************************************,,,*,,,,,,..       \n" + Colors.RESET +
-                "          (.*******,,,*,**********************************************..        \n" +Colors.CYAN_BOLD_BRIGHT +
+                "          (.*******,,,*,**********************************************..        \n" + Colors.CYAN_BOLD_BRIGHT +
                 "            ..****************************************.************....         \n" +
                 "             %,....*********************************.....******,....%%%         \n" +
                 "              %%%%&...........................................*%%%%%%           \n" +
@@ -266,24 +270,34 @@ public class GameMessage {
                 "  *                                                                         " + Colors.RESET);
     }
 
+
+    public static void printMonsterArt(MonsterType monsterType) {
+        String art = MONSTER_ART_MAP.get(monsterType);
+        if (art != null) {
+            System.out.println(art);
+        } else {
+            System.out.println("No ASCII art available for " + monsterType);
+        }
+    }
+
     public static void babySpiderPic() {
         System.out.println(Colors.WHITE_BOLD_BRIGHT +
                 " .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   ,#&@@@&#.  .  .   \n" +
                 ".. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. @@@@@@@@@@@@@@@@@@@@ .. ..\n" +
                 ".. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .@@@@@@# .. .. .. ..@@@@.. ..\n" +
-                "..  .  @@@@@@@@@@@@@@@@@@.  .  .  .  (&&&#..  . .. @@@@@  . ..  .  .  . ..  .  .\n" +Colors.RESET+
-                "  .  @@@@@@@@@@%**#@@@@@@@@   %&&&&&&&&&&&&&&&&&%/@@@@@ .  @@@@@@@@@@@@@  .  .  \n" +Colors.WHITE +
+                "..  .  @@@@@@@@@@@@@@@@@@.  .  .  .  (&&&#..  . .. @@@@@  . ..  .  .  . ..  .  .\n" + Colors.RESET +
+                "  .  @@@@@@@@@@%**#@@@@@@@@   %&&&&&&&&&&&&&&&&&%/@@@@@ .  @@@@@@@@@@@@@  .  .  \n" + Colors.WHITE +
                 "  . @@@@.  .  .  .  .  @@@@&&&&&&&&&&&&&&&&&&&&%&&&&%@  %@@@@@@@  *@@@@@@@@@@%  \n" +
                 "  .  .  .  ,@@@@@@@@.  .*&&&&&&     %&&&&%         &&&%@@@@@# .  .  .  . &@@@@@@\n" +
-                ".. .. .@@@@@@@@@@@@@@@@%&&&&&         %&%   @@     /&&&&@&. .@@@@@@. .. .. .*@@@\n" +Colors.RESET+
-                ".. %@@@@@@@ .. .. .@@@@&&&&&  @@@@@    &&  @@@@@   &&&&&@@@@@@@@@@@@@@. .. ..  &\n" +Colors.WHITE_BOLD_BRIGHT+
+                ".. .. .@@@@@@@@@@@@@@@@%&&&&&         %&%   @@     /&&&&@&. .@@@@@@. .. .. .*@@@\n" + Colors.RESET +
+                ".. %@@@@@@@ .. .. .@@@@&&&&&  @@@@@    &&  @@@@@   &&&&&@@@@@@@@@@@@@@. .. ..  &\n" + Colors.WHITE_BOLD_BRIGHT +
                 ".@@@@@@. .. .. .   . ..&&&&&& (@@@.   %&&&&*     &&&&&&&@@@... .. ..@@@@@  .. ..\n" +
                 "@@@@#.  .  . @@@@@@@@@@%&&&&&&&&%&&&&&&&&&&&&&&&&&&&&&&&@@@@@@@@@@  .  @@@@@ .  \n" +
-                " @@  .  . @@@@@. .  .*@@&&&&&&&&&&&&&&&*%%%%&&&&&&&&&&&,.  .  .,@@@@.  . @@@@.  \n" +Colors.RESET+
-                "  .  .  @@@@@ .  (@@@@@@@@&&&&&&&&&&&&&&&&&&&&&&&&&&&.  .  .  .  .@@@  . .@@ .  \n" +Colors.WHITE +
+                " @@  .  . @@@@@. .  .*@@&&&&&&&&&&&&&&&*%%%%&&&&&&&&&&&,.  .  .,@@@@.  . @@@@.  \n" + Colors.RESET +
+                "  .  .  @@@@@ .  (@@@@@@@@&&&&&&&&&&&&&&&&&&&&&&&&&&&.  .  .  .  .@@@  . .@@ .  \n" + Colors.WHITE +
                 ".. .. %@@@@ .. @@@@@@&. .. .. %&&&&&&&&&&&&&&&&&&# .. .. .. .. .. .@@@( .. .. ..\n" +
-                ".. .. @@@/. ..@@@ .. .. .. .. .. .. .#&&&%.. .. .. .. .. .. .. .. ..@@@ .. .. ..\n" +Colors.RESET+
-                ".. ..  @@.. .@@@. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..@@. .. .. ..\n" +Colors.WHITE_BOLD_BRIGHT+
+                ".. .. @@@/. ..@@@ .. .. .. .. .. .. .#&&&%.. .. .. .. .. .. .. .. ..@@@ .. .. ..\n" + Colors.RESET +
+                ".. ..  @@.. .@@@. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..@@. .. .. ..\n" + Colors.WHITE_BOLD_BRIGHT +
                 "  .  .  .  .#@@@ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  \n" +
                 "  .  .  .  .(@@@ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  " + Colors.RESET);
     }
@@ -309,7 +323,7 @@ public class GameMessage {
                 "               &*/(#%      ,////****//*/*******/**//(#%    ,         /          \n" +
                 "                 #/*//(#/**//#  ///*************///###%  .                      \n" +
                 "                   %***/#/(#  (  (,/*/********///(#&%&#  .                      \n" + Colors.RESET +
-                "                       (%   *    (%#(///////##@%%%&%%%&&&                       \n" +Colors.GREEN_BOLD +
+                "                       (%   *    (%#(///////##@%%%&%%%&&&                       \n" + Colors.GREEN_BOLD +
                 "                       ,,,.     .&%#%%%#%%&%%##%&&&&&&&#&&%                     \n" +
                 "                              %%%%%%%&@@%%%%&@@&&&%&&%&&&&&&                    \n" +
                 "                           @#%%%%%%%%%%%%%%%%@@&&&%%%&&&&&&&&                   \n" +
