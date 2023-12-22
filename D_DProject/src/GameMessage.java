@@ -151,7 +151,7 @@ public class GameMessage {
                 " ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░     ░ ▒  ▒  ▒ ░ ░ ░  ░ ░ ▒  ▒ \n" +
                 " ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░     ░ ░  ░  ▒ ░   ░    ░ ░  ░ \n" +
                 " ░ ░         ░ ░     ░           ░     ░     ░  ░   ░    \n" +
-                " ░ ░                           ░                  ░      " + Colors.RESET);
+                " ░ ░                           ░                  ░        " + Colors.RESET);
         getOneBlankSpace();
     }
 
