@@ -41,9 +41,63 @@ public class Dungeon {
 
             if (isLevelCompleted()) {
                 if (level == 5) {
-                    System.out.println("You completed the dungeon!");
+                    System.out.println(Colors.FATIMAS_RED +
+                            "▄██   ▄    ▄██████▄  ███    █▄                              \n" +
+                            "███   ██▄ ███    ███ ███    ███                             \n" +
+                            "███▄▄▄███ ███    ███ ███    ███                             \n" +
+                            "▀▀▀▀▀▀███ ███    ███ ███    ███                             \n" +
+                            "▄██   ███ ███    ███ ███    ███                             \n" +
+                            "███   ███ ███    ███ ███    ███                             \n" +
+                            "███   ███ ███    ███ ███    ███                             \n" +
+                            " ▀█████▀   ▀██████▀  ████████▀                              \n" +
+                            "                                                            \n" +
+                            "   ▄████████    ▄████████  ▄█    █▄     ▄████████ ████████▄ \n" +
+                            "  ███    ███   ███    ███ ███    ███   ███    ███ ███   ▀███\n" +
+                            "  ███    █▀    ███    ███ ███    ███   ███    █▀  ███    ███\n" +
+                            "  ███          ███    ███ ███    ███  ▄███▄▄▄     ███    ███\n" +
+                            "▀███████████ ▀███████████ ███    ███ ▀▀███▀▀▀     ███    ███\n" +
+                            "         ███   ███    ███ ███    ███   ███    █▄  ███    ███\n" +
+                            "   ▄█    ███   ███    ███ ███    ███   ███    ███ ███   ▄███\n" +
+                            " ▄████████▀    ███    █▀   ▀██████▀    ██████████ ████████▀ \n" +
+                            "                                                            \n" +
+                            "    ███        ▄█    █▄       ▄████████                     \n" +
+                            "▀█████████▄   ███    ███     ███    ███                     \n" +
+                            "   ▀███▀▀██   ███    ███     ███    █▀                      \n" +
+                            "    ███   ▀  ▄███▄▄▄▄███▄▄  ▄███▄▄▄                         \n" +
+                            "    ███     ▀▀███▀▀▀▀███▀  ▀▀███▀▀▀                         \n" +
+                            "    ███       ███    ███     ███    █▄                      \n" +
+                            "    ███       ███    ███     ███    ███                     \n" +
+                            "   ▄████▀     ███    █▀      ██████████                     \n" +
+                            "                                                            \n" +
+                            " ▄█     █▄   ▄██████▄     ▄████████  ▄█          ▄████████  \n" +
+                            "███     ███ ███    ███   ███    ███ ███         ███    ███  \n" +
+                            "███     ███ ███    ███   ███    ███ ███         ███    █▀   \n" +
+                            "███     ███ ███    ███  ▄███▄▄▄▄██▀ ███         ███         \n" +
+                            "███     ███ ███    ███ ▀▀███▀▀▀▀▀   ███       ▀███████████  \n" +
+                            "███     ███ ███    ███ ▀███████████ ███                ███  \n" +
+                            "███ ▄█▄ ███ ███    ███   ███    ███ ███▌    ▄    ▄█    ███  \n" +
+                            " ▀███▀███▀   ▀██████▀    ███    ███ █████▄▄██  ▄████████▀   \n" +
+                            "                         ███    ███ ▀                       " + Colors.RESET);
                 } else {
-                    System.out.println("You passed the level");
+                    System.out.println(Colors.FATIMAS_RED +
+                            "███▄▄▄▄      ▄████████ ▀████    ▐████▀     ███          \n" +
+                            "███▀▀▀██▄   ███    ███   ███▌   ████▀  ▀█████████▄      \n" +
+                            "███   ███   ███    █▀     ███  ▐███       ▀███▀▀██      \n" +
+                            "███   ███  ▄███▄▄▄        ▀███▄███▀        ███   ▀      \n" +
+                            "███   ███ ▀▀███▀▀▀        ████▀██▄         ███          \n" +
+                            "███   ███   ███    █▄    ▐███  ▀███        ███          \n" +
+                            "███   ███   ███    ███  ▄███     ███▄      ███          \n" +
+                            " ▀█   █▀    ██████████ ████       ███▄    ▄████▀        \n" +
+                            "                                                        \n" +
+                            " ▄█          ▄████████  ▄█    █▄     ▄████████  ▄█      \n" +
+                            "███         ███    ███ ███    ███   ███    ███ ███      \n" +
+                            "███         ███    █▀  ███    ███   ███    █▀  ███      \n" +
+                            "███        ▄███▄▄▄     ███    ███  ▄███▄▄▄     ███      \n" +
+                            "███       ▀▀███▀▀▀     ███    ███ ▀▀███▀▀▀     ███      \n" +
+                            "███         ███    █▄  ███    ███   ███    █▄  ███      \n" +
+                            "███▌    ▄   ███    ███ ███    ███   ███    ███ ███▌    ▄\n" +
+                            "█████▄▄██   ██████████  ▀██████▀    ██████████ █████▄▄██\n" +
+                            "▀                                              ▀        " + Colors.RESET);
                     level++;
                 }
                 monsters.remove(monsters.get(LEVEL_INDEX));
@@ -99,7 +153,7 @@ public class Dungeon {
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.out.println(Colors.RED_BOLD_BRIGHT + "Invalid choice. Please try again." + Colors.RESET);
             }
         }
     }
@@ -163,16 +217,27 @@ public class Dungeon {
             System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Heavy Attack" + Colors.RESET);
             System.out.println(Colors.YELLOW_BOLD_BRIGHT + "3✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Ultimate Attack" + Colors.RESET);
             System.out.println(Colors.YELLOW_BOLD_BRIGHT + "4✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Ultimate Attack" + Colors.RESET);
-            System.out.print(Colors.YELLOW_BOLD_BRIGHT + "Enter your choice: \n" + Colors.RESET);
+            System.out.print(Colors.FATIMAS_RED + "Enter your choice: \n" + Colors.RESET);
             switch (scan.nextInt()) {
                 case 0:
                     throw new OperationCancelledException();
                 case 1:
                     if (attackCounter == 0) {
-                        currentMonster.monsterSpeak();
+                        try {
+                            currentMonster.monsterSpeak();
+                            Thread.sleep(2000);
+                        } catch (Exception e) {
+                            GameMessage.getExceptionMessage(e.getMessage());
+                        }
                     }
                     currentMonster.takeDamage(player, "light");
+                    try {
+                        Thread.sleep(1000);
                     currentMonster.monsterAngerSpeak();
+                    Thread.sleep(2000);
+                    } catch (Exception e) {
+                        GameMessage.getExceptionMessage(e.getMessage());
+                    }
                     attackCounter++;
                     printDeathMessageIfDead();
                     break;
