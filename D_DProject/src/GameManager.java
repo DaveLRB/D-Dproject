@@ -109,7 +109,7 @@ public class GameManager {
                 }
             }
         } catch (EmptyInventoryException | AlreadyEquipedException | NothingEquipedException e) {
-            System.err.println(e.getMessage());
+            GameMessage.getExceptionMessage(e.getMessage());
         }
     }
 
