@@ -78,6 +78,10 @@ public class GameMessage {
         System.out.print(Colors.FATIMAS_RED + "Welcome, welcome! Whats your name? " + Colors.RESET);
     }
 
+    public static void getMercyMessage() {
+        System.out.println("You are spared my love!");
+    }
+
     public static void getWelcomeMessage(String name) {
         System.out.println(Colors.FATIMAS_RED + "Welcome " + name + ", please select a character:" + Colors.RESET);
     }
@@ -234,10 +238,19 @@ public class GameMessage {
         System.out.println(Colors.WHITE_BOLD_BRIGHT + "You sold " + item.getName() + " for " + item.getPriceToBuy() / 2 + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " gold." + Colors.RESET);
     }
 
+    public static void printMonsterArt(MonsterType monsterType) {
+        String art = MONSTER_ART_MAP.get(monsterType);
+        if (art != null) {
+            System.out.println(art);
+        } else {
+            System.out.println("No ASCII art available for " + monsterType);
+        }
+    }
 
-   public static final Map<MonsterType, String> MONSTER_ART_MAP = new HashMap<>();
+    public static final Map<MonsterType, String> MONSTER_ART_MAP = new HashMap<>();
+
     static {
-        MONSTER_ART_MAP.put(MonsterType.SLIME, "                                                                                \n" +
+        MONSTER_ART_MAP.put(MonsterType.SLIME, ("                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
@@ -267,22 +280,11 @@ public class GameMessage {
                 "                                                                                \n" +
                 "  %                                                                             \n" +
                 "  %                                                                             \n" +
-                "  *                                                                         " + Colors.RESET);
-    }
+                "  *                                                                         " + Colors.RESET));
 
 
-    public static void printMonsterArt(MonsterType monsterType) {
-        String art = MONSTER_ART_MAP.get(monsterType);
-        if (art != null) {
-            System.out.println(art);
-        } else {
-            System.out.println("No ASCII art available for " + monsterType);
-        }
-    }
-
-    public static void babySpiderPic() {
-        System.out.println(Colors.WHITE_BOLD_BRIGHT +
-                " .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   ,#&@@@&#.  .  .   \n" +
+        MONSTER_ART_MAP.put(MonsterType.BABYSPIDERS, (Colors.WHITE_BOLD_BRIGHT +
+                " .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   ,#&@@@&#.  .  .  \n" +
                 ".. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. @@@@@@@@@@@@@@@@@@@@ .. ..\n" +
                 ".. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .@@@@@@# .. .. .. ..@@@@.. ..\n" +
                 "..  .  @@@@@@@@@@@@@@@@@@.  .  .  .  (&&&#..  . .. @@@@@  . ..  .  .  . ..  .  .\n" + Colors.RESET +
@@ -299,12 +301,10 @@ public class GameMessage {
                 ".. .. @@@/. ..@@@ .. .. .. .. .. .. .#&&&%.. .. .. .. .. .. .. .. ..@@@ .. .. ..\n" + Colors.RESET +
                 ".. ..  @@.. .@@@. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..@@. .. .. ..\n" + Colors.WHITE_BOLD_BRIGHT +
                 "  .  .  .  .#@@@ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  \n" +
-                "  .  .  .  .(@@@ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  " + Colors.RESET);
-    }
+                "  .  .  .  .(@@@ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  " + Colors.RESET));
 
-    public static void goblinPic() {
-        System.out.println(Colors.GREEN_BOLD_BRIGHT +
-                "                                                                                \n" +
+
+        MONSTER_ART_MAP.put(MonsterType.GOBLIN, (Colors.GREEN_BOLD_BRIGHT + "                                                                               \n" +
                 "                                  ,&(,,,,/((%                                   \n" +
                 "                            #,,,/((((((((((((((((#            %/**  *           \n" +
                 "          ,(*/          ./,,(((((((((((((((((((((((#&    &./%//%                \n" +
@@ -339,11 +339,10 @@ public class GameMessage {
                 "                       #,/**//((##  *                    (*/*/*/*/(             \n" +
                 "               /,/***((**//(((#%  (.                       &(./******/*(#&      \n" +
                 "               #((,/%*/(***/##  /.                         *  %/**/*/*#(((*#%% *\n" +
-                "              .     .%#%####  /.                                ,(/**/((#%%   /" + Colors.RESET);
-    }
+                "              .     .%#%####  /.                                ,(/**/((#%%   /" + Colors.RESET));
 
-    public static void skeletonPic() {
-        System.out.println(Colors.WHITE_BOLD_BRIGHT +
+
+        MONSTER_ART_MAP.put(MonsterType.SKELETON, (Colors.WHITE_BOLD_BRIGHT +
                 "                                                                                \n" +
                 "                                     ,@@@@@@@@/                                 \n" +
                 "                                  .@@@@@@@@@@@@@@@@                             \n" +
@@ -370,12 +369,10 @@ public class GameMessage {
                 "                                 #@ #      #                                    \n" +
                 "                           .,@@#@##@@    @@(@                                   \n" +
                 "                                           @@@@*                                \n" +
-                "                                            /                                  " + Colors.RESET);
-    }
+                "                                            /                                  " + Colors.RESET));
 
-    public static void zombiePic() {
-        System.out.println(Colors.MAGENTA_BOLD_BRIGHT +
-                "                                                                               \n" +
+        MONSTER_ART_MAP.put(MonsterType.ZOMBIE, (Colors.MAGENTA_BOLD_BRIGHT +
+                "                                                                                \n" +
                 "                                    @,,,,,,,,,,,,,@&  *                         \n" +
                 "                                 @...,,,,,,,,,,,,,,,**##                        \n" +
                 "                                @,,,@,...,,,,,*,,(,,,***/ %%                    \n" +
@@ -419,11 +416,9 @@ public class GameMessage {
                 "                                         %&,,,,,,,,**             @@  ,***,,**@ \n" +
                 "                                  &,,,,,....,,,,,****@               @*,,,,*@   \n" +
                 "                                   @,*@,,,,,****              %,&,(,,,,,,,,*,   \n" +
-                "                                      (@//@#                     &@%.*&#((#%/(#(" + Colors.RESET);
-    }
+                "                                      (@//@#                     &@%.*&#((#%/(#(" + Colors.RESET));
 
-    public static void spectrePic() {
-        System.out.println(Colors.WHITE_BOLD_BRIGHT +
+        MONSTER_ART_MAP.put(MonsterType.SPECTRE, (Colors.WHITE_BOLD_BRIGHT +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                   *&@@@@@@%*                                   \n" +
@@ -454,11 +449,9 @@ public class GameMessage {
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
-                "                  ,    ,         *           /,*., # * / * * (.*             " + Colors.RESET);
-    }
+                "                  ,    ,         *           /,*., # * / * * (.*             ") + Colors.RESET);
 
-    public static void werewolfPic() {
-        System.out.println(Colors.BLUE_BOLD_BRIGHT +
+        MONSTER_ART_MAP.put(MonsterType.WEREWOLF, (Colors.BLUE_BOLD_BRIGHT +
                 "                                                                                \n" +
                 "                       .                                                        \n" +
                 "                        %@@@@@&@                                                \n" +
@@ -484,11 +477,11 @@ public class GameMessage {
                 "                   @@@@  .@@@@@   @@@@@@@@@@@@@@@                               \n" +
                 "                     @@@@@@   *@@@@@@@@(                                        \n" +
                 "                        .@@@@@@@@@@@#.      ./&@@@.                             \n" +
-                "                                                                        " + Colors.RESET);
-    }
 
-    public static void ghostPic() {
-        System.out.println(Colors.WHITE_BOLD_BRIGHT +
+                "                                                                        " + Colors.RESET));
+
+
+        MONSTER_ART_MAP.put(MonsterType.GHOST, (Colors.WHITE_BOLD_BRIGHT +
                 " . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
                 ".. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . \n" +
                 ".. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . \n" +
@@ -520,12 +513,11 @@ public class GameMessage {
                 "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
                 "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
                 "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
-                "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. ." + Colors.RESET);
-    }
+                "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. ." + Colors.RESET));
 
-    public static void witchPic() {
-        System.out.println(Colors.MAGENTA_BOLD_BRIGHT +
-                "                     .@@@@@@@@@@@@@@@@@@@@@.                                     \n" +
+
+        MONSTER_ART_MAP.put(MonsterType.WITCH, (Colors.MAGENTA_BOLD_BRIGHT +
+                "                   .@@@@@@@@@@@@@@@@@@@@@.                                     \n" +
                 "                  .@@@@.     @@@@@@@@@@@@@@@@                                   \n" +
                 "                  @@(          &@@@@@@@@@@@@@@#                                 \n" +
                 "                 @@.           .@@@@@@@@@@@@@@@&                                \n" +
@@ -547,11 +539,9 @@ public class GameMessage {
                 "               ..  /&@@@@@@@@@@@@@@@@@(  ,@@@@@@@@@@ ,@@,  .                    \n" +
                 "                /@@@@@@@@@@@@@@*@@@@@@@@@@@ *@@@@@@#.@@  &@                     \n" +
                 "                  @@@@@@@@@@@,&@@@@@@@(.    @@@@@@@@@@@@#                       \n" +
-                "                    ,@@@@(  @@@@@@@*       &@@@@@@@@@@,               " + Colors.RESET);
-    }
+                "                    ,@@@@(  @@@@@@@*       &@@@@@@@@@@,               " + Colors.RESET));
 
-    public static void vampirePic() {
-        System.out.println(Colors.RED_BOLD_BRIGHT +
+        MONSTER_ART_MAP.put(MonsterType.VAMPIRE, (Colors.RED_BOLD_BRIGHT +
                 "                        .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/                        \n" +
                 "                    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&                    \n" +
                 "                  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  \n" +
@@ -587,12 +577,11 @@ public class GameMessage {
                 "                       (@@@@@@@@@@@@@@&(%@@@@@@@@@@@@@@@@                       \n" +
                 "                          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@                         \n" +
                 "                             @@@@@@@@@@@@@@@@@@@@@@@                            \n" +
-                "                                  @@@@@@@@@@@@@" + Colors.RESET);
-    }
+                "                                  @@@@@@@@@@@@@" + Colors.RESET));
 
-    public static void mummyPic() {
-        System.out.println(Colors.WHITE_BOLD_BRIGHT +
-                "                                                                           \n" +
+
+        MONSTER_ART_MAP.put(MonsterType.MUMMY, (Colors.WHITE_BOLD_BRIGHT +
+                "                                                                               \n" +
                 "                                                            @%@     @@@@@@@@ @  \n" +
                 "                                      @@@@@ &@&  /@@@     @    @@@&          @  \n" +
                 "                                  @@      @@         @@@@   @@/   @@@       (/  \n" +
@@ -626,12 +615,10 @@ public class GameMessage {
                 "                                         @@       @%                            \n" +
                 "                                  @@*  @@   @@@@@%@                             \n" +
                 "                                 @@  @   /@       @                             \n" +
-                "                                        .@@@@@@@@                           " + Colors.RESET);
-    }
+                "                                        .@@@@@@@@                           " + Colors.RESET));
 
-    public static void creeperPic() {
-        System.out.println(Colors.GREEN_BOLD_BRIGHT +
-                ". .. .  . .. .  . .. .  . .. .  . .. @@ . .. .  . .  . .  . .. .  . .. .  . .. .\n" +
+        MONSTER_ART_MAP.put(MonsterType.CREEPER, (Colors.GREEN_BOLD_BRIGHT +
+                ". .. .  . .. .  . .. .  . .. .  . .. @@ . .. .  . .. .  . .. .  . .. .  . .. .\n" +
                 ".. .  . .. .  . .. .  .  &@@@@@@@@@@@@       @@@@@@@  . .. .  . .. .  . .. .  . \n" +
                 ".. .  . .. .  .@@@@@@@@                             %@@@@@@.  . .. .  . .. .  . \n" +
                 ".. .  . .. .  . @@   @@                                    @@@@@.. .  . .. .  . \n" +
@@ -672,12 +659,12 @@ public class GameMessage {
                 ".. .  . .. .  . .. .   @@@@@  . .. .@@      @      @@ . .. .  . .. .  . .. .  . \n" +
                 "  . .. .  . .. .  . .. .  . .. .  . @@      @     @@@. .  . .. .  . .. .  . .. .\n" +
                 "  . .. .  . .. .  . .. .  . .. .  . ./@@@@    @@@@@ .. .  . .. .  . .. .  . .. .\n" +
-                "  . .. .  . .. .  . .. .  . .. .  . .. . @@@@@@.  . .. .  . .. .  . .. .  . .. ." + Colors.RESET);
-    }
 
-    public static void harpyPic() {
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT +
-                " @&   /,,                                                                       \n" +
+                "  . .. .  . .. .  . .. .  . .. .  . .. . @@@@@@.  . .. .  . .. .  . .. .  . .. ." + Colors.RESET));
+
+
+        MONSTER_ART_MAP.put(MonsterType.HARPY, (Colors.YELLOW_BOLD_BRIGHT +
+                " @&   /,,                                                                     \n" +
                 "  &  ,@   ,,,                                                                   \n" +
                 "   @. @,.  @.,,%                                                                \n" +
                 "     .. .,,,,,&,,@                                                              \n" +
@@ -708,12 +695,10 @@ public class GameMessage {
                 "                @   @   @@                   @,&.(.,.,.(@                       \n" +
                 "                                              @..,,%,* @                        \n" +
                 "                                             ,%%     &                          \n" +
-                "                                              ,%                         " + Colors.RESET);
-    }
+                "                                              ,%                         " + Colors.RESET));
 
-    public static void centaurPic() {
-        System.out.println(Colors.GREEN_BOLD +
-                "                                                                                \n" +
+
+        MONSTER_ART_MAP.put(MonsterType.CENTAUR, (Colors.YELLOW_BOLD_BRIGHT +
                 "                       ,&&&&&&&&                                                \n" +
                 "            %         &&&&&&&%&&                                                \n" +
                 "           &%        .&%&&& %* %                                                \n" +
@@ -743,12 +728,10 @@ public class GameMessage {
                 "                    %%&&(       &( *%     %%&*%&   & ( &                        \n" +
                 "  %                  &.&       &  &     * &&&&&  &  #.&                         \n" +
                 "  %                           &%&&&              &,&&&&                         \n" +
-                "  *                                                                            " + Colors.RESET);
-    }
+                "  *                                                                            " + Colors.RESET));
 
-    public static void minotaurPic() {
-        System.out.println(Colors.YELLOW +
-                "                                                                                \n" +
+        MONSTER_ART_MAP.put(MonsterType.MINOTAUR, (Colors.YELLOW +
+                "                                                                               \n" +
                 "                                     @@      /                                  \n" +
                 "                                       @@     @@@@@@@@@@                        \n" +
                 "                                       #@@@  @@@@,   (@@@                       \n" +
@@ -773,11 +756,11 @@ public class GameMessage {
                 "                                        @@@@@        %@@@@                      \n" +
                 "                                      (@@@@@@        @@@@@%                     \n" +
                 "                                      &@@#            @@@@@                     \n" +
-                "                                                                            " + Colors.RESET);
-    }
+                "                                                                            " + Colors.RESET));
 
-    public static void cyclopsPic() {
-        System.out.println(Colors.GREEN_BOLD_BRIGHT +
+
+        MONSTER_ART_MAP.put(MonsterType.CYCLOPS, (Colors.GREEN_BOLD_BRIGHT +
+
                 "                                                                                \n" +
                 "                           # (,. ,*,                  &% ( @                    \n" +
                 "                           . @ &%( /,,              *#  (%@@/&                  \n" +
@@ -806,12 +789,11 @@ public class GameMessage {
                 "                     .@    &                    @      **                       \n" +
                 "                   (& % ( &                       % #/& %(                      \n" +
                 "                   %%@ @ (                           .&, .                      \n" +
-                "                        *                                                " + Colors.RESET);
-    }
+                "                        *                                                " + Colors.RESET));
 
-    public static void basiliskPic() {
-        System.out.println(Colors.GREEN +
-                "                                                                                \n" +
+
+        MONSTER_ART_MAP.put(MonsterType.BASILISK, (Colors.GREEN +
+                "                                                                               \n" +
                 "                                            #@                                  \n" +
                 "                                            @.@                                 \n" +
                 "                                           @@@@  @ @                            \n" + Colors.RESET +
@@ -838,12 +820,10 @@ public class GameMessage {
                 "                              @@@@@@@@@@@@@@@     .@@@@@@@@@@@@                 \n" +
                 "                               @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  \n" +
                 "                                @@@@@@@@@@@@@@@@@@@@@@@@@@@                     \n" +
-                "                                     @@@@@@@@@@@@@@@@                   " + Colors.RESET);
-    }
+                "                                     @@@@@@@@@@@@@@@@                   " + Colors.RESET));
 
-    public static void griffinPic() {
-        System.out.println(Colors.YELLOW +
-                "                                                                                \n" +
+        MONSTER_ART_MAP.put(MonsterType.GRIFFIN, (Colors.YELLOW +
+                "                                                                       \n" +
                 "                                                                                \n" +
                 "                                      @@                                        \n" +
                 "                                @@    @@@                                       \n" +
@@ -863,12 +843,12 @@ public class GameMessage {
                 "                       @@@@                            @@@                      \n" +
                 "                      @@@@ @@                           @@@@@&                  \n" +
                 "                                                                                \n" +
-                "                                                                        " + Colors.RESET);
-    }
 
-    public static void chimeraPic() {
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT +
-                "                                     &&.   &                                    \n" +
+                "                                                                        " + Colors.RESET));
+
+
+        MONSTER_ART_MAP.put(MonsterType.CHIMERA, (Colors.YELLOW_BOLD_BRIGHT +
+                "                                    &&.   &                                    \n" +
                 "                                          &&&,                                  \n" +
                 "                                        &&&*& &&                                \n" +
                 "      %&&&&&&&&&&             &       &&&&&&&(&&&&                              \n" +
@@ -889,11 +869,11 @@ public class GameMessage {
                 "   &&&&&         &&&&&&&                      #&&&&&&&&&&&                      \n" +
                 "   (&&&&            @&&&&&&&&&&                    /&&&&&&&&&                   \n" +
                 "    %&&&                   @&&&&&                       &&&&&&&&                \n" +
-                "     &&&&&&&&&%               &&&&&                        &&&&&&&&&&&&&&&     " + Colors.RESET);
-    }
 
-    public static void medusaPic() {
-        System.out.println(Colors.GREEN_BRIGHT +
+                "     &&&&&&&&&%               &&&&&                        &&&&&&&&&&&&&&&     " + Colors.RESET));
+
+
+        MONSTER_ART_MAP.put(MonsterType.MEDUSA, (Colors.GREEN +
                 "                                                                                \n" +
                 "                                  @@@@      &@@@@@@@@@@@#@@                     \n" +
                 "                               @@@    @#  @@@%        .@@@@ %                   \n" +
@@ -927,11 +907,10 @@ public class GameMessage {
                 "                                                                         @      \n" +
                 "                                      @                                  @      \n" +
                 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n" +
-                "@@@@    ( @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" + Colors.RESET);
-    }
+                "@@@@    ( @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" + Colors.RESET));
 
-    public static void wyvernPic() {
-        System.out.println(Colors.RED_BOLD_BRIGHT +
+
+        MONSTER_ART_MAP.put(MonsterType.WYVERN, (Colors.RED_BOLD_BRIGHT +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                   @.              @@           \n" +
@@ -966,11 +945,10 @@ public class GameMessage {
                 "  %                 @@@ @@@@@@@                 @@@@@@@&@@@@@@@ @@@@@           \n" +
                 "  .                  /@@      @@                   @@@@@@@@@@@@@@@@             \n" +
                 "  *                  #         ,                        @(                      \n" +
-                "  (                                                                             " + Colors.RESET);
-    }
+                "  (                                                                             " + Colors.RESET));
 
-    public static void phoenixPic() {
-        System.out.println(Colors.RED_BOLD_BRIGHT +
+
+        MONSTER_ART_MAP.put(MonsterType.PHOENIX, (Colors.RED_BOLD_BRIGHT +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                      /                         \n" +
@@ -1000,11 +978,10 @@ public class GameMessage {
                 "                            //(            ////   (                             \n" +
                 "                                  ,*/((/*.                                      \n" +
                 "                                                                                \n" +
-                "                                                                                " + Colors.RESET);
-    }
 
-    public static void krakenPic() {
-        System.out.println(Colors.MAGENTA_BOLD +
+                "                                                                                " + Colors.RESET));
+
+        MONSTER_ART_MAP.put(MonsterType.KRAKEN, (Colors.MAGENTA_BOLD +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
@@ -1036,11 +1013,9 @@ public class GameMessage {
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
-                "                                                                                " + Colors.RESET);
-    }
+                "                                                                                " + Colors.RESET));
 
-    public static void behemothPic() {
-        System.out.println(Colors.GREEN_BRIGHT +
+        MONSTER_ART_MAP.put(MonsterType.KRAKEN, (Colors.GREEN_BRIGHT +
                 "                                                                                \n" +
                 "            @@@@@@%                                                     @@@@@@. \n" +
                 "         @@@@@@@@@@@@@@@@@                                         .@@@@@@      \n" +
@@ -1067,11 +1042,9 @@ public class GameMessage {
                 "                  @@@@@@@@.                       .@@@@@@@@.                    \n" +
                 "                  #@@@@@@@@                         @@@@@@@@@                   \n" +
                 "              @@@@@@@@@@@@@@                       @@@@@@@@@@@@                 \n" +
-                "             @@@@@@@@@@@                           @@& @@@ @@@@@                " + Colors.RESET);
-    }
+                "             @@@@@@@@@@@                           @@& @@@ @@@@@                " + Colors.RESET));
 
-    public static void dragonPic() {
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT +
+        MONSTER_ART_MAP.put(MonsterType.DRAGON, (Colors.YELLOW_BOLD_BRIGHT +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
@@ -1110,7 +1083,7 @@ public class GameMessage {
                 "                                @@                                              \n" +
                 "                                    @                                           \n" +
                 "                                                                                \n" +
-                "                                                                                \n" + Colors.RESET);
+                "                                                                                \n" + Colors.RESET));
     }
 
     public static void chestFound() {
@@ -1173,5 +1146,9 @@ public class GameMessage {
                 "  ███    ███ ███   ███ ███   ▄███   ███    ███ ███   ▄███                                          \n" +
                 "  ██████████  ▀█   █▀  ████████▀    ██████████ ████████▀                                           " + Colors.RESET);
     }
+
+
 }
+
+
 

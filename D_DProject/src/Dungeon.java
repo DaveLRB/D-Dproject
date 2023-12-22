@@ -28,6 +28,7 @@ public class Dungeon {
         System.out.println("\nType 0 to go back");
         do {
             if (!isPlayerAlive()) {
+                monsters.clear();
                 handlePlayerDefeat();
                 return;
             }
@@ -136,6 +137,7 @@ public class Dungeon {
             isInventoryOpen = false;
             switch (option) {
                 case 0:
+                    monsters.clear();
                     throw new OperationCancelledException();
                 case 1:
                     fightMenu(level, wantsToLeave);
