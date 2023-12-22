@@ -151,8 +151,7 @@ public class Dungeon {
                     itemsMenu(level);
                     break;
                 case 4:
-                    System.out.println("You ran away. Game over.");
-                    System.exit(0);
+                    wantsToLeave = true;
                     break;
                 default:
                     System.out.println(Colors.RED_BOLD_BRIGHT + "Invalid choice. Please try again." + Colors.RESET);
@@ -193,7 +192,10 @@ public class Dungeon {
                     GameMessage.getExceptionMessage(e.getMessage());
                 }
             case 2:
-                // Mercy
+                if(currentMonster.isSeduced()) {
+                    monsters.remove(monsters.get(LEVEL_INDEX));
+                    GameMessage.getMercyMessage();
+                }
                 break;
             default:
                 System.out.println(Colors.RED_BOLD_BRIGHT + "Invalid choice. Please try again.\n" + Colors.RESET);
@@ -235,8 +237,8 @@ public class Dungeon {
                     currentMonster.takeDamage(player, "light");
                     try {
                         Thread.sleep(1000);
-                    currentMonster.monsterAngerSpeak();
-                    Thread.sleep(2000);
+                        currentMonster.monsterAngerSpeak();
+                        Thread.sleep(2000);
                     } catch (Exception e) {
                         GameMessage.getExceptionMessage(e.getMessage());
                     }
