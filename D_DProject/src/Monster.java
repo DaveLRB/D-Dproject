@@ -20,8 +20,8 @@ public class Monster {
     private Quote[] seducedQuotes;
     private static final int ONE_SHOT_CHANCE = 10;
     private static final int REVIVE_HEALTH = 100;
-
-    public Monster(String name, int hitDmg, int monsterHP, int experiencePoints, int gold, boolean isAlive, boolean isInvisible, boolean isAngered, boolean isSeduced, String[] attacks, Quote[] neutralQuotes, Quote[] angerQuotes, Quote[] seducedQuotes) {
+    private MonsterType monsterType;
+    public Monster(String name, int hitDmg, int monsterHP, int experiencePoints, int gold, boolean isAlive, boolean isInvisible, boolean isAngered, boolean isSeduced, String[] attacks, Quote[] neutralQuotes, Quote[] angerQuotes, Quote[] seducedQuotes, MonsterType monsterType) {
         this.name = name;
         this.hitDmg = hitDmg;
         this.monsterHP = monsterHP;
@@ -35,6 +35,7 @@ public class Monster {
         this.neutralQuotes = neutralQuotes;
         this.angerQuotes = angerQuotes;
         this.seducedQuotes = seducedQuotes;
+        this.monsterType = monsterType;
     }
 
     public int getTimesAttacked() {
@@ -179,6 +180,7 @@ public class Monster {
                 || name.equals("Spectre"))) {
             isInvisible = true;
         }
+
         int attackIndex = new Random().nextInt(attacks.length);
         String attack = attacks[attackIndex];
         System.out.println(name + " used " + attack + "! " + character.getName() + " took " + hitDmg + " damage.");
@@ -247,5 +249,8 @@ public class Monster {
             hasBeenRevived = true;
             System.out.println(this.getName() + " has been revived with full health!");
         }
+    }
+    public void printMonsterArt() {
+        GameMessage.printMonsterArt(this.monsterType);
     }
 }

@@ -64,6 +64,7 @@ public class Dungeon {
         return monsters.get(LEVEL_INDEX).isEmpty();
     }
 
+    int count = 0;
     private void handleBattleTurn(int level, boolean wantsToLeave) {
         Scanner scanner = new Scanner(System.in);
         Character selectedCharacter = player.getSelectedCharacter();
@@ -71,6 +72,10 @@ public class Dungeon {
         while (monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getMonsterHP() > 0
                 && player.getSelectedCharacter().getHealthPoints() > 0 && !wantsToLeave) {
             Monster currentMonster = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX);
+            if(count < 1) {
+                currentMonster.printMonsterArt();
+                count++;
+            }
             displayMenu();
             int option = scanner.nextInt();
             isInventoryOpen = false;
@@ -140,88 +145,24 @@ public class Dungeon {
             GAME_MANAGER.getPlayerInventory();
             isInventoryOpen = true;
         }
-        public void fightMenu(int level,boolean wantsToLeave) {
-            int attackCounter = 0;
-            Random random = new Random();
-            Character selectedCharacter = player.getSelectedCharacter();
-            while (monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getMonsterHP() > 0 && player.getSelectedCharacter().getHealthPoints() > 0 && !wantsToLeave) {
-                Monster currentMonster = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX);
-                Scanner scan = new Scanner(System.in);
-                Boolean isInventoryOpen = false;
-
-                System.out.println("✧✦✧ Choose an attack ✧✦✧");
-                System.out.println("1✧ Light Attack");
-                System.out.println("2✦ Heavy Attack");
-                System.out.println("3✧ Ultimate Attack");
-                System.out.println("4✧ Ultimate Attack");
-                System.out.print("Enter your choice: ");
-                switch (scan.nextInt()) {
-                    case 0:
-                        throw new OperationCancelledException();
-                    case 1:
-                        if (attackCounter == 0) {
-                            currentMonster.monsterSpeak();
-                        }
-                        currentMonster.takeDamage(player, "light");
-                        currentMonster.monsterAngerSpeak();
-                        attackCounter++;
-                        printDeathMessageIfDead();
-                        break;
-                    case 2:
-                        if (attackCounter == 0) {
-                            currentMonster.monsterSpeak();
-                        }
-                        currentMonster.takeDamage(player, "heavy");
-                        currentMonster.monsterAngerSpeak();
-                        printDeathMessageIfDead();
-                        break;
-                    case 3:
-                        try {
-                            if (attackCounter == 0) {
-                                currentMonster.monsterSpeak();
-                            }
-                            currentMonster.takeDamage(player, "ultimate");
-                            currentMonster.monsterAngerSpeak();
-                            printDeathMessageIfDead();
-                        } catch (HealthPointsGreaterThan20Exception e) {
-                            System.out.println(e.getMessage());
-                            return;
-                        }
-                        break;
-                    case 4:
-                        actMenu(currentMonster);
-
-                } if (!isInventoryOpen) {
-                    if (isMonsterAlive() && !currentMonster.isSeduced()) {
-                        selectedCharacter.setHP(currentMonster.monsterAttack(selectedCharacter));
-                    }
-                    if (currentMonster.isSeduced()) currentMonster.setSeduced(false);
-                    if (!isMonsterAlive()) {
-                        monsters.get(LEVEL_INDEX).remove(monsters.get(LEVEL_INDEX).get(MONSTER_INDEX));
-                        if(monsters.get(LEVEL_INDEX).isEmpty()){
-                            monsters.remove(monsters.get(LEVEL_INDEX));
-                            level++;
-                        }
-                        int randomNumber = random.nextInt(101);
-                        if(randomNumber<=15){
-                            new Chest(player);
-                        }
-                    }
-
-                    System.out.println("\nThe level of the dungeon: " + level);
-                    System.out.println("Monsters left: " + monsters.get(LEVEL_INDEX).size());
-                }
-            }
-        }
-
-    /*private void handleBattleTurn(int level, boolean wantsToLeave) {
-
+    public void fightMenu(int level, boolean wantsToLeave) {
         int attackCounter = 0;
-        while (monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getMonsterHP() > 0 && player.getSelectedCharacter().getHealthPoints() > 0 && !wantsToLeave) {
+        Random random = new Random();
+        Character selectedCharacter = player.getSelectedCharacter();
+        while (monsters.get(LEVEL_INDEX).get(MONSTER_INDEX).getMonsterHP() > 0 &&
+                player.getSelectedCharacter().getHealthPoints() > 0 &&
+                !wantsToLeave) {
             Monster currentMonster = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX);
-            int option = InputHelper.getOptionFromUser();
-            isInventoryOpen = false;
-            switch (option) {
+            Scanner scan = new Scanner(System.in);
+            Boolean isInventoryOpen = false;
+
+            System.out.println("✧✦✧ Choose an attack ✧✦✧");
+            System.out.println("1✧ Light Attack");
+            System.out.println("2✦ Heavy Attack");
+            System.out.println("3✧ Ultimate Attack");
+            System.out.println("4✧ Back to menu");
+            System.out.print("Enter your choice: ");
+            switch (scan.nextInt()) {
                 case 0:
                     throw new OperationCancelledException();
                 case 1:
@@ -254,35 +195,32 @@ public class Dungeon {
                         return;
                     }
                     break;
-                case 4:
-                    GAME_MANAGER.getPlayerInventory();
-                    isInventoryOpen = true;
-                    break;
             }
 
             if (!isInventoryOpen) {
-                if (isMonsterAlive() && !currentMonster.isSeduced()) {
-                    selectedCharacter.setHP(currentMonster.monsterAttack(selectedCharacter));
-                }
-                if (currentMonster.isSeduced()) currentMonster.setSeduced(false);
-                if (!isMonsterAlive()) {
-                    monsters.get(LEVEL_INDEX).remove(monsters.get(LEVEL_INDEX).get(MONSTER_INDEX));
-                    if(monsters.get(LEVEL_INDEX).isEmpty()){
-                        monsters.remove(monsters.get(LEVEL_INDEX));
-                        level++;
+                    if (isMonsterAlive() && !currentMonster.isSeduced()) {
+                        selectedCharacter.setHP(currentMonster.monsterAttack(selectedCharacter));
                     }
-                    int randomNumber = random.nextInt(101);
-                    if(randomNumber<=15){
-                        new Chest(player);
+                    if (currentMonster.isSeduced()) currentMonster.setSeduced(false);
+                    if (!isMonsterAlive()) {
+                        count = 0;
+                        monsters.get(LEVEL_INDEX).remove(monsters.get(LEVEL_INDEX).get(MONSTER_INDEX));
+                        if(monsters.get(LEVEL_INDEX).isEmpty()){
+                            monsters.remove(monsters.get(LEVEL_INDEX));
+                            level++;
+                        }
+                        int randomNumber = random.nextInt(101);
+                        if(randomNumber<=15){
+                            new Chest(player);
+                        }
                     }
-                }
 
-                System.out.println("\nThe level of the dungeon: " + level);
-                System.out.println("Monsters left: " + monsters.get(LEVEL_INDEX).size());
+                    System.out.println("\nThe level of the dungeon: " + level);
+                    System.out.println("Monsters left: " + monsters.get(LEVEL_INDEX).size());
+                }
+            handleBattleTurn(level, false);
             }
-        }*/
-
-
+        }
 
             private void printDeathMessageIfDead () {
                 if (!isMonsterAlive()) {

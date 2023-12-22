@@ -1,4 +1,6 @@
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Scanner;
 
 public class GameMessage {
@@ -223,8 +225,10 @@ public class GameMessage {
         System.out.println("You sold " + item.getName() + " for " + item.getPriceToBuy() / 2 + " gold.");
     }
 
-    public static void slimePic() {
-        System.out.println("                                                                                \n" +
+
+   public static final Map<MonsterType, String> MONSTER_ART_MAP = new HashMap<>();
+    static {
+        MONSTER_ART_MAP.put(MonsterType.SLIME, "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
@@ -254,6 +258,16 @@ public class GameMessage {
                 "  %                                                                             \n" +
                 "  %                                                                             \n" +
                 "  *                                                                         ");
+    }
+
+
+    public static void printMonsterArt(MonsterType monsterType) {
+        String art = MONSTER_ART_MAP.get(monsterType);
+        if (art != null) {
+            System.out.println(art);
+        } else {
+            System.out.println("No ASCII art available for " + monsterType);
+        }
     }
 
     public static void babySpiderPic() {

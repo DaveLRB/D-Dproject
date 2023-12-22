@@ -25,7 +25,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Slime+seduce+3_out.wav", "Our connection is as gooey as love."),
                             new Quote("MonsterAudio/Slime+seduce+4_out.wav", "I love our slimy bond."),
                             new Quote("MonsterAudio/Slime+seduce+5_out.wav", "I'm gonna love the goo'out of you.")
-                    });
+                    }, MonsterType.SLIME);
 
             case BABYSPIDERS -> new Monster("Baby Spider", 20, 35, 15, 35, true, false, false, false,
                     new String[]{"Venomous Bite", "Web Spit", "Silk Wrap", "Arachnid Assault", "Spider Squeeze"},
@@ -49,7 +49,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Baby+spider+seduce+3_out.wav", "You're tangled in my love's web."),
                             new Quote("MonsterAudio/Baby+spider+seduce+4_out.wav", "Feel this delicate touch of mine"),
                             new Quote("MonsterAudio/Baby+spider+seduce+5_out.wav", "In the web of love, we're entwined.")
-                    });
+                    }, MonsterType.BABYSPIDERS);
                                             
             case GOBLIN -> new Monster("Goblin", 25, 40, 15, 35, true, false, false, false,
                     new String[]{"Vicious Stab", "Rock Throw", "Goblin Ambush", "Sneaky Strike", "Mischief Slash"},
@@ -73,7 +73,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Goblin+seduce+3_out.wav", "Hope you don't resist me"),
                             new Quote("MonsterAudio/Goblin+seduce+4_out.wav", "Feel the mischievous touch of goblin affection."),
                             new Quote("MonsterAudio/Goblin+seduce+5_out.wav", "Why fight... let's make a pleasurable arrangement?")
-                    });
+                    }, MonsterType.GOBLIN);
 
             case SKELETON -> new Monster("Skeleton", 30, 45, 15, 35, true, false, false, false,
                     new String[]{"Boner Attack", "Rattle", "Bone Crush", "Spooky Strike", "Graveyard Slam"},
@@ -97,7 +97,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/skeleton_seduce_3_out.m4a", "Caught in the dance of the undead."),
                             new Quote("MonsterAudio/skeleton_seduce_4_out.wav", "Feel the skeletal passion."),
                             new Quote("MonsterAudio/skeleton_seduce_5_out.wav", "In the arms of the skeletal embrace.")
-                    });
+                    }, MonsterType.SKELETON);
 
             case ZOMBIE -> new Monster("Zombie", 35, 50, 15, 35, true, false, false, false,
                     new String[]{"Bite", "Grasp", "Lurch", "Flesh Tear", "Rotting Slam"},
@@ -121,7 +121,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Zombie+seduce+3_out.wav", "I want your brains... and your heart!"),
                             new Quote("MonsterAudio/Zombie+seduce+4_out.wav", "Feel the decaying love."),
                             new Quote("MonsterAudio/Zombie+seduce+5_out.wav", "Watch these moves. (;")
-                    });
+                    }, MonsterType.ZOMBIE);
 
             case SPECTRE -> new Monster("Spectre", 40, 55, 35, 55, true, true, false, false,
                     new String[]{"Ethereal Touch", "Soul Drain", "Shadow Strike", "Ghostly Wail", "Phantom Embrace"},
@@ -145,7 +145,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Spectre+seduced+3_out.wav", "Embrace the ghostly love."),
                             new Quote("MonsterAudio/Spectre+seduced+4_out.wav", "By me, you will be bewitched."),
                             new Quote("MonsterAudio/Spectre+seduced+5_out.wav", "Soul entwined.")
-                    });
+                    }, MonsterType.SPECTRE);
 
             case WEREWOLF -> new Monster("Werewolf", 45, 60, 35, 55, true, false, false, false,
                     new String[]{"Claw Slash", "Howl", "Moonlit Pounce", "Feral Lunge", "Lunar Fury"},
@@ -169,7 +169,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Werewolf+seduced+3_out.wav", "Feel the love in the moonlight!"),
                             new Quote("MonsterAudio/Werewolf+seduced+4_out.wav", "Wild love under the moon."),
                             new Quote("MonsterAudio/Werewolf+seduced+5_out.wav", "Moonlit passion in every howl.")
-                    });
+                    }, MonsterType.WEREWOLF);
 
             case GHOST -> new Monster("Ghost", 50, 65, 35, 55, true, true, false, false,
                     new String[]{"Haunt", "Vanish", "Ethereal Grasp", "Spectral Wail", "Ghostly Embrace"},
@@ -193,7 +193,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Ghost+seduced+3_out.wav", "In the dance of the spirits, we unite."),
                             new Quote("MonsterAudio/Ghost+seduced+4_out.wav", "The haunting beauty of our connection."),
                             new Quote("MonsterAudio/Ghost+seduced+5_out.wav", "Love transcends even death.")
-                    });
+                    }, MonsterType.GHOST);
 
             case WITCH -> new Monster("Witch", 55, 70, 35, 55, true, false, false, false,
                     new String[]{"Spell Cast", "Potion Toss", "Enchanting Hex", "Mystic Blast", "Witch's Embrace"},
@@ -217,7 +217,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Witch+seduced+3_out.wav", "In the dance of enchantment, we are entwined."),
                             new Quote("MonsterAudio/Witch+seduced+4_out.wav", "Feel the magical embrace of love."),
                             new Quote("MonsterAudio/Witch+seduced+5_out.wav", "Our love is a potion of eternal bliss.")
-                    });
+                    }, MonsterType.WITCH);
 
             case VAMPIRE -> new Monster("Vampire", 60, 75, 35, 55, true, false, false, false,
                     new String[]{"Bite", "Hypnotize", "Night's Embrace", "Dark Kiss", "Eternal Thirst"},
@@ -241,7 +241,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Vampire+seduce+3_out.wav", "Eternity in the gaze of a vampire."),
                             new Quote("MonsterAudio/Vampire+seduce+4_out.wav", "Our hearts beat in sync with the night."),
                             new Quote("MonsterAudio/Vampire+seduce+5_out.wav", "Join me in the everlasting dance of shadows.")
-                    });
+                    }, MonsterType.VAMPIRE);
 
             case MUMMY -> new Monster("Mummy", 65, 80, 55, 75, true, false, false, false,
                     new String[]{"Bandage Wrap", "Ancient Curse", "Sands of Time", "Tomb's Embrace", "Eternal Rest"},
@@ -265,7 +265,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/mummy_seduce_3_out.wav", "Love sealed in the embrace of the ancient curse."),
                             new Quote("MonsterAudio/mummy_seduce_4_out.wav", "Our love echoes through the corridors of time."),
                             new Quote("MonsterAudio/mummy_seduce_5_out.wav", "Together in the eternity of the afterlife.")
-                    });
+                    }, MonsterType.MUMMY);
 
             case CREEPER -> new Monster("Creeper", 70, 85, 55, 75, true, false, false, false,
                     new String[]{"Explode", "Sssss", "Creeper's Fury", "Boom Boom!", "Silent Blast"},
@@ -289,7 +289,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/creeper_seduce_3_out.wav", "In the quiet before the blast, feel our connection."),
                             new Quote("MonsterAudio/creeper_seduce_4_out.wav", "Silent steps, explosive love!"),
                             new Quote("MonsterAudio/creeper_seduce_5_out.wav", "Boom! Love explodes in the creeper's heart.")
-                    });
+                    }, MonsterType.CREEPER);
 
             case HARPY -> new Monster("Harpy", 75, 90, 55, 75, true, false, false, false,
                     new String[]{"Talon Slash", "Wind Gust", "Feather Dance", "Aerial Assault", "Sky's Embrace"},
@@ -313,7 +313,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/harpy_seduce_3.wav", "In the embrace of the sky, love takes flight."),
                             new Quote("MonsterAudio/harpy_seduce_4.wav", "Whispers of love in the wind."),
                             new Quote("MonsterAudio/harpy_seduce_5.wav", "Our love, like feathers, dances in the air.")
-                    });
+                    }, MonsterType.HARPY);
 
             case CENTAUR -> new Monster("Centaur", 80, 95, 55, 75, true, false, false, false,
                     new String[]{"Bow Shot", "Hoof Kick", "Rapid Arrows", "Thundering Charge", "Nature's Wrath"},
@@ -337,7 +337,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/centaur_seduce_3.wav", "Feel the heartbeat of nature in our love."),
                             new Quote("MonsterAudio/centaur_seduce_4.wav", "The centaur's love is as wild as the forest."),
                             new Quote("MonsterAudio/centaur_seduce_5.wav", "In the dance of hooves, our love finds rhythm.")
-                    });
+                    }, MonsterType.CENTAUR);
 
             case MINOTAUR -> new Monster("Minotaur", 85, 100, 55, 75, true, false, false, false,
                     new String[]{"Axe Swing", "Maze Charge", "Labyrinth's Grasp", "Rage of the Horns", "Mighty Roar"},
@@ -361,7 +361,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Minotaur+seduce+3_out.wav", "In the dance of blades, find the rhythm of my wrath."),
                             new Quote("MonsterAudio/Minotaur+seduce+4_out.wav", "Labyrinth's embrace tightens with each swing."),
                             new Quote("MonsterAudio/Minotaur+seduce+5_out.wav", "The minotaur's love is a maze, and you're trapped in its heart.")
-                    });
+                    }, MonsterType.MINOTAUR);
 
             case CYCLOPS -> new Monster("Cyclops", 90, 105, 75, 95, true, false, false, false,
                     new String[]{"Boulder Throw", "Single Eye Glare", "Titanic Stomp", "Cyclopean Crush", "Rockslide Embrace"},
@@ -385,7 +385,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Cyclops+seduce+3_out.wav", "Love, like a boulder, crashes into the heart."),
                             new Quote("MonsterAudio/Cyclops+seduce+4_out.wav", "In the cyclops's gaze, find the depth of affection."),
                             new Quote("MonsterAudio/Cyclops+seduce+5_out.wav", "Cyclopean love, a force of nature.")
-                    });
+                    }, MonsterType.CYCLOPS);
 
             case BASILISK -> new Monster("Basilisk", 95, 110, 75, 95, true, false, false, false,
                     new String[]{"Petrify Gaze", "Venomous Bite", "Stone's Embrace", "Serpentine Glare", "Silent Hiss"},
@@ -409,7 +409,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/basilisk_seduce_3.wav", "In the stone-cold eyes, find the warmth of affection."),
                             new Quote("MonsterAudio/basilisk_seduce_4.wav", "Bite into the apple of love, sweet as serpent's venom."),
                             new Quote("MonsterAudio/basilisk_seduce_5.wav", "Our love, like stone, stands the test of time.")
-                    });
+                    }, MonsterType.BASILISK);
 
             case GRIFFIN -> new Monster("Griffin", 100, 115, 75, 95, true, false, false, false,
                     new String[]{"Claw Swipe", "Wing Buffet", "Sky Roar", "Talon Gust", "Feather Frenzy"},
@@ -433,7 +433,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/griffin_seduce_3.wav", "Our love soars high, like my majestic wings."),
                             new Quote("MonsterAudio/griffin_seduce_4.wav", "Feel the gust of passion."),
                             new Quote("MonsterAudio/griffin_seduce_5.wav", "In the feathered embrace, our connection takes flight.")
-                    });
+                    }, MonsterType.GRIFFIN);
 
             case CHIMERA -> new Monster("Chimera", 105, 120, 75, 95, true, false, false, false,
                     new String[]{"Fire Breath", "Tail Whip", "Venomous Bite", "Triple Roar", "Inferno Claw"},
@@ -457,7 +457,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/chimera_seduce_3.wav", "In the venomous embrace, our connection strengthens."),
                             new Quote("MonsterAudio/chimera_seduce_4.wav", "Feel the heat of passion, like the chimera's fiery breath."),
                             new Quote("MonsterAudio/chimera_seduce_5.wav", "In the triple roar, hear the echoes of our bond.")
-                    });
+                    }, MonsterType.CHIMERA);
 
             case MEDUSA -> new Monster("Medusa", 110, 125, 75, 95, true, false, false, false,
                     new String[]{"Snake Bite", "Stone Gaze", "Venomous Hiss", "Coiled Strike", "Heart of Stone"},
@@ -481,7 +481,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/medusa_seduce_3.wav", "In the venomous embrace, our connection strengthens."),
                             new Quote("MonsterAudio/medusa_seduce_4.wav", "Coiled strike, the dance of serpentine love."),
                             new Quote("MonsterAudio/medusa_seduce_5.wav", "Heart of stone, the love that lasts an eternity.")
-                    });
+                    }, MonsterType.MEDUSA);
 
             case WYVERN -> new Monster("Wyvern", 115, 130, 95, 105, true, false, false, false,
                     new String[]{"Tail Sweep", "Dive Bomb", "Wing Slash", "Fiery Roar", "Aerial Dominance"},
@@ -505,7 +505,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/wyvern_seduce_3_out.wav", "Raurrr!"),
                             new Quote("MonsterAudio/wyvern_seduce_4_out.wav", "Riauuuu"),
                             new Quote("MonsterAudio/wyvern_seduce_5_out.wav", "Ri re ro rauuu ro rauu!")
-                    });
+                    }, MonsterType.WYVERN);
 
             case PHOENIX -> new Monster("Phoenix", 120, 135, 95, 105, true, false, false, false,
                     new String[]{"Fire Burst", "Rebirth", "Inferno Dance", "Eternal Flame", "Blazing Resurgence"},
@@ -529,7 +529,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/phoenix_seduce_3.wav", "Inferno dance, our passion in every flicker."),
                             new Quote("MonsterAudio/phoenix_seduce_4.wav", "Eternal flame, our love burns eternally."),
                             new Quote("MonsterAudio/phoenix_seduce_5.wav", "Blazing resurgence, our connection reignites with intensity.")
-                    });
+                    }, MonsterType.PHOENIX);
 
             case KRAKEN -> new Monster("Kraken", 125, 140, 95, 105, true, false, false, false,
                     new String[]{"Tentacle Grasp", "Ink Cloud", "Deep-Sea Slam", "Abyssal Ensnare", "Squid's Embrace"},
@@ -553,7 +553,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/kraken_seduce_3.wav", "Abyssal slam, a force that can't be resisted."),
                             new Quote("MonsterAudio/kraken_seduce_4.wav", "Abyssal ensnare, our connection tightens."),
                             new Quote("MonsterAudio/kraken_seduce_5.wav", "Squid's embrace, our bond in the depths of the sea.")
-                    });
+                    }, MonsterType.KRAKEN);
 
             case BEHEMOTH -> new Monster("Behemoth", 130, 145, 95, 105, true, false, false, false,
                     new String[]{"Earthquake Stomp", "Meteor Shower", "Colossal Roar", "Mighty Tremor", "Behemoth's Wrath"},
@@ -577,7 +577,7 @@ class MonsterFactory {
                             new Quote("MonsterAudio/Behemoth+seduced+3_out.wav", "Colossal roar, a symphony of power."),
                             new Quote("MonsterAudio/Behemoth+seduced+4_out.wav", "Mighty tremor, the ground quakes in submission."),
                             new Quote("MonsterAudio/Behemoth+seduced+5_out.wav", "Behemoth's wrath, a testament to its unstoppable might.")
-                    });
+                    }, MonsterType.BEHEMOTH);
 
             case DRAGON -> new Monster("Dragon", 150, 150, 95, 500, true, false, false, false,
                     new String[]{"Dragon Breath", "Wing Gust", "Fiery Roar", "Inferno Sweep", "Eternal Soar"},
@@ -601,9 +601,8 @@ class MonsterFactory {
                             new Quote("MonsterAudio/dragon_seduce_3.wav", "Fiery roar, a symphony of draconic affection."),
                             new Quote("MonsterAudio/dragon_seduce_4.wav", "Inferno sweep, the flames of our love burn bright."),
                             new Quote("MonsterAudio/dragon_seduce_5.wav", "Eternal soar, our love transcends the highest peaks.")
-                    });
+                    }, MonsterType.DRAGON);
         };
     }
-
-} // audio needed for Harpy
+}
 
