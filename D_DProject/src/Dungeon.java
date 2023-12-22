@@ -163,9 +163,9 @@ public class Dungeon {
     public static void displayMenu() {
         System.out.println(Colors.YELLOW_BOLD_BRIGHT + "✧✦✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Stay determinate " + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " ✧✦✧" + Colors.RESET);
         System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Fight" + Colors.RESET);
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + "Act" + Colors.RESET);
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "3✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + "Inventory" + Colors.RESET);
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "4✦" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + "Run Away" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Act" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "3✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Inventory" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "4✦" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Run Away" + Colors.RESET);
         System.out.print(Colors.FATIMAS_RED + "Enter your choice: \n" + Colors.RESET);
     }
 
@@ -218,7 +218,7 @@ public class Dungeon {
             System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Light Attack" + Colors.RESET);
             System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Heavy Attack" + Colors.RESET);
             System.out.println(Colors.YELLOW_BOLD_BRIGHT + "3✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Ultimate Attack" + Colors.RESET);
-            System.out.println(Colors.YELLOW_BOLD_BRIGHT + "4✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Ultimate Attack" + Colors.RESET);
+            System.out.println(Colors.YELLOW_BOLD_BRIGHT + "4✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Back " + Colors.RESET);
             System.out.print(Colors.FATIMAS_RED + "Enter your choice: \n" + Colors.RESET);
             switch (scan.nextInt()) {
                 case 0:
@@ -265,7 +265,8 @@ public class Dungeon {
                     }
                     break;
                 case 4:
-                    actMenu(currentMonster);
+                    handleBattleTurn(level,false);
+                    break;
 
             }
             if (!isInventoryOpen) {
