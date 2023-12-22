@@ -1,6 +1,6 @@
 
 public enum CharacterType {
-    KNIGHT("KNIGHT", 12,7,8,5),
+    KNIGHT("KNIGHT", 1200,7,8,5),
     SORCERER("SORCERER", 5,6,8,12),
     BARD("BARD", 7,8,12,8),
     ASSASSIN("ASSASSIN",8,12,5,7);

@@ -176,6 +176,7 @@ public class Character {
                         monster.setSeduced(true);
                         System.out.println(randomQuote.getText());
                         music = new Music(randomQuote.getFilename());
+                        music.play();
                     }
                 }
             }
