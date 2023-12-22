@@ -161,7 +161,7 @@ public class Dungeon {
     }
 
     public static void displayMenu() {
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "✧✦✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Stay determinate " + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " ✧✦✧" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "\n✧✦✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Stay determinate " + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " ✧✦✧" + Colors.RESET);
         System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Fight" + Colors.RESET);
         System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Act" + Colors.RESET);
         System.out.println(Colors.YELLOW_BOLD_BRIGHT + "3✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Inventory" + Colors.RESET);
@@ -171,9 +171,10 @@ public class Dungeon {
 
     public void actMenu(Monster currentMonster) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "✧✦✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Act Menu " + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " ✧✦✧");
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "\n✧✦✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Act Menu " + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " ✧✦✧");
         System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Talk" + Colors.RESET);
         System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Mercy" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "3✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Back " + Colors.RESET);
         System.out.print(Colors.FATIMAS_RED + "Enter your choice: \n" + Colors.RESET);
         int choice = scanner.nextInt();
         switch (choice) {
@@ -198,6 +199,9 @@ public class Dungeon {
                     GameMessage.getMercyMessage();
                 }
                 break;
+            case 3:
+                handleBattleTurn(LEVEL_INDEX, false);
+                break;
             default:
                 System.out.println(Colors.RED_BOLD_BRIGHT + "Invalid choice. Please try again.\n" + Colors.RESET);
         }
@@ -216,8 +220,7 @@ public class Dungeon {
             Monster currentMonster = monsters.get(LEVEL_INDEX).get(MONSTER_INDEX);
             Scanner scan = new Scanner(System.in);
             Boolean isInventoryOpen = false;
-
-            System.out.println(Colors.YELLOW_BOLD_BRIGHT + "✧✦✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Choose an attack " + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " ✧✦✧" + Colors.RESET);
+            System.out.println(Colors.YELLOW_BOLD_BRIGHT + "\n✧✦✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Choose an attack " + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " ✧✦✧" + Colors.RESET);
             System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Light Attack" + Colors.RESET);
             System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Heavy Attack" + Colors.RESET);
             System.out.println(Colors.YELLOW_BOLD_BRIGHT + "3✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Ultimate Attack" + Colors.RESET);
@@ -369,4 +372,3 @@ public class Dungeon {
         return randomNumber;
     }
 }
-

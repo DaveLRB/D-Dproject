@@ -175,6 +175,13 @@ public class Monster {
         this.seducedQuotes = seducedQuotes;
     }
 
+    public MonsterType getMonsterType() {
+        return monsterType;
+    }
+
+    public void setMonsterType(MonsterType monsterType) {
+        this.monsterType = monsterType;
+    }
     public int monsterAttack(Character character) {
         if (getTurnToBeInvisible() % 2 == 0
                 && (name.equals("Ghost")
@@ -251,6 +258,7 @@ public class Monster {
             System.out.println(this.getName() + " has been revived with full health!");
         }
     }
+
     public void printMonsterArt() {
         GameMessage.printMonsterArt(this.monsterType);
     }
