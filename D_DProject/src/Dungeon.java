@@ -25,7 +25,6 @@ public class Dungeon {
         boolean wantToLeave = false;
         int level = 1;
 
-        System.out.println("\nType 0 to go back");
         do {
             if (!isPlayerAlive()) {
                 monsters.clear();
@@ -192,7 +191,7 @@ public class Dungeon {
                     GameMessage.getExceptionMessage(e.getMessage());
                 }
             case 2:
-                if(currentMonster.isSeduced()) {
+                if (currentMonster.isSeduced()) {
                     monsters.remove(monsters.get(LEVEL_INDEX));
                     GameMessage.getMercyMessage();
                 }
@@ -267,7 +266,7 @@ public class Dungeon {
                     }
                     break;
                 case 4:
-                    handleBattleTurn(level,false);
+                    handleBattleTurn(level, false);
                     break;
 
             }
@@ -305,17 +304,17 @@ public class Dungeon {
     }
 
     private void handlePlayerDefeat() {
-        System.out.println("Colors.RED_BOLD_BRIGHT +\n" +
-                "                \"▓██   ██▓ ▒█████   █    ██    ▓█████▄  ██▓▓█████ ▓█████▄ \\n\" +\n" +
-                "                \" ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▒██▀ ██▌▓██▒▓█   ▀ ▒██▀ ██▌\\n\" +\n" +
-                "                \"  ▒██ ██░▒██░  ██▒▓██  ▒██░   ░██   █▌▒██▒▒███   ░██   █▌\\n\" +\n" +
-                "                \"  ░ ▐██▓░▒██   ██░▓▓█  ░██░   ░▓█▄   ▌░██░▒▓█  ▄ ░▓█▄   ▌\\n\" +\n" +
-                "                \"  ░ ██▒▓░░ ████▓▒░▒▒█████▓    ░▒████▓ ░██░░▒████▒░▒████▓ \\n\" +\n" +
-                "                \"   ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒     ▒▒▓  ▒ ░▓  ░░ ▒░ ░ ▒▒▓  ▒ \\n\" +\n" +
-                "                \" ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░     ░ ▒  ▒  ▒ ░ ░ ░  ░ ░ ▒  ▒ \\n\" +\n" +
-                "                \" ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░     ░ ░  ░  ▒ ░   ░    ░ ░  ░ \\n\" +\n" +
-                "                \" ░ ░         ░ ░     ░           ░     ░     ░  ░   ░    \\n\" +\n" +
-                "                \" ░ ░                           ░                  ░      \" + Colors.RESET");
+        System.out.println(Colors.RED_BOLD_BRIGHT +
+                "                ▓██   ██▓ ▒█████   █    ██    ▓█████▄  ██▓▓█████ ▓█████▄ \n" +
+                "                 ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▒██▀ ██▌▓██▒▓█   ▀ ▒██▀ ██▌\n" +
+                "                 ▒██ ██░▒██░  ██▒▓██  ▒██░   ░██   █▌▒██▒▒███   ░██   █▌\n" +
+                "                 ░ ▐██▓░▒██   ██░▓▓█  ░██░   ░▓█▄   ▌░██░▒▓█  ▄ ░▓█▄   ▌\n" +
+                "                 ░ ██▒▓░░ ████▓▒░▒▒█████▓    ░▒████▓ ░██░░▒████▒░▒████▓ \n" +
+                "                  ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒     ▒▒▓  ▒ ░▓  ░░ ▒░ ░ ▒▒▓  ▒ \n" +
+                "                 ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░     ░ ▒  ▒  ▒ ░ ░ ░  ░ ░ ▒  ▒ \n" +
+                "                 ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░     ░ ░  ░  ▒ ░   ░    ░ ░  ░ \n" +
+                "                 ░ ░         ░ ░     ░           ░     ░     ░  ░   ░    \n" + Colors.RESET);
+
     }
 
     //Creating and adding monsters to the list
