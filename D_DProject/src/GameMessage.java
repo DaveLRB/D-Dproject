@@ -3,16 +3,16 @@ import java.util.Scanner;
 
 public class GameMessage {
     public static void getMenuMessage() {
-        System.out.println("1✧ Enter the dungeon");
-        System.out.println("2✦ Check character stats");
-        System.out.println("3✧ Check inventory");
-        System.out.println("4✦ Shop");
-        System.out.println("5✧ Leave game");
-        System.out.print("Option: ");
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧" +Colors.RESET + Colors.WHITE_BOLD_BRIGHT+  " Enter the dungeon" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT +"2✦"+Colors.RESET + Colors.WHITE_BOLD_BRIGHT+" Check character stats"+ Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT +"3✧"+Colors.RESET + Colors.WHITE_BOLD_BRIGHT+" Check inventory"+ Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT +"4✦"+Colors.RESET + Colors.WHITE_BOLD_BRIGHT+" Shop"+ Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT +"5✧"+Colors.RESET + Colors.WHITE_BOLD_BRIGHT+" Leave game"+ Colors.RESET);
+        System.out.print(Colors.YELLOW_BOLD_BRIGHT + "Option: " + Colors.RESET);
     }
 
     public static void getPlayerSelectMessage() {
-        System.out.print("Select character: ");
+        System.out.print(Colors.YELLOW_BOLD_BRIGHT + "Select character: " + Colors.RESET);
     }
 
     public static void getBigBlankSpace() {
@@ -24,7 +24,7 @@ public class GameMessage {
     }
 
     public static void getSelectPlayerBigMessage() {
-        System.out.println("\n"+
+        System.out.println(Colors.FATIMAS_RED + "\n" +
                 "   ▄████████    ▄████████  ▄█          ▄████████  ▄████████     ███             ▄███████▄  ▄█          ▄████████ ▄██   ▄      ▄████████    ▄████████ \n" +
                 "  ███    ███   ███    ███ ███         ███    ███ ███    ███ ▀█████████▄        ███    ███ ███         ███    ███ ███   ██▄   ███    ███   ███    ███ \n" +
                 "  ███    █▀    ███    █▀  ███         ███    █▀  ███    █▀     ▀███▀▀██        ███    ███ ███         ███    ███ ███▄▄▄███   ███    █▀    ███    ███ \n" +
@@ -33,7 +33,7 @@ public class GameMessage {
                 "         ███   ███    █▄  ███         ███    █▄  ███    █▄      ███            ███        ███         ███    ███ ███   ███   ███    █▄  ▀███████████ \n" +
                 "   ▄█    ███   ███    ███ ███▌    ▄   ███    ███ ███    ███     ███            ███        ███▌    ▄   ███    ███ ███   ███   ███    ███   ███    ███ \n" +
                 " ▄████████▀    ██████████ █████▄▄██   ██████████ ████████▀     ▄████▀         ▄████▀      █████▄▄██   ███    █▀   ▀█████▀    ██████████   ███    ███ \n" +
-                "                                                                                                                                                     \n");
+                "                                                                                                                                                     \n" + Colors.RESET);
     }
 
     public static void getMenuBigMessage() {
@@ -74,11 +74,11 @@ public class GameMessage {
     }
 
     public static void getPlayerName() {
-        System.out.print("Welcome, welcome! Whats your name? ");
+        System.out.print(Colors.FATIMAS_RED + "Welcome, welcome! Whats your name? " + Colors.RESET);
     }
 
     public static void getWelcomeMessage(String name) {
-        System.out.println("Welcome " + name + ", please select a character:");
+        System.out.println(Colors.WHITE_BOLD_BRIGHT + "Welcome " + name + ", please select a character:" + Colors.RESET);
     }
 
     public static void getOneBlankSpace() {
@@ -135,13 +135,23 @@ public class GameMessage {
     }
 
     public static void getDeadMessage() {
-        System.out.println("You're dead.");
+        System.out.println(Colors.RED_BOLD_BRIGHT +
+                "▓██   ██▓ ▒█████   █    ██    ▓█████▄  ██▓▓█████ ▓█████▄ \n" +
+                " ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▒██▀ ██▌▓██▒▓█   ▀ ▒██▀ ██▌\n" +
+                "  ▒██ ██░▒██░  ██▒▓██  ▒██░   ░██   █▌▒██▒▒███   ░██   █▌\n" +
+                "  ░ ▐██▓░▒██   ██░▓▓█  ░██░   ░▓█▄   ▌░██░▒▓█  ▄ ░▓█▄   ▌\n" +
+                "  ░ ██▒▓░░ ████▓▒░▒▒█████▓    ░▒████▓ ░██░░▒████▒░▒████▓ \n" +
+                "   ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒     ▒▒▓  ▒ ░▓  ░░ ▒░ ░ ▒▒▓  ▒ \n" +
+                " ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░     ░ ▒  ▒  ▒ ░ ░ ░  ░ ░ ▒  ▒ \n" +
+                " ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░     ░ ░  ░  ▒ ░   ░    ░ ░  ░ \n" +
+                " ░ ░         ░ ░     ░           ░     ░     ░  ░   ░    \n" +
+                " ░ ░                           ░                  ░      " + Colors.RESET);
         getOneBlankSpace();
     }
 
     public static void getMenuDead() {
-        System.out.println("1 - Create a new character");
-        System.out.println("2 - Leave game");
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1 -" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Create a new character" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2 -" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Leave game" + Colors.RESET);
     }
 
     private static int count = 1;
@@ -150,9 +160,9 @@ public class GameMessage {
         count = 1;
         for (Item item : shop.getShopList()) {
             if (item.getCharisma() != null) {
-                System.out.println(count++ + " | " + item.getName() + " | Price: " + item.getPriceToBuy() + " | Skill: +" + item.getSkillToMenu());
+                System.out.println(Colors.WHITE_BOLD_BRIGHT + "" + count++ + " | " + item.getName() + " | Price: " + item.getPriceToBuy() + " | Skill: +" + item.getSkillToMenu() + Colors.RESET);
             } else {
-                System.out.println(count++ + " | " + item.getName() + " | Price: " + item.getPriceToBuy());
+                System.out.println(Colors.WHITE_BOLD_BRIGHT + "" + count++ + " | " + item.getName() + " | Price: " + item.getPriceToBuy() + Colors.RESET);
             }
         }
     }
@@ -203,11 +213,11 @@ public class GameMessage {
     }
 
     public static void upgradeSuccess(Item item) {
-        System.out.println(Colors.WHITE_BOLD_BRIGHT +"You upgraded your " + item.getName() + "." + Colors.RESET);
+        System.out.println(Colors.WHITE_BOLD_BRIGHT + "You upgraded your " + item.getName() + "." + Colors.RESET);
     }
 
     public static void errorUsingSomething(Player player) {
-        System.out.println(Colors.CYAN_BOLD_BRIGHT+"Interesting " + player.getSelectedCharacter().getInventory().getItemList() + "... but this cannot be used, only equipped." + Colors.RESET);
+        System.out.println(Colors.CYAN_BOLD_BRIGHT + "Interesting " + player.getSelectedCharacter().getInventory().getItemList() + "... but this cannot be used, only equipped." + Colors.RESET);
     }
 
     public static void usedHealPotion() {
@@ -220,65 +230,68 @@ public class GameMessage {
 
     public static void successSell(LinkedList<Item> playerItem, int index) {
         Item item = playerItem.get(index);
-        System.out.println(Colors.WHITE_BOLD_BRIGHT + "You sold " + item.getName() + " for " + item.getPriceToBuy() / 2 +Colors.RESET +Colors.YELLOW_BOLD_BRIGHT+ " gold." + Colors.RESET);
+        System.out.println(Colors.WHITE_BOLD_BRIGHT + "You sold " + item.getName() + " for " + item.getPriceToBuy() / 2 + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " gold." + Colors.RESET);
     }
 
     public static void slimePic() {
-        System.out.println("                                                                                \n" +
+        System.out.println(Colors.CYAN_BOLD_BRIGHT +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
-                "                                      (*,.,*(                                   \n" +
-                "                            /.........         ........,                        \n" +
+                "                                                                                \n" +
+                "                                      (*,.,*(                                   \n" + Colors.RESET +
+                "                            /.........         ........,                        \n" + Colors.BLUE +
                 "                        .....             ..................                    \n" +
                 "                    ......       . ............................/                \n" +
                 "                 /..   .......*************************.... ......              \n" +
-                "               ...........****,*************************,,..........            \n" +
-                "             ,..........************************************..........          \n" +
+                "               ...........****,*************************,,..........            \n" + Colors.RESET +
+                "             ,..........************************************..........          \n" +Colors.CYAN_BOLD_BRIGHT +
                 "            ..........,******(**************(****************..........         \n" +
                 "           ..........***************************************............        \n" +
                 "          .......... ..***********************************,......*.......       \n" +
                 "         ......,,.,.....********************************..,,.,,,,,,,...../      \n" +
                 "         .......,.........**************************..............,,,,...*      \n" +
                 "         .....,........,*****************************,,,.........,,,,,,..       \n" +
-                "         *...,,,,,,,,**,*************************************,,,*,,,,,,..       \n" +
-                "          (.*******,,,*,**********************************************..        \n" +
+                "         *...,,,,,,,,**,*************************************,,,*,,,,,,..       \n" + Colors.RESET +
+                "          (.*******,,,*,**********************************************..        \n" +Colors.CYAN_BOLD_BRIGHT +
                 "            ..****************************************.************....         \n" +
                 "             %,....*********************************.....******,....%%%         \n" +
                 "              %%%%&...........................................*%%%%%%           \n" +
-                "  *                   /%%%%%%%%%%%%%%%%%%%&%(//(#&%%%%%%%%%%%%%%                \n" +
-                "  .                                                                             \n" +
+                "  *                   /%%%%%%%%%%%%%%%%%%%&%(//(#&%%%%%%%%%%%%%%                \n" + Colors.RESET +
+                "  .                                                                             \n" + Colors.BLUE +
                 "  .                                                                             \n" +
                 "                                                                                \n" +
                 "  %                                                                             \n" +
                 "  %                                                                             \n" +
-                "  *                                                                         ");
+                "  *                                                                         " + Colors.RESET);
     }
 
     public static void babySpiderPic() {
-        System.out.println(" .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   ,#&@@@&#.  .  .  \n" +
+        System.out.println(Colors.WHITE_BOLD_BRIGHT +
+                " .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   ,#&@@@&#.  .  .   \n" +
                 ".. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. @@@@@@@@@@@@@@@@@@@@ .. ..\n" +
                 ".. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .@@@@@@# .. .. .. ..@@@@.. ..\n" +
-                "..  .  @@@@@@@@@@@@@@@@@@.  .  .  .  (&&&#..  . .. @@@@@  . ..  .  .  . ..  .  .\n" +
-                "  .  @@@@@@@@@@%**#@@@@@@@@   %&&&&&&&&&&&&&&&&&%/@@@@@ .  @@@@@@@@@@@@@  .  .  \n" +
+                "..  .  @@@@@@@@@@@@@@@@@@.  .  .  .  (&&&#..  . .. @@@@@  . ..  .  .  . ..  .  .\n" +Colors.RESET+
+                "  .  @@@@@@@@@@%**#@@@@@@@@   %&&&&&&&&&&&&&&&&&%/@@@@@ .  @@@@@@@@@@@@@  .  .  \n" +Colors.WHITE +
                 "  . @@@@.  .  .  .  .  @@@@&&&&&&&&&&&&&&&&&&&&%&&&&%@  %@@@@@@@  *@@@@@@@@@@%  \n" +
                 "  .  .  .  ,@@@@@@@@.  .*&&&&&&     %&&&&%         &&&%@@@@@# .  .  .  . &@@@@@@\n" +
-                ".. .. .@@@@@@@@@@@@@@@@%&&&&&         %&%   @@     /&&&&@&. .@@@@@@. .. .. .*@@@\n" +
-                ".. %@@@@@@@ .. .. .@@@@&&&&&  @@@@@    &&  @@@@@   &&&&&@@@@@@@@@@@@@@. .. ..  &\n" +
+                ".. .. .@@@@@@@@@@@@@@@@%&&&&&         %&%   @@     /&&&&@&. .@@@@@@. .. .. .*@@@\n" +Colors.RESET+
+                ".. %@@@@@@@ .. .. .@@@@&&&&&  @@@@@    &&  @@@@@   &&&&&@@@@@@@@@@@@@@. .. ..  &\n" +Colors.WHITE_BOLD_BRIGHT+
                 ".@@@@@@. .. .. .   . ..&&&&&& (@@@.   %&&&&*     &&&&&&&@@@... .. ..@@@@@  .. ..\n" +
                 "@@@@#.  .  . @@@@@@@@@@%&&&&&&&&%&&&&&&&&&&&&&&&&&&&&&&&@@@@@@@@@@  .  @@@@@ .  \n" +
-                " @@  .  . @@@@@. .  .*@@&&&&&&&&&&&&&&&*%%%%&&&&&&&&&&&,.  .  .,@@@@.  . @@@@.  \n" +
-                "  .  .  @@@@@ .  (@@@@@@@@&&&&&&&&&&&&&&&&&&&&&&&&&&&.  .  .  .  .@@@  . .@@ .  \n" +
+                " @@  .  . @@@@@. .  .*@@&&&&&&&&&&&&&&&*%%%%&&&&&&&&&&&,.  .  .,@@@@.  . @@@@.  \n" +Colors.RESET+
+                "  .  .  @@@@@ .  (@@@@@@@@&&&&&&&&&&&&&&&&&&&&&&&&&&&.  .  .  .  .@@@  . .@@ .  \n" +Colors.WHITE +
                 ".. .. %@@@@ .. @@@@@@&. .. .. %&&&&&&&&&&&&&&&&&&# .. .. .. .. .. .@@@( .. .. ..\n" +
-                ".. .. @@@/. ..@@@ .. .. .. .. .. .. .#&&&%.. .. .. .. .. .. .. .. ..@@@ .. .. ..\n" +
-                ".. ..  @@.. .@@@. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..@@. .. .. ..\n" +
+                ".. .. @@@/. ..@@@ .. .. .. .. .. .. .#&&&%.. .. .. .. .. .. .. .. ..@@@ .. .. ..\n" +Colors.RESET+
+                ".. ..  @@.. .@@@. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..@@. .. .. ..\n" +Colors.WHITE_BOLD_BRIGHT+
                 "  .  .  .  .#@@@ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  \n" +
-                "  .  .  .  .(@@@ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ");
+                "  .  .  .  .(@@@ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  " + Colors.RESET);
     }
 
     public static void goblinPic() {
-        System.out.println("                                                                               \n" +
+        System.out.println(Colors.GREEN_BOLD_BRIGHT +
+                "                                                                                \n" +
                 "                                  ,&(,,,,/((%                                   \n" +
                 "                            #,,,/((((((((((((((((#            %/**  *           \n" +
                 "          ,(*/          ./,,(((((((((((((((((((((((#&    &./%//%                \n" +
@@ -296,8 +309,8 @@ public class GameMessage {
                 "          .*/(//(           &////#%(/(##//********//(#(    %##/(//(#  /         \n" +
                 "               &*/(#%      ,////****//*/*******/**//(#%    ,         /          \n" +
                 "                 #/*//(#/**//#  ///*************///###%  .                      \n" +
-                "                   %***/#/(#  (  (,/*/********///(#&%&#  .                      \n" +
-                "                       (%   *    (%#(///////##@%%%&%%%&&&                       \n" +
+                "                   %***/#/(#  (  (,/*/********///(#&%&#  .                      \n" + Colors.RESET +
+                "                       (%   *    (%#(///////##@%%%&%%%&&&                       \n" +Colors.GREEN_BOLD +
                 "                       ,,,.     .&%#%%%#%%&%%##%&&&&&&&#&&%                     \n" +
                 "                              %%%%%%%&@@%%%%&@@&&&%&&%&&&&&&                    \n" +
                 "                           @#%%%%%%%%%%%%%%%%@@&&&%%%&&&&&&&&                   \n" +
@@ -313,11 +326,12 @@ public class GameMessage {
                 "                       #,/**//((##  *                    (*/*/*/*/(             \n" +
                 "               /,/***((**//(((#%  (.                       &(./******/*(#&      \n" +
                 "               #((,/%*/(***/##  /.                         *  %/**/*/*#(((*#%% *\n" +
-                "              .     .%#%####  /.                                ,(/**/((#%%   /");
+                "              .     .%#%####  /.                                ,(/**/((#%%   /" + Colors.RESET);
     }
 
     public static void skeletonPic() {
-        System.out.println("                                                                               \n" +
+        System.out.println(Colors.WHITE_BOLD_BRIGHT +
+                "                                                                                \n" +
                 "                                     ,@@@@@@@@/                                 \n" +
                 "                                  .@@@@@@@@@@@@@@@@                             \n" +
                 "                                 (@@@@@@@@@@@@@@@@@@*                           \n" +
@@ -343,11 +357,12 @@ public class GameMessage {
                 "                                 #@ #      #                                    \n" +
                 "                           .,@@#@##@@    @@(@                                   \n" +
                 "                                           @@@@*                                \n" +
-                "                                            /                                  ");
+                "                                            /                                  " + Colors.RESET);
     }
 
     public static void zombiePic() {
-        System.out.println("                                                                               \n" +
+        System.out.println(Colors.MAGENTA_BOLD_BRIGHT +
+                "                                                                               \n" +
                 "                                    @,,,,,,,,,,,,,@&  *                         \n" +
                 "                                 @...,,,,,,,,,,,,,,,**##                        \n" +
                 "                                @,,,@,...,,,,,*,,(,,,***/ %%                    \n" +
@@ -391,11 +406,12 @@ public class GameMessage {
                 "                                         %&,,,,,,,,**             @@  ,***,,**@ \n" +
                 "                                  &,,,,,....,,,,,****@               @*,,,,*@   \n" +
                 "                                   @,*@,,,,,****              %,&,(,,,,,,,,*,   \n" +
-                "                                      (@//@#                     &@%.*&#((#%/(#(");
+                "                                      (@//@#                     &@%.*&#((#%/(#(" + Colors.RESET);
     }
 
     public static void spectrePic() {
-        System.out.println("                                                                         \n" +
+        System.out.println(Colors.WHITE_BOLD_BRIGHT +
+                "                                                                                \n" +
                 "                                                                                \n" +
                 "                                   *&@@@@@@%*                                   \n" +
                 "                               /@              .@(                              \n" +
@@ -425,11 +441,12 @@ public class GameMessage {
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
-                "                  ,    ,         *           /,*., # * / * * (.*             ");
+                "                  ,    ,         *           /,*., # * / * * (.*             " + Colors.RESET);
     }
 
     public static void werewolfPic() {
-        System.out.println("                                                                       \n" +
+        System.out.println(Colors.BLUE_BOLD_BRIGHT +
+                "                                                                                \n" +
                 "                       .                                                        \n" +
                 "                        %@@@@@&@                                                \n" +
                 "                         &@@@@@@@@@@@%                                          \n" +
@@ -454,11 +471,12 @@ public class GameMessage {
                 "                   @@@@  .@@@@@   @@@@@@@@@@@@@@@                               \n" +
                 "                     @@@@@@   *@@@@@@@@(                                        \n" +
                 "                        .@@@@@@@@@@@#.      ./&@@@.                             \n" +
-                "                                                                        ");
+                "                                                                        " + Colors.RESET);
     }
 
     public static void ghostPic() {
-        System.out.println(" . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
+        System.out.println(Colors.WHITE_BOLD_BRIGHT +
+                " . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
                 ".. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . \n" +
                 ".. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . \n" +
                 ".. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . \n" +
@@ -489,11 +507,12 @@ public class GameMessage {
                 "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
                 "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
                 "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
-                "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .");
+                "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. ." + Colors.RESET);
     }
 
     public static void witchPic() {
-        System.out.println("       .@@@@@@@@@@@@@@@@@@@@@.                                     \n" +
+        System.out.println(Colors.MAGENTA_BOLD_BRIGHT +
+                "                     .@@@@@@@@@@@@@@@@@@@@@.                                     \n" +
                 "                  .@@@@.     @@@@@@@@@@@@@@@@                                   \n" +
                 "                  @@(          &@@@@@@@@@@@@@@#                                 \n" +
                 "                 @@.           .@@@@@@@@@@@@@@@&                                \n" +
@@ -515,11 +534,12 @@ public class GameMessage {
                 "               ..  /&@@@@@@@@@@@@@@@@@(  ,@@@@@@@@@@ ,@@,  .                    \n" +
                 "                /@@@@@@@@@@@@@@*@@@@@@@@@@@ *@@@@@@#.@@  &@                     \n" +
                 "                  @@@@@@@@@@@,&@@@@@@@(.    @@@@@@@@@@@@#                       \n" +
-                "                    ,@@@@(  @@@@@@@*       &@@@@@@@@@@,               ");
+                "                    ,@@@@(  @@@@@@@*       &@@@@@@@@@@,               " + Colors.RESET);
     }
 
     public static void vampirePic() {
-        System.out.println("            .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/                        \n" +
+        System.out.println(Colors.RED_BOLD_BRIGHT +
+                "                        .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/                        \n" +
                 "                    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&                    \n" +
                 "                  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  \n" +
                 "                %@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                \n" +
@@ -554,11 +574,12 @@ public class GameMessage {
                 "                       (@@@@@@@@@@@@@@&(%@@@@@@@@@@@@@@@@                       \n" +
                 "                          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@                         \n" +
                 "                             @@@@@@@@@@@@@@@@@@@@@@@                            \n" +
-                "                                  @@@@@@@@@@@@@");
+                "                                  @@@@@@@@@@@@@" + Colors.RESET);
     }
 
     public static void mummyPic() {
-        System.out.println("                                                                           \n" +
+        System.out.println(Colors.WHITE_BOLD_BRIGHT +
+                "                                                                           \n" +
                 "                                                            @%@     @@@@@@@@ @  \n" +
                 "                                      @@@@@ &@&  /@@@     @    @@@&          @  \n" +
                 "                                  @@      @@         @@@@   @@/   @@@       (/  \n" +
@@ -592,11 +613,12 @@ public class GameMessage {
                 "                                         @@       @%                            \n" +
                 "                                  @@*  @@   @@@@@%@                             \n" +
                 "                                 @@  @   /@       @                             \n" +
-                "                                        .@@@@@@@@                           ");
+                "                                        .@@@@@@@@                           " + Colors.RESET);
     }
 
     public static void creeperPic() {
-        System.out.println(". .. .  . .. .  . .. .  . .. .  . .. @@ . .. .  . .. .  . .. .  . .. .  . .. .\n" +
+        System.out.println(Colors.GREEN_BOLD_BRIGHT +
+                ". .. .  . .. .  . .. .  . .. .  . .. @@ . .. .  . .  . .  . .. .  . .. .  . .. .\n" +
                 ".. .  . .. .  . .. .  .  &@@@@@@@@@@@@       @@@@@@@  . .. .  . .. .  . .. .  . \n" +
                 ".. .  . .. .  .@@@@@@@@                             %@@@@@@.  . .. .  . .. .  . \n" +
                 ".. .  . .. .  . @@   @@                                    @@@@@.. .  . .. .  . \n" +
@@ -637,11 +659,12 @@ public class GameMessage {
                 ".. .  . .. .  . .. .   @@@@@  . .. .@@      @      @@ . .. .  . .. .  . .. .  . \n" +
                 "  . .. .  . .. .  . .. .  . .. .  . @@      @     @@@. .  . .. .  . .. .  . .. .\n" +
                 "  . .. .  . .. .  . .. .  . .. .  . ./@@@@    @@@@@ .. .  . .. .  . .. .  . .. .\n" +
-                "  . .. .  . .. .  . .. .  . .. .  . .. . @@@@@@.  . .. .  . .. .  . .. .  . .. .");
+                "  . .. .  . .. .  . .. .  . .. .  . .. . @@@@@@.  . .. .  . .. .  . .. .  . .. ." + Colors.RESET);
     }
 
     public static void harpyPic() {
-        System.out.println(" @&   /,,                                                                     \n" +
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT +
+                " @&   /,,                                                                       \n" +
                 "  &  ,@   ,,,                                                                   \n" +
                 "   @. @,.  @.,,%                                                                \n" +
                 "     .. .,,,,,&,,@                                                              \n" +
@@ -672,11 +695,12 @@ public class GameMessage {
                 "                @   @   @@                   @,&.(.,.,.(@                       \n" +
                 "                                              @..,,%,* @                        \n" +
                 "                                             ,%%     &                          \n" +
-                "                                              ,%                         ");
+                "                                              ,%                         " + Colors.RESET);
     }
 
     public static void centaurPic() {
-        System.out.println("                                                                            \n" +
+        System.out.println(Colors.GREEN_BOLD +
+                "                                                                                \n" +
                 "                       ,&&&&&&&&                                                \n" +
                 "            %         &&&&&&&%&&                                                \n" +
                 "           &%        .&%&&& %* %                                                \n" +
@@ -706,11 +730,12 @@ public class GameMessage {
                 "                    %%&&(       &( *%     %%&*%&   & ( &                        \n" +
                 "  %                  &.&       &  &     * &&&&&  &  #.&                         \n" +
                 "  %                           &%&&&              &,&&&&                         \n" +
-                "  *                                                                            ");
+                "  *                                                                            " + Colors.RESET);
     }
 
     public static void minotaurPic() {
-        System.out.println("                                                                         \n" +
+        System.out.println(Colors.YELLOW +
+                "                                                                                \n" +
                 "                                     @@      /                                  \n" +
                 "                                       @@     @@@@@@@@@@                        \n" +
                 "                                       #@@@  @@@@,   (@@@                       \n" +
@@ -735,11 +760,12 @@ public class GameMessage {
                 "                                        @@@@@        %@@@@                      \n" +
                 "                                      (@@@@@@        @@@@@%                     \n" +
                 "                                      &@@#            @@@@@                     \n" +
-                "                                                                            ");
+                "                                                                            " + Colors.RESET);
     }
 
     public static void cyclopsPic() {
-        System.out.println("                                                                      \n" +
+        System.out.println(Colors.GREEN_BOLD_BRIGHT +
+                "                                                                                \n" +
                 "                           # (,. ,*,                  &% ( @                    \n" +
                 "                           . @ &%( /,,              *#  (%@@/&                  \n" +
                 "                            .     &.                ,,      ,/                  \n" +
@@ -767,42 +793,44 @@ public class GameMessage {
                 "                     .@    &                    @      **                       \n" +
                 "                   (& % ( &                       % #/& %(                      \n" +
                 "                   %%@ @ (                           .&, .                      \n" +
-                "                        *                                                ");
+                "                        *                                                " + Colors.RESET);
     }
 
     public static void basiliskPic() {
-        System.out.println("                                                                        \n" +
+        System.out.println(Colors.GREEN +
+                "                                                                                \n" +
                 "                                            #@                                  \n" +
                 "                                            @.@                                 \n" +
-                "                                           @@@@  @ @                            \n" +
-                "                                       @.@@@@@@@@(@                             \n" +
+                "                                           @@@@  @ @                            \n" + Colors.RESET +
+                "                                       @.@@@@@@@@(@                             \n" + Colors.GREEN_BRIGHT +
                 "                                      @@@@@@@@@@@@@@@@@                         \n" +
-                "                                    .@@@@@@@@@@@@@@@ @                          \n" +
-                "                                   &@@@@@@@@@@@@@@@@@@@@                        \n" +
+                "                                    .@@@@@@@@@@@@@@@ @                          \n" + Colors.RESET +
+                "                                   &@@@@@@@@@@@@@@@@@@@@                        \n" + Colors.GREEN +
                 "                                   @@@@@@@@@@@  @@@@@@@@%                       \n" +
                 "                                    @@          .@@@@@@@@                       \n" +
                 "                                                 @@@@@@@@@*                     \n" +
                 "                                                 @@@@@@@@                       \n" +
                 "                                                @@@@@@@@@                       \n" +
                 "                           %                   @@@@@@@@@@                       \n" +
-                "                     %  @@@@@                @@@@@@@@@@ @                       \n" +
-                "                  @@ @@@@@@                @@@@@@@@@@ @                         \n" +
+                "                     %  @@@@@                @@@@@@@@@@ @                       \n" + Colors.RESET +
+                "                  @@ @@@@@@                @@@@@@@@@@ @                         \n" + Colors.GREEN_BRIGHT +
                 "                   @@@@@@@@@@            @@@@@@@@@@@                            \n" +
                 "                     @@@@@@@@@         @@@@@@@@@@/                              \n" +
                 "                    @@@@@            @@@@@@@@@@@@                               \n" +
-                "                   # @@            @@@@@@@@@@@@                                 \n" +
-                "                    @&@          @@@@@@@/@@@&                                   \n" +
+                "                   # @@            @@@@@@@@@@@@                                 \n" + Colors.RESET +
+                "                    @&@          @@@@@@@/@@@&                                   \n" + Colors.GREEN +
                 "                     @@@        @@@@@@@@@@@@@@@@@@@@@@@@@@@@                    \n" +
                 "                       @@@@@@#&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  \n" +
                 "                            @@@@@@@@@@@@@@@.           @@@@@@@@                 \n" +
                 "                              @@@@@@@@@@@@@@@     .@@@@@@@@@@@@                 \n" +
                 "                               @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  \n" +
                 "                                @@@@@@@@@@@@@@@@@@@@@@@@@@@                     \n" +
-                "                                     @@@@@@@@@@@@@@@@                   ");
+                "                                     @@@@@@@@@@@@@@@@                   " + Colors.RESET);
     }
 
     public static void griffinPic() {
-        System.out.println("                                                                       \n" +
+        System.out.println(Colors.YELLOW +
+                "                                                                                \n" +
                 "                                                                                \n" +
                 "                                      @@                                        \n" +
                 "                                @@    @@@                                       \n" +
@@ -822,11 +850,12 @@ public class GameMessage {
                 "                       @@@@                            @@@                      \n" +
                 "                      @@@@ @@                           @@@@@&                  \n" +
                 "                                                                                \n" +
-                "                                                                        ");
+                "                                                                        " + Colors.RESET);
     }
 
     public static void chimeraPic() {
-        System.out.println("                                    &&.   &                                    \n" +
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT +
+                "                                     &&.   &                                    \n" +
                 "                                          &&&,                                  \n" +
                 "                                        &&&*& &&                                \n" +
                 "      %&&&&&&&&&&             &       &&&&&&&(&&&&                              \n" +
@@ -847,24 +876,25 @@ public class GameMessage {
                 "   &&&&&         &&&&&&&                      #&&&&&&&&&&&                      \n" +
                 "   (&&&&            @&&&&&&&&&&                    /&&&&&&&&&                   \n" +
                 "    %&&&                   @&&&&&                       &&&&&&&&                \n" +
-                "     &&&&&&&&&%               &&&&&                        &&&&&&&&&&&&&&&     ");
+                "     &&&&&&&&&%               &&&&&                        &&&&&&&&&&&&&&&     " + Colors.RESET);
     }
 
     public static void medusaPic() {
-        System.out.println("                                                                                \n" +
+        System.out.println(Colors.GREEN_BRIGHT +
+                "                                                                                \n" +
                 "                                  @@@@      &@@@@@@@@@@@#@@                     \n" +
                 "                               @@@    @#  @@@%        .@@@@ %                   \n" +
                 "            @@@@@@@@@&@       @@    @@@@ @@@               ((&@@@.              \n" +
                 "          @@@@@@@@/ .@@@@@   #@@    @@&@@@@@           @@@@.     @@@@@          \n" +
                 "       @                @@@@  @@@       %@@@@        @@@@           @@@&%       \n" +
                 "                         @@@(  @@@% #    @@@@@%      @@@              @@@@      \n" +
-                "         @@@@@            @@@   @@@@@      @@@@@@    @@@@                       \n" +
-                "      @@@     @@@@#       @@@@    @@@@@      @@@@@@   @@@@                      \n" +
+                "         @@@@@            @@@   @@@@@      @@@@@@    @@@@                       \n" + Colors.RESET +
+                "      @@@     @@@@#       @@@@    @@@@@      @@@@@@   @@@@                      \n" + Colors.GREEN +
                 "      @@&        @@@&     ,@@@      @@@@@@      @@@@@   @@@@       @@@@,  .@@@  \n" +
                 "       @@@@@@&    @@@@     @@@@        @@@@@@@    @@@@@  @@@@(   @@@          @@\n" +
                 "          .@,      @@@@     @@@@          @@@@@@@   @@@@   @@@@  @@           @@\n" +
-                "    (@@@@@@#        .@@@     @@@@@           @@@@@   @@@@   @@@  @#        @@@@ \n" +
-                "  @@@      /%/@       @@@@    @@@@@@           @@@@   @@@@  ,@@* #((      @@%@@ \n" +
+                "    (@@@@@@#        .@@@     @@@@@           @@@@@   @@@@   @@@  @#        @@@@ \n" + Colors.RESET +
+                "  @@@      /%/@       @@@@    @@@@@@           @@@@   @@@@  ,@@* #((      @@%@@ \n" + Colors.GREEN_BRIGHT +
                 " @@@@        @@@@      @@@@@@    @@@@@@         @@@   @@@   @@@  @@@     @      \n" +
                 " @@@@         @@@@        @@@@@@@   @@@@@@@      @   @@   &@@%  @@@@   ,        \n" +
                 "               (@@@@         @@@@@@@@                        @@@@@@             \n" +
@@ -874,8 +904,8 @@ public class GameMessage {
                 "  &@@         @@@@@@             ,@@      &@@@@@@      @@@@                     \n" +
                 "  @@@@           ,@@@@@@@@@@@@@@@    @                                          \n" +
                 "   @*@(                            @@@                @                         \n" +
-                "            @@@@@@@@@@@@@@@@@@@@@@@@# %                   @                     \n" +
-                "          @@@@                        @ @       %%####   .                      \n" +
+                "            @@@@@@@@@@@@@@@@@@@@@@@@# %                   @                     \n" + Colors.RESET +
+                "          @@@@                        @ @       %%####   .                      \n" + Colors.GREEN +
                 "         @@@            @@@%@        *@ @              @           @   @        \n" +
                 "         @@          @@@@@@@@        @@  ,    @      @@       @         @       \n" +
                 "     @%@@@@         @@@            @@@#  #                                      \n" +
@@ -884,11 +914,12 @@ public class GameMessage {
                 "                                                                         @      \n" +
                 "                                      @                                  @      \n" +
                 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n" +
-                "@@@@    ( @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+                "@@@@    ( @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" + Colors.RESET);
     }
 
     public static void wyvernPic() {
-        System.out.println("                                                                                \n" +
+        System.out.println(Colors.RED_BOLD_BRIGHT +
+                "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                   @.              @@           \n" +
                 "                                                 @@.           @@               \n" +
@@ -922,11 +953,12 @@ public class GameMessage {
                 "  %                 @@@ @@@@@@@                 @@@@@@@&@@@@@@@ @@@@@           \n" +
                 "  .                  /@@      @@                   @@@@@@@@@@@@@@@@             \n" +
                 "  *                  #         ,                        @(                      \n" +
-                "  (                                                                             ");
+                "  (                                                                             " + Colors.RESET);
     }
 
     public static void phoenixPic() {
-        System.out.println("                                                                                \n" +
+        System.out.println(Colors.RED_BOLD_BRIGHT +
+                "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                      /                         \n" +
                 "                                              (     ./          .               \n" +
@@ -938,16 +970,16 @@ public class GameMessage {
                 "              .//     //   ///                  ///,///(/// //*       /         \n" +
                 "                 //*  ///  //                   //////////////  ,///            \n" +
                 "          *///*    /// ///.//                    ///////////, ////              \n" +
-                "                //* *///,/////     */*          *////////. /////   //           \n" +
-                "                  ///( ////////      ///*       //////////////  /(              \n" +
+                "                //* *///,/////     */*          *////////. /////   //           \n" + Colors.RESET +
+                "                  ///( ////////      ///*       //////////////  /(              \n" + Colors.YELLOW_BOLD_BRIGHT +
                 "          (//////,  ,////////////     ////    //////////////////                \n" +
                 "                 //////////////////// ///////////////////  .                    \n" +
                 "            ./////.  .,. ////////////( //////////.//////.                       \n" +
                 "                    /////////// // ////  ///////////*                           \n" +
                 "                         /.      /*  /.     /////*                              \n" +
                 "                    (                         //////                            \n" +
-                "                                               ////// /                         \n" +
-                "                     */  /                    //////// /                        \n" +
+                "                                               ////// /                         \n" + Colors.RESET +
+                "                     */  /                    //////// /                        \n" + Colors.RED_BOLD_BRIGHT +
                 "                       /*  /                ////////(////                       \n" +
                 "                         //* .*  (////////////////// /,,/                       \n" +
                 "                    /       (////      ,/////////// ./ (/                       \n" +
@@ -955,11 +987,12 @@ public class GameMessage {
                 "                            //(            ////   (                             \n" +
                 "                                  ,*/((/*.                                      \n" +
                 "                                                                                \n" +
-                "                                                                                ");
+                "                                                                                " + Colors.RESET);
     }
 
     public static void krakenPic() {
-        System.out.println("                                                                                \n" +
+        System.out.println(Colors.MAGENTA_BOLD +
+                "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
@@ -967,12 +1000,12 @@ public class GameMessage {
                 "                                   /@@@@@@@@@,                                  \n" +
                 "                                @@@@@@@@@@@@@@@@@                               \n" +
                 "                              @@@@@@@@@@@@@@@@@@@@@                             \n" +
-                "                             @@@@@@@@@@@@@@@@@@@@@@@                            \n" +
-                "                             @@@@@@@@@@@@@@@@@@@@@@@                            \n" +
+                "                             @@@@@@@@@@@@@@@@@@@@@@@                            \n" + Colors.RESET +
+                "                             @@@@@@@@@@@@@@@@@@@@@@@                            \n" + Colors.MAGENTA_BOLD_BRIGHT +
                 "                (@@.&@@@@    @@@@@@@@@@@@@@@@@@@@@@@    @@@@%.@@,               \n" +
                 "               #@     @@@@   @@@@@@@@@@@@@@@@@@@@@@@   @@@@    .@.              \n" +
-                "                     @@@@@   .@@@@@@@@@@@@@@@@@@@@@    @@@@@                    \n" +
-                "                    @@@@&  @& #@@@@@@@@@@@@@@@@@@@* @#  @@@@@                   \n" +
+                "                     @@@@@   .@@@@@@@@@@@@@@@@@@@@@    @@@@@                    \n" + Colors.RESET +
+                "                    @@@@&  @& #@@@@@@@@@@@@@@@@@@@* @#  @@@@@                   \n" + Colors.MAGENTA_BOLD +
                 "                  #@@@@   @@    @@@@@@@@@@@@@@@@@    @@   @@@@,                 \n" +
                 "                 @@@@@/  @@*   @@@@@@@@@@@@@@@@@@@   #@@  %@@@@@                \n" +
                 "                @@@@@@   @@@    @% @@@@@@@@@@@ @@    @@@   @@@@@%               \n" +
@@ -980,8 +1013,8 @@ public class GameMessage {
                 "                @@@@@@@@@.   @@@@@@@@@@@@@@@@@@@@@@@   .@@@@@@@@@               \n" +
                 "                 @@@@@@@@@@@* @@@@%@@@@@@@@@@@,@@@@ %@@@@@@@@@@@                \n" +
                 "                    *@@@@@ @@(@@ @@@@@@@@@@@@@@@ @@@@@ @@@@@,                   \n" +
-                "                 @@@@@@@@@ @@ ,@@@@@@@@@ @@@@@@@@@.,@@ @@@@@@@@@                \n" +
-                "                @@@@@@    @ @@@@@@@@@@.   ,@@@@@@@@@@ @   .@@@@@@               \n" +
+                "                 @@@@@@@@@ @@ ,@@@@@@@@@ @@@@@@@@@.,@@ @@@@@@@@@                \n" + Colors.RESET +
+                "                @@@@@@    @ @@@@@@@@@@.   ,@@@@@@@@@@ @   .@@@@@@               \n" + Colors.MAGENTA_BOLD_BRIGHT +
                 "                @@@@@@@@@ @@@@@@@@@  &     %  @@@@@@@@@ @@@@@@@@@               \n" +
                 "                 @@@@@@@@ @@@@@@      @@ @@      @@@@@@ @@@@@@@@                \n" +
                 "                          @@@@@@      @@ @@      @@@@@@                         \n" +
@@ -990,18 +1023,19 @@ public class GameMessage {
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
-                "                                                                                ");
+                "                                                                                " + Colors.RESET);
     }
 
     public static void behemothPic() {
-        System.out.println("                                                                                \n" +
+        System.out.println(Colors.GREEN_BRIGHT +
+                "                                                                                \n" +
                 "            @@@@@@%                                                     @@@@@@. \n" +
                 "         @@@@@@@@@@@@@@@@@                                         .@@@@@@      \n" +
                 "        @@@@@@@@@@@@@@@@@@@@@@@  & @& @                          @@@@@@         \n" +
                 "           @@@@@@@@@@@@@@@@@@@@@@@@@@@#                         &@@@@           \n" +
                 "           @@@/@@@@@@@@@@@@@@@@@@@@@@@, & @& @@@&              @@@@@            \n" +
-                "                @@@@@@@@@@@@@@@@@@@@@@@@&@@@@@  .              @@@@             \n" +
-                "              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@               .@@@@@            \n" +
+                "                @@@@@@@@@@@@@@@@@@@@@@@@&@@@@@  .              @@@@             \n" + Colors.RESET +
+                "              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@               .@@@@@            \n" + Colors.GREEN_BOLD +
                 "             @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&                  #@@@@@           \n" +
                 "  #@@@@       @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.                @@@@@@          \n" +
                 "  @@@@@@@.     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.                @@@@@@@        \n" +
@@ -1010,8 +1044,8 @@ public class GameMessage {
                 "                   &  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@               @@@@@@@      \n" +
                 "                     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.,             @@@@@@@@      \n" +
                 "                   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      @  @ #@@@@@@@@      \n" +
-                "                  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@,@@@@@@@@@@@@@@@(      \n" +
-                "                 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@       \n" +
+                "                  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@,@@@@@@@@@@@@@@@(      \n" + Colors.RESET +
+                "                 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@       \n" + Colors.GREEN_BRIGHT +
                 "                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@         \n" +
                 "                @@@@@@@@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@           \n" +
                 "               &@@@@@@@@@(             @@@@@@@@@@@@@@@@@@@@@@@@@@@              \n" +
@@ -1020,11 +1054,12 @@ public class GameMessage {
                 "                  @@@@@@@@.                       .@@@@@@@@.                    \n" +
                 "                  #@@@@@@@@                         @@@@@@@@@                   \n" +
                 "              @@@@@@@@@@@@@@                       @@@@@@@@@@@@                 \n" +
-                "             @@@@@@@@@@@                           @@& @@@ @@@@@                ");
+                "             @@@@@@@@@@@                           @@& @@@ @@@@@                " + Colors.RESET);
     }
 
     public static void dragonPic() {
-        System.out.println("                                                                                \n" +
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT +
+                "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                        &       \n" +
@@ -1036,8 +1071,8 @@ public class GameMessage {
                 "                     @@@@@@@@@@@@@@@@@@@@@* @@@ @@@@       @@@@,                \n" +
                 "                 @   @@@ .@@@@@@@@@@&@@@@@@@ @@@@@ %@@@@@@                      \n" +
                 "                @@@@@@@@@@@@@@@*  @/ @ .@@@@@@@@@@@@#                           \n" +
-                "               @@@@@@#  @@@@   (      @ @@@@@@#@@@@@@/                          \n" +
-                "                                      @@@@@@@@@@@@@(           *@@%             \n" +
+                "               @@@@@@#  @@@@   (      @ @@@@@@#@@@@@@/                          \n" + Colors.RESET +
+                "                                      @@@@@@@@@@@@@(           *@@%             \n" + Colors.RED_BOLD_BRIGHT +
                 "                %   @@ @@ @ @  @ @ ,@@@ @@@@@*@@@@@                             \n" +
                 "            &@@@@@/@@@(@@@@@@@. @ @ @@@@@@@@@@@@   @@@                          \n" +
                 "           @@@@&@@@@@@@@@@@@@@@@@@@@@@@@@@ @@  @%       @                       \n" +
@@ -1046,15 +1081,15 @@ public class GameMessage {
                 "        @(@(/@@@@@@.         @ @@@@@@@@@@@@@                                    \n" +
                 "         @@@/@@@@@@@@     *@@@@@@@@@@@@@@@@@@    @                              \n" +
                 "          @@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                               \n" +
-                "          @ @(@@@@@@@@@@@@@@@@@@&        @@@@@@@  @                             \n" +
-                "              @@@%@@/@@@@@@@.            @@@@@@ @                               \n" +
+                "          @ @(@@@@@@@@@@@@@@@@@@&        @@@@@@@  @                             \n" + Colors.RESET +
+                "              @@@%@@/@@@@@@@.            @@@@@@ @                               \n" + Colors.YELLOW_BOLD_BRIGHT +
                 "                 % @    @             @@@@@@@ @  @                              \n" +
                 "                       ,@@@@@@@@@@@@@@@@@@ @  *                                 \n" +
                 "                    @@@@@@@    @ @ @ @  @                                       \n" +
                 "                   @@@     @@@@                                                 \n" +
                 "                  @@@    @@@  @@@                                               \n" +
-                "                   @@@  @@@  /@@                                                \n" +
-                "                     @@@@@@@@@                                                  \n" +
+                "                   @@@  @@@  /@@                                                \n" + Colors.RESET +
+                "                     @@@@@@@@@                                                  \n" + Colors.RED_BOLD_BRIGHT +
                 "                          @@                                                    \n" +
                 "                           @@@*                                                 \n" +
                 "                          @@@@@                                                 \n" +
@@ -1062,15 +1097,68 @@ public class GameMessage {
                 "                                @@                                              \n" +
                 "                                    @                                           \n" +
                 "                                                                                \n" +
-                "                                                                                \n");
+                "                                                                                \n" + Colors.RESET);
     }
 
     public static void chestFound() {
-        System.out.println("Oh, you found a chest! Checking things inside..");
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "Oh, you found a chest! Checking things inside.." + Colors.RESET);
     }
 
     public static void getFinalGameMessage() {
-        System.out.println("Meh. Goodbye.");
+        System.out.println(Colors.RED_BOLD_BRIGHT +
+                "    ███        ▄█    █▄       ▄████████ ███▄▄▄▄      ▄█   ▄█▄    ▄████████                         \n" +
+                "▀█████████▄   ███    ███     ███    ███ ███▀▀▀██▄   ███ ▄███▀   ███    ███                         \n" +
+                "   ▀███▀▀██   ███    ███     ███    ███ ███   ███   ███▐██▀     ███    █▀                          \n" +
+                "    ███   ▀  ▄███▄▄▄▄███▄▄   ███    ███ ███   ███  ▄█████▀      ███                                \n" +
+                "    ███     ▀▀███▀▀▀▀███▀  ▀███████████ ███   ███ ▀▀█████▄    ▀███████████                         \n" +
+                "    ███       ███    ███     ███    ███ ███   ███   ███▐██▄            ███                         \n" +
+                "    ███       ███    ███     ███    ███ ███   ███   ███ ▀███▄    ▄█    ███                         \n" +
+                "   ▄████▀     ███    █▀      ███    █▀   ▀█   █▀    ███   ▀█▀  ▄████████▀                          \n" +
+                "                                                    ▀                                              \n" +
+                "    ███      ▄██████▄       ▄██   ▄    ▄██████▄  ███    █▄     ▄████████                           \n" +
+                "▀█████████▄ ███    ███      ███   ██▄ ███    ███ ███    ███   ███    ███                           \n" +
+                "   ▀███▀▀██ ███    ███      ███▄▄▄███ ███    ███ ███    ███   ███    ███                           \n" +
+                "    ███   ▀ ███    ███      ▀▀▀▀▀▀███ ███    ███ ███    ███  ▄███▄▄▄▄██▀                           \n" +
+                "    ███     ███    ███      ▄██   ███ ███    ███ ███    ███ ▀▀███▀▀▀▀▀                             \n" +
+                "    ███     ███    ███      ███   ███ ███    ███ ███    ███ ▀███████████                           \n" +
+                "    ███     ███    ███      ███   ███ ███    ███ ███    ███   ███    ███                           \n" +
+                "   ▄████▀    ▀██████▀        ▀█████▀   ▀██████▀  ████████▀    ███    ███                           \n" +
+                "                                                              ███    ███                           \n" +
+                " ▄████████  ▄██████▄   ▄█     █▄     ▄████████    ▄████████ ████████▄   ▄█   ▄████████    ▄████████\n" +
+                "███    ███ ███    ███ ███     ███   ███    ███   ███    ███ ███   ▀███ ███  ███    ███   ███    ███\n" +
+                "███    █▀  ███    ███ ███     ███   ███    ███   ███    ███ ███    ███ ███▌ ███    █▀    ███    █▀ \n" +
+                "███        ███    ███ ███     ███   ███    ███  ▄███▄▄▄▄██▀ ███    ███ ███▌ ███         ▄███▄▄▄    \n" +
+                "███        ███    ███ ███     ███ ▀███████████ ▀▀███▀▀▀▀▀   ███    ███ ███▌ ███        ▀▀███▀▀▀    \n" +
+                "███    █▄  ███    ███ ███     ███   ███    ███ ▀███████████ ███    ███ ███  ███    █▄    ███    █▄ \n" +
+                "███    ███ ███    ███ ███ ▄█▄ ███   ███    ███   ███    ███ ███   ▄███ ███  ███    ███   ███    ███\n" +
+                "████████▀   ▀██████▀   ▀███▀███▀    ███    █▀    ███    ███ ████████▀  █▀   ████████▀    ██████████\n" +
+                "                                                 ███    ███                                        \n" +
+                "    ███        ▄█    █▄       ▄████████                                                            \n" +
+                "▀█████████▄   ███    ███     ███    ███                                                            \n" +
+                "   ▀███▀▀██   ███    ███     ███    █▀                                                             \n" +
+                "    ███   ▀  ▄███▄▄▄▄███▄▄  ▄███▄▄▄                                                                \n" +
+                "    ███     ▀▀███▀▀▀▀███▀  ▀▀███▀▀▀                                                                \n" +
+                "    ███       ███    ███     ███    █▄                                                             \n" +
+                "    ███       ███    ███     ███    ███                                                            \n" +
+                "   ▄████▀     ███    █▀      ██████████                                                            \n" +
+                "                                                                                                   \n" +
+                " ▄█     █▄   ▄██████▄     ▄████████  ▄█       ████████▄                                            \n" +
+                "███     ███ ███    ███   ███    ███ ███       ███   ▀███                                           \n" +
+                "███     ███ ███    ███   ███    ███ ███       ███    ███                                           \n" +
+                "███     ███ ███    ███  ▄███▄▄▄▄██▀ ███       ███    ███                                           \n" +
+                "███     ███ ███    ███ ▀▀███▀▀▀▀▀   ███       ███    ███                                           \n" +
+                "███     ███ ███    ███ ▀███████████ ███       ███    ███                                           \n" +
+                "███ ▄█▄ ███ ███    ███   ███    ███ ███▌    ▄ ███   ▄███                                           \n" +
+                " ▀███▀███▀   ▀██████▀    ███    ███ █████▄▄██ ████████▀                                            \n" +
+                "                         ███    ███ ▀                                                              \n" +
+                "   ▄████████ ███▄▄▄▄   ████████▄     ▄████████ ████████▄                                           \n" +
+                "  ███    ███ ███▀▀▀██▄ ███   ▀███   ███    ███ ███   ▀███                                          \n" +
+                "  ███    █▀  ███   ███ ███    ███   ███    █▀  ███    ███                                          \n" +
+                " ▄███▄▄▄     ███   ███ ███    ███  ▄███▄▄▄     ███    ███                                          \n" +
+                "▀▀███▀▀▀     ███   ███ ███    ███ ▀▀███▀▀▀     ███    ███                                          \n" +
+                "  ███    █▄  ███   ███ ███    ███   ███    █▄  ███    ███                                          \n" +
+                "  ███    ███ ███   ███ ███   ▄███   ███    ███ ███   ▄███                                          \n" +
+                "  ██████████  ▀█   █▀  ████████▀    ██████████ ████████▀                                           " + Colors.RESET);
     }
 }
 
