@@ -37,6 +37,13 @@ public class Monster {
         this.seducedQuotes = seducedQuotes;
     }
 
+    public int getTimesAttacked() {
+        return timesAttacked;
+    }
+
+    public void setTimesAttacked(int timesAttacked) {
+        this.timesAttacked = timesAttacked;
+    }
 
     public String getName() {
         return name;
@@ -70,12 +77,28 @@ public class Monster {
         this.experiencePoints = experiencePoints;
     }
 
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
     public int getGold() {
         return gold;
     }
 
     public void setGold(int gold) {
         this.gold = gold;
+    }
+
+    public int getTurnToBeInvisible() {
+        return turnToBeInvisible;
+    }
+
+    public void setTurnToBeInvisible(int turnToBeInvisible) {
+        this.turnToBeInvisible = turnToBeInvisible;
     }
 
     public boolean isAlive() {
@@ -94,6 +117,14 @@ public class Monster {
         this.hasBeenRevived = hasBeenRevived;
     }
 
+    public boolean isAngered() {
+        return isAngered;
+    }
+
+    public void setAngered(boolean angered) {
+        isAngered = angered;
+    }
+
     public boolean isInvisible() {
         return isInvisible;
     }
@@ -102,12 +133,12 @@ public class Monster {
         isInvisible = invisible;
     }
 
-    public boolean isAngered() {
-        return isAngered;
+    public boolean isSeduced() {
+        return isSeduced;
     }
 
-    public void setAngered(boolean angered) {
-        isAngered = angered;
+    public void setSeduced(boolean seduced) {
+        isSeduced = seduced;
     }
 
     public String[] getAttacks() {
@@ -140,42 +171,6 @@ public class Monster {
 
     public void setSeducedQuotes(Quote[] seducedQuotes) {
         this.seducedQuotes = seducedQuotes;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    public boolean isSeduced() {
-        return isSeduced;
-    }
-
-    public void setSeduced(boolean seduced) {
-        isSeduced = seduced;
-    }
-
-    public boolean isMonsterAlive() {
-        return monsterHP > 0;
-    }
-
-    public int getTurnToBeInvisible() {
-        return turnToBeInvisible;
-    }
-
-    public void setTurnToBeInvisible(int turnToBeInvisible) {
-        this.turnToBeInvisible = turnToBeInvisible;
-    }
-
-    public int getTimesAttacked() {
-        return timesAttacked;
-    }
-
-    public void setTimesAttacked(int timesAttacked) {
-        this.timesAttacked = timesAttacked;
     }
 
     public int monsterAttack(Character character) {
