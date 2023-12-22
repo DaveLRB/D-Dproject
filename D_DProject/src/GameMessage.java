@@ -8,11 +8,11 @@ public class GameMessage {
         System.out.println(Colors.YELLOW_BOLD_BRIGHT +"3✧"+Colors.RESET + Colors.WHITE_BOLD_BRIGHT+" Check inventory"+ Colors.RESET);
         System.out.println(Colors.YELLOW_BOLD_BRIGHT +"4✦"+Colors.RESET + Colors.WHITE_BOLD_BRIGHT+" Shop"+ Colors.RESET);
         System.out.println(Colors.YELLOW_BOLD_BRIGHT +"5✧"+Colors.RESET + Colors.WHITE_BOLD_BRIGHT+" Leave game"+ Colors.RESET);
-        System.out.print(Colors.YELLOW_BOLD_BRIGHT + "Option: " + Colors.RESET);
+        System.out.print(Colors.FATIMAS_RED + "Option: \n" + Colors.RESET);
     }
 
     public static void getPlayerSelectMessage() {
-        System.out.print(Colors.YELLOW_BOLD_BRIGHT + "Select character: " + Colors.RESET);
+        System.out.print(Colors.FATIMAS_RED + "Select character: " + Colors.RESET);
     }
 
     public static void getBigBlankSpace() {
@@ -51,7 +51,6 @@ public class GameMessage {
                 "                                                       The original                                                        \n" +
                 "                                                                                                                           \n" +
                 "                                                                                                                           \n" +
-                "                                                                                                                           \n" +
                 "████████▄     ▄████████    ▄████████    ▄██████▄   ▄██████▄  ███▄▄▄▄      ▄████████         ▄████████ ███▄▄▄▄   ████████▄  \n" +
                 "███   ▀███   ███    ███   ███    ███   ███    ███ ███    ███ ███▀▀▀██▄   ███    ███        ███    ███ ███▀▀▀██▄ ███   ▀███ \n" +
                 "███    ███   ███    ███   ███    ███   ███    █▀  ███    ███ ███   ███   ███    █▀         ███    ███ ███   ███ ███    ███ \n" +
@@ -78,7 +77,7 @@ public class GameMessage {
     }
 
     public static void getWelcomeMessage(String name) {
-        System.out.println(Colors.WHITE_BOLD_BRIGHT + "Welcome " + name + ", please select a character:" + Colors.RESET);
+        System.out.println(Colors.FATIMAS_RED + "Welcome " + name + ", please select a character:" + Colors.RESET);
     }
 
     public static void getOneBlankSpace() {
@@ -113,14 +112,14 @@ public class GameMessage {
         int cha = playerItem != null ? playerItem.getCharisma() : 0;
         int ite = playerItem != null ? playerItem.getIntelligence() : 0;
 
-        System.out.println("Character: " + player.getSelectedCharacter().getName() + "\n" + "\n" +
-                "Types of attack:" +
-                "\nStrength: " + player.getSelectedCharacter().getStrength() + " (+" + str + ")"
-                + "\nDexterity: " + player.getSelectedCharacter().getDexterity() + " (+" + dex + ")"
-                + "\nCharisma: " + player.getSelectedCharacter().getCharisma() + " (+" + cha + ")"
-                + "\nIntelligence: " + player.getSelectedCharacter().getIntelligence() + " (+" + ite + ")");
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "Character: " + Colors.RESET + player.getSelectedCharacter().getName() + "\n" + "\n" +
+                Colors.YELLOW_BOLD_BRIGHT + "Types of attack:" +Colors.RESET +
+                Colors.YELLOW_BOLD_BRIGHT +"\nStrength: " + Colors.RESET + player.getSelectedCharacter().getStrength() + " (+" + str + ")" +
+                Colors.YELLOW_BOLD_BRIGHT + "\nDexterity: " + Colors.RESET + player.getSelectedCharacter().getDexterity() + " (+" + dex + ")" +
+                Colors.YELLOW_BOLD_BRIGHT + "\nCharisma: " + Colors.RESET + player.getSelectedCharacter().getCharisma() + " (+" + cha + ")" +
+                Colors.YELLOW_BOLD_BRIGHT + "\nIntelligence: " + Colors.RESET + player.getSelectedCharacter().getIntelligence() + " (+" + ite + ")");
         getOneBlankSpace();
-        System.out.println("Equiped: " + player.getWhatIsEquiped());
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "Equiped: " + player.getWhatIsEquiped()+Colors.RESET);
 
         System.out.println(Colors.YELLOW_BOLD_BRIGHT + "HP: " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + player.getSelectedCharacter().getHealthPoints() + Colors.RESET);
         System.out.println(Colors.YELLOW_BOLD_BRIGHT + "XP: " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + player.getXp() + Colors.RESET);
@@ -150,8 +149,8 @@ public class GameMessage {
     }
 
     public static void getMenuDead() {
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1 -" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Create a new character" + Colors.RESET);
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2 -" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Leave game" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Create a new character" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Leave game" + Colors.RESET);
     }
 
     private static int count = 1;
@@ -160,18 +159,18 @@ public class GameMessage {
         count = 1;
         for (Item item : shop.getShopList()) {
             if (item.getCharisma() != null) {
-                System.out.println(Colors.WHITE_BOLD_BRIGHT + "" + count++ + " | " + item.getName() + " | Price: " + item.getPriceToBuy() + " | Skill: +" + item.getSkillToMenu() + Colors.RESET);
+                System.out.println(Colors.YELLOW_BOLD_BRIGHT + "" + count++ +Colors.RESET +Colors.WHITE_BOLD_BRIGHT +  " | " + item.getName() + " | Price: " + item.getPriceToBuy() + " | Skill: +" + item.getSkillToMenu() + Colors.RESET);
             } else {
-                System.out.println(Colors.WHITE_BOLD_BRIGHT + "" + count++ + " | " + item.getName() + " | Price: " + item.getPriceToBuy() + Colors.RESET);
+                System.out.println(Colors.YELLOW_BOLD_BRIGHT + "" + count++ +Colors.RESET +Colors.WHITE_BOLD_BRIGHT + " | " + item.getName() + " | Price: " + item.getPriceToBuy() + Colors.RESET);
             }
         }
     }
 
     public static void shopMenu() {
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1 -" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + "BUY" + Colors.RESET);
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2 -" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " UPGRADE" + Colors.RESET);
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "3 - " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + "SELL" + Colors.RESET);
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "4 - " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + "LEAVE" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " BUY" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " UPGRADE" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "3✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " SELL" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "4✦ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " LEAVE" + Colors.RESET);
     }
 
     public static void getShopSuccessMessage(Item item) {
@@ -179,7 +178,7 @@ public class GameMessage {
     }
 
     public static void getOption() {
-        System.out.print(Colors.YELLOW_BOLD_BRIGHT + "Option: " + Colors.RESET);
+        System.out.print(Colors.YELLOW_BOLD_BRIGHT + "Option: \n" + Colors.RESET);
     }
 
     private static int count2 = 1;
@@ -198,18 +197,18 @@ public class GameMessage {
                 .getItemList()
                 .forEach(item -> {
                     if (item.getWeaponBetterSkill() != 50) {
-                        System.out.println(Colors.WHITE_BOLD_BRIGHT + "" + count2++ + " | " + item.getName() + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " (" + item.getPriceToUpgrade() + " gold to upgrade)" + Colors.RESET);
+                        System.out.println(Colors.WHITE_BOLD_BRIGHT + "" + count2++ + " | " + item.getName() + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " (" + item.getPriceToUpgrade() + " gold to upgrade)\n" + Colors.RESET);
                     } else {
-                        System.out.println(Colors.WHITE_BOLD_BRIGHT + "" + count2++ + " | " + item.getName() + Colors.RESET + Colors.RED_BOLD_BRIGHT + " (Can't upgrade anymore)" + Colors.RESET);
+                        System.out.println(Colors.WHITE_BOLD_BRIGHT + "" + count2++ + " | " + item.getName() + Colors.RESET + Colors.RED_BOLD_BRIGHT + " (Can't upgrade anymore)\n" + Colors.RESET);
                     }
                 });
     }
 
     public static void getInventoryMenu() {
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1 -" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Equip item" + Colors.RESET);
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2 -" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Unequip item" + Colors.RESET);
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "3 -" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " USE" + Colors.RESET);
-        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "4 -" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Exit" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Equip item" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Unequip item" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "3✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " USE" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "4✦ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Exit\n" + Colors.RESET);
     }
 
     public static void upgradeSuccess(Item item) {
@@ -221,11 +220,11 @@ public class GameMessage {
     }
 
     public static void usedHealPotion() {
-        System.out.println(Colors.CYAN_BOLD_BRIGHT + "You drank the potion and fully restored your HP." + Colors.RESET);
+        System.out.println(Colors.CYAN_BOLD_BRIGHT + "You drank the potion and fully restored your HP.\n" + Colors.RESET);
     }
 
     public static void whatItemYouWantToSell() {
-        System.out.println(Colors.WHITE_BOLD_BRIGHT + "What item you want to sell?" + Colors.RESET);
+        System.out.println(Colors.WHITE_BOLD_BRIGHT + "What item you want to sell?\n" + Colors.RESET);
     }
 
     public static void successSell(LinkedList<Item> playerItem, int index) {
