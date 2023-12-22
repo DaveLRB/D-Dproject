@@ -225,10 +225,18 @@ public class GameMessage {
         System.out.println("You sold " + item.getName() + " for " + item.getPriceToBuy() / 2 + " gold.");
     }
 
+    public static void printMonsterArt(MonsterType monsterType) {
+        String art = MONSTER_ART_MAP.get(monsterType);
+        if (art != null) {
+            System.out.println(art);
+        } else {
+            System.out.println("No ASCII art available for " + monsterType);
+        }
+    }
 
-   public static final Map<MonsterType, String> MONSTER_ART_MAP = new HashMap<>();
+    public static final Map<MonsterType, String> MONSTER_ART_MAP = new HashMap<>();
     static {
-        MONSTER_ART_MAP.put(MonsterType.SLIME, "                                                                                \n" +
+        MONSTER_ART_MAP.put(MonsterType.SLIME,("                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
@@ -257,21 +265,9 @@ public class GameMessage {
                 "                                                                                \n" +
                 "  %                                                                             \n" +
                 "  %                                                                             \n" +
-                "  *                                                                         ");
-    }
+                "  *                                                                         "));
 
-
-    public static void printMonsterArt(MonsterType monsterType) {
-        String art = MONSTER_ART_MAP.get(monsterType);
-        if (art != null) {
-            System.out.println(art);
-        } else {
-            System.out.println("No ASCII art available for " + monsterType);
-        }
-    }
-
-    public static void babySpiderPic() {
-        System.out.println(" .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   ,#&@@@&#.  .  .  \n" +
+        MONSTER_ART_MAP.put(MonsterType.BABYSPIDERS, (" .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   ,#&@@@&#.  .  .  \n" +
                 ".. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. @@@@@@@@@@@@@@@@@@@@ .. ..\n" +
                 ".. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .@@@@@@# .. .. .. ..@@@@.. ..\n" +
                 "..  .  @@@@@@@@@@@@@@@@@@.  .  .  .  (&&&#..  . .. @@@@@  . ..  .  .  . ..  .  .\n" +
@@ -288,11 +284,9 @@ public class GameMessage {
                 ".. .. @@@/. ..@@@ .. .. .. .. .. .. .#&&&%.. .. .. .. .. .. .. .. ..@@@ .. .. ..\n" +
                 ".. ..  @@.. .@@@. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..@@. .. .. ..\n" +
                 "  .  .  .  .#@@@ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  \n" +
-                "  .  .  .  .(@@@ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ");
-    }
+                "  .  .  .  .(@@@ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  "));
 
-    public static void goblinPic() {
-        System.out.println("                                                                               \n" +
+        MONSTER_ART_MAP.put(MonsterType.GOBLIN,("                                                                               \n" +
                 "                                  ,&(,,,,/((%                                   \n" +
                 "                            #,,,/((((((((((((((((#            %/**  *           \n" +
                 "          ,(*/          ./,,(((((((((((((((((((((((#&    &./%//%                \n" +
@@ -327,11 +321,10 @@ public class GameMessage {
                 "                       #,/**//((##  *                    (*/*/*/*/(             \n" +
                 "               /,/***((**//(((#%  (.                       &(./******/*(#&      \n" +
                 "               #((,/%*/(***/##  /.                         *  %/**/*/*#(((*#%% *\n" +
-                "              .     .%#%####  /.                                ,(/**/((#%%   /");
-    }
+                "              .     .%#%####  /.                                ,(/**/((#%%   /"));
 
-    public static void skeletonPic() {
-        System.out.println("                                                                               \n" +
+
+        MONSTER_ART_MAP.put(MonsterType.SKELETON,("                                                                               \n" +
                 "                                     ,@@@@@@@@/                                 \n" +
                 "                                  .@@@@@@@@@@@@@@@@                             \n" +
                 "                                 (@@@@@@@@@@@@@@@@@@*                           \n" +
@@ -357,11 +350,10 @@ public class GameMessage {
                 "                                 #@ #      #                                    \n" +
                 "                           .,@@#@##@@    @@(@                                   \n" +
                 "                                           @@@@*                                \n" +
-                "                                            /                                  ");
-    }
+                "                                            /                                  "));
 
-    public static void zombiePic() {
-        System.out.println("                                                                               \n" +
+
+    MONSTER_ART_MAP.put(MonsterType.ZOMBIE,("                                                                               \n" +
                 "                                    @,,,,,,,,,,,,,@&  *                         \n" +
                 "                                 @...,,,,,,,,,,,,,,,**##                        \n" +
                 "                                @,,,@,...,,,,,*,,(,,,***/ %%                    \n" +
@@ -405,45 +397,41 @@ public class GameMessage {
                 "                                         %&,,,,,,,,**             @@  ,***,,**@ \n" +
                 "                                  &,,,,,....,,,,,****@               @*,,,,*@   \n" +
                 "                                   @,*@,,,,,****              %,&,(,,,,,,,,*,   \n" +
-                "                                      (@//@#                     &@%.*&#((#%/(#(");
-    }
+                "                                      (@//@#                     &@%.*&#((#%/(#("));
 
-    public static void spectrePic() {
-        System.out.println("                                                                         \n" +
-                "                                                                                \n" +
-                "                                   *&@@@@@@%*                                   \n" +
-                "                               /@              .@(                              \n" +
-                "                             /%                   .@                            \n" +
-                "                            @                       /%                          \n" +
-                "                           &       .%    @@@         .&                         \n" +
-                "                          .&      %@@@  @@@@@         */                        \n" +
-                "                          %.      *@@@  .@@@@/         @                        \n" +
-                "                          @               /%           #                        \n" +
-                "                          @           @@@              /*                       \n" +
-                "                          @          ,@@@              #(/,                     \n" +
-                "                          %.                                 &/                 \n" +
-                "                          @                              @(                     \n" +
-                "                         .&                           ##                        \n" +
-                "                         @                           @                          \n" +
-                "                      @&                            @                           \n" +
-                "                     (@@@@@                       /#                            \n" +
-                "                         @                       @                              \n" +
-                "                        @.                    ,@                                \n" +
-                "                       @                    @(                                  \n" +
-                "                      @                 .@/                                     \n" +
-                "                    &/              (@(                                         \n" +
-                "                  *@          %@@,                                              \n" +
-                "                  #@@@%*                                                        \n" +
-                "                                                                                \n" +
-                "                                                                                \n" +
-                "                                                                                \n" +
-                "                                                                                \n" +
-                "                                                                                \n" +
-                "                  ,    ,         *           /,*., # * / * * (.*             ");
-    }
+ MONSTER_ART_MAP.put(MonsterType.SPECTRE,("                                                                         \n" +
+            "                                                                                \n" +
+            "                                   *&@@@@@@%*                                   \n" +
+            "                               /@              .@(                              \n" +
+            "                             /%                   .@                            \n" +
+            "                            @                       /%                          \n" +
+            "                           &       .%    @@@         .&                         \n" +
+            "                          .&      %@@@  @@@@@         */                        \n" +
+            "                          %.      *@@@  .@@@@/         @                        \n" +
+            "                          @               /%           #                        \n" +
+            "                          @           @@@              /*                       \n" +
+            "                          @          ,@@@              #(/,                     \n" +
+            "                          %.                                 &/                 \n" +
+            "                          @                              @(                     \n" +
+            "                         .&                           ##                        \n" +
+            "                         @                           @                          \n" +
+            "                      @&                            @                           \n" +
+            "                     (@@@@@                       /#                            \n" +
+            "                         @                       @                              \n" +
+            "                        @.                    ,@                                \n" +
+            "                       @                    @(                                  \n" +
+            "                      @                 .@/                                     \n" +
+            "                    &/              (@(                                         \n" +
+            "                  *@          %@@,                                              \n" +
+            "                  #@@@%*                                                        \n" +
+            "                                                                                \n" +
+            "                                                                                \n" +
+            "                                                                                \n" +
+            "                                                                                \n" +
+            "                                                                                \n" +
+            "                  ,    ,         *           /,*., # * / * * (.*             "));
 
-    public static void werewolfPic() {
-        System.out.println("                                                                       \n" +
+        MONSTER_ART_MAP.put(MonsterType.WEREWOLF,("                                                                       \n" +
                 "                       .                                                        \n" +
                 "                        %@@@@@&@                                                \n" +
                 "                         &@@@@@@@@@@@%                                          \n" +
@@ -468,11 +456,9 @@ public class GameMessage {
                 "                   @@@@  .@@@@@   @@@@@@@@@@@@@@@                               \n" +
                 "                     @@@@@@   *@@@@@@@@(                                        \n" +
                 "                        .@@@@@@@@@@@#.      ./&@@@.                             \n" +
-                "                                                                        ");
-    }
+                "                                                                        "));
 
-    public static void ghostPic() {
-        System.out.println(" . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
+        MONSTER_ART_MAP.put(MonsterType.GHOST,(" . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
                 ".. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . \n" +
                 ".. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . \n" +
                 ".. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . \n" +
@@ -503,11 +489,9 @@ public class GameMessage {
                 "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
                 "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
                 "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
-                "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .");
-    }
+                "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. ."));
 
-    public static void witchPic() {
-        System.out.println("       .@@@@@@@@@@@@@@@@@@@@@.                                     \n" +
+        MONSTER_ART_MAP.put(MonsterType.WITCH,("       .@@@@@@@@@@@@@@@@@@@@@.                                     \n" +
                 "                  .@@@@.     @@@@@@@@@@@@@@@@                                   \n" +
                 "                  @@(          &@@@@@@@@@@@@@@#                                 \n" +
                 "                 @@.           .@@@@@@@@@@@@@@@&                                \n" +
@@ -529,11 +513,9 @@ public class GameMessage {
                 "               ..  /&@@@@@@@@@@@@@@@@@(  ,@@@@@@@@@@ ,@@,  .                    \n" +
                 "                /@@@@@@@@@@@@@@*@@@@@@@@@@@ *@@@@@@#.@@  &@                     \n" +
                 "                  @@@@@@@@@@@,&@@@@@@@(.    @@@@@@@@@@@@#                       \n" +
-                "                    ,@@@@(  @@@@@@@*       &@@@@@@@@@@,               ");
-    }
+                "                    ,@@@@(  @@@@@@@*       &@@@@@@@@@@,               "));
 
-    public static void vampirePic() {
-        System.out.println("            .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/                        \n" +
+        MONSTER_ART_MAP.put(MonsterType.VAMPIRE,("            .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/                        \n" +
                 "                    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&                    \n" +
                 "                  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  \n" +
                 "                %@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                \n" +
@@ -568,11 +550,9 @@ public class GameMessage {
                 "                       (@@@@@@@@@@@@@@&(%@@@@@@@@@@@@@@@@                       \n" +
                 "                          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@                         \n" +
                 "                             @@@@@@@@@@@@@@@@@@@@@@@                            \n" +
-                "                                  @@@@@@@@@@@@@");
-    }
+                "                                  @@@@@@@@@@@@@"));
 
-    public static void mummyPic() {
-        System.out.println("                                                                           \n" +
+        MONSTER_ART_MAP.put(MonsterType.MUMMY,("                                                                           \n" +
                 "                                                            @%@     @@@@@@@@ @  \n" +
                 "                                      @@@@@ &@&  /@@@     @    @@@&          @  \n" +
                 "                                  @@      @@         @@@@   @@/   @@@       (/  \n" +
@@ -606,11 +586,9 @@ public class GameMessage {
                 "                                         @@       @%                            \n" +
                 "                                  @@*  @@   @@@@@%@                             \n" +
                 "                                 @@  @   /@       @                             \n" +
-                "                                        .@@@@@@@@                           ");
-    }
+                "                                        .@@@@@@@@                           "));
 
-    public static void creeperPic() {
-        System.out.println(". .. .  . .. .  . .. .  . .. .  . .. @@ . .. .  . .. .  . .. .  . .. .  . .. .\n" +
+        MONSTER_ART_MAP.put(MonsterType.CREEPER,(". .. .  . .. .  . .. .  . .. .  . .. @@ . .. .  . .. .  . .. .  . .. .  . .. .\n" +
                 ".. .  . .. .  . .. .  .  &@@@@@@@@@@@@       @@@@@@@  . .. .  . .. .  . .. .  . \n" +
                 ".. .  . .. .  .@@@@@@@@                             %@@@@@@.  . .. .  . .. .  . \n" +
                 ".. .  . .. .  . @@   @@                                    @@@@@.. .  . .. .  . \n" +
@@ -651,11 +629,9 @@ public class GameMessage {
                 ".. .  . .. .  . .. .   @@@@@  . .. .@@      @      @@ . .. .  . .. .  . .. .  . \n" +
                 "  . .. .  . .. .  . .. .  . .. .  . @@      @     @@@. .  . .. .  . .. .  . .. .\n" +
                 "  . .. .  . .. .  . .. .  . .. .  . ./@@@@    @@@@@ .. .  . .. .  . .. .  . .. .\n" +
-                "  . .. .  . .. .  . .. .  . .. .  . .. . @@@@@@.  . .. .  . .. .  . .. .  . .. .");
-    }
+                "  . .. .  . .. .  . .. .  . .. .  . .. . @@@@@@.  . .. .  . .. .  . .. .  . .. ."));
 
-    public static void harpyPic() {
-        System.out.println(" @&   /,,                                                                     \n" +
+        MONSTER_ART_MAP.put(MonsterType.HARPY,(" @&   /,,                                                                     \n" +
                 "  &  ,@   ,,,                                                                   \n" +
                 "   @. @,.  @.,,%                                                                \n" +
                 "     .. .,,,,,&,,@                                                              \n" +
@@ -686,11 +662,9 @@ public class GameMessage {
                 "                @   @   @@                   @,&.(.,.,.(@                       \n" +
                 "                                              @..,,%,* @                        \n" +
                 "                                             ,%%     &                          \n" +
-                "                                              ,%                         ");
-    }
+                "                                              ,%                         "));
 
-    public static void centaurPic() {
-        System.out.println("                                                                            \n" +
+        MONSTER_ART_MAP.put(MonsterType.CENTAUR,("                                                                            \n" +
                 "                       ,&&&&&&&&                                                \n" +
                 "            %         &&&&&&&%&&                                                \n" +
                 "           &%        .&%&&& %* %                                                \n" +
@@ -720,11 +694,9 @@ public class GameMessage {
                 "                    %%&&(       &( *%     %%&*%&   & ( &                        \n" +
                 "  %                  &.&       &  &     * &&&&&  &  #.&                         \n" +
                 "  %                           &%&&&              &,&&&&                         \n" +
-                "  *                                                                            ");
-    }
+                "  *                                                                            "));
 
-    public static void minotaurPic() {
-        System.out.println("                                                                         \n" +
+        MONSTER_ART_MAP.put(MonsterType.MINOTAUR,("                                                                         \n" +
                 "                                     @@      /                                  \n" +
                 "                                       @@     @@@@@@@@@@                        \n" +
                 "                                       #@@@  @@@@,   (@@@                       \n" +
@@ -749,11 +721,9 @@ public class GameMessage {
                 "                                        @@@@@        %@@@@                      \n" +
                 "                                      (@@@@@@        @@@@@%                     \n" +
                 "                                      &@@#            @@@@@                     \n" +
-                "                                                                            ");
-    }
+                "                                                                            "));
 
-    public static void cyclopsPic() {
-        System.out.println("                                                                      \n" +
+        MONSTER_ART_MAP.put(MonsterType.CYCLOPS,("                                                                      \n" +
                 "                           # (,. ,*,                  &% ( @                    \n" +
                 "                           . @ &%( /,,              *#  (%@@/&                  \n" +
                 "                            .     &.                ,,      ,/                  \n" +
@@ -781,11 +751,9 @@ public class GameMessage {
                 "                     .@    &                    @      **                       \n" +
                 "                   (& % ( &                       % #/& %(                      \n" +
                 "                   %%@ @ (                           .&, .                      \n" +
-                "                        *                                                ");
-    }
+                "                        *                                                "));
 
-    public static void basiliskPic() {
-        System.out.println("                                                                        \n" +
+        MONSTER_ART_MAP.put(MonsterType.BASILISK,("                                                                        \n" +
                 "                                            #@                                  \n" +
                 "                                            @.@                                 \n" +
                 "                                           @@@@  @ @                            \n" +
@@ -812,11 +780,9 @@ public class GameMessage {
                 "                              @@@@@@@@@@@@@@@     .@@@@@@@@@@@@                 \n" +
                 "                               @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  \n" +
                 "                                @@@@@@@@@@@@@@@@@@@@@@@@@@@                     \n" +
-                "                                     @@@@@@@@@@@@@@@@                   ");
-    }
+                "                                     @@@@@@@@@@@@@@@@                   "));
 
-    public static void griffinPic() {
-        System.out.println("                                                                       \n" +
+        MONSTER_ART_MAP.put(MonsterType.GRIFFIN,("                                                                       \n" +
                 "                                                                                \n" +
                 "                                      @@                                        \n" +
                 "                                @@    @@@                                       \n" +
@@ -836,11 +802,9 @@ public class GameMessage {
                 "                       @@@@                            @@@                      \n" +
                 "                      @@@@ @@                           @@@@@&                  \n" +
                 "                                                                                \n" +
-                "                                                                        ");
-    }
+                "                                                                        "));
 
-    public static void chimeraPic() {
-        System.out.println("                                    &&.   &                                    \n" +
+        MONSTER_ART_MAP.put(MonsterType.CHIMERA,("                                    &&.   &                                    \n" +
                 "                                          &&&,                                  \n" +
                 "                                        &&&*& &&                                \n" +
                 "      %&&&&&&&&&&             &       &&&&&&&(&&&&                              \n" +
@@ -861,11 +825,9 @@ public class GameMessage {
                 "   &&&&&         &&&&&&&                      #&&&&&&&&&&&                      \n" +
                 "   (&&&&            @&&&&&&&&&&                    /&&&&&&&&&                   \n" +
                 "    %&&&                   @&&&&&                       &&&&&&&&                \n" +
-                "     &&&&&&&&&%               &&&&&                        &&&&&&&&&&&&&&&     ");
-    }
+                "     &&&&&&&&&%               &&&&&                        &&&&&&&&&&&&&&&     "));
 
-    public static void medusaPic() {
-        System.out.println("                                                                                \n" +
+        MONSTER_ART_MAP.put(MonsterType.MEDUSA,("                                                                                \n" +
                 "                                  @@@@      &@@@@@@@@@@@#@@                     \n" +
                 "                               @@@    @#  @@@%        .@@@@ %                   \n" +
                 "            @@@@@@@@@&@       @@    @@@@ @@@               ((&@@@.              \n" +
@@ -898,11 +860,9 @@ public class GameMessage {
                 "                                                                         @      \n" +
                 "                                      @                                  @      \n" +
                 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n" +
-                "@@@@    ( @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-    }
+                "@@@@    ( @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"));
 
-    public static void wyvernPic() {
-        System.out.println("                                                                                \n" +
+        MONSTER_ART_MAP.put(MonsterType.WYVERN,("                                                                                \n" +
                 "                                                                                \n" +
                 "                                                   @.              @@           \n" +
                 "                                                 @@.           @@               \n" +
@@ -936,11 +896,9 @@ public class GameMessage {
                 "  %                 @@@ @@@@@@@                 @@@@@@@&@@@@@@@ @@@@@           \n" +
                 "  .                  /@@      @@                   @@@@@@@@@@@@@@@@             \n" +
                 "  *                  #         ,                        @(                      \n" +
-                "  (                                                                             ");
-    }
+                "  (                                                                             "));
 
-    public static void phoenixPic() {
-        System.out.println("                                                                                \n" +
+        MONSTER_ART_MAP.put(MonsterType.PHOENIX,("                                                                                \n" +
                 "                                                                                \n" +
                 "                                                      /                         \n" +
                 "                                              (     ./          .               \n" +
@@ -969,11 +927,9 @@ public class GameMessage {
                 "                            //(            ////   (                             \n" +
                 "                                  ,*/((/*.                                      \n" +
                 "                                                                                \n" +
-                "                                                                                ");
-    }
+                "                                                                                "));
 
-    public static void krakenPic() {
-        System.out.println("                                                                                \n" +
+        MONSTER_ART_MAP.put(MonsterType.KRAKEN,("                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
@@ -1004,11 +960,9 @@ public class GameMessage {
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
-                "                                                                                ");
-    }
+                "                                                                                "));
 
-    public static void behemothPic() {
-        System.out.println("                                                                                \n" +
+        MONSTER_ART_MAP.put(MonsterType.KRAKEN,("                                                                                \n" +
                 "            @@@@@@%                                                     @@@@@@. \n" +
                 "         @@@@@@@@@@@@@@@@@                                         .@@@@@@      \n" +
                 "        @@@@@@@@@@@@@@@@@@@@@@@  & @& @                          @@@@@@         \n" +
@@ -1034,11 +988,9 @@ public class GameMessage {
                 "                  @@@@@@@@.                       .@@@@@@@@.                    \n" +
                 "                  #@@@@@@@@                         @@@@@@@@@                   \n" +
                 "              @@@@@@@@@@@@@@                       @@@@@@@@@@@@                 \n" +
-                "             @@@@@@@@@@@                           @@& @@@ @@@@@                ");
-    }
+                "             @@@@@@@@@@@                           @@& @@@ @@@@@                "));
 
-    public static void dragonPic() {
-        System.out.println("                                                                                \n" +
+        MONSTER_ART_MAP.put(MonsterType.DRAGON,("                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                        &       \n" +
@@ -1076,8 +1028,8 @@ public class GameMessage {
                 "                                @@                                              \n" +
                 "                                    @                                           \n" +
                 "                                                                                \n" +
-                "                                                                                \n");
-    }
+                "                                                                                \n"));
+        }
 
     public static void chestFound() {
         System.out.println("Oh, you found a chest! Checking things inside..");
@@ -1087,4 +1039,3 @@ public class GameMessage {
         System.out.println("Meh. Goodbye.");
     }
 }
-
