@@ -5,16 +5,16 @@ import java.util.Scanner;
 
 public class GameMessage {
     public static void getMenuMessage() {
-        System.out.println("1✧ Enter the dungeon");
-        System.out.println("2✦ Check character stats");
-        System.out.println("3✧ Check inventory");
-        System.out.println("4✦ Shop");
-        System.out.println("5✧ Leave game");
-        System.out.print("Option: ");
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Enter the dungeon" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Check character stats" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "3✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Check inventory" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "4✦" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Shop" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "5✧" + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Leave game" + Colors.RESET);
+        System.out.print(Colors.FATIMAS_RED + "Option: \n" + Colors.RESET);
     }
 
     public static void getPlayerSelectMessage() {
-        System.out.print("Select character: ");
+        System.out.print(Colors.FATIMAS_RED + "Select character: " + Colors.RESET);
     }
 
     public static void getBigBlankSpace() {
@@ -26,7 +26,7 @@ public class GameMessage {
     }
 
     public static void getSelectPlayerBigMessage() {
-        System.out.println("\n"+
+        System.out.println(Colors.FATIMAS_RED + "\n" +
                 "   ▄████████    ▄████████  ▄█          ▄████████  ▄████████     ███             ▄███████▄  ▄█          ▄████████ ▄██   ▄      ▄████████    ▄████████ \n" +
                 "  ███    ███   ███    ███ ███         ███    ███ ███    ███ ▀█████████▄        ███    ███ ███         ███    ███ ███   ██▄   ███    ███   ███    ███ \n" +
                 "  ███    █▀    ███    █▀  ███         ███    █▀  ███    █▀     ▀███▀▀██        ███    ███ ███         ███    ███ ███▄▄▄███   ███    █▀    ███    ███ \n" +
@@ -35,7 +35,7 @@ public class GameMessage {
                 "         ███   ███    █▄  ███         ███    █▄  ███    █▄      ███            ███        ███         ███    ███ ███   ███   ███    █▄  ▀███████████ \n" +
                 "   ▄█    ███   ███    ███ ███▌    ▄   ███    ███ ███    ███     ███            ███        ███▌    ▄   ███    ███ ███   ███   ███    ███   ███    ███ \n" +
                 " ▄████████▀    ██████████ █████▄▄██   ██████████ ████████▀     ▄████▀         ▄████▀      █████▄▄██   ███    █▀   ▀█████▀    ██████████   ███    ███ \n" +
-                "                                                                                                                                                     \n");
+                "                                                                                                                                                     \n" + Colors.RESET);
     }
 
     public static void getMenuBigMessage() {
@@ -51,7 +51,6 @@ public class GameMessage {
                 "                                                                                                                           \n" +
                 "                                                                                                                           \n" +
                 "                                                       The original                                                        \n" +
-                "                                                                                                                           \n" +
                 "                                                                                                                           \n" +
                 "                                                                                                                           \n" +
                 "████████▄     ▄████████    ▄████████    ▄██████▄   ▄██████▄  ███▄▄▄▄      ▄████████         ▄████████ ███▄▄▄▄   ████████▄  \n" +
@@ -76,11 +75,15 @@ public class GameMessage {
     }
 
     public static void getPlayerName() {
-        System.out.print("Welcome, welcome! Whats your name? ");
+        System.out.print(Colors.FATIMAS_RED + "Welcome, welcome! Whats your name? " + Colors.RESET);
+    }
+
+    public static void getMercyMessage() {
+        System.out.println("You are spared my love!");
     }
 
     public static void getWelcomeMessage(String name) {
-        System.out.println("Welcome " + name + ", please select a character:");
+        System.out.println(Colors.FATIMAS_RED + "Welcome " + name + ", please select a character:" + Colors.RESET);
     }
 
     public static void getOneBlankSpace() {
@@ -115,18 +118,18 @@ public class GameMessage {
         int cha = playerItem != null ? playerItem.getCharisma() : 0;
         int ite = playerItem != null ? playerItem.getIntelligence() : 0;
 
-        System.out.println("Character: " + player.getSelectedCharacter().getName() + "\n" + "\n" +
-                "Types of attack:" +
-                "\nStrength: " + player.getSelectedCharacter().getStrength() + " (+" + str + ")"
-                + "\nDexterity: " + player.getSelectedCharacter().getDexterity() + " (+" + dex + ")"
-                + "\nCharisma: " + player.getSelectedCharacter().getCharisma() + " (+" + cha + ")"
-                + "\nIntelligence: " + player.getSelectedCharacter().getIntelligence() + " (+" + ite + ")");
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "Character: " + Colors.RESET + player.getSelectedCharacter().getName() + "\n" + "\n" +
+                Colors.YELLOW_BOLD_BRIGHT + "Types of attack:" + Colors.RESET +
+                Colors.YELLOW_BOLD_BRIGHT + "\nStrength: " + Colors.RESET + player.getSelectedCharacter().getStrength() + " (+" + str + ")" +
+                Colors.YELLOW_BOLD_BRIGHT + "\nDexterity: " + Colors.RESET + player.getSelectedCharacter().getDexterity() + " (+" + dex + ")" +
+                Colors.YELLOW_BOLD_BRIGHT + "\nCharisma: " + Colors.RESET + player.getSelectedCharacter().getCharisma() + " (+" + cha + ")" +
+                Colors.YELLOW_BOLD_BRIGHT + "\nIntelligence: " + Colors.RESET + player.getSelectedCharacter().getIntelligence() + " (+" + ite + ")");
         getOneBlankSpace();
-        System.out.println("Equiped: " + player.getWhatIsEquiped());
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "Equiped: " + player.getWhatIsEquiped() + Colors.RESET);
 
-        System.out.println("HP: " + player.getSelectedCharacter().getHealthPoints());
-        System.out.println("XP: " + player.getXp());
-        System.out.println("GOLD: " + player.getGold());
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "HP: " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + player.getSelectedCharacter().getHealthPoints() + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "XP: " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + player.getXp() + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "GOLD: " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + player.getGold() + Colors.RESET);
 
 
         getOneBlankSpace();
@@ -137,13 +140,23 @@ public class GameMessage {
     }
 
     public static void getDeadMessage() {
-        System.out.println("You're dead.");
+        System.out.println(Colors.RED_BOLD_BRIGHT +
+                "▓██   ██▓ ▒█████   █    ██    ▓█████▄  ██▓▓█████ ▓█████▄ \n" +
+                " ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▒██▀ ██▌▓██▒▓█   ▀ ▒██▀ ██▌\n" +
+                "  ▒██ ██░▒██░  ██▒▓██  ▒██░   ░██   █▌▒██▒▒███   ░██   █▌\n" +
+                "  ░ ▐██▓░▒██   ██░▓▓█  ░██░   ░▓█▄   ▌░██░▒▓█  ▄ ░▓█▄   ▌\n" +
+                "  ░ ██▒▓░░ ████▓▒░▒▒█████▓    ░▒████▓ ░██░░▒████▒░▒████▓ \n" +
+                "   ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒     ▒▒▓  ▒ ░▓  ░░ ▒░ ░ ▒▒▓  ▒ \n" +
+                " ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░     ░ ▒  ▒  ▒ ░ ░ ░  ░ ░ ▒  ▒ \n" +
+                " ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░     ░ ░  ░  ▒ ░   ░    ░ ░  ░ \n" +
+                " ░ ░         ░ ░     ░           ░     ░     ░  ░   ░    \n" +
+                " ░ ░                           ░                  ░      " + Colors.RESET);
         getOneBlankSpace();
     }
 
     public static void getMenuDead() {
-        System.out.println("1 - Create a new character");
-        System.out.println("2 - Leave game");
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Create a new character" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Leave game" + Colors.RESET);
     }
 
     private static int count = 1;
@@ -152,26 +165,26 @@ public class GameMessage {
         count = 1;
         for (Item item : shop.getShopList()) {
             if (item.getCharisma() != null) {
-                System.out.println(count++ + " | " + item.getName() + " | Price: " + item.getPriceToBuy() + " | Skill: +" + item.getSkillToMenu());
+                System.out.println(Colors.YELLOW_BOLD_BRIGHT + "" + count++ + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " | " + item.getName() + " | Price: " + item.getPriceToBuy() + " | Skill: +" + item.getSkillToMenu() + Colors.RESET);
             } else {
-                System.out.println(count++ + " | " + item.getName() + " | Price: " + item.getPriceToBuy());
+                System.out.println(Colors.YELLOW_BOLD_BRIGHT + "" + count++ + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " | " + item.getName() + " | Price: " + item.getPriceToBuy() + Colors.RESET);
             }
         }
     }
 
     public static void shopMenu() {
-        System.out.println("1 - BUY");
-        System.out.println("2 - UPGRADE");
-        System.out.println("3 - SELL");
-        System.out.println("4 - LEAVE");
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " BUY" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " UPGRADE" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "3✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " SELL" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "4✦ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " LEAVE" + Colors.RESET);
     }
 
     public static void getShopSuccessMessage(Item item) {
-        System.out.println("You bought " + item.getName() + " for " + item.getPriceToBuy() + " gold.");
+        System.out.println(Colors.WHITE_BOLD_BRIGHT + "You bought " + item.getName() + " for " + item.getPriceToBuy() + " gold." + Colors.RESET);
     }
 
     public static void getOption() {
-        System.out.print("Option: ");
+        System.out.print(Colors.YELLOW_BOLD_BRIGHT + "Option: \n" + Colors.RESET);
     }
 
     private static int count2 = 1;
@@ -180,7 +193,7 @@ public class GameMessage {
         player.getSelectedCharacter()
                 .getInventory()
                 .getItemList()
-                .forEach(item1 -> System.out.println(count2++ + " | " + item1.getName()));
+                .forEach(item1 -> System.out.println(Colors.WHITE_BOLD_BRIGHT + "" + count2++ + " | " + item1.getName() + Colors.RESET));
     }
 
     public static void getPlayerInventoryListToUpgrade(Player player) {
@@ -190,39 +203,39 @@ public class GameMessage {
                 .getItemList()
                 .forEach(item -> {
                     if (item.getWeaponBetterSkill() != 50) {
-                        System.out.println(count2++ + " | " + item.getName() + " (" + item.getPriceToUpgrade() + " gold to upgrade)");
+                        System.out.println(Colors.WHITE_BOLD_BRIGHT + "" + count2++ + " | " + item.getName() + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " (" + item.getPriceToUpgrade() + " gold to upgrade)\n" + Colors.RESET);
                     } else {
-                        System.out.println(count2++ + " | " + item.getName() + " (Can't upgrade anymore)");
+                        System.out.println(Colors.WHITE_BOLD_BRIGHT + "" + count2++ + " | " + item.getName() + Colors.RESET + Colors.RED_BOLD_BRIGHT + " (Can't upgrade anymore)\n" + Colors.RESET);
                     }
                 });
     }
 
     public static void getInventoryMenu() {
-        System.out.println("1 - Equip item");
-        System.out.println("2 - Unquip item");
-        System.out.println("3 - USE");
-        System.out.println("4 - Exit");
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "1✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Equip item" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "2✦ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Unequip item" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "3✧ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " USE" + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "4✦ " + Colors.RESET + Colors.WHITE_BOLD_BRIGHT + " Exit\n" + Colors.RESET);
     }
 
     public static void upgradeSuccess(Item item) {
-        System.out.println("You upgraded your " + item.getName() + ".");
+        System.out.println(Colors.WHITE_BOLD_BRIGHT + "You upgraded your " + item.getName() + "." + Colors.RESET);
     }
 
     public static void errorUsingSomething(Player player) {
-        System.out.println("Interesting " + player.getSelectedCharacter().getInventory().getItemList() + "... but this cannot be used, only equipped.");
+        System.out.println(Colors.CYAN_BOLD_BRIGHT + "Interesting " + player.getSelectedCharacter().getInventory().getItemList() + "... but this cannot be used, only equipped." + Colors.RESET);
     }
 
     public static void usedHealPotion() {
-        System.out.println("You drank the potion and fully restored your HP.");
+        System.out.println(Colors.CYAN_BOLD_BRIGHT + "You drank the potion and fully restored your HP.\n" + Colors.RESET);
     }
 
     public static void whatItemYouWantToSell() {
-        System.out.println("What item you want to sell?");
+        System.out.println(Colors.WHITE_BOLD_BRIGHT + "What item you want to sell?\n" + Colors.RESET);
     }
 
     public static void successSell(LinkedList<Item> playerItem, int index) {
         Item item = playerItem.get(index);
-        System.out.println("You sold " + item.getName() + " for " + item.getPriceToBuy() / 2 + " gold.");
+        System.out.println(Colors.WHITE_BOLD_BRIGHT + "You sold " + item.getName() + " for " + item.getPriceToBuy() / 2 + Colors.RESET + Colors.YELLOW_BOLD_BRIGHT + " gold." + Colors.RESET);
     }
 
     public static void printMonsterArt(MonsterType monsterType) {
@@ -235,58 +248,63 @@ public class GameMessage {
     }
 
     public static final Map<MonsterType, String> MONSTER_ART_MAP = new HashMap<>();
+
     static {
-        MONSTER_ART_MAP.put(MonsterType.SLIME,("                                                                                \n" +
+        MONSTER_ART_MAP.put(MonsterType.SLIME, ("                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
-                "                                      (*,.,*(                                   \n" +
-                "                            /.........         ........,                        \n" +
+                "                                                                                \n" +
+                "                                      (*,.,*(                                   \n" + Colors.RESET +
+                "                            /.........         ........,                        \n" + Colors.BLUE +
                 "                        .....             ..................                    \n" +
                 "                    ......       . ............................/                \n" +
                 "                 /..   .......*************************.... ......              \n" +
-                "               ...........****,*************************,,..........            \n" +
-                "             ,..........************************************..........          \n" +
+                "               ...........****,*************************,,..........            \n" + Colors.RESET +
+                "             ,..........************************************..........          \n" + Colors.CYAN_BOLD_BRIGHT +
                 "            ..........,******(**************(****************..........         \n" +
                 "           ..........***************************************............        \n" +
                 "          .......... ..***********************************,......*.......       \n" +
                 "         ......,,.,.....********************************..,,.,,,,,,,...../      \n" +
                 "         .......,.........**************************..............,,,,...*      \n" +
                 "         .....,........,*****************************,,,.........,,,,,,..       \n" +
-                "         *...,,,,,,,,**,*************************************,,,*,,,,,,..       \n" +
-                "          (.*******,,,*,**********************************************..        \n" +
+                "         *...,,,,,,,,**,*************************************,,,*,,,,,,..       \n" + Colors.RESET +
+                "          (.*******,,,*,**********************************************..        \n" + Colors.CYAN_BOLD_BRIGHT +
                 "            ..****************************************.************....         \n" +
                 "             %,....*********************************.....******,....%%%         \n" +
                 "              %%%%&...........................................*%%%%%%           \n" +
-                "  *                   /%%%%%%%%%%%%%%%%%%%&%(//(#&%%%%%%%%%%%%%%                \n" +
-                "  .                                                                             \n" +
+                "  *                   /%%%%%%%%%%%%%%%%%%%&%(//(#&%%%%%%%%%%%%%%                \n" + Colors.RESET +
+                "  .                                                                             \n" + Colors.BLUE +
                 "  .                                                                             \n" +
                 "                                                                                \n" +
                 "  %                                                                             \n" +
                 "  %                                                                             \n" +
-                "  *                                                                         "));
+                "  *                                                                         " + Colors.RESET));
 
-        MONSTER_ART_MAP.put(MonsterType.BABYSPIDERS, (" .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   ,#&@@@&#.  .  .  \n" +
+
+        MONSTER_ART_MAP.put(MonsterType.BABYSPIDERS, (Colors.WHITE_BOLD_BRIGHT +
+                " .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .   ,#&@@@&#.  .  .  \n" +
                 ".. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. @@@@@@@@@@@@@@@@@@@@ .. ..\n" +
                 ".. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .@@@@@@# .. .. .. ..@@@@.. ..\n" +
-                "..  .  @@@@@@@@@@@@@@@@@@.  .  .  .  (&&&#..  . .. @@@@@  . ..  .  .  . ..  .  .\n" +
-                "  .  @@@@@@@@@@%**#@@@@@@@@   %&&&&&&&&&&&&&&&&&%/@@@@@ .  @@@@@@@@@@@@@  .  .  \n" +
+                "..  .  @@@@@@@@@@@@@@@@@@.  .  .  .  (&&&#..  . .. @@@@@  . ..  .  .  . ..  .  .\n" + Colors.RESET +
+                "  .  @@@@@@@@@@%**#@@@@@@@@   %&&&&&&&&&&&&&&&&&%/@@@@@ .  @@@@@@@@@@@@@  .  .  \n" + Colors.WHITE +
                 "  . @@@@.  .  .  .  .  @@@@&&&&&&&&&&&&&&&&&&&&%&&&&%@  %@@@@@@@  *@@@@@@@@@@%  \n" +
                 "  .  .  .  ,@@@@@@@@.  .*&&&&&&     %&&&&%         &&&%@@@@@# .  .  .  . &@@@@@@\n" +
-                ".. .. .@@@@@@@@@@@@@@@@%&&&&&         %&%   @@     /&&&&@&. .@@@@@@. .. .. .*@@@\n" +
-                ".. %@@@@@@@ .. .. .@@@@&&&&&  @@@@@    &&  @@@@@   &&&&&@@@@@@@@@@@@@@. .. ..  &\n" +
+                ".. .. .@@@@@@@@@@@@@@@@%&&&&&         %&%   @@     /&&&&@&. .@@@@@@. .. .. .*@@@\n" + Colors.RESET +
+                ".. %@@@@@@@ .. .. .@@@@&&&&&  @@@@@    &&  @@@@@   &&&&&@@@@@@@@@@@@@@. .. ..  &\n" + Colors.WHITE_BOLD_BRIGHT +
                 ".@@@@@@. .. .. .   . ..&&&&&& (@@@.   %&&&&*     &&&&&&&@@@... .. ..@@@@@  .. ..\n" +
                 "@@@@#.  .  . @@@@@@@@@@%&&&&&&&&%&&&&&&&&&&&&&&&&&&&&&&&@@@@@@@@@@  .  @@@@@ .  \n" +
-                " @@  .  . @@@@@. .  .*@@&&&&&&&&&&&&&&&*%%%%&&&&&&&&&&&,.  .  .,@@@@.  . @@@@.  \n" +
-                "  .  .  @@@@@ .  (@@@@@@@@&&&&&&&&&&&&&&&&&&&&&&&&&&&.  .  .  .  .@@@  . .@@ .  \n" +
+                " @@  .  . @@@@@. .  .*@@&&&&&&&&&&&&&&&*%%%%&&&&&&&&&&&,.  .  .,@@@@.  . @@@@.  \n" + Colors.RESET +
+                "  .  .  @@@@@ .  (@@@@@@@@&&&&&&&&&&&&&&&&&&&&&&&&&&&.  .  .  .  .@@@  . .@@ .  \n" + Colors.WHITE +
                 ".. .. %@@@@ .. @@@@@@&. .. .. %&&&&&&&&&&&&&&&&&&# .. .. .. .. .. .@@@( .. .. ..\n" +
-                ".. .. @@@/. ..@@@ .. .. .. .. .. .. .#&&&%.. .. .. .. .. .. .. .. ..@@@ .. .. ..\n" +
-                ".. ..  @@.. .@@@. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..@@. .. .. ..\n" +
+                ".. .. @@@/. ..@@@ .. .. .. .. .. .. .#&&&%.. .. .. .. .. .. .. .. ..@@@ .. .. ..\n" + Colors.RESET +
+                ".. ..  @@.. .@@@. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..@@. .. .. ..\n" + Colors.WHITE_BOLD_BRIGHT +
                 "  .  .  .  .#@@@ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  \n" +
-                "  .  .  .  .(@@@ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  "));
+                "  .  .  .  .(@@@ .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  " + Colors.RESET));
 
-        MONSTER_ART_MAP.put(MonsterType.GOBLIN,("                                                                               \n" +
+
+        MONSTER_ART_MAP.put(MonsterType.GOBLIN, (Colors.GREEN_BOLD_BRIGHT + "                                                                               \n" +
                 "                                  ,&(,,,,/((%                                   \n" +
                 "                            #,,,/((((((((((((((((#            %/**  *           \n" +
                 "          ,(*/          ./,,(((((((((((((((((((((((#&    &./%//%                \n" +
@@ -304,8 +322,8 @@ public class GameMessage {
                 "          .*/(//(           &////#%(/(##//********//(#(    %##/(//(#  /         \n" +
                 "               &*/(#%      ,////****//*/*******/**//(#%    ,         /          \n" +
                 "                 #/*//(#/**//#  ///*************///###%  .                      \n" +
-                "                   %***/#/(#  (  (,/*/********///(#&%&#  .                      \n" +
-                "                       (%   *    (%#(///////##@%%%&%%%&&&                       \n" +
+                "                   %***/#/(#  (  (,/*/********///(#&%&#  .                      \n" + Colors.RESET +
+                "                       (%   *    (%#(///////##@%%%&%%%&&&                       \n" + Colors.GREEN_BOLD +
                 "                       ,,,.     .&%#%%%#%%&%%##%&&&&&&&#&&%                     \n" +
                 "                              %%%%%%%&@@%%%%&@@&&&%&&%&&&&&&                    \n" +
                 "                           @#%%%%%%%%%%%%%%%%@@&&&%%%&&&&&&&&                   \n" +
@@ -321,10 +339,11 @@ public class GameMessage {
                 "                       #,/**//((##  *                    (*/*/*/*/(             \n" +
                 "               /,/***((**//(((#%  (.                       &(./******/*(#&      \n" +
                 "               #((,/%*/(***/##  /.                         *  %/**/*/*#(((*#%% *\n" +
-                "              .     .%#%####  /.                                ,(/**/((#%%   /"));
+                "              .     .%#%####  /.                                ,(/**/((#%%   /" + Colors.RESET));
 
 
-        MONSTER_ART_MAP.put(MonsterType.SKELETON,("                                                                               \n" +
+        MONSTER_ART_MAP.put(MonsterType.SKELETON, (Colors.WHITE_BOLD_BRIGHT +
+                "                                                                                \n" +
                 "                                     ,@@@@@@@@/                                 \n" +
                 "                                  .@@@@@@@@@@@@@@@@                             \n" +
                 "                                 (@@@@@@@@@@@@@@@@@@*                           \n" +
@@ -350,10 +369,10 @@ public class GameMessage {
                 "                                 #@ #      #                                    \n" +
                 "                           .,@@#@##@@    @@(@                                   \n" +
                 "                                           @@@@*                                \n" +
-                "                                            /                                  "));
+                "                                            /                                  " + Colors.RESET));
 
-
-    MONSTER_ART_MAP.put(MonsterType.ZOMBIE,("                                                                               \n" +
+        MONSTER_ART_MAP.put(MonsterType.ZOMBIE, (Colors.MAGENTA_BOLD_BRIGHT +
+                "                                                                                \n" +
                 "                                    @,,,,,,,,,,,,,@&  *                         \n" +
                 "                                 @...,,,,,,,,,,,,,,,**##                        \n" +
                 "                                @,,,@,...,,,,,*,,(,,,***/ %%                    \n" +
@@ -397,41 +416,43 @@ public class GameMessage {
                 "                                         %&,,,,,,,,**             @@  ,***,,**@ \n" +
                 "                                  &,,,,,....,,,,,****@               @*,,,,*@   \n" +
                 "                                   @,*@,,,,,****              %,&,(,,,,,,,,*,   \n" +
-                "                                      (@//@#                     &@%.*&#((#%/(#("));
+                "                                      (@//@#                     &@%.*&#((#%/(#(" + Colors.RESET));
 
- MONSTER_ART_MAP.put(MonsterType.SPECTRE,("                                                                         \n" +
-            "                                                                                \n" +
-            "                                   *&@@@@@@%*                                   \n" +
-            "                               /@              .@(                              \n" +
-            "                             /%                   .@                            \n" +
-            "                            @                       /%                          \n" +
-            "                           &       .%    @@@         .&                         \n" +
-            "                          .&      %@@@  @@@@@         */                        \n" +
-            "                          %.      *@@@  .@@@@/         @                        \n" +
-            "                          @               /%           #                        \n" +
-            "                          @           @@@              /*                       \n" +
-            "                          @          ,@@@              #(/,                     \n" +
-            "                          %.                                 &/                 \n" +
-            "                          @                              @(                     \n" +
-            "                         .&                           ##                        \n" +
-            "                         @                           @                          \n" +
-            "                      @&                            @                           \n" +
-            "                     (@@@@@                       /#                            \n" +
-            "                         @                       @                              \n" +
-            "                        @.                    ,@                                \n" +
-            "                       @                    @(                                  \n" +
-            "                      @                 .@/                                     \n" +
-            "                    &/              (@(                                         \n" +
-            "                  *@          %@@,                                              \n" +
-            "                  #@@@%*                                                        \n" +
-            "                                                                                \n" +
-            "                                                                                \n" +
-            "                                                                                \n" +
-            "                                                                                \n" +
-            "                                                                                \n" +
-            "                  ,    ,         *           /,*., # * / * * (.*             "));
+        MONSTER_ART_MAP.put(MonsterType.SPECTRE, (Colors.WHITE_BOLD_BRIGHT +
+                "                                                                                \n" +
+                "                                                                                \n" +
+                "                                   *&@@@@@@%*                                   \n" +
+                "                               /@              .@(                              \n" +
+                "                             /%                   .@                            \n" +
+                "                            @                       /%                          \n" +
+                "                           &       .%    @@@         .&                         \n" +
+                "                          .&      %@@@  @@@@@         */                        \n" +
+                "                          %.      *@@@  .@@@@/         @                        \n" +
+                "                          @               /%           #                        \n" +
+                "                          @           @@@              /*                       \n" +
+                "                          @          ,@@@              #(/,                     \n" +
+                "                          %.                                 &/                 \n" +
+                "                          @                              @(                     \n" +
+                "                         .&                           ##                        \n" +
+                "                         @                           @                          \n" +
+                "                      @&                            @                           \n" +
+                "                     (@@@@@                       /#                            \n" +
+                "                         @                       @                              \n" +
+                "                        @.                    ,@                                \n" +
+                "                       @                    @(                                  \n" +
+                "                      @                 .@/                                     \n" +
+                "                    &/              (@(                                         \n" +
+                "                  *@          %@@,                                              \n" +
+                "                  #@@@%*                                                        \n" +
+                "                                                                                \n" +
+                "                                                                                \n" +
+                "                                                                                \n" +
+                "                                                                                \n" +
+                "                                                                                \n" +
+                "                  ,    ,         *           /,*., # * / * * (.*             ") + Colors.RESET);
 
-        MONSTER_ART_MAP.put(MonsterType.WEREWOLF,("                                                                       \n" +
+        MONSTER_ART_MAP.put(MonsterType.WEREWOLF, (Colors.BLUE_BOLD_BRIGHT +
+                "                                                                                \n" +
                 "                       .                                                        \n" +
                 "                        %@@@@@&@                                                \n" +
                 "                         &@@@@@@@@@@@%                                          \n" +
@@ -456,9 +477,12 @@ public class GameMessage {
                 "                   @@@@  .@@@@@   @@@@@@@@@@@@@@@                               \n" +
                 "                     @@@@@@   *@@@@@@@@(                                        \n" +
                 "                        .@@@@@@@@@@@#.      ./&@@@.                             \n" +
-                "                                                                        "));
 
-        MONSTER_ART_MAP.put(MonsterType.GHOST,(" . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
+                "                                                                        " + Colors.RESET));
+
+
+        MONSTER_ART_MAP.put(MonsterType.GHOST, (Colors.WHITE_BOLD_BRIGHT +
+                " . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
                 ".. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . \n" +
                 ".. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . \n" +
                 ".. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . \n" +
@@ -489,9 +513,11 @@ public class GameMessage {
                 "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
                 "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
                 "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .\n" +
-                "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. ."));
+                "  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. .  . .. ." + Colors.RESET));
 
-        MONSTER_ART_MAP.put(MonsterType.WITCH,("       .@@@@@@@@@@@@@@@@@@@@@.                                     \n" +
+
+        MONSTER_ART_MAP.put(MonsterType.WITCH, (Colors.MAGENTA_BOLD_BRIGHT +
+                "                   .@@@@@@@@@@@@@@@@@@@@@.                                     \n" +
                 "                  .@@@@.     @@@@@@@@@@@@@@@@                                   \n" +
                 "                  @@(          &@@@@@@@@@@@@@@#                                 \n" +
                 "                 @@.           .@@@@@@@@@@@@@@@&                                \n" +
@@ -513,9 +539,10 @@ public class GameMessage {
                 "               ..  /&@@@@@@@@@@@@@@@@@(  ,@@@@@@@@@@ ,@@,  .                    \n" +
                 "                /@@@@@@@@@@@@@@*@@@@@@@@@@@ *@@@@@@#.@@  &@                     \n" +
                 "                  @@@@@@@@@@@,&@@@@@@@(.    @@@@@@@@@@@@#                       \n" +
-                "                    ,@@@@(  @@@@@@@*       &@@@@@@@@@@,               "));
+                "                    ,@@@@(  @@@@@@@*       &@@@@@@@@@@,               " + Colors.RESET));
 
-        MONSTER_ART_MAP.put(MonsterType.VAMPIRE,("            .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/                        \n" +
+        MONSTER_ART_MAP.put(MonsterType.VAMPIRE, (Colors.RED_BOLD_BRIGHT +
+                "                        .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/                        \n" +
                 "                    *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&                    \n" +
                 "                  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  \n" +
                 "                %@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                \n" +
@@ -550,9 +577,11 @@ public class GameMessage {
                 "                       (@@@@@@@@@@@@@@&(%@@@@@@@@@@@@@@@@                       \n" +
                 "                          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@                         \n" +
                 "                             @@@@@@@@@@@@@@@@@@@@@@@                            \n" +
-                "                                  @@@@@@@@@@@@@"));
+                "                                  @@@@@@@@@@@@@" + Colors.RESET));
 
-        MONSTER_ART_MAP.put(MonsterType.MUMMY,("                                                                           \n" +
+
+        MONSTER_ART_MAP.put(MonsterType.MUMMY, (Colors.WHITE_BOLD_BRIGHT +
+                "                                                                               \n" +
                 "                                                            @%@     @@@@@@@@ @  \n" +
                 "                                      @@@@@ &@&  /@@@     @    @@@&          @  \n" +
                 "                                  @@      @@         @@@@   @@/   @@@       (/  \n" +
@@ -586,9 +615,10 @@ public class GameMessage {
                 "                                         @@       @%                            \n" +
                 "                                  @@*  @@   @@@@@%@                             \n" +
                 "                                 @@  @   /@       @                             \n" +
-                "                                        .@@@@@@@@                           "));
+                "                                        .@@@@@@@@                           " + Colors.RESET));
 
-        MONSTER_ART_MAP.put(MonsterType.CREEPER,(". .. .  . .. .  . .. .  . .. .  . .. @@ . .. .  . .. .  . .. .  . .. .  . .. .\n" +
+        MONSTER_ART_MAP.put(MonsterType.CREEPER, (Colors.GREEN_BOLD_BRIGHT +
+                ". .. .  . .. .  . .. .  . .. .  . .. @@ . .. .  . .. .  . .. .  . .. .  . .. .\n" +
                 ".. .  . .. .  . .. .  .  &@@@@@@@@@@@@       @@@@@@@  . .. .  . .. .  . .. .  . \n" +
                 ".. .  . .. .  .@@@@@@@@                             %@@@@@@.  . .. .  . .. .  . \n" +
                 ".. .  . .. .  . @@   @@                                    @@@@@.. .  . .. .  . \n" +
@@ -629,9 +659,12 @@ public class GameMessage {
                 ".. .  . .. .  . .. .   @@@@@  . .. .@@      @      @@ . .. .  . .. .  . .. .  . \n" +
                 "  . .. .  . .. .  . .. .  . .. .  . @@      @     @@@. .  . .. .  . .. .  . .. .\n" +
                 "  . .. .  . .. .  . .. .  . .. .  . ./@@@@    @@@@@ .. .  . .. .  . .. .  . .. .\n" +
-                "  . .. .  . .. .  . .. .  . .. .  . .. . @@@@@@.  . .. .  . .. .  . .. .  . .. ."));
 
-        MONSTER_ART_MAP.put(MonsterType.HARPY,(" @&   /,,                                                                     \n" +
+                "  . .. .  . .. .  . .. .  . .. .  . .. . @@@@@@.  . .. .  . .. .  . .. .  . .. ." + Colors.RESET));
+
+
+        MONSTER_ART_MAP.put(MonsterType.HARPY, (Colors.YELLOW_BOLD_BRIGHT +
+                " @&   /,,                                                                     \n" +
                 "  &  ,@   ,,,                                                                   \n" +
                 "   @. @,.  @.,,%                                                                \n" +
                 "     .. .,,,,,&,,@                                                              \n" +
@@ -662,9 +695,10 @@ public class GameMessage {
                 "                @   @   @@                   @,&.(.,.,.(@                       \n" +
                 "                                              @..,,%,* @                        \n" +
                 "                                             ,%%     &                          \n" +
-                "                                              ,%                         "));
+                "                                              ,%                         " + Colors.RESET));
 
-        MONSTER_ART_MAP.put(MonsterType.CENTAUR,("                                                                            \n" +
+
+        MONSTER_ART_MAP.put(MonsterType.CENTAUR, (Colors.YELLOW_BOLD_BRIGHT +
                 "                       ,&&&&&&&&                                                \n" +
                 "            %         &&&&&&&%&&                                                \n" +
                 "           &%        .&%&&& %* %                                                \n" +
@@ -694,9 +728,10 @@ public class GameMessage {
                 "                    %%&&(       &( *%     %%&*%&   & ( &                        \n" +
                 "  %                  &.&       &  &     * &&&&&  &  #.&                         \n" +
                 "  %                           &%&&&              &,&&&&                         \n" +
-                "  *                                                                            "));
+                "  *                                                                            " + Colors.RESET));
 
-        MONSTER_ART_MAP.put(MonsterType.MINOTAUR,("                                                                         \n" +
+        MONSTER_ART_MAP.put(MonsterType.MINOTAUR, (Colors.YELLOW +
+                "                                                                               \n" +
                 "                                     @@      /                                  \n" +
                 "                                       @@     @@@@@@@@@@                        \n" +
                 "                                       #@@@  @@@@,   (@@@                       \n" +
@@ -721,9 +756,12 @@ public class GameMessage {
                 "                                        @@@@@        %@@@@                      \n" +
                 "                                      (@@@@@@        @@@@@%                     \n" +
                 "                                      &@@#            @@@@@                     \n" +
-                "                                                                            "));
+                "                                                                            " + Colors.RESET));
 
-        MONSTER_ART_MAP.put(MonsterType.CYCLOPS,("                                                                      \n" +
+
+        MONSTER_ART_MAP.put(MonsterType.CYCLOPS, (Colors.GREEN_BOLD_BRIGHT +
+
+                "                                                                                \n" +
                 "                           # (,. ,*,                  &% ( @                    \n" +
                 "                           . @ &%( /,,              *#  (%@@/&                  \n" +
                 "                            .     &.                ,,      ,/                  \n" +
@@ -751,38 +789,41 @@ public class GameMessage {
                 "                     .@    &                    @      **                       \n" +
                 "                   (& % ( &                       % #/& %(                      \n" +
                 "                   %%@ @ (                           .&, .                      \n" +
-                "                        *                                                "));
+                "                        *                                                " + Colors.RESET));
 
-        MONSTER_ART_MAP.put(MonsterType.BASILISK,("                                                                        \n" +
+
+        MONSTER_ART_MAP.put(MonsterType.BASILISK, (Colors.GREEN +
+                "                                                                               \n" +
                 "                                            #@                                  \n" +
                 "                                            @.@                                 \n" +
-                "                                           @@@@  @ @                            \n" +
-                "                                       @.@@@@@@@@(@                             \n" +
+                "                                           @@@@  @ @                            \n" + Colors.RESET +
+                "                                       @.@@@@@@@@(@                             \n" + Colors.GREEN_BRIGHT +
                 "                                      @@@@@@@@@@@@@@@@@                         \n" +
-                "                                    .@@@@@@@@@@@@@@@ @                          \n" +
-                "                                   &@@@@@@@@@@@@@@@@@@@@                        \n" +
+                "                                    .@@@@@@@@@@@@@@@ @                          \n" + Colors.RESET +
+                "                                   &@@@@@@@@@@@@@@@@@@@@                        \n" + Colors.GREEN +
                 "                                   @@@@@@@@@@@  @@@@@@@@%                       \n" +
                 "                                    @@          .@@@@@@@@                       \n" +
                 "                                                 @@@@@@@@@*                     \n" +
                 "                                                 @@@@@@@@                       \n" +
                 "                                                @@@@@@@@@                       \n" +
                 "                           %                   @@@@@@@@@@                       \n" +
-                "                     %  @@@@@                @@@@@@@@@@ @                       \n" +
-                "                  @@ @@@@@@                @@@@@@@@@@ @                         \n" +
+                "                     %  @@@@@                @@@@@@@@@@ @                       \n" + Colors.RESET +
+                "                  @@ @@@@@@                @@@@@@@@@@ @                         \n" + Colors.GREEN_BRIGHT +
                 "                   @@@@@@@@@@            @@@@@@@@@@@                            \n" +
                 "                     @@@@@@@@@         @@@@@@@@@@/                              \n" +
                 "                    @@@@@            @@@@@@@@@@@@                               \n" +
-                "                   # @@            @@@@@@@@@@@@                                 \n" +
-                "                    @&@          @@@@@@@/@@@&                                   \n" +
+                "                   # @@            @@@@@@@@@@@@                                 \n" + Colors.RESET +
+                "                    @&@          @@@@@@@/@@@&                                   \n" + Colors.GREEN +
                 "                     @@@        @@@@@@@@@@@@@@@@@@@@@@@@@@@@                    \n" +
                 "                       @@@@@@#&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  \n" +
                 "                            @@@@@@@@@@@@@@@.           @@@@@@@@                 \n" +
                 "                              @@@@@@@@@@@@@@@     .@@@@@@@@@@@@                 \n" +
                 "                               @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                  \n" +
                 "                                @@@@@@@@@@@@@@@@@@@@@@@@@@@                     \n" +
-                "                                     @@@@@@@@@@@@@@@@                   "));
+                "                                     @@@@@@@@@@@@@@@@                   " + Colors.RESET));
 
-        MONSTER_ART_MAP.put(MonsterType.GRIFFIN,("                                                                       \n" +
+        MONSTER_ART_MAP.put(MonsterType.GRIFFIN, (Colors.YELLOW +
+                "                                                                       \n" +
                 "                                                                                \n" +
                 "                                      @@                                        \n" +
                 "                                @@    @@@                                       \n" +
@@ -802,9 +843,12 @@ public class GameMessage {
                 "                       @@@@                            @@@                      \n" +
                 "                      @@@@ @@                           @@@@@&                  \n" +
                 "                                                                                \n" +
-                "                                                                        "));
 
-        MONSTER_ART_MAP.put(MonsterType.CHIMERA,("                                    &&.   &                                    \n" +
+                "                                                                        " + Colors.RESET));
+
+
+        MONSTER_ART_MAP.put(MonsterType.CHIMERA, (Colors.YELLOW_BOLD_BRIGHT +
+                "                                    &&.   &                                    \n" +
                 "                                          &&&,                                  \n" +
                 "                                        &&&*& &&                                \n" +
                 "      %&&&&&&&&&&             &       &&&&&&&(&&&&                              \n" +
@@ -825,22 +869,25 @@ public class GameMessage {
                 "   &&&&&         &&&&&&&                      #&&&&&&&&&&&                      \n" +
                 "   (&&&&            @&&&&&&&&&&                    /&&&&&&&&&                   \n" +
                 "    %&&&                   @&&&&&                       &&&&&&&&                \n" +
-                "     &&&&&&&&&%               &&&&&                        &&&&&&&&&&&&&&&     "));
 
-        MONSTER_ART_MAP.put(MonsterType.MEDUSA,("                                                                                \n" +
+                "     &&&&&&&&&%               &&&&&                        &&&&&&&&&&&&&&&     " + Colors.RESET));
+
+
+        MONSTER_ART_MAP.put(MonsterType.MEDUSA, (Colors.GREEN +
+                "                                                                                \n" +
                 "                                  @@@@      &@@@@@@@@@@@#@@                     \n" +
                 "                               @@@    @#  @@@%        .@@@@ %                   \n" +
                 "            @@@@@@@@@&@       @@    @@@@ @@@               ((&@@@.              \n" +
                 "          @@@@@@@@/ .@@@@@   #@@    @@&@@@@@           @@@@.     @@@@@          \n" +
                 "       @                @@@@  @@@       %@@@@        @@@@           @@@&%       \n" +
                 "                         @@@(  @@@% #    @@@@@%      @@@              @@@@      \n" +
-                "         @@@@@            @@@   @@@@@      @@@@@@    @@@@                       \n" +
-                "      @@@     @@@@#       @@@@    @@@@@      @@@@@@   @@@@                      \n" +
+                "         @@@@@            @@@   @@@@@      @@@@@@    @@@@                       \n" + Colors.RESET +
+                "      @@@     @@@@#       @@@@    @@@@@      @@@@@@   @@@@                      \n" + Colors.GREEN +
                 "      @@&        @@@&     ,@@@      @@@@@@      @@@@@   @@@@       @@@@,  .@@@  \n" +
                 "       @@@@@@&    @@@@     @@@@        @@@@@@@    @@@@@  @@@@(   @@@          @@\n" +
                 "          .@,      @@@@     @@@@          @@@@@@@   @@@@   @@@@  @@           @@\n" +
-                "    (@@@@@@#        .@@@     @@@@@           @@@@@   @@@@   @@@  @#        @@@@ \n" +
-                "  @@@      /%/@       @@@@    @@@@@@           @@@@   @@@@  ,@@* #((      @@%@@ \n" +
+                "    (@@@@@@#        .@@@     @@@@@           @@@@@   @@@@   @@@  @#        @@@@ \n" + Colors.RESET +
+                "  @@@      /%/@       @@@@    @@@@@@           @@@@   @@@@  ,@@* #((      @@%@@ \n" + Colors.GREEN_BRIGHT +
                 " @@@@        @@@@      @@@@@@    @@@@@@         @@@   @@@   @@@  @@@     @      \n" +
                 " @@@@         @@@@        @@@@@@@   @@@@@@@      @   @@   &@@%  @@@@   ,        \n" +
                 "               (@@@@         @@@@@@@@                        @@@@@@             \n" +
@@ -850,8 +897,8 @@ public class GameMessage {
                 "  &@@         @@@@@@             ,@@      &@@@@@@      @@@@                     \n" +
                 "  @@@@           ,@@@@@@@@@@@@@@@    @                                          \n" +
                 "   @*@(                            @@@                @                         \n" +
-                "            @@@@@@@@@@@@@@@@@@@@@@@@# %                   @                     \n" +
-                "          @@@@                        @ @       %%####   .                      \n" +
+                "            @@@@@@@@@@@@@@@@@@@@@@@@# %                   @                     \n" + Colors.RESET +
+                "          @@@@                        @ @       %%####   .                      \n" + Colors.GREEN +
                 "         @@@            @@@%@        *@ @              @           @   @        \n" +
                 "         @@          @@@@@@@@        @@  ,    @      @@       @         @       \n" +
                 "     @%@@@@         @@@            @@@#  #                                      \n" +
@@ -860,9 +907,11 @@ public class GameMessage {
                 "                                                                         @      \n" +
                 "                                      @                                  @      \n" +
                 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n" +
-                "@@@@    ( @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"));
+                "@@@@    ( @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" + Colors.RESET));
 
-        MONSTER_ART_MAP.put(MonsterType.WYVERN,("                                                                                \n" +
+
+        MONSTER_ART_MAP.put(MonsterType.WYVERN, (Colors.RED_BOLD_BRIGHT +
+                "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                   @.              @@           \n" +
                 "                                                 @@.           @@               \n" +
@@ -896,9 +945,11 @@ public class GameMessage {
                 "  %                 @@@ @@@@@@@                 @@@@@@@&@@@@@@@ @@@@@           \n" +
                 "  .                  /@@      @@                   @@@@@@@@@@@@@@@@             \n" +
                 "  *                  #         ,                        @(                      \n" +
-                "  (                                                                             "));
+                "  (                                                                             " + Colors.RESET));
 
-        MONSTER_ART_MAP.put(MonsterType.PHOENIX,("                                                                                \n" +
+
+        MONSTER_ART_MAP.put(MonsterType.PHOENIX, (Colors.RED_BOLD_BRIGHT +
+                "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                      /                         \n" +
                 "                                              (     ./          .               \n" +
@@ -910,16 +961,16 @@ public class GameMessage {
                 "              .//     //   ///                  ///,///(/// //*       /         \n" +
                 "                 //*  ///  //                   //////////////  ,///            \n" +
                 "          *///*    /// ///.//                    ///////////, ////              \n" +
-                "                //* *///,/////     */*          *////////. /////   //           \n" +
-                "                  ///( ////////      ///*       //////////////  /(              \n" +
+                "                //* *///,/////     */*          *////////. /////   //           \n" + Colors.RESET +
+                "                  ///( ////////      ///*       //////////////  /(              \n" + Colors.YELLOW_BOLD_BRIGHT +
                 "          (//////,  ,////////////     ////    //////////////////                \n" +
                 "                 //////////////////// ///////////////////  .                    \n" +
                 "            ./////.  .,. ////////////( //////////.//////.                       \n" +
                 "                    /////////// // ////  ///////////*                           \n" +
                 "                         /.      /*  /.     /////*                              \n" +
                 "                    (                         //////                            \n" +
-                "                                               ////// /                         \n" +
-                "                     */  /                    //////// /                        \n" +
+                "                                               ////// /                         \n" + Colors.RESET +
+                "                     */  /                    //////// /                        \n" + Colors.RED_BOLD_BRIGHT +
                 "                       /*  /                ////////(////                       \n" +
                 "                         //* .*  (////////////////// /,,/                       \n" +
                 "                    /       (////      ,/////////// ./ (/                       \n" +
@@ -927,9 +978,11 @@ public class GameMessage {
                 "                            //(            ////   (                             \n" +
                 "                                  ,*/((/*.                                      \n" +
                 "                                                                                \n" +
-                "                                                                                "));
 
-        MONSTER_ART_MAP.put(MonsterType.KRAKEN,("                                                                                \n" +
+                "                                                                                " + Colors.RESET));
+
+        MONSTER_ART_MAP.put(MonsterType.KRAKEN, (Colors.MAGENTA_BOLD +
+                "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
@@ -937,12 +990,12 @@ public class GameMessage {
                 "                                   /@@@@@@@@@,                                  \n" +
                 "                                @@@@@@@@@@@@@@@@@                               \n" +
                 "                              @@@@@@@@@@@@@@@@@@@@@                             \n" +
-                "                             @@@@@@@@@@@@@@@@@@@@@@@                            \n" +
-                "                             @@@@@@@@@@@@@@@@@@@@@@@                            \n" +
+                "                             @@@@@@@@@@@@@@@@@@@@@@@                            \n" + Colors.RESET +
+                "                             @@@@@@@@@@@@@@@@@@@@@@@                            \n" + Colors.MAGENTA_BOLD_BRIGHT +
                 "                (@@.&@@@@    @@@@@@@@@@@@@@@@@@@@@@@    @@@@%.@@,               \n" +
                 "               #@     @@@@   @@@@@@@@@@@@@@@@@@@@@@@   @@@@    .@.              \n" +
-                "                     @@@@@   .@@@@@@@@@@@@@@@@@@@@@    @@@@@                    \n" +
-                "                    @@@@&  @& #@@@@@@@@@@@@@@@@@@@* @#  @@@@@                   \n" +
+                "                     @@@@@   .@@@@@@@@@@@@@@@@@@@@@    @@@@@                    \n" + Colors.RESET +
+                "                    @@@@&  @& #@@@@@@@@@@@@@@@@@@@* @#  @@@@@                   \n" + Colors.MAGENTA_BOLD +
                 "                  #@@@@   @@    @@@@@@@@@@@@@@@@@    @@   @@@@,                 \n" +
                 "                 @@@@@/  @@*   @@@@@@@@@@@@@@@@@@@   #@@  %@@@@@                \n" +
                 "                @@@@@@   @@@    @% @@@@@@@@@@@ @@    @@@   @@@@@%               \n" +
@@ -950,8 +1003,8 @@ public class GameMessage {
                 "                @@@@@@@@@.   @@@@@@@@@@@@@@@@@@@@@@@   .@@@@@@@@@               \n" +
                 "                 @@@@@@@@@@@* @@@@%@@@@@@@@@@@,@@@@ %@@@@@@@@@@@                \n" +
                 "                    *@@@@@ @@(@@ @@@@@@@@@@@@@@@ @@@@@ @@@@@,                   \n" +
-                "                 @@@@@@@@@ @@ ,@@@@@@@@@ @@@@@@@@@.,@@ @@@@@@@@@                \n" +
-                "                @@@@@@    @ @@@@@@@@@@.   ,@@@@@@@@@@ @   .@@@@@@               \n" +
+                "                 @@@@@@@@@ @@ ,@@@@@@@@@ @@@@@@@@@.,@@ @@@@@@@@@                \n" + Colors.RESET +
+                "                @@@@@@    @ @@@@@@@@@@.   ,@@@@@@@@@@ @   .@@@@@@               \n" + Colors.MAGENTA_BOLD_BRIGHT +
                 "                @@@@@@@@@ @@@@@@@@@  &     %  @@@@@@@@@ @@@@@@@@@               \n" +
                 "                 @@@@@@@@ @@@@@@      @@ @@      @@@@@@ @@@@@@@@                \n" +
                 "                          @@@@@@      @@ @@      @@@@@@                         \n" +
@@ -960,16 +1013,17 @@ public class GameMessage {
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
-                "                                                                                "));
+                "                                                                                " + Colors.RESET));
 
-        MONSTER_ART_MAP.put(MonsterType.KRAKEN,("                                                                                \n" +
+        MONSTER_ART_MAP.put(MonsterType.KRAKEN, (Colors.GREEN_BRIGHT +
+                "                                                                                \n" +
                 "            @@@@@@%                                                     @@@@@@. \n" +
                 "         @@@@@@@@@@@@@@@@@                                         .@@@@@@      \n" +
                 "        @@@@@@@@@@@@@@@@@@@@@@@  & @& @                          @@@@@@         \n" +
                 "           @@@@@@@@@@@@@@@@@@@@@@@@@@@#                         &@@@@           \n" +
                 "           @@@/@@@@@@@@@@@@@@@@@@@@@@@, & @& @@@&              @@@@@            \n" +
-                "                @@@@@@@@@@@@@@@@@@@@@@@@&@@@@@  .              @@@@             \n" +
-                "              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@               .@@@@@            \n" +
+                "                @@@@@@@@@@@@@@@@@@@@@@@@&@@@@@  .              @@@@             \n" + Colors.RESET +
+                "              @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@               .@@@@@            \n" + Colors.GREEN_BOLD +
                 "             @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&                  #@@@@@           \n" +
                 "  #@@@@       @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.                @@@@@@          \n" +
                 "  @@@@@@@.     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.                @@@@@@@        \n" +
@@ -978,8 +1032,8 @@ public class GameMessage {
                 "                   &  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@               @@@@@@@      \n" +
                 "                     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.,             @@@@@@@@      \n" +
                 "                   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      @  @ #@@@@@@@@      \n" +
-                "                  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@,@@@@@@@@@@@@@@@(      \n" +
-                "                 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@       \n" +
+                "                  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@,@@@@@@@@@@@@@@@(      \n" + Colors.RESET +
+                "                 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@       \n" + Colors.GREEN_BRIGHT +
                 "                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@         \n" +
                 "                @@@@@@@@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@           \n" +
                 "               &@@@@@@@@@(             @@@@@@@@@@@@@@@@@@@@@@@@@@@              \n" +
@@ -988,9 +1042,10 @@ public class GameMessage {
                 "                  @@@@@@@@.                       .@@@@@@@@.                    \n" +
                 "                  #@@@@@@@@                         @@@@@@@@@                   \n" +
                 "              @@@@@@@@@@@@@@                       @@@@@@@@@@@@                 \n" +
-                "             @@@@@@@@@@@                           @@& @@@ @@@@@                "));
+                "             @@@@@@@@@@@                           @@& @@@ @@@@@                " + Colors.RESET));
 
-        MONSTER_ART_MAP.put(MonsterType.DRAGON,("                                                                                \n" +
+        MONSTER_ART_MAP.put(MonsterType.DRAGON, (Colors.YELLOW_BOLD_BRIGHT +
+                "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                                \n" +
                 "                                                                        &       \n" +
@@ -1002,8 +1057,8 @@ public class GameMessage {
                 "                     @@@@@@@@@@@@@@@@@@@@@* @@@ @@@@       @@@@,                \n" +
                 "                 @   @@@ .@@@@@@@@@@&@@@@@@@ @@@@@ %@@@@@@                      \n" +
                 "                @@@@@@@@@@@@@@@*  @/ @ .@@@@@@@@@@@@#                           \n" +
-                "               @@@@@@#  @@@@   (      @ @@@@@@#@@@@@@/                          \n" +
-                "                                      @@@@@@@@@@@@@(           *@@%             \n" +
+                "               @@@@@@#  @@@@   (      @ @@@@@@#@@@@@@/                          \n" + Colors.RESET +
+                "                                      @@@@@@@@@@@@@(           *@@%             \n" + Colors.RED_BOLD_BRIGHT +
                 "                %   @@ @@ @ @  @ @ ,@@@ @@@@@*@@@@@                             \n" +
                 "            &@@@@@/@@@(@@@@@@@. @ @ @@@@@@@@@@@@   @@@                          \n" +
                 "           @@@@&@@@@@@@@@@@@@@@@@@@@@@@@@@ @@  @%       @                       \n" +
@@ -1012,15 +1067,15 @@ public class GameMessage {
                 "        @(@(/@@@@@@.         @ @@@@@@@@@@@@@                                    \n" +
                 "         @@@/@@@@@@@@     *@@@@@@@@@@@@@@@@@@    @                              \n" +
                 "          @@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                               \n" +
-                "          @ @(@@@@@@@@@@@@@@@@@@&        @@@@@@@  @                             \n" +
-                "              @@@%@@/@@@@@@@.            @@@@@@ @                               \n" +
+                "          @ @(@@@@@@@@@@@@@@@@@@&        @@@@@@@  @                             \n" + Colors.RESET +
+                "              @@@%@@/@@@@@@@.            @@@@@@ @                               \n" + Colors.YELLOW_BOLD_BRIGHT +
                 "                 % @    @             @@@@@@@ @  @                              \n" +
                 "                       ,@@@@@@@@@@@@@@@@@@ @  *                                 \n" +
                 "                    @@@@@@@    @ @ @ @  @                                       \n" +
                 "                   @@@     @@@@                                                 \n" +
                 "                  @@@    @@@  @@@                                               \n" +
-                "                   @@@  @@@  /@@                                                \n" +
-                "                     @@@@@@@@@                                                  \n" +
+                "                   @@@  @@@  /@@                                                \n" + Colors.RESET +
+                "                     @@@@@@@@@                                                  \n" + Colors.RED_BOLD_BRIGHT +
                 "                          @@                                                    \n" +
                 "                           @@@*                                                 \n" +
                 "                          @@@@@                                                 \n" +
@@ -1028,14 +1083,72 @@ public class GameMessage {
                 "                                @@                                              \n" +
                 "                                    @                                           \n" +
                 "                                                                                \n" +
-                "                                                                                \n"));
-        }
+                "                                                                                \n" + Colors.RESET));
+    }
 
     public static void chestFound() {
-        System.out.println("Oh, you found a chest! Checking things inside..");
+        System.out.println(Colors.YELLOW_BOLD_BRIGHT + "Oh, you found a chest! Checking things inside.." + Colors.RESET);
     }
 
     public static void getFinalGameMessage() {
-        System.out.println("Meh. Goodbye.");
+        System.out.println(Colors.RED_BOLD_BRIGHT +
+                "    ███        ▄█    █▄       ▄████████ ███▄▄▄▄      ▄█   ▄█▄    ▄████████                         \n" +
+                "▀█████████▄   ███    ███     ███    ███ ███▀▀▀██▄   ███ ▄███▀   ███    ███                         \n" +
+                "   ▀███▀▀██   ███    ███     ███    ███ ███   ███   ███▐██▀     ███    █▀                          \n" +
+                "    ███   ▀  ▄███▄▄▄▄███▄▄   ███    ███ ███   ███  ▄█████▀      ███                                \n" +
+                "    ███     ▀▀███▀▀▀▀███▀  ▀███████████ ███   ███ ▀▀█████▄    ▀███████████                         \n" +
+                "    ███       ███    ███     ███    ███ ███   ███   ███▐██▄            ███                         \n" +
+                "    ███       ███    ███     ███    ███ ███   ███   ███ ▀███▄    ▄█    ███                         \n" +
+                "   ▄████▀     ███    █▀      ███    █▀   ▀█   █▀    ███   ▀█▀  ▄████████▀                          \n" +
+                "                                                    ▀                                              \n" +
+                "    ███      ▄██████▄       ▄██   ▄    ▄██████▄  ███    █▄     ▄████████                           \n" +
+                "▀█████████▄ ███    ███      ███   ██▄ ███    ███ ███    ███   ███    ███                           \n" +
+                "   ▀███▀▀██ ███    ███      ███▄▄▄███ ███    ███ ███    ███   ███    ███                           \n" +
+                "    ███   ▀ ███    ███      ▀▀▀▀▀▀███ ███    ███ ███    ███  ▄███▄▄▄▄██▀                           \n" +
+                "    ███     ███    ███      ▄██   ███ ███    ███ ███    ███ ▀▀███▀▀▀▀▀                             \n" +
+                "    ███     ███    ███      ███   ███ ███    ███ ███    ███ ▀███████████                           \n" +
+                "    ███     ███    ███      ███   ███ ███    ███ ███    ███   ███    ███                           \n" +
+                "   ▄████▀    ▀██████▀        ▀█████▀   ▀██████▀  ████████▀    ███    ███                           \n" +
+                "                                                              ███    ███                           \n" +
+                " ▄████████  ▄██████▄   ▄█     █▄     ▄████████    ▄████████ ████████▄   ▄█   ▄████████    ▄████████\n" +
+                "███    ███ ███    ███ ███     ███   ███    ███   ███    ███ ███   ▀███ ███  ███    ███   ███    ███\n" +
+                "███    █▀  ███    ███ ███     ███   ███    ███   ███    ███ ███    ███ ███▌ ███    █▀    ███    █▀ \n" +
+                "███        ███    ███ ███     ███   ███    ███  ▄███▄▄▄▄██▀ ███    ███ ███▌ ███         ▄███▄▄▄    \n" +
+                "███        ███    ███ ███     ███ ▀███████████ ▀▀███▀▀▀▀▀   ███    ███ ███▌ ███        ▀▀███▀▀▀    \n" +
+                "███    █▄  ███    ███ ███     ███   ███    ███ ▀███████████ ███    ███ ███  ███    █▄    ███    █▄ \n" +
+                "███    ███ ███    ███ ███ ▄█▄ ███   ███    ███   ███    ███ ███   ▄███ ███  ███    ███   ███    ███\n" +
+                "████████▀   ▀██████▀   ▀███▀███▀    ███    █▀    ███    ███ ████████▀  █▀   ████████▀    ██████████\n" +
+                "                                                 ███    ███                                        \n" +
+                "    ███        ▄█    █▄       ▄████████                                                            \n" +
+                "▀█████████▄   ███    ███     ███    ███                                                            \n" +
+                "   ▀███▀▀██   ███    ███     ███    █▀                                                             \n" +
+                "    ███   ▀  ▄███▄▄▄▄███▄▄  ▄███▄▄▄                                                                \n" +
+                "    ███     ▀▀███▀▀▀▀███▀  ▀▀███▀▀▀                                                                \n" +
+                "    ███       ███    ███     ███    █▄                                                             \n" +
+                "    ███       ███    ███     ███    ███                                                            \n" +
+                "   ▄████▀     ███    █▀      ██████████                                                            \n" +
+                "                                                                                                   \n" +
+                " ▄█     █▄   ▄██████▄     ▄████████  ▄█       ████████▄                                            \n" +
+                "███     ███ ███    ███   ███    ███ ███       ███   ▀███                                           \n" +
+                "███     ███ ███    ███   ███    ███ ███       ███    ███                                           \n" +
+                "███     ███ ███    ███  ▄███▄▄▄▄██▀ ███       ███    ███                                           \n" +
+                "███     ███ ███    ███ ▀▀███▀▀▀▀▀   ███       ███    ███                                           \n" +
+                "███     ███ ███    ███ ▀███████████ ███       ███    ███                                           \n" +
+                "███ ▄█▄ ███ ███    ███   ███    ███ ███▌    ▄ ███   ▄███                                           \n" +
+                " ▀███▀███▀   ▀██████▀    ███    ███ █████▄▄██ ████████▀                                            \n" +
+                "                         ███    ███ ▀                                                              \n" +
+                "   ▄████████ ███▄▄▄▄   ████████▄     ▄████████ ████████▄                                           \n" +
+                "  ███    ███ ███▀▀▀██▄ ███   ▀███   ███    ███ ███   ▀███                                          \n" +
+                "  ███    █▀  ███   ███ ███    ███   ███    █▀  ███    ███                                          \n" +
+                " ▄███▄▄▄     ███   ███ ███    ███  ▄███▄▄▄     ███    ███                                          \n" +
+                "▀▀███▀▀▀     ███   ███ ███    ███ ▀▀███▀▀▀     ███    ███                                          \n" +
+                "  ███    █▄  ███   ███ ███    ███   ███    █▄  ███    ███                                          \n" +
+                "  ███    ███ ███   ███ ███   ▄███   ███    ███ ███   ▄███                                          \n" +
+                "  ██████████  ▀█   █▀  ████████▀    ██████████ ████████▀                                           " + Colors.RESET);
     }
+
+
 }
+
+
+
