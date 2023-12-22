@@ -175,7 +175,6 @@ public class Character {
                     if (!monster.isSeduced()) {
                         monster.setSeduced(true);
                         System.out.println(randomQuote.getText());
-                        monster.monsterSeducedSpeak();
                         music = new Music(randomQuote.getFilename());
                     }
                 }
@@ -213,7 +212,6 @@ public class Character {
         int attack = 0;
         Random random = new Random();
         double chance = random.nextDouble();
-        characterTalk(monster);
         switch (attackType) {
             case "light":
                 attack = switch (characterType) {
